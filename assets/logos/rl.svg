@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Reinforcement Learning">
+  <rect width="64" height="64" rx="14" fill="#1A2F1A"/>
+  <circle cx="20" cy="40" r="5" fill="#4ADE80"/>
+  <circle cx="32" cy="24" r="5" fill="#FBBF24"/>
+  <circle cx="46" cy="38" r="5" fill="#60A5FA"/>
+  <path d="M25 38l5-12M37 27l7 8" stroke="#86EFAC" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

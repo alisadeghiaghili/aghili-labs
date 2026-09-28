@@ -1,0 +1,6 @@
+# Local QA captures
+docs/preview/
+
+# OS
+.DS_Store
+Thumbs.db

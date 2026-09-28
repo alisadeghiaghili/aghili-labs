@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Windows CMD">
+  <rect width="64" height="64" rx="14" fill="#0C1A2A"/>
+  <rect x="10" y="14" width="44" height="36" rx="4" fill="none" stroke="#7C8B9A" stroke-width="2"/>
+  <path d="M18 26h8l-3 4 3 4h-8" fill="none" stroke="#4CC2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 36h12" stroke="#E8EEF4" stroke-width="2" stroke-linecap="round"/>
+</svg>

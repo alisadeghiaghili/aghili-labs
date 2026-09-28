@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hadoop">
+  <rect width="64" height="64" rx="14" fill="#1B3A4B"/>
+  <rect x="14" y="16" width="14" height="14" rx="2" fill="#FFCA28"/>
+  <rect x="36" y="16" width="14" height="14" rx="2" fill="#FFCA28"/>
+  <rect x="25" y="36" width="14" height="14" rx="2" fill="#66BB6A"/>
+  <path d="M28 23h8M21 30l8 8M43 30l-8 8" stroke="#9AD0FF" stroke-width="2" stroke-linecap="round"/>
+</svg>

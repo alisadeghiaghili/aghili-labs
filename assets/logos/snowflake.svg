@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Snowflake">
+  <rect width="64" height="64" rx="14" fill="#29B5E8"/>
+  <path d="M32 12v40M16 22l32 20M16 42l32-20" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 16l6 4 6-4M26 48l6-4 6 4M16 28l6 2-2 6M48 36l-6-2 2-6M16 36l6-2-2-6M48 28l-6 2 2 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

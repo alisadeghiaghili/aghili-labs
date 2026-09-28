@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Computer Vision">
+  <rect width="64" height="64" rx="14" fill="#1A2B2E"/>
+  <ellipse cx="32" cy="32" rx="18" ry="12" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="6" fill="#2DD4BF"/>
+  <circle cx="32" cy="32" r="2.5" fill="#0F172A"/>
+  <path d="M14 22h6M44 22h6M14 42h6M44 42h6" stroke="#F0B429" stroke-width="2" stroke-linecap="round"/>
+</svg>

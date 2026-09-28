@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PowerShell">
+  <rect width="64" height="64" rx="14" fill="#012456"/>
+  <path d="M16 20h22l-2 6H18v6h14l-2 6H18v10h-4V20z" fill="#5391FE"/>
+  <path d="M34 34l12 6-12 6v-5l7-3-7-3v-5z" fill="#EEA71D"/>
+</svg>
