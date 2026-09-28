@@ -75,7 +75,7 @@ const CATEGORIES = {
         slug: "learn-powershell",
         title: "پاورشل",
         en: "PowerShell",
-        desc: "pipeline اشیاء، state جلسه و مدل فکری PowerShell — به سبک LGB.",
+        desc: "pipeline اشیاء، state جلسه و مدل فکری PowerShell — تعاملی و مرحله‌ای.",
         logo: "powershell",
       },
       {
@@ -188,7 +188,7 @@ const CATEGORIES = {
         slug: "learn-m",
         title: "Power Query M",
         en: "M",
-        desc: "مربی M به سبک learnGitBranching — visualization، sandbox و سطح‌ها.",
+        desc: "مربی M — visualization، sandbox و سطح‌های پلکانی.",
         logo: "m",
       },
       {
@@ -329,14 +329,14 @@ const CATEGORIES = {
         slug: "learn-flask",
         title: "فلسک",
         en: "Flask",
-        desc: "pipeline درخواست، sandbox و سطح‌های Flask — سبک LGB.",
+        desc: "pipeline درخواست، sandbox و سطح‌های Flask — تعاملی.",
         logo: "flask",
       },
       {
         slug: "learn-streamlit",
         title: "استریملیت",
         en: "Streamlit",
-        desc: "کلون Streamlit/Pyodide از learnGitBranching — sandbox، سطح و گراف.",
+        desc: "محیط Streamlit/Pyodide — sandbox، سطح و گراف تعاملی.",
         logo: "streamlit",
       },
       {
