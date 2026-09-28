@@ -584,10 +584,44 @@ function setupStats() {
   el.textContent = String(all.length);
 }
 
+/**
+ * Copy catalog URL so learners can pass courses to people who need them.
+ *
+ * @returns {void}
+ */
+function setupShare() {
+  const btn = document.getElementById("share-copy");
+  if (!btn) return;
+
+  const label = btn.querySelector("span");
+  const url = `${window.location.origin}${window.location.pathname}`;
+
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const input = document.createElement("input");
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      input.remove();
+    }
+    if (label) {
+      const previous = label.textContent;
+      label.textContent = "کپی شد";
+      window.setTimeout(() => {
+        label.textContent = previous;
+      }, 1800);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderCourses();
   setupNav();
   setupStats();
+  setupShare();
   setupReveal();
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
