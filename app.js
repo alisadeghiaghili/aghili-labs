@@ -423,8 +423,13 @@ function createCourseCard(course) {
           <p class="course-title">${escapeHtml(course.title)}</p>
           <p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>
         </a>
-        <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(course.title)}" aria-label="کپی لینک ${escapeHtml(course.title)}">
-          <span aria-hidden="true">⧉</span>
+        <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(course.title)}" aria-label="اشتراک‌گذاری ${escapeHtml(course.title)}">
+          <svg class="course-share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="18" cy="5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="6" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="18" cy="19" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8.3 10.8l7.4-4.2M8.3 13.2l7.4 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -586,6 +591,36 @@ function setupStats() {
 }
 
 /**
+ * Show a brief toast message.
+ *
+ * @param {string} message
+ * @returns {void}
+ */
+function showToast(message) {
+  let toast = document.getElementById("toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "toast";
+    toast.className = "toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.remove("is-show");
+  // force restart of the enter transition
+  void toast.offsetWidth;
+  toast.classList.add("is-show");
+  window.clearTimeout(showToast.timer);
+  showToast.timer = window.setTimeout(() => {
+    toast.classList.remove("is-show");
+  }, 1800);
+}
+
+/** @type {number | undefined} */
+showToast.timer = undefined;
+
+/**
  * Copy a single course page URL from the course grid.
  *
  * @returns {void}
@@ -620,9 +655,10 @@ function setupShare() {
 
     btn.classList.add("is-copied");
     btn.setAttribute("aria-label", `کپی شد: ${title}`);
+    showToast("لینک کپی شد");
     window.setTimeout(() => {
       btn.classList.remove("is-copied");
-      btn.setAttribute("aria-label", `کپی لینک ${title}`);
+      btn.setAttribute("aria-label", `اشتراک‌گذاری ${title}`);
     }, 1600);
   });
 }
