@@ -691,6 +691,20 @@ h3 {
   object-fit: cover;
 }
 
+.course-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.course-title-link {
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+}
+
 .course-title {
   margin: 0;
   font-family: var(--font-display);
@@ -742,6 +756,42 @@ h3 {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.45s var(--ease);
+}
+
+.course-tag:hover {
+  background: rgba(15, 118, 110, 0.14);
+}
+
+.course-share {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: rgba(28, 25, 23, 0.05);
+  color: var(--ink-soft);
+  border: 1px solid transparent;
+  transition:
+    transform 0.45s var(--ease),
+    background 0.45s var(--ease),
+    color 0.45s var(--ease),
+    border-color 0.45s var(--ease);
+}
+
+.course-share:hover {
+  transform: translateY(-1px);
+  background: rgba(194, 65, 12, 0.1);
+  color: var(--accent);
+  border-color: rgba(194, 65, 12, 0.18);
+}
+
+.course-share.is-copied {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
 }
 
 .course-go {
@@ -752,7 +802,8 @@ h3 {
   place-items: center;
   background: rgba(28, 25, 23, 0.05);
   color: var(--ink);
-  transition: transform 0.55s var(--ease), background 0.45s var(--ease);
+  text-decoration: none;
+  transition: transform 0.55s var(--ease), background 0.45s var(--ease), color 0.45s var(--ease);
 }
 
 .course-card:hover .course-go {

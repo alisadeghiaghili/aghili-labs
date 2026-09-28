@@ -409,28 +409,29 @@ function formatDesc(text) {
  * @returns {HTMLElement}
  */
 function createCourseCard(course) {
-  const card = document.createElement("a");
+  const courseUrl = `${BASE}/${course.slug}/`;
+  const card = document.createElement("article");
   card.className = `course-card reveal${course.soon ? " is-soon" : ""}`;
-  card.href = course.soon ? "#support" : `${BASE}/${course.slug}/`;
-  if (!course.soon) {
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
-  }
 
   card.innerHTML = `
     <div class="course-top">
-      <div class="course-logo">
+      <a class="course-logo" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-label="${escapeHtml(course.title)}">
         <img src="assets/logos/${course.logo}.svg" alt="" width="48" height="48" loading="lazy" />
-      </div>
-      <div>
-        <p class="course-title">${escapeHtml(course.title)}</p>
-        <p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>
+      </a>
+      <div class="course-heading">
+        <a class="course-title-link" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'}>
+          <p class="course-title">${escapeHtml(course.title)}</p>
+          <p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>
+        </a>
+        <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(course.title)}" aria-label="کپی لینک ${escapeHtml(course.title)}">
+          <span aria-hidden="true">⧉</span>
+        </button>
       </div>
     </div>
     <p class="course-desc">${formatDesc(course.desc)}</p>
     <div class="course-foot">
-      <span class="course-tag">${course.soon ? "به‌زودی" : "شروع یادگیری"}</span>
-      <span class="course-go" aria-hidden="true">${course.soon ? "…" : "↗"}</span>
+      <a class="course-tag" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'}>${course.soon ? "به‌زودی" : "شروع یادگیری"}</a>
+      <a class="course-go" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-hidden="true">${course.soon ? "…" : "↗"}</a>
     </div>
   `;
 
@@ -585,18 +586,27 @@ function setupStats() {
 }
 
 /**
- * Copy catalog URL so learners can pass courses to people who need them.
+ * Copy a single course page URL from the course grid.
  *
  * @returns {void}
  */
 function setupShare() {
-  const btn = document.getElementById("share-copy");
-  if (!btn) return;
+  const root = document.getElementById("course-root");
+  if (!root) return;
 
-  const label = btn.querySelector("span");
-  const url = `${window.location.origin}${window.location.pathname}`;
+  root.addEventListener("click", async (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const btn = target.closest(".course-share");
+    if (!(btn instanceof HTMLButtonElement)) return;
 
-  btn.addEventListener("click", async () => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const url = btn.getAttribute("data-course-url") || "";
+    const title = btn.getAttribute("data-course-title") || "course";
+    if (!url) return;
+
     try {
       await navigator.clipboard.writeText(url);
     } catch {
@@ -607,13 +617,13 @@ function setupShare() {
       document.execCommand("copy");
       input.remove();
     }
-    if (label) {
-      const previous = label.textContent;
-      label.textContent = "کپی شد";
-      window.setTimeout(() => {
-        label.textContent = previous;
-      }, 1800);
-    }
+
+    btn.classList.add("is-copied");
+    btn.setAttribute("aria-label", `کپی شد: ${title}`);
+    window.setTimeout(() => {
+      btn.classList.remove("is-copied");
+      btn.setAttribute("aria-label", `کپی لینک ${title}`);
+    }, 1600);
   });
 }
 
