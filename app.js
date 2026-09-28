@@ -1,5 +1,5 @@
-﻿/**
- * Learn with Ali â€” course catalog renderer.
+/**
+ * Learn with Ali — course catalog renderer.
  * Course metadata, category filters, and scroll reveal.
  */
 
@@ -18,111 +18,112 @@ const BASE = "https://alisadeghiaghili.github.io";
 /** @type {Record<string, { title: string, blurb: string, courses: Course[] }>} */
 const CATEGORIES = {
   languages: {
-    title: "Ø²Ø¨Ø§Ù†â€ŒÙ‡Ø§ÛŒ Ø¨Ø±Ù†Ø§Ù…Ù‡â€ŒÙ†ÙˆÛŒØ³ÛŒ",
-    blurb: "Ù¾Ø§ÛŒÙ‡â€ŒÙ‡Ø§ÛŒ Ù…Ø­Ú©Ù… Ø¨Ø±Ø§ÛŒ Ù‡Ø± Ù…Ø³ÛŒØ± ÙÙ†ÛŒ",
+    title: "زبان‌های برنامه‌نویسی",
+    blurb: "پایه‌های محکم برای هر مسیر فنی",
     courses: [
       {
         slug: "learn-python",
-        title: "Ù¾Ø§ÛŒØªÙˆÙ†",
+        title: "پایتون",
         en: "Python",
-        desc: "Ø­Ø§ÙØ¸Ù‡ØŒ <span class='tech' dir='ltr'>sandbox</span> ØªØ¹Ø§Ù…Ù„ÛŒ Ùˆ Ú†Ø§Ù„Ø´â€ŒÙ‡Ø§ÛŒ Ù¾Ù„Ú©Ø§Ù†ÛŒ â€” Ø§Ø² Ù…ØªØºÛŒØ± ØªØ§ Ù…Ø¯Ù„ Ø°Ù‡Ù†ÛŒ Ø§Ø´ÛŒØ§Ø¡.",
+        desc: "حافظه، sandbox تعاملی و چالش‌های پلکانی — از متغیر تا مدل ذهنی اشیاء.",
         logo: "python",
+        soon: true,
       },
       {
         slug: "learn-r",
-        title: "Ø²Ø¨Ø§Ù† R",
+        title: "زبان R",
         en: "R",
-        desc: "Ù…Ø­ÛŒØ· <span class='tech' dir='ltr'>R</span> Ø²Ù†Ø¯Ù‡ØŒ Ø³Ø·Ø­â€ŒØ¨Ù†Ø¯ÛŒ Ø¢Ù…ÙˆØ²Ø´ÛŒ Ùˆ Ø§Ù…ØªÛŒØ§Ø²Ø¯Ù‡ÛŒ Ú¯Ù„Ù â€” Ø¨Ø±Ø§ÛŒ ØªØ­Ù„ÛŒÙ„ Ùˆ Ø¢Ù…Ø§Ø±.",
+        desc: "محیط R زنده، سطح‌بندی آموزشی و امتیازدهی گلف — برای تحلیل و آمار.",
         logo: "r",
       },
       {
         slug: "learn-cpp",
         title: "C++",
         en: "C++",
-        desc: "Ø¢Ø²Ù…Ø§ÛŒØ´Ú¯Ø§Ù‡ Ø­Ø§ÙØ¸Ù‡: <span class='tech' dir='ltr'>pointer</span>ØŒ <span class='tech' dir='ltr'>ownership</span> Ùˆ Ø±ÙØªØ§Ø± ÙˆØ§Ù‚Ø¹ÛŒ Ù…Ø§Ø´ÛŒÙ†.",
+        desc: "آزمایشگاه حافظه: pointer، ownership و رفتار واقعی ماشین.",
         logo: "cpp",
       },
       {
         slug: "learn-rust",
-        title: "Ø±Ø§Ø³Øª",
+        title: "راست",
         en: "Rust",
-        desc: "Ù…Ø§Ù„Ú©ÛŒØªØŒ <span class='tech' dir='ltr'>move</span> Ùˆ <span class='tech' dir='ltr'>borrow</span> Ø±Ø§ Ø¨ØµØ±ÛŒ Ø¨Ø¨ÛŒÙ†ÛŒØ¯ â€” Ø¨Ø§ <span class='tech' dir='ltr'>sandbox</span> Ùˆ Ø³Ø·Ø­â€ŒÙ‡Ø§ÛŒ Ú†Ø§Ù„Ø´ÛŒ.",
+        desc: "مالکیت، move و borrow را بصری ببینید — با sandbox و سطح‌های چالشی.",
         logo: "rust",
       },
       {
         slug: "learn-ts",
-        title: "ØªØ§ÛŒÙ¾â€ŒØ§Ø³Ú©Ø±ÛŒÙ¾Øª",
+        title: "تایپ‌اسکریپت",
         en: "TypeScript",
-        desc: "ØªØ§ÛŒÙ¾â€ŒØ³ÛŒØ³ØªÙ… Ù…Ø¯Ø±Ù† Ø¬Ø§ÙˆØ§Ø§Ø³Ú©Ø±ÛŒÙ¾ØªØŒ Ø¹Ù…ÛŒÙ‚ Ùˆ Ú©Ø§Ø±Ø¨Ø±Ø¯ÛŒ.",
+        desc: "تایپ‌سیستم مدرن جاوااسکریپت، عمیق و کاربردی.",
         logo: "ts",
         soon: true,
       },
     ],
   },
   systems: {
-    title: "Ø´Ù„ØŒ Ø³ÛŒØ³ØªÙ… Ùˆ Ø§Ø¨Ø²Ø§Ø±",
-    blurb: "Ú©Ù†ØªØ±Ù„ ÙˆØ§Ù‚Ø¹ÛŒ Ø¨Ø± Ù…Ø§Ø´ÛŒÙ† Ùˆ Ø¬Ø±ÛŒØ§Ù† Ú©Ø§Ø±",
+    title: "شل، سیستم و ابزار",
+    blurb: "کنترل واقعی بر ماشین و جریان کار",
     courses: [
       {
         slug: "learn-bash",
-        title: "Ø¨Ø´",
+        title: "بش",
         en: "Bash",
-        desc: "Ø¨Ø§ ØªØ§ÛŒÙ¾ Ø¯Ø³ØªÙˆØ± ÙˆØ§Ù‚Ø¹ÛŒØŒ <span class='tech' dir='ltr'>cwd</span>ØŒ ÙØ§ÛŒÙ„â€ŒÙ‡Ø§ Ùˆ <span class='tech' dir='ltr'>pipe</span>Ù‡Ø§ Ø±Ø§ Ø²Ù†Ø¯Ù‡ Ø¨Ø¨ÛŒÙ†ÛŒØ¯.",
+        desc: "با تایپ دستور واقعی، cwd، فایل‌ها و pipeها را زنده ببینید.",
         logo: "bash",
       },
       {
         slug: "learn-powershell",
-        title: "Ù¾Ø§ÙˆØ±Ø´Ù„",
+        title: "پاورشل",
         en: "PowerShell",
-        desc: " <span class='tech' dir='ltr'>pipeline</span> Ø§Ø´ÛŒØ§Ø¡ØŒ <span class='tech' dir='ltr'>state</span> Ø¬Ù„Ø³Ù‡ Ùˆ Ù…Ø¯Ù„ ÙÚ©Ø±ÛŒ <span class='tech' dir='ltr'>PowerShell</span> â€” Ø¨Ù‡ Ø³Ø¨Ú© <span class='tech' dir='ltr'>LGB.</span>",
+        desc: "pipeline اشیاء، state جلسه و مدل فکری PowerShell — به سبک LGB.",
         logo: "powershell",
       },
       {
         slug: "learn-cmd",
-        title: "CMD ÙˆÛŒÙ†Ø¯ÙˆØ²",
+        title: "CMD ویندوز",
         en: "Windows CMD",
-        desc: "Ø®Ø· ÙØ±Ù…Ø§Ù† ÙˆÛŒÙ†Ø¯ÙˆØ² Ø¨Ø§ <span class='tech' dir='ltr'>visualizer</span> ÙØ§ÛŒÙ„â€ŒØ³ÛŒØ³ØªÙ…ØŒ <span class='tech' dir='ltr'>sandbox</span> Ùˆ Ø³Ø·Ø­â€ŒÙ‡Ø§ÛŒ ØªÙ…Ø±ÛŒÙ†ÛŒ.",
+        desc: "خط فرمان ویندوز با visualizer فایل‌سیستم، sandbox و سطح‌های تمرینی.",
         logo: "cmd",
       },
       {
         slug: "learn-linux",
-        title: "Ù„ÛŒÙ†ÙˆÚ©Ø³",
+        title: "لینوکس",
         en: "Linux / Ubuntu",
-        desc: "Ù…Ø±Ø¨ÛŒ Ø´Ù„ Ø§ÙˆØ¨ÙˆÙ†ØªÙˆ Ø¨Ø§ ÙØ§ÛŒÙ„â€ŒØ³ÛŒØ³ØªÙ… Ø²Ù†Ø¯Ù‡ØŒ Ø­Ø§Ù„Øª <span class='tech' dir='ltr'>sandbox</span> Ùˆ Ú†Ø§Ù„Ø´â€ŒÙ‡Ø§ÛŒ Ù…Ø±Ø­Ù„Ù‡â€ŒØ§ÛŒ.",
+        desc: "مربی شل اوبونتو با فایل‌سیستم زنده، حالت sandbox و چالش‌های مرحله‌ای.",
         logo: "linux",
       },
       {
         slug: "learn-git",
-        title: "Ú¯ÛŒØª",
+        title: "گیت",
         en: "Git",
-        desc: "<span class='tech' dir='ltr'>stage</span>ØŒ <span class='tech' dir='ltr'>commit</span>ØŒ <span class='tech' dir='ltr'>branch</span>ØŒ <span class='tech' dir='ltr'>remote</span> Ùˆ Ø¨Ø§Ø²ÛŒØ§Ø¨ÛŒ â€” Ø¯Ø± ÛŒÚ© <span class='tech' dir='ltr'>sandbox</span> ØªØ¹Ø§Ù…Ù„ÛŒ.",
+        desc: "stage، commit، branch، remote و بازیابی — در یک sandbox تعاملی.",
         logo: "git",
       },
       {
         slug: "learn-networking",
-        title: "Ø´Ø¨Ú©Ù‡",
+        title: "شبکه",
         en: "Networking",
-        desc: "Ø¢Ø²Ù…Ø§ÛŒØ´Ú¯Ø§Ù‡ Ø´Ø¨Ú©Ù‡ Ø¨Ø±Ø§ÛŒ <span class='tech' dir='ltr'>data</span> Ùˆ <span class='tech' dir='ltr'>DevOps</span> â€” Ù„ÛŒÙ†ÙˆÚ©Ø³ Ùˆ ÙˆÛŒÙ†Ø¯ÙˆØ²ØŒ Ø³Ø·Ø­â€ŒØ¨Ù‡â€ŒØ³Ø·Ø­.",
+        desc: "آزمایشگاه شبکه برای data و DevOps — لینوکس و ویندوز، سطح‌به‌سطح.",
         logo: "networking",
       },
     ],
   },
   platforms: {
-    title: "Ø§Ø¨Ø±ØŒ Ù¾Ù„ØªÙØ±Ù… Ùˆ Ø¹Ù…Ù„ÛŒØ§Øª",
-    blurb: "Ø²ÛŒØ±Ø³Ø§Ø®ØªÛŒ Ú©Ù‡ Ù…Ø¯Ù„â€ŒÙ‡Ø§ Ùˆ Ø¯Ø§Ø¯Ù‡ Ø±ÙˆÛŒ Ø¢Ù† Ù…ÛŒâ€ŒÙ†Ø´ÛŒÙ†Ø¯",
+    title: "ابر، پلتفرم و عملیات",
+    blurb: "زیرساختی که مدل‌ها و داده روی آن می‌نشیند",
     courses: [
       {
         slug: "learn-docker",
-        title: "Ø¯Ø§Ú©Ø±",
+        title: "داکر",
         en: "Docker",
-        desc: "<span class='tech' dir='ltr'>container</span>ØŒ <span class='tech' dir='ltr'>image</span> Ùˆ <span class='tech' dir='ltr'>orchestration</span> Ù¾Ø§ÛŒÙ‡ â€” Ø¨Ø§ Ø³Ø·Ø­â€ŒÙ‡Ø§ÛŒ ØªØ¹Ø§Ù…Ù„ÛŒ.",
+        desc: "container، image و orchestration پایه — با سطح‌های تعاملی.",
         logo: "docker",
       },
       {
         slug: "learn-aws",
         title: "AWS",
         en: "Amazon Web Services",
-        desc: "Ù…ÙØ§Ù‡ÛŒÙ… Ø³Ø±ÙˆÛŒØ³â€ŒÙ‡Ø§ÛŒ Ø§Ø¨Ø±ÛŒ Ø¢Ù…Ø§Ø²ÙˆÙ† Ø¨Ø±Ø§ÛŒ Ù…Ù‡Ù†Ø¯Ø³ÛŒ Ø¯Ø§Ø¯Ù‡.",
+        desc: "مفاهیم سرویس‌های ابری آمازون برای مهندسی داده.",
         logo: "aws",
         soon: true,
       },
@@ -130,233 +131,233 @@ const CATEGORIES = {
         slug: "learn-azure",
         title: "Azure",
         en: "Microsoft Azure",
-        desc: "Ù¾Ù„ØªÙØ±Ù… Ø§Ø¨Ø±ÛŒ Ù…Ø§ÛŒÚ©Ø±ÙˆØ³Ø§ÙØªØŒ Ø§Ø² Ù¾Ø§ÛŒÙ‡ ØªØ§ Ø§Ù„Ú¯ÙˆÙ‡Ø§ÛŒ Ø¯Ø§Ø¯Ù‡.",
+        desc: "پلتفرم ابری مایکروسافت، از پایه تا الگوهای داده.",
         logo: "azure",
         soon: true,
       },
       {
         slug: "learn-databricks",
-        title: "Ø¯ÛŒØªØ§Ø¨Ø±ÛŒÚ©Ø³",
+        title: "دیتابریکس",
         en: "Databricks",
-        desc: "<span class='tech' dir='ltr'>Lakehouse</span>ØŒ <span class='tech' dir='ltr'>Spark</span> Ù…Ø¯ÛŒØ±ÛŒØªâ€ŒØ´Ø¯Ù‡ Ùˆ Ø¬Ø±ÛŒØ§Ù† Ú©Ø§Ø± ØªÛŒÙ…â€ŒÙ‡Ø§ÛŒ Ø¯Ø§Ø¯Ù‡.",
+        desc: "Lakehouse، Spark مدیریت‌شده و جریان کار تیم‌های داده.",
         logo: "databricks",
         soon: true,
       },
       {
         slug: "learn-snowflake",
-        title: "Ø§Ø³Ù†ÙˆÙØ±ÛŒÚ©",
+        title: "اسنوفریک",
         en: "Snowflake",
-        desc: "<span class='tech' dir='ltr'>Time</span> <span class='tech' dir='ltr'>Travel</span>ØŒ <span class='tech' dir='ltr'>clone</span>Ù‡Ø§ÛŒ <span class='tech' dir='ltr'>zero-copy</span>ØŒ <span class='tech' dir='ltr'>warehouse</span> Ùˆ Ø³Ø·Ø­â€ŒÙ‡Ø§ÛŒ <span class='tech' dir='ltr'>SQL.</span>",
+        desc: "Time Travel، cloneهای zero-copy، warehouse و سطح‌های SQL.",
         logo: "snowflake",
       },
       {
         slug: "learn-grafana",
-        title: "Ú¯Ø±Ø§ÙØ§Ù†Ø§",
+        title: "گرافانا",
         en: "Grafana",
-        desc: "<span class='tech' dir='ltr'>observability</span>ØŒ Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯ Ùˆ Ù‡Ø´Ø¯Ø§Ø± â€” Ø¨Ù‡â€ŒØµÙˆØ±Øª Ø¨Ø§Ø²ÛŒ Ø¢Ù…ÙˆØ²Ø´ÛŒ.",
+        desc: "observability، داشبورد و هشدار — به‌صورت بازی آموزشی.",
         logo: "grafana",
       },
       {
         slug: "learn-pkgm",
-        title: "Ù…Ø¯ÛŒØ±ÛŒØª Ø¨Ø³ØªÙ‡",
-        en: "pip Â· conda Â· uv",
-        desc: "Ù…Ø­ÛŒØ·â€ŒÙ‡Ø§ Ùˆ Ø¨Ø³ØªÙ‡â€ŒÙ‡Ø§: <span class='tech' dir='ltr'>pip</span>ØŒ <span class='tech' dir='ltr'>conda</span> Ùˆ <span class='tech' dir='ltr'>uv</span> â€” Ø¨Ø¯ÙˆÙ† Ø³Ø±Ø¯Ø±Ú¯Ù…ÛŒ.",
+        title: "مدیریت بسته",
+        en: "pip · conda · uv",
+        desc: "محیط‌ها و بسته‌ها: pip، conda و uv — بدون سردرگمی.",
         logo: "pkgm",
       },
     ],
   },
   data: {
-    title: "Ø¯Ø§Ø¯Ù‡ Ùˆ ØªØ­Ù„ÛŒÙ„",
-    blurb: "Ø§Ø² SQL ØªØ§ Ø¯Ø±ÛŒØ§Ú†Ù‡â€ŒÙ‡Ø§ÛŒ Ø¯Ø§Ø¯Ù‡",
+    title: "داده و تحلیل",
+    blurb: "از SQL تا دریاچه‌های داده",
     courses: [
       {
         slug: "learn-sql",
         title: "SQL",
         en: "SQL",
-        desc: "Ø³Ù†Ø¯Ø¨Ø§Ú©Ø³ <span class='tech' dir='ltr'>SQLite</span> Ø¯Ø± Ù…Ø±ÙˆØ±Ú¯Ø±ØŒ Ú†Ø§Ù„Ø´â€ŒÙ‡Ø§ÛŒ Ù‡Ø¯Ùâ€ŒÙ…Ø­ÙˆØ± Ùˆ <span class='tech' dir='ltr'>pipeline</span> Ú©ÙˆØ¦Ø±ÛŒ.",
+        desc: "سندباکس SQLite در مرورگر، چالش‌های هدف‌محور و pipeline کوئری.",
         logo: "sql",
       },
       {
         slug: "learn-dax",
         title: "DAX",
         en: "DAX",
-        desc: "<span class='tech' dir='ltr'>visualization</span> Ùˆ <span class='tech' dir='ltr'>sandbox</span> Ø²Ø¨Ø§Ù† <span class='tech' dir='ltr'>DAX</span> Ø¨Ø±Ø§ÛŒ <span class='tech' dir='ltr'>Power</span> <span class='tech' dir='ltr'>BI</span> â€” Ø¨Ø§ Ú†Ø§Ù„Ø´â€ŒÙ‡Ø§.",
+        desc: "visualization و sandbox زبان DAX برای Power BI — با چالش‌ها.",
         logo: "dax",
       },
       {
         slug: "learn-m",
         title: "Power Query M",
         en: "M",
-        desc: "Ù…Ø±Ø¨ÛŒ <span class='tech' dir='ltr'>M</span> Ø¨Ù‡ Ø³Ø¨Ú© <span class='tech' dir='ltr'>learnGitBranching</span> â€” <span class='tech' dir='ltr'>visualization</span>ØŒ <span class='tech' dir='ltr'>sandbox</span> Ùˆ Ø³Ø·Ø­â€ŒÙ‡Ø§.",
+        desc: "مربی M به سبک learnGitBranching — visualization، sandbox و سطح‌ها.",
         logo: "m",
       },
       {
         slug: "learn-spark",
-        title: "Ø§Ø³Ù¾Ø§Ø±Ú©",
+        title: "اسپارک",
         en: "Apache Spark",
-        desc: "Ù¾Ø±Ø¯Ø§Ø²Ø´ ØªÙˆØ²ÛŒØ¹â€ŒØ´Ø¯Ù‡ØŒ Ø¨Ù‡â€ŒØµÙˆØ±Øª <span class='tech' dir='ltr'>sandbox</span> ØªØ¹Ø§Ù…Ù„ÛŒ.",
+        desc: "پردازش توزیع‌شده، به‌صورت sandbox تعاملی.",
         logo: "spark",
       },
       {
         slug: "learn-hadoop",
-        title: "Ù‡Ø¯ÙˆÙ¾",
+        title: "هدوپ",
         en: "Hadoop",
-        desc: "<span class='tech' dir='ltr'>HDFS</span>ØŒ <span class='tech' dir='ltr'>YARN</span> Ùˆ <span class='tech' dir='ltr'>MapReduce</span> â€” Ù…Ø¹Ù…Ø§Ø±ÛŒ ÛŒÚ©Ø¬Ø§ØŒ Ù‚Ø§Ø¨Ù„ Ù„Ù…Ø³.",
+        desc: "HDFS، YARN و MapReduce — معماری یکجا، قابل لمس.",
         logo: "hadoop",
       },
     ],
   },
   mlops: {
-    title: "MLOps Ùˆ Ù¾Ø§ÛŒÙ¾â€ŒÙ„Ø§ÛŒÙ†",
-    blurb: "Ú†Ø±Ø®Ù‡Ù” Ø¹Ù…Ø± Ù…Ø¯Ù„ØŒ Ø¯Ø§Ø¯Ù‡ Ùˆ Ø¬Ø±ÛŒØ§Ù† Ø±ÙˆÛŒØ¯Ø§Ø¯",
+    title: "MLOps و پایپ‌لاین",
+    blurb: "چرخهٔ عمر مدل، داده و جریان رویداد",
     courses: [
       {
         slug: "learn-dvc",
         title: "DVC",
         en: "Data Version Control",
-        desc: "Ù†Ø³Ø®Ù‡â€ŒØ¨Ù†Ø¯ÛŒ Ø¯Ø§Ø¯Ù‡ØŒ <span class='tech' dir='ltr'>cache</span>ØŒ <span class='tech' dir='ltr'>remote</span>ØŒ <span class='tech' dir='ltr'>pipeline</span> Ùˆ <span class='tech' dir='ltr'>experiment</span>Ù‡Ø§.",
+        desc: "نسخه‌بندی داده، cache، remote، pipeline و experimentها.",
         logo: "dvc",
       },
       {
         slug: "learn-dbt",
         title: "dbt",
         en: "dbt",
-        desc: "<span class='tech' dir='ltr'>DAG</span> Ù…Ø¯Ù„â€ŒÙ‡Ø§ØŒ <span class='tech' dir='ltr'>selection</span> <span class='tech' dir='ltr'>grammar</span>ØŒ <span class='tech' dir='ltr'>materialization</span>ØŒ ØªØ³Øª Ùˆ <span class='tech' dir='ltr'>CI</span> Ù†Ø§Ø²Ú©.",
+        desc: "DAG مدل‌ها، selection grammar، materialization، تست و CI نازک.",
         logo: "dbt",
       },
       {
         slug: "learn-airflow",
-        title: "Ø§ÛŒØ±ÙÙ„Ùˆ",
+        title: "ایرفلو",
         en: "Apache Airflow",
-        desc: "<span class='tech' dir='ltr'>DAG</span>ØŒ <span class='tech' dir='ltr'>task</span>ØŒ ÙˆØ§Ø¨Ø³ØªÚ¯ÛŒØŒ <span class='tech' dir='ltr'>schedule</span>ØŒ <span class='tech' dir='ltr'>retry</span> Ùˆ <span class='tech' dir='ltr'>operator</span> â€” Ø¯Ø± <span class='tech' dir='ltr'>sandbox.</span>",
+        desc: "DAG، task، وابستگی، schedule، retry و operator — در sandbox.",
         logo: "airflow",
       },
       {
         slug: "learn-kafka",
-        title: "Ú©Ø§ÙÚ©Ø§",
+        title: "کافکا",
         en: "Apache Kafka",
-        desc: "<span class='tech' dir='ltr'>topic</span>ØŒ <span class='tech' dir='ltr'>partition</span>ØŒ <span class='tech' dir='ltr'>consumer</span>ØŒ <span class='tech' dir='ltr'>offset</span> Ùˆ <span class='tech' dir='ltr'>replication</span> Ø¨Ø§ <span class='tech' dir='ltr'>cluster</span> Ø²Ù†Ø¯Ù‡.",
+        desc: "topic، partition، consumer، offset و replication با cluster زنده.",
         logo: "kafka",
       },
       {
         slug: "learn-mlflow",
-        title: "Ø§Ù…â€ŒØ§Ù„â€ŒÙÙ„Ùˆ",
+        title: "ام‌ال‌فلو",
         en: "MLflow",
-        desc: "Ù…Ø¯ÛŒØ±ÛŒØª Ø¢Ø²Ù…Ø§ÛŒØ´ØŒ <span class='tech' dir='ltr'>tracking</span> Ùˆ Ø«Ø¨Øª Ù…Ø¯Ù„ â€” Ø¨Ù‡â€ŒØµÙˆØ±Øª Ø¨Ø§Ø²ÛŒ Ø¢Ù…ÙˆØ²Ø´ÛŒ.",
+        desc: "مدیریت آزمایش، tracking و ثبت مدل — به‌صورت بازی آموزشی.",
         logo: "mlflow",
       },
     ],
   },
   ml: {
-    title: "ÛŒØ§Ø¯Ú¯ÛŒØ±ÛŒ Ù…Ø§Ø´ÛŒÙ† Ùˆ Ù‡ÙˆØ´ Ù…ØµÙ†ÙˆØ¹ÛŒ",
-    blurb: "Ø§Ø² Ø¢Ù…Ø§Ø± Ùˆ Ø±ÛŒØ§Ø¶ÛŒ ØªØ§ ÛŒØ§Ø¯Ú¯ÛŒØ±ÛŒ Ø¹Ù…ÛŒÙ‚",
+    title: "یادگیری ماشین و هوش مصنوعی",
+    blurb: "از آمار و ریاضی تا یادگیری عمیق",
     courses: [
       {
         slug: "learn-ml",
-        title: "ÛŒØ§Ø¯Ú¯ÛŒØ±ÛŒ Ù…Ø§Ø´ÛŒÙ†",
+        title: "یادگیری ماشین",
         en: "Machine Learning",
-        desc: "Ù…ÙÙ‡ÙˆÙ… <span class='tech' dir='ltr'>ML</span> Ø­ÙˆÙ„ Ù…Ø¯Ù„ Ø°Ù‡Ù†ÛŒ <span class='tech' dir='ltr'>scikit-learn</span> â€” <span class='tech' dir='ltr'>sandbox</span> Ùˆ Ø³Ø·Ø­â€ŒÙ‡Ø§ÛŒ Ù…ÙÙ‡ÙˆÙ…ÛŒ.",
+        desc: "مفهوم ML حول مدل ذهنی scikit-learn — sandbox و سطح‌های مفهومی.",
         logo: "ml",
       },
       {
         slug: "learn-mlmath",
-        title: "Ø±ÛŒØ§Ø¶ÛŒ ML",
+        title: "ریاضی ML",
         en: "ML Math",
-        desc: "Ù¾Ø§ÛŒÙ‡â€ŒÙ‡Ø§ÛŒ Ø±ÛŒØ§Ø¶ÛŒâ€ŒØ§ÛŒ Ú©Ù‡ Ù…Ø¯Ù„â€ŒÙ‡Ø§ Ø±ÙˆÛŒ Ø¢Ù† Ø³ÙˆØ§Ø± Ù…ÛŒâ€ŒØ´ÙˆÙ†Ø¯.",
+        desc: "پایه‌های ریاضی‌ای که مدل‌ها روی آن سوار می‌شوند.",
         logo: "mlmath",
         soon: true,
       },
       {
         slug: "learn-mlstats",
-        title: "Ø¢Ù…Ø§Ø± ML",
+        title: "آمار ML",
         en: "ML Statistics",
-        desc: "Ø¢Ù…Ø§Ø± Ø§Ø³ØªÙ†Ø¨Ø§Ø·ÛŒ Ùˆ Ø§Ø­ØªÙ…Ø§Ù„ØŒ Ø¯Ù‚ÛŒÙ‚ Ùˆ Ú©Ø§Ø±Ø¨Ø±Ø¯ÛŒ Ø¨Ø±Ø§ÛŒ Ù…Ø¯Ù„â€ŒØ³Ø§Ø²ÛŒ.",
+        desc: "آمار استنباطی و احتمال، دقیق و کاربردی برای مدل‌سازی.",
         logo: "mlstats",
         soon: true,
       },
       {
         slug: "learn-dl",
-        title: "ÛŒØ§Ø¯Ú¯ÛŒØ±ÛŒ Ø¹Ù…ÛŒÙ‚",
+        title: "یادگیری عمیق",
         en: "Deep Learning",
-        desc: "<span class='tech' dir='ltr'>PyTorch</span>ØŒ <span class='tech' dir='ltr'>TensorFlow</span> Ùˆ <span class='tech' dir='ltr'>Keras</span> â€” <span class='tech' dir='ltr'>visualization</span> Ùˆ Ø³Ø·Ø­â€ŒÙ‡Ø§ÛŒ ØªÙ…Ø±ÛŒÙ†ÛŒ.",
+        desc: "PyTorch، TensorFlow و Keras — visualization و سطح‌های تمرینی.",
         logo: "dl",
       },
       {
         slug: "learn-rl",
-        title: "ÛŒØ§Ø¯Ú¯ÛŒØ±ÛŒ ØªÙ‚ÙˆÛŒØªÛŒ",
+        title: "یادگیری تقویتی",
         en: "Reinforcement Learning",
-        desc: "<span class='tech' dir='ltr'>MDP</span>ØŒ <span class='tech' dir='ltr'>value</span> Ùˆ <span class='tech' dir='ltr'>policy</span> Ø±Ø§ Ø¨ØµØ±ÛŒ Ø¨Ø¨ÛŒÙ†ÛŒØ¯ Ùˆ Ù…Ø±Ø­Ù„Ù‡â€ŒÙ‡Ø§ Ø±Ø§ Ø­Ù„ Ú©Ù†ÛŒØ¯.",
+        desc: "MDP، value و policy را بصری ببینید و مرحله‌ها را حل کنید.",
         logo: "rl",
       },
       {
         slug: "learn-nlp",
-        title: "Ù¾Ø±Ø¯Ø§Ø²Ø´ Ø²Ø¨Ø§Ù† Ø·Ø¨ÛŒØ¹ÛŒ",
+        title: "پردازش زبان طبیعی",
         en: "NLP",
-        desc: "Ø§Ø² ØªÙˆÚ©Ù†â€ŒØ³Ø§Ø²ÛŒ ØªØ§ Ù…Ø¯Ù„â€ŒÙ‡Ø§ÛŒ Ù…Ø¯Ø±Ù† Ø²Ø¨Ø§Ù†.",
+        desc: "از توکن‌سازی تا مدل‌های مدرن زبان.",
         logo: "nlp",
         soon: true,
       },
       {
         slug: "learn-cv",
-        title: "Ø¨ÛŒÙ†Ø§ÛŒÛŒ Ù…Ø§Ø´ÛŒÙ†",
+        title: "بینایی ماشین",
         en: "Computer Vision",
-        desc: "Ù¾Ø±Ø¯Ø§Ø²Ø´ ØªØµÙˆÛŒØ± Ùˆ Ø¨ÛŒÙ†Ø§ÛŒÛŒ Ú©Ø§Ù…Ù¾ÛŒÙˆØªØ±ØŒ Ú©Ø§Ø±Ø¨Ø±Ø¯ÛŒ Ùˆ ØªØ¹Ø§Ù…Ù„ÛŒ.",
+        desc: "پردازش تصویر و بینایی کامپیوتر، کاربردی و تعاملی.",
         logo: "cv",
         soon: true,
       },
       {
         slug: "learn-algorithm",
-        title: "Ø§Ù„Ú¯ÙˆØ±ÛŒØªÙ…",
+        title: "الگوریتم",
         en: "Algorithms",
-        desc: "Ø§Ù„Ú¯ÙˆØ±ÛŒØªÙ…â€ŒÙ‡Ø§ Ø±Ø§ Ù†Ù‡ ÙÙ‚Ø· Ø¨Ø®ÙˆØ§Ù†ÛŒØ¯ â€” Ø§Ø¬Ø±Ø§ØŒ Ø¨ØµØ±ÛŒâ€ŒØ³Ø§Ø²ÛŒ Ùˆ Ù…Ù‚Ø§ÛŒØ³Ù‡ Ú©Ù†ÛŒØ¯.",
+        desc: "الگوریتم‌ها را نه فقط بخوانید — اجرا، بصری‌سازی و مقایسه کنید.",
         logo: "algorithm",
       },
     ],
   },
   web: {
-    title: "ÙˆØ¨ Ùˆ Ø§Ù¾Ù„ÛŒÚ©ÛŒØ´Ù†",
-    blurb: "Ø³Ø§Ø®ØªØŒ Ø§Ù†ØªØ´Ø§Ø± Ùˆ ØªØ¹Ø§Ù…Ù„ Ø¨Ø§ Ø¯Ø§Ø¯Ù‡ Ø¯Ø± ÙˆØ¨",
+    title: "وب و اپلیکیشن",
+    blurb: "ساخت، انتشار و تعامل با داده در وب",
     courses: [
       {
         slug: "learn-django",
-        title: "Ø¬Ù†Ú¯Ùˆ",
+        title: "جنگو",
         en: "Django",
-        desc: "Ù…Ø¹Ù…Ø§Ø±ÛŒ <span class='tech' dir='ltr'>Django</span> Ø±Ø§ ØªØ§ÛŒÙ¾ Ú©Ù†ÛŒØ¯ØŒ Ú¯Ø±Ø§Ù Ø±Ø§ Ø¨Ø§Ø²Ø³ÛŒÙ…Ø§ÛŒÛŒ Ø¨Ø¨ÛŒÙ†ÛŒØ¯ØŒ Ø³Ø·Ø­ Ø±Ø§ Ø±Ø¯ Ú©Ù†ÛŒØ¯.",
+        desc: "معماری Django را تایپ کنید، گراف را بازسیمایی ببینید، سطح را رد کنید.",
         logo: "django",
       },
       {
         slug: "learn-flask",
-        title: "ÙÙ„Ø³Ú©",
+        title: "فلسک",
         en: "Flask",
-        desc: "<span class='tech' dir='ltr'>pipeline</span> Ø¯Ø±Ø®ÙˆØ§Ø³ØªØŒ <span class='tech' dir='ltr'>sandbox</span> Ùˆ Ø³Ø·Ø­â€ŒÙ‡Ø§ÛŒ <span class='tech' dir='ltr'>Flask</span> â€” Ø³Ø¨Ú© <span class='tech' dir='ltr'>LGB.</span>",
+        desc: "pipeline درخواست، sandbox و سطح‌های Flask — سبک LGB.",
         logo: "flask",
       },
       {
         slug: "learn-streamlit",
-        title: "Ø§Ø³ØªØ±ÛŒÙ…Ù„ÛŒØª",
+        title: "استریملیت",
         en: "Streamlit",
-        desc: "Ú©Ù„ÙˆÙ† <span class='tech' dir='ltr'>Streamlit/Pyodide</span> Ø§Ø² <span class='tech' dir='ltr'>learnGitBranching</span> â€” <span class='tech' dir='ltr'>sandbox</span>ØŒ Ø³Ø·Ø­ Ùˆ Ú¯Ø±Ø§Ù.",
+        desc: "کلون Streamlit/Pyodide از learnGitBranching — sandbox، سطح و گراف.",
         logo: "streamlit",
       },
       {
         slug: "learn-shiny",
-        title: "Ø´Ø§ÛŒÙ†ÛŒ",
+        title: "شاینی",
         en: "Shiny",
-        desc: "Ø¢Ù…ÙˆØ²Ø´ Ùˆ <span class='tech' dir='ltr'>sandbox</span> Ø´Ø§ÛŒÙ†ÛŒ Ø¨Ø±Ø§ÛŒ <span class='tech' dir='ltr'>R</span> Ùˆ <span class='tech' dir='ltr'>Python.</span>",
+        desc: "آموزش و sandbox شاینی برای R و Python.",
         logo: "shiny",
       },
       {
         slug: "learn-api",
         title: "API",
         en: "API",
-        desc: "Ø¨Ø§Ø²ÛŒ Ø¢Ù…ÙˆØ²Ø´ÛŒ <span class='tech' dir='ltr'>API</span> Ø¨Ø±Ø§ÛŒ <span class='tech' dir='ltr'>FastAPI</span>ØŒ <span class='tech' dir='ltr'>plumber</span> Ùˆ <span class='tech' dir='ltr'>OpenAPI.</span>",
+        desc: "بازی آموزشی API برای FastAPI، plumber و OpenAPI.",
         logo: "api",
       },
       {
         slug: "learn-scraping",
-        title: "ÙˆØ¨â€ŒØ§Ø³Ú©Ø±Ù¾ÛŒÙ†Ú¯",
+        title: "وب‌اسکرپینگ",
         en: "Web Scraping",
-        desc: "<span class='tech' dir='ltr'>HTTP</span>ØŒ <span class='tech' dir='ltr'>BeautifulSoup</span>ØŒ <span class='tech' dir='ltr'>Selenium</span>ØŒ <span class='tech' dir='ltr'>Scrapy</span> Ùˆ Ø§Ù„Ú¯ÙˆÙ‡Ø§ÛŒ <span class='tech' dir='ltr'>production.</span>",
+        desc: "HTTP، BeautifulSoup، Selenium، Scrapy و الگوهای production.",
         logo: "scraping",
       },
     ],
@@ -364,15 +365,42 @@ const CATEGORIES = {
 };
 
 const FILTERS = [
-  { id: "all", label: "Ù‡Ù…Ù‡" },
-  { id: "languages", label: "Ø²Ø¨Ø§Ù†â€ŒÙ‡Ø§" },
-  { id: "systems", label: "Ø´Ù„ Ùˆ Ø³ÛŒØ³ØªÙ…" },
-  { id: "platforms", label: "Ø§Ø¨Ø± Ùˆ Ù¾Ù„ØªÙØ±Ù…" },
-  { id: "data", label: "Ø¯Ø§Ø¯Ù‡" },
+  { id: "all", label: "همه" },
+  { id: "languages", label: "زبان‌ها" },
+  { id: "systems", label: "شل و سیستم" },
+  { id: "platforms", label: "ابر و پلتفرم" },
+  { id: "data", label: "داده" },
   { id: "mlops", label: "MLOps" },
   { id: "ml", label: "ML / AI" },
-  { id: "web", label: "ÙˆØ¨" },
+  { id: "web", label: "وب" },
 ];
+
+/**
+ * Escape HTML text content.
+ *
+ * @param {string} value
+ * @returns {string}
+ */
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+/**
+ * Wrap Latin technical tokens so RTL layout isolates them.
+ *
+ * @param {string} text
+ * @returns {string}
+ */
+function formatDesc(text) {
+  return escapeHtml(text).replace(
+    /[A-Za-z][A-Za-z0-9./+-]*/g,
+    (token) => `<span class="tech" dir="ltr">${token}</span>`
+  );
+}
 
 /**
  * Build a course card element.
@@ -384,9 +412,10 @@ function createCourseCard(course) {
   const card = document.createElement("a");
   card.className = `course-card reveal${course.soon ? " is-soon" : ""}`;
   card.href = course.soon ? "#support" : `${BASE}/${course.slug}/`;
-  card.target = course.soon ? undefined : "_blank";
-  card.rel = course.soon ? undefined : "noopener noreferrer";
-  card.dataset.categorySoon = course.soon ? "1" : "0";
+  if (!course.soon) {
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+  }
 
   card.innerHTML = `
     <div class="course-top">
@@ -394,14 +423,14 @@ function createCourseCard(course) {
         <img src="assets/logos/${course.logo}.svg" alt="" width="48" height="48" loading="lazy" />
       </div>
       <div>
-        <p class="course-title">${course.title}</p>
-        <p class="course-en" dir="ltr">${course.en}</p>
+        <p class="course-title">${escapeHtml(course.title)}</p>
+        <p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>
       </div>
     </div>
-    <p class="course-desc">${course.desc}</p>
+    <p class="course-desc">${formatDesc(course.desc)}</p>
     <div class="course-foot">
-      <span class="course-tag">${course.soon ? "Ø¨Ù‡â€ŒØ²ÙˆØ¯ÛŒ" : "Ø´Ø±ÙˆØ¹ ÛŒØ§Ø¯Ú¯ÛŒØ±ÛŒ"}</span>
-      <span class="course-go" aria-hidden="true">${course.soon ? "â€¦" : "â†—"}</span>
+      <span class="course-tag">${course.soon ? "به‌زودی" : "شروع یادگیری"}</span>
+      <span class="course-go" aria-hidden="true">${course.soon ? "…" : "↗"}</span>
     </div>
   `;
 
@@ -418,20 +447,18 @@ function renderCourses() {
   const filterBar = document.querySelector(".filter-bar");
   if (!root || !filterBar) return;
 
-  // chips
   filterBar.replaceChildren();
   FILTERS.forEach((f, index) => {
     const btn = document.createElement("button");
     btn.className = `filter-chip${index === 0 ? " is-active" : ""}`;
     btn.type = "button";
-    btn.role = "tab";
-    btn.ariaSelected = index === 0 ? "true" : "false";
+    btn.setAttribute("role", "tab");
+    btn.setAttribute("aria-selected", index === 0 ? "true" : "false");
     btn.dataset.filter = f.id;
     btn.textContent = f.label;
     filterBar.appendChild(btn);
   });
 
-  // categories
   Object.entries(CATEGORIES).forEach(([key, cat]) => {
     const section = document.createElement("section");
     section.className = "category";
@@ -442,10 +469,10 @@ function renderCourses() {
     head.className = "category-head reveal";
     head.innerHTML = `
       <div>
-        <h3>${cat.title}</h3>
-        <p>${cat.blurb}</p>
+        <h3>${escapeHtml(cat.title)}</h3>
+        <p>${escapeHtml(cat.blurb)}</p>
       </div>
-      <p>${cat.courses.length} Ø¯ÙˆØ±Ù‡</p>
+      <p>${cat.courses.length} دوره</p>
     `;
 
     const grid = document.createElement("div");
@@ -457,7 +484,6 @@ function renderCourses() {
     root.appendChild(section);
   });
 
-  // filter behavior
   filterBar.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
@@ -505,7 +531,6 @@ function setupReveal() {
 
   nodes.forEach((node) => observer.observe(node));
 
-  // Safety: never leave content stuck at opacity 0 (printers, full-page captures, odd viewports)
   window.setTimeout(() => {
     nodes.forEach((node) => {
       const rect = node.getBoundingClientRect();
@@ -548,7 +573,7 @@ function setupNav() {
 }
 
 /**
- * Count live/total courses in hero stats.
+ * Count courses in hero stats.
  *
  * @returns {void}
  */
@@ -567,4 +592,3 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 });
-
