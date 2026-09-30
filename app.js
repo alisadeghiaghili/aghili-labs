@@ -124,7 +124,6 @@ const CATEGORIES = {
         en: "Amazon Web Services",
         desc: "پیشرو بازار خدمات ابر و جایی که بیشتر زیرساخت‌های داده جهان ساکن‌اند — مفاهیم سرویس‌های آمازون برای مهندسی داده.",
         logo: "aws",
-        soon: true,
       },
       {
         slug: "learn-azure",
@@ -132,7 +131,6 @@ const CATEGORIES = {
         en: "Microsoft Azure",
         desc: "رقیب بزرگ AWS در دنیای سازمان‌ها و دنیای مایکروسافت — از پایه تا الگوهای داده.",
         logo: "azure",
-        soon: true,
       },
       {
         slug: "learn-databricks",
