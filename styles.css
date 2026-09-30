@@ -333,6 +333,10 @@ h3 {
   border-top: 1px solid var(--hairline);
 }
 
+.hero-stats > div {
+  text-align: center;
+}
+
 .hero-stats dt {
   font-family: var(--font-display);
   font-size: 1.85rem;
@@ -340,18 +344,21 @@ h3 {
   letter-spacing: -0.03em;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  text-align: center;
 }
 
 .hero-stats dd {
   margin: 0.35rem 0 0;
   color: var(--ink-soft);
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .stat-fallback-badge {
   height: 1.85rem;
   width: auto;
-  margin-top: 0.15rem;
+  margin: 0.15rem auto 0;
+  display: block;
 }
 
 /* Double bezel */
