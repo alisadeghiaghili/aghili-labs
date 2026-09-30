@@ -675,43 +675,77 @@ function setupStats() {
  *
  * @returns {Promise<void>}
  */
+/**
+ * Count unique visitors (once per browser) via visitorbadge.io.
+ * The badge endpoint increments on every request, so we only call it
+ * on a browser's first visit; return visits reuse the cached number.
+ *
+ * @returns {Promise<void>}
+ */
 async function setupVisitors() {
   const el = document.getElementById("stat-visitors");
   if (!el) return;
 
+  const STORAGE_KEY = "learn-with-ali:unique-visitors";
   const badgeUrl = "https://api.visitorbadge.io/api/combined?path=learn-with-ali";
+
+  /**
+   * Parse the visitor count out of a visitorbadge SVG payload.
+   *
+   * @param {string} svg
+   * @returns {number}
+   */
+  const parseCount = (svg) => {
+    const title = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i);
+    const raw = (title ? title[1] : "").replace(/,/g, "");
+    if (!raw) return Number.NaN;
+    const suffix = raw.slice(-1).toUpperCase();
+    const scale = { K: 1e3, M: 1e6, B: 1e9 }[suffix] || 1;
+    const numeric = scale === 1 ? Number(raw) : Number.parseFloat(raw) * scale;
+    return Number.isFinite(numeric) ? numeric : Number.NaN;
+  };
+
+  /**
+   * Paint a count into the hero stat.
+   *
+   * @param {number} value
+   * @returns {void}
+   */
+  const paint = (value) => {
+    el.textContent = Math.max(0, Math.round(value)).toLocaleString("en-US");
+    el.title = "بازدیدهای یونیک (هر مرورگر یک بار)";
+  };
+
+  /** @type {{ count: number, at: number } | null} */
+  let cached = null;
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) cached = JSON.parse(raw);
+  } catch {
+    cached = null;
+  }
+
+  if (cached && typeof cached.count === "number") {
+    paint(cached.count);
+    return;
+  }
 
   try {
     const res = await fetch(badgeUrl, { cache: "no-store" });
     if (!res.ok) throw new Error(`status ${res.status}`);
-    const svg = await res.text();
-    const match = svg.match(/VISITORS:\s*([\d.]+[KMB]?)/i) || svg.match(/<title>([^<]+)<\/title>/i);
-    if (!match) throw new Error("count not found");
-
-    let raw = match[1];
-    if (raw.includes("VISITORS")) {
-      const inner = raw.match(/VISITORS:\s*([\d.]+[KMB]?)/i);
-      if (!inner) throw new Error("count not found");
-      raw = inner[1];
+    const count = parseCount(await res.text());
+    if (!Number.isFinite(count)) throw new Error("bad count");
+    paint(count);
+    try {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({ count, at: Date.now() })
+      );
+    } catch {
+      // private mode / quota — still fine, next visit will count once more
     }
-
-    const suffix = String(raw).slice(-1);
-    const scale = { K: 1e3, M: 1e6, B: 1e9 }[suffix.toUpperCase()] || 1;
-    const numeric = scale === 1 ? Number(raw) : Number.parseFloat(raw) * scale;
-    if (!Number.isFinite(numeric)) throw new Error("bad count");
-
-    el.textContent = numeric.toLocaleString("en-US");
-    el.title = "تعداد بازدیدهای این صفحه";
   } catch {
-    // Fallback: decorative badge if the counter API is unavailable
-    el.textContent = "…";
-    const img = document.createElement("img");
-    img.src = badgeUrl;
-    img.alt = "visitors";
-    img.className = "stat-fallback-badge";
-    img.addEventListener("load", () => {
-      el.replaceWith(img);
-    });
+    el.textContent = "—";
   }
 }
 
