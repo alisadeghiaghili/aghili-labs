@@ -1,11 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Deep Learning">
-  <rect width="64" height="64" rx="14" fill="#1E1B2E"/>
-  <circle cx="18" cy="22" r="4" fill="#A78BFA"/>
-  <circle cx="18" cy="42" r="4" fill="#A78BFA"/>
-  <circle cx="32" cy="18" r="4" fill="#E879F9"/>
-  <circle cx="32" cy="32" r="4" fill="#E879F9"/>
-  <circle cx="32" cy="46" r="4" fill="#E879F9"/>
-  <circle cx="48" cy="28" r="4" fill="#FBBF24"/>
-  <circle cx="48" cy="40" r="4" fill="#FBBF24"/>
-  <path d="M22 22l6-3M22 42l6 3M36 18l8 8M36 32l8-2M36 32l8 6M36 46l8-5" stroke="#CBD5E1" stroke-width="1.5" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PyTorch">
+  <rect width="64" height="64" rx="14" fill="#58241c"/>
+  <g transform="translate(12 12) scale(1.6667)" fill="#f7a99a"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"/></g>
 </svg>
