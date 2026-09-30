@@ -713,7 +713,7 @@ async function setupVisitors() {
    */
   const paint = (value) => {
     el.textContent = Math.max(0, Math.round(value)).toLocaleString("en-US");
-    el.title = "بازدیدهای یونیک (هر مرورگر یک بار)";
+    el.title = "تعداد بازدیدهای این صفحه";
   };
 
   /** @type {{ count: number, at: number } | null} */
