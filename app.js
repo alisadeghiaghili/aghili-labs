@@ -299,7 +299,6 @@ const CATEGORIES = {
         en: "Computer Vision",
         desc: "چشم ماشین بر دنیای تصویر و ویدیو؛ از تشخیص محصول تا رانندگی خودکار — کاربردی و تعاملی.",
         logo: "cv",
-        soon: true,
       },
       {
         slug: "learn-datastructure",
