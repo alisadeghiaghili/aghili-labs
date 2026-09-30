@@ -305,6 +305,13 @@ const CATEGORIES = {
         soon: true,
       },
       {
+        slug: "learn-datastructure",
+        title: "ساختارهای داده",
+        en: "Data Structures",
+        desc: "آرایه‌ها، لیست‌ها، پشته، صف، جدول درهم‌ریزی، درخت‌ها، هرم‌ها، union-find و گراف — در sandbox تعاملی.",
+        logo: "datastructure",
+      },
+      {
         slug: "learn-algorithm",
         title: "الگوریتم",
         en: "Algorithms",
