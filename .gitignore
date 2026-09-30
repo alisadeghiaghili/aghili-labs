@@ -1,6 +1,9 @@
 # Local QA captures
 docs/preview/
 
+# Local dev tooling
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
