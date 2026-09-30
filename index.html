@@ -97,7 +97,7 @@
                   دروازهٔ یادگیری به روی همهٔ مردم دنیا باز بماند.»
                 </blockquote>
                 <div class="hero-card-foot">
-                  <div class="avatar" aria-hidden="true">ع</div>
+                  <img class="avatar" src="https://avatars.githubusercontent.com/u/2105007?v=4" alt="" width="44" height="44" loading="lazy" />
                   <div>
                     <strong>علی صادقی عقیلی</strong>
                     <span>Ali Sadeghi Aghili</span>
@@ -212,11 +212,32 @@
             </p>
           </div>
 
-          <div class="filter-bar reveal" role="tablist" aria-label="Course categories">
-            <button class="filter-chip is-active" data-filter="all" role="tab" aria-selected="true">همه</button>
+          <div class="courses-tools reveal">
+            <div class="course-search">
+              <svg class="course-search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M15.8 15.8L20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <input
+                class="course-search-input"
+                type="search"
+                id="course-search"
+                placeholder="جستجوی دوره‌ها…"
+                aria-label="جستجو در دوره‌ها"
+                autocomplete="off"
+              />
+            </div>
+            <div class="filter-bar" role="tablist" aria-label="Course categories">
+              <button class="filter-chip is-active" data-filter="all" role="tab" aria-selected="true">همه</button>
+            </div>
           </div>
 
           <div id="course-root"></div>
+
+          <div id="course-empty" class="course-empty" hidden aria-live="polite">
+            <p class="course-empty-title">نتیجه‌ای پیدا نشد</p>
+            <p class="course-empty-hint">عبارت دیگری را امتحان کنید یا دسته‌بندی را تغییر دهید.</p>
+          </div>
         </div>
       </section>
 

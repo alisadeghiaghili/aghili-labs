@@ -443,8 +443,78 @@ function createCourseCard(course) {
   return card;
 }
 
+/** @type {{ filter: string, query: string }} */
+const courseFilters = { filter: "all", query: "" };
+
 /**
- * Render categories and attach filter chips.
+ * Build a lowercase searchable haystack from a course.
+ *
+ * @param {Course} course
+ * @returns {string}
+ */
+function courseSearchText(course) {
+  return [course.title, course.en, course.desc, course.slug].join(" ").toLowerCase();
+}
+
+/**
+ * Reveal a node so it is visible without waiting for scroll.
+ *
+ * @param {HTMLElement} node
+ * @returns {void}
+ */
+function forceReveal(node) {
+  if (node.classList.contains("reveal")) node.classList.add("is-in");
+  node.querySelectorAll(".reveal").forEach((n) => n.classList.add("is-in"));
+}
+
+/**
+ * Show or hide category sections and cards based on the active
+ * filter chip and the search query.
+ *
+ * @returns {void}
+ */
+function applyCourseFilters() {
+  const root = document.getElementById("course-root");
+  const empty = document.getElementById("course-empty");
+  if (!root || !empty) return;
+
+  const query = courseFilters.query;
+  let visibleTotal = 0;
+
+  root.querySelectorAll(".category").forEach((section) => {
+    let visibleInSection = 0;
+
+    section.querySelectorAll(".course-card").forEach((card) => {
+      const title = card.querySelector(".course-title")?.textContent || "";
+      const en = card.querySelector(".course-en")?.textContent || "";
+      const desc = card.querySelector(".course-desc")?.textContent || "";
+      const haystack = `${title} ${en} ${desc}`.toLowerCase();
+      const matches = !query || haystack.includes(query);
+      const show = matches;
+      card.hidden = !show;
+      if (show) visibleInSection += 1;
+    });
+
+    const categoryMatches =
+      courseFilters.filter === "all" || section.dataset.category === courseFilters.filter;
+    const showSection = categoryMatches && visibleInSection > 0;
+    section.hidden = !showSection;
+    if (showSection) visibleTotal += visibleInSection;
+
+    const count = section.querySelector(".category-head > p:last-child");
+    if (count) {
+      count.textContent =
+        visibleInSection === 1 ? "۱ دوره" : `${String(visibleInSection).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)])} دوره`;
+    }
+
+    if (showSection) forceReveal(section);
+  });
+
+  empty.hidden = visibleTotal > 0;
+}
+
+/**
+ * Render categories, filter chips, and the course search box.
  *
  * @returns {void}
  */
@@ -496,17 +566,24 @@ function renderCourses() {
     const filter = target.dataset.filter;
     if (!filter) return;
 
+    courseFilters.filter = filter;
+
     filterBar.querySelectorAll(".filter-chip").forEach((chip) => {
       const active = chip === target;
       chip.classList.toggle("is-active", active);
       chip.setAttribute("aria-selected", active ? "true" : "false");
     });
 
-    root.querySelectorAll(".category").forEach((section) => {
-      const show = filter === "all" || section.dataset.category === filter;
-      section.hidden = !show;
-    });
+    applyCourseFilters();
   });
+
+  const searchInput = document.getElementById("course-search");
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      courseFilters.query = searchInput.value.trim().toLowerCase();
+      applyCourseFilters();
+    });
+  }
 }
 
 /**
