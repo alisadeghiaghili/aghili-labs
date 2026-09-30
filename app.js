@@ -670,6 +670,52 @@ function setupStats() {
 }
 
 /**
+ * Load and increment the page visitor counter.
+ * Uses visitorbadge.io (CORS-enabled SVG with count in the title).
+ *
+ * @returns {Promise<void>}
+ */
+async function setupVisitors() {
+  const el = document.getElementById("stat-visitors");
+  if (!el) return;
+
+  const badgeUrl = "https://api.visitorbadge.io/api/combined?path=learn-with-ali";
+
+  try {
+    const res = await fetch(badgeUrl, { cache: "no-store" });
+    if (!res.ok) throw new Error(`status ${res.status}`);
+    const svg = await res.text();
+    const match = svg.match(/VISITORS:\s*([\d.]+[KMB]?)/i) || svg.match(/<title>([^<]+)<\/title>/i);
+    if (!match) throw new Error("count not found");
+
+    let raw = match[1];
+    if (raw.includes("VISITORS")) {
+      const inner = raw.match(/VISITORS:\s*([\d.]+[KMB]?)/i);
+      if (!inner) throw new Error("count not found");
+      raw = inner[1];
+    }
+
+    const suffix = String(raw).slice(-1);
+    const scale = { K: 1e3, M: 1e6, B: 1e9 }[suffix.toUpperCase()] || 1;
+    const numeric = scale === 1 ? Number(raw) : Number.parseFloat(raw) * scale;
+    if (!Number.isFinite(numeric)) throw new Error("bad count");
+
+    el.textContent = numeric.toLocaleString("en-US");
+    el.title = "تعداد بازدیدهای این صفحه";
+  } catch {
+    // Fallback: decorative badge if the counter API is unavailable
+    el.textContent = "…";
+    const img = document.createElement("img");
+    img.src = badgeUrl;
+    img.alt = "visitors";
+    img.className = "stat-fallback-badge";
+    img.addEventListener("load", () => {
+      el.replaceWith(img);
+    });
+  }
+}
+
+/**
  * Show a brief toast message.
  *
  * @param {string} message
@@ -746,6 +792,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCourses();
   setupNav();
   setupStats();
+  setupVisitors();
   setupShare();
   setupReveal();
   const year = document.getElementById("year");
