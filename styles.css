@@ -1162,3 +1162,9 @@ html.js .reveal.is-in {
     transform: none;
   }
 }
+
+.hero-copy .lede {
+  text-align: justify;
+  text-align-last: start;
+}
+
