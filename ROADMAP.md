@@ -7,34 +7,34 @@ This document outlines the architectural roadmap and curriculum expansion for th
 The mission of **Learn with Ali** is to provide rigorous, free, interactive, browser-executable education centered around:
 - **Data Engineering & Distributed Systems**
 - **Applied Statistics, Data Science & Machine Learning**
-- **Industrial Automation & Industry 4.0**
-- **Systems, Cloud Platforms & Modern Software Craftsmanship**
+- **Industrial Automation, Business Processes & Industry 4.0**
+- **Systems, Cloud Platforms, Quality Engineering & Modern Software Craftsmanship**
 
 Every course adheres to an interactive-first paradigm: an isolated in-browser sandbox, incremental challenges, immediate verification feedback, and mental model visualizations.
 
 ---
 
-## Catalog Topology (8 Disciplines · 59 Courses)
+## Catalog Topology (8 Disciplines · 70 Courses)
 
 The curriculum is partitioned into eight foundational disciplines:
 
 | # | Discipline | Scope & Focus | Active | In Development (Soon) | Total |
 |---|------------|---------------|:------:|:---------------------:|:-----:|
 | 1 | **Programming Languages** | Core computational paradigms, memory models, and syntax | 4 | 6 | 10 |
-| 2 | **Shell, Systems & Tooling** | Machine control, operating systems, networking & security | 6 | 1 | 7 |
+| 2 | **Shell, Systems & Tooling** | Machine control, OS, networking, testing, architecture & engineering methods | 6 | 7 | 13 |
 | 3 | **Cloud, Platforms & Ops** | Scalable infrastructure, platforms, observability & data cloud | 4 | 4 | 8 |
-| 4 | **Data & Analytics** | Relational, document, query engines & big data platforms | 5 | 2 | 7 |
+| 4 | **Data & Analytics** | Relational, document, modeling, governance, storytelling & big data | 5 | 6 | 11 |
 | 5 | **MLOps & Pipelines** | Model lifecycle, data versioning, orchestration & stream processing | 5 | 0 | 5 |
-| 6 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning & LLMs | 7 | 4 | 11 |
+| 6 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning, LLMs & critical analysis | 7 | 5 | 12 |
 | 7 | **Web & Applications** | Data presentation, web applications, APIs & extraction | 6 | 0 | 6 |
 | 8 | **IoT, Hardware & Edge** | Physical computing, edge analytics, industrial automation & DLT | 0 | 3 | 3 |
-| **Sum** | | | **37** | **22** | **59** |
+| **Sum** | | | **37** | **33** | **70** |
 
 ---
 
 ## Detailed Course Breakdown
 
-### 1. Programming Languages (`languages`)
+### 1. Programming Languages (`languages` · 10 Courses)
 - `learn-python` — Python: Memory model, objects, interactive sandbox, data ecosystem foundation. *(Active)*
 - `learn-r` — R: Statistical computing, live REPL, vectors, data manipulation. *(Active)*
 - `learn-cpp` — C++: Memory management, pointers, ownership, low-level execution. *(Active)*
@@ -46,7 +46,7 @@ The curriculum is partitioned into eight foundational disciplines:
 - `learn-functional-programming` — Functional Programming: Immutability, pure functions, higher-order functions, monads. *(Soon)*
 - `learn-software-design` — Software Design & Clean Code: SOLID principles, design patterns, refactoring, Clean Architecture. *(Soon)*
 
-### 2. Shell, Systems & Tooling (`systems`)
+### 2. Shell, Systems & Tooling (`systems` · 13 Courses)
 - `learn-bash` — Bash: Linux command-line, pipes, text streams, automation scripting. *(Active)*
 - `learn-powershell` — PowerShell: Object pipeline, system automation, Windows administration. *(Active)*
 - `learn-cmd` — Windows CMD: Classic command shell, filesystem navigation, batch tooling. *(Active)*
@@ -54,8 +54,14 @@ The curriculum is partitioned into eight foundational disciplines:
 - `learn-git` — Git: DAG revision graph, staging, branching, merging, interactive recovery. *(Active)*
 - `learn-networking` — Networking: TCP/IP, OSI layers, DNS, routing, diagnostics for data & DevOps. *(Active)*
 - `learn-cryptography` — Applied Cryptography: Hashing, symmetric/asymmetric encryption, digital signatures, data integrity. *(Soon)*
+- `learn-scientific-writing` — Scientific Writing & Research: Empirical methodology, IMRAD structure, reproducibility, peer review. *(Soon)*
+- `learn-technical-docs` — Technical Docs & ADRs: Architecture Decision Records, RFCs, API specs, data contracts, engineering knowledge. *(Soon)*
+- `learn-testing` — Testing & Quality Engineering: Test-Driven Development (TDD), unit/integration testing, pytest, fixtures, mocks, data validation. *(Soon)*
+- `learn-ddd` — Domain-Driven Design in Data & AI: Ubiquitous language, bounded contexts, aggregates, Data Mesh domain ownership. *(Soon)*
+- `learn-bpmn` — Business Process Modeling (BPMN 2.0): Organizational workflows, decision gateways, events, automation engine integration. *(Soon)*
+- `learn-tech-interviews` — Technical Interviewing for Data & Systems: Data system design, live algorithm and SQL coding, architecture defense. *(Soon)*
 
-### 3. Cloud, Platforms & Ops (`platforms`)
+### 3. Cloud, Platforms & Ops (`platforms` · 8 Courses)
 - `learn-docker` — Docker: Containers, image layering, Dockerfile authoring, multi-container stacks. *(Active)*
 - `learn-aws` — AWS: Core cloud infrastructure, storage, identity, compute for data workflows. *(Active)*
 - `learn-azure` — Azure: Enterprise cloud architecture, data lakes, resource groups. *(Active)*
@@ -67,7 +73,7 @@ The curriculum is partitioned into eight foundational disciplines:
 - `learn-logstash` — Logstash: Real-time event extraction, grok parsing pipelines, index ingestion. *(Soon)*
 - `learn-splunk` — Splunk: Enterprise SIEM, machine log analytics, SPL query mastery. *(Soon)*
 
-### 4. Data & Analytics (`data`)
+### 4. Data & Analytics (`data` · 11 Courses)
 - `learn-sql` — SQL: In-browser SQLite engine, relational algebra, window functions, query optimization. *(Active)*
 - `learn-dax` — DAX: Power BI calculation engine, evaluation context, filter transitions. *(Active)*
 - `learn-m` — Power Query M: Data transformation language, ETL pipelines, step-by-step evaluation. *(Active)*
@@ -75,15 +81,19 @@ The curriculum is partitioned into eight foundational disciplines:
 - `learn-hadoop` — Hadoop: HDFS architecture, MapReduce paradigm, YARN resource management. *(Active)*
 - `learn-mongodb` — MongoDB: Document data modeling, BSON schema design, aggregation pipelines. *(Soon)*
 - `learn-elasticsearch` — Elasticsearch: Inverted indexing, distributed search, BM25 text relevance, aggregations. *(Soon)*
+- `learn-data-storytelling` — Data Storytelling & Visualization: Gestalt principles, cognitive load reduction, decluttering, executive narrative. *(Soon)*
+- `learn-data-modeling` — Data Modeling & Dimensional Design: ERDs, normalization (1NF-BCNF), Kimball dimensional modeling, star/snowflake schemas, OLTP vs. OLAP. *(Soon)*
+- `learn-data-governance` — Data Governance & Quality: Data contracts, lineage tracking, metadata catalogs, PII security, quality rules. *(Soon)*
+- `learn-dashboard-kpi` — Dashboard Design & KPI Strategy: Metric selection matrices, leading vs. lagging indicators, cognitive hierarchy, alert fatigue prevention. *(Soon)*
 
-### 5. MLOps & Pipelines (`mlops`)
+### 5. MLOps & Pipelines (`mlops` · 5 Courses)
 - `learn-dvc` — DVC: Data and model versioning, remote storage, reproducible pipelines. *(Active)*
 - `learn-dbt` — dbt: In-warehouse transformations, SQL data modeling, lineage DAGs, automated testing. *(Active)*
 - `learn-airflow` — Apache Airflow: Workflow orchestration, DAG authoring, task dependencies, sensor operators. *(Active)*
 - `learn-kafka` — Apache Kafka: Event streaming, topic partitioning, consumer groups, fault tolerance. *(Active)*
 - `learn-mlflow` — MLflow: Experiment tracking, parameter logging, model registry, artifact packaging. *(Active)*
 
-### 6. Machine Learning & AI (`ml`)
+### 6. Machine Learning & AI (`ml` · 12 Courses)
 - `learn-ml` — Machine Learning: Supervised/unsupervised algorithms, evaluation metrics, scikit-learn sandboxes. *(Active)*
 - `learn-mlmath` — ML Math: Linear algebra, vector calculus, matrix decompositions, loss optimization. *(Soon)*
 - `learn-mlstats` — ML Statistics: Hypothesis testing, probability distributions, Bayesian inference, confidence intervals. *(Soon)*
@@ -95,8 +105,9 @@ The curriculum is partitioned into eight foundational disciplines:
 - `learn-algorithm` — Algorithms: Sorting, searching, dynamic programming, graph traversal, asymptotic complexity. *(Active)*
 - `learn-llm` — Large Language Models: Transformer attention mechanisms, prompting, RAG architectures, fine-tuning. *(Soon)*
 - `learn-ml-patterns` — ML Design Patterns: Feature store design, cascades, checkpointing, robust production patterns. *(Soon)*
+- `learn-critical-thinking` — Critical Thinking in Data & AI: Spurious correlations, Simpson's paradox, selection bias, p-hacking risks, causal inference. *(Soon)*
 
-### 7. Web & Applications (`web`)
+### 7. Web & Applications (`web` · 6 Courses)
 - `learn-django` — Django: Batteries-included web framework, ORM, MVC architecture, migrations. *(Active)*
 - `learn-flask` — Flask: Minimalist microframework, WSGI request cycle, route handlers, extensibility. *(Active)*
 - `learn-streamlit` — Streamlit: Rapid analytical web applications, reactive widgets, data caching. *(Active)*
@@ -104,7 +115,7 @@ The curriculum is partitioned into eight foundational disciplines:
 - `learn-api` — Modern APIs: RESTful principles, FastAPI, OpenAPI specifications, endpoint validation. *(Active)*
 - `learn-scraping` — Web Scraping: HTTP requests, DOM parsing with BeautifulSoup, Selenium, production scraping patterns. *(Active)*
 
-### 8. IoT, Hardware & Edge (`iot`)
+### 8. IoT, Hardware & Edge (`iot` · 3 Courses)
 - `learn-arduino` — Arduino: Microcontroller programming, embedded C/C++, digital/analog I/O, I2C/SPI protocols. *(Soon)*
 - `learn-raspberrypi` — Raspberry Pi: Single-board computers, embedded Linux, GPIO interfacing, edge data collection. *(Soon)*
 - `learn-enterprise-blockchain` — Enterprise Blockchain & DLT: Immutable audit trails, supply chain provenance, Hyperledger Fabric, M2M verification. *(Soon)*

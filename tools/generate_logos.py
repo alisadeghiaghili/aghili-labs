@@ -139,6 +139,75 @@ MARKS: dict[str, str] = {
   <circle cx="32" cy="42" r="6" fill="#FBBF24"/>
   <path d="M25 24l5 14M39 24l-5 14M27 22h10" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
 </svg>""",
+    "datastorytelling": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Data Storytelling">
+  <rect width="64" height="64" rx="14" fill="#042F2E"/>
+  <path d="M16 44l10-14 8 8 14-18" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="48" cy="20" r="4" fill="#F59E0B"/>
+  <circle cx="26" cy="30" r="3" fill="#2DD4BF"/>
+  <circle cx="34" cy="38" r="3" fill="#2DD4BF"/>
+</svg>""",
+    "datamodeling": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Data Modeling">
+  <rect width="64" height="64" rx="14" fill="#172554"/>
+  <rect x="14" y="16" width="16" height="12" rx="2" fill="#3B82F6"/>
+  <rect x="34" y="36" width="16" height="12" rx="2" fill="#3B82F6"/>
+  <path d="M22 28v14h12" fill="none" stroke="#93C5FD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="22" cy="42" r="2" fill="#93C5FD"/>
+</svg>""",
+    "datagovernance": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Data Governance">
+  <rect width="64" height="64" rx="14" fill="#1E1B4B"/>
+  <path d="M32 14l16 6v12c0 10-7 16-16 18-9-2-16-8-16-18V20l16-6z" fill="none" stroke="#818CF8" stroke-width="2.5"/>
+  <path d="M26 32l4 4 8-8" fill="none" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>""",
+    "dashboardkpi": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dashboard Design &amp; KPIs">
+  <rect width="64" height="64" rx="14" fill="#0C4A6E"/>
+  <path d="M18 42a16 16 0 1 1 28 0" fill="none" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 34l8-8" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="34" r="3.5" fill="#fff"/>
+</svg>""",
+    "criticalthinking": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Critical Thinking">
+  <rect width="64" height="64" rx="14" fill="#312E81"/>
+  <circle cx="28" cy="28" r="12" fill="none" stroke="#A5B4FC" stroke-width="3"/>
+  <path d="M37 37l9 9" stroke="#F43F5E" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M24 28h8M28 24v8" stroke="#A5B4FC" stroke-width="2" stroke-linecap="round"/>
+</svg>""",
+    "scientificwriting": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Scientific Writing">
+  <rect width="64" height="64" rx="14" fill="#1C1917"/>
+  <rect x="18" y="14" width="28" height="36" rx="3" fill="none" stroke="#E7E5E4" stroke-width="2.5"/>
+  <path d="M24 24h16M24 31h16M24 38h10" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+</svg>""",
+    "technicaldocs": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Technical Documentation">
+  <rect width="64" height="64" rx="14" fill="#0F172A"/>
+  <path d="M16 20h20l12 12v16a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V24a4 4 0 0 1 4-4z" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
+  <path d="M36 20v12h12" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
+  <path d="M20 38l4 4-4 4M28 46h8" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>""",
+    "testing": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Testing &amp; Quality">
+  <rect width="64" height="64" rx="14" fill="#052E16"/>
+  <circle cx="32" cy="32" r="16" fill="none" stroke="#4ADE80" stroke-width="3"/>
+  <path d="M24 32l6 6 12-12" fill="none" stroke="#4ADE80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>""",
+    "ddd": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Domain-Driven Design">
+  <rect width="64" height="64" rx="14" fill="#3B0764"/>
+  <circle cx="26" cy="32" r="12" fill="none" stroke="#C084FC" stroke-width="2.5"/>
+  <circle cx="38" cy="32" r="12" fill="none" stroke="#F472B6" stroke-width="2.5"/>
+  <path d="M32 24v16" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+</svg>""",
+    "bpmn": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BPMN 2.0">
+  <rect width="64" height="64" rx="14" fill="#1A2E05"/>
+  <circle cx="18" cy="32" r="5" fill="#A3E635"/>
+  <path d="M23 32h7" stroke="#A3E635" stroke-width="2" stroke-linecap="round"/>
+  <rect x="30" y="24" width="16" height="16" rx="3" fill="none" stroke="#A3E635" stroke-width="2"/>
+  <path d="M46 32h6" stroke="#A3E635" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="54" cy="32" r="4" fill="none" stroke="#FACC15" stroke-width="2"/>
+</svg>""",
+    "techinterviews": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Technical Interviews">
+  <rect width="64" height="64" rx="14" fill="#1E293B"/>
+  <rect x="14" y="16" width="36" height="26" rx="4" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
+  <path d="M24 42v6l8-6" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="24" cy="29" r="2.5" fill="#F59E0B"/>
+  <circle cx="32" cy="29" r="2.5" fill="#F59E0B"/>
+  <circle cx="40" cy="29" r="2.5" fill="#F59E0B"/>
+</svg>""",
     "powershell": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PowerShell">
   <rect width="64" height="64" rx="14" fill="#012456"/>
   <path d="M16 20h22l-2 6H18v6h14l-2 6H18v10h-4V20z" fill="#5391FE"/>

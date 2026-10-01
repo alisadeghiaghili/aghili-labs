@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Critical Thinking">
+  <rect width="64" height="64" rx="14" fill="#312E81"/>
+  <circle cx="28" cy="28" r="12" fill="none" stroke="#A5B4FC" stroke-width="3"/>
+  <path d="M37 37l9 9" stroke="#F43F5E" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M24 28h8M28 24v8" stroke="#A5B4FC" stroke-width="2" stroke-linecap="round"/>
+</svg>
