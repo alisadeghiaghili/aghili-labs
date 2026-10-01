@@ -1,7 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ML Statistics">
-  <rect width="64" height="64" rx="14" fill="#2D3142"/>
-  <rect x="16" y="34" width="6" height="14" rx="1.5" fill="#7DD3FC"/>
-  <rect x="26" y="26" width="6" height="22" rx="1.5" fill="#2A9D8F"/>
-  <rect x="36" y="18" width="6" height="30" rx="1.5" fill="#F0B429"/>
-  <rect x="46" y="28" width="6" height="20" rx="1.5" fill="#E76F51"/>
+  <rect width="64" height="64" rx="14" fill="#1C2430"/>
+  <g transform="translate(12 14)">
+    <line x1="4" y1="30" x2="36" y2="30" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+    <path d="M4 30c6 0 10-2 12-10 2-8 3-14 4-14s2 6 4 14c2 8 6 10 12 10" fill="none" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+    <line x1="20" y1="6" x2="20" y2="30" stroke="#FBBF24" stroke-width="1.8" stroke-dasharray="2 2"/>
+    <circle cx="20" cy="6" r="3" fill="#FBBF24"/>
+  </g>
 </svg>

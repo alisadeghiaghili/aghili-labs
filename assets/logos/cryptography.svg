@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cryptography">
-  <rect width="64" height="64" rx="14" fill="#1E1B4B"/>
-  <rect x="18" y="28" width="28" height="22" rx="4" fill="#A5B4FC"/>
-  <path d="M24 28v-7a8 8 0 0 1 16 0v7" fill="none" stroke="#A5B4FC" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="32" cy="37" r="2.5" fill="#1E1B4B"/>
-  <path d="M32 39.5v4.5" stroke="#1E1B4B" stroke-width="2" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Applied Cryptography">
+  <rect width="64" height="64" rx="14" fill="#18153B"/>
+  <g transform="translate(15 13)">
+    <rect x="3" y="16" width="28" height="20" rx="4" fill="#4F46E5"/>
+    <path d="M8 16V9a9 9 0 0 1 18 0v7" fill="none" stroke="#818CF8" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="17" cy="24" r="2.5" fill="#FFFFFF"/>
+    <path d="M17 26.5v4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
 </svg>

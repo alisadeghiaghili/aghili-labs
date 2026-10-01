@@ -19,16 +19,17 @@ tools/              # maintenance scripts
 
 ## Courses
 
-Courses are grouped into eight categories:
+The 70 courses are grouped into nine foundational disciplines:
 
 1. Programming languages
-2. Shell, systems & tooling
-3. Cloud, platforms & ops
-4. Data & analytics
-5. MLOps & pipelines
-6. Machine learning & AI
-7. Web & apps
-8. IoT, hardware & edge
+2. Shell, systems & low-level tooling
+3. Architecture, methodology & engineering craftsmanship
+4. Cloud, platforms & ops
+5. Data engineering, analytics & modeling
+6. MLOps & pipeline orchestration
+7. Machine learning, foundations & AI
+8. Web applications & interfaces
+9. IoT, hardware & industrial edge
 
 Each card links to `https://alisadeghiaghili.github.io/<slug>/`.
 

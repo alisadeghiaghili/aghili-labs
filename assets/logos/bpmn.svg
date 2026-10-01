@@ -1,8 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BPMN 2.0">
-  <rect width="64" height="64" rx="14" fill="#1A2E05"/>
-  <circle cx="18" cy="32" r="5" fill="#A3E635"/>
-  <path d="M23 32h7" stroke="#A3E635" stroke-width="2" stroke-linecap="round"/>
-  <rect x="30" y="24" width="16" height="16" rx="3" fill="none" stroke="#A3E635" stroke-width="2"/>
-  <path d="M46 32h6" stroke="#A3E635" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="54" cy="32" r="4" fill="none" stroke="#FACC15" stroke-width="2"/>
+  <rect width="64" height="64" rx="14" fill="#1B382B"/>
+  <g transform="translate(12 12)">
+    <circle cx="6" cy="20" r="5" fill="#4ADE80"/>
+    <line x1="11" y1="20" x2="16" y2="20" stroke="#FFFFFF" stroke-width="2"/>
+    <rect x="16" y="11" width="16" height="18" rx="4" fill="#FFFFFF"/>
+    <rect x="19" y="15" width="10" height="2" fill="#1B382B"/>
+    <rect x="19" y="19" width="7" height="2" fill="#1B382B"/>
+    <line x1="32" y1="20" x2="36" y2="20" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="41" cy="20" r="5" fill="none" stroke="#F87171" stroke-width="2.5"/>
+  </g>
 </svg>

@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ML Math">
-  <rect width="64" height="64" rx="14" fill="#2A1F4A"/>
-  <text x="32" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#C4B5FD">∑</text>
+  <rect width="64" height="64" rx="14" fill="#201335"/>
+  <g transform="translate(14 14)">
+    <path d="M4 6h4M4 6v24M4 30h4M32 6h-4M32 6v24M32 30h-4" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="12" cy="13" r="3" fill="#A78BFA"/>
+    <circle cx="24" cy="13" r="3" fill="#6366F1"/>
+    <circle cx="12" cy="23" r="3" fill="#6366F1"/>
+    <circle cx="24" cy="23" r="3" fill="#EC4899"/>
+  </g>
 </svg>

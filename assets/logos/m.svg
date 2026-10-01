@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Power Query M">
-  <rect width="64" height="64" rx="14" fill="#2C2A5A"/>
-  <text x="32" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#F2C811">M</text>
+  <rect width="64" height="64" rx="14" fill="#0E5C4E"/>
+  <g transform="translate(14 14)">
+    <rect x="2" y="2" width="32" height="32" rx="6" fill="#107C41" opacity="0.4"/>
+    <path d="M6 28V8h6l6 11 6-11h6v20h-5V15l-5 9h-4l-5-9v13H6z" fill="#FFFFFF"/>
+  </g>
 </svg>

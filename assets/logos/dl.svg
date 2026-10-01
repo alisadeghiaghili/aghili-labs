@@ -1,4 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PyTorch">
-  <rect width="64" height="64" rx="14" fill="#58241c"/>
-  <g transform="translate(12 12) scale(1.6667)" fill="#f7a99a"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Deep Learning">
+  <rect width="64" height="64" rx="14" fill="#181528"/>
+  <g transform="translate(13 13)">
+    <line x1="5" y1="9" x2="19" y2="5" stroke="#475569" stroke-width="1.5"/>
+    <line x1="5" y1="9" x2="19" y2="19" stroke="#475569" stroke-width="1.5"/>
+    <line x1="5" y1="9" x2="19" y2="33" stroke="#475569" stroke-width="1.5"/>
+    <line x1="5" y1="29" x2="19" y2="5" stroke="#475569" stroke-width="1.5"/>
+    <line x1="5" y1="29" x2="19" y2="19" stroke="#475569" stroke-width="1.5"/>
+    <line x1="5" y1="29" x2="19" y2="33" stroke="#475569" stroke-width="1.5"/>
+    <line x1="19" y1="5" x2="33" y2="19" stroke="#818CF8" stroke-width="1.8"/>
+    <line x1="19" y1="19" x2="33" y2="19" stroke="#818CF8" stroke-width="1.8"/>
+    <line x1="19" y1="33" x2="33" y2="19" stroke="#818CF8" stroke-width="1.8"/>
+    <circle cx="5" cy="9" r="4" fill="#38BDF8"/>
+    <circle cx="5" cy="29" r="4" fill="#38BDF8"/>
+    <circle cx="19" cy="5" r="4" fill="#A855F7"/>
+    <circle cx="19" cy="19" r="4" fill="#A855F7"/>
+    <circle cx="19" cy="33" r="4" fill="#A855F7"/>
+    <circle cx="33" cy="19" r="5" fill="#F43F5E"/>
+  </g>
 </svg>
