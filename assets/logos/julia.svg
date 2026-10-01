@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Julia">
+  <rect width="64" height="64" rx="14" fill="#1C1917"/>
+  <circle cx="23" cy="24" r="7" fill="#CB3C33"/>
+  <circle cx="41" cy="24" r="7" fill="#389826"/>
+  <circle cx="32" cy="40" r="7" fill="#9558B2"/>
+</svg>

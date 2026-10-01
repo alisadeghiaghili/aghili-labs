@@ -4,6 +4,10 @@ docs/preview/
 # Local dev tooling
 .claude/
 
+# Python cache
+__pycache__/
+*.pyc
+
 # OS
 .DS_Store
 Thumbs.db

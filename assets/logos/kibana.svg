@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kibana">
+  <rect width="64" height="64" rx="14" fill="#1A1C29"/>
+  <path d="M18 16h8v32h-8z" fill="#F04E98"/>
+  <path d="M29 32c0-9 7-16 16-16v16H29z" fill="#005571"/>
+  <path d="M29 35h18c-1 8-8 13-18 13v-13z" fill="#F04E98"/>
+</svg>

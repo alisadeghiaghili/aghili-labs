@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Splunk">
+  <rect width="64" height="64" rx="14" fill="#121212"/>
+  <path d="M20 22l14 10-14 10" fill="none" stroke="#EA125E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36 42h10" stroke="#F18902" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

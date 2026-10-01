@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Elasticsearch">
+  <rect width="64" height="64" rx="14" fill="#1E252B"/>
+  <path d="M32 14c-9 0-16 4-18 10h36c-2-6-9-10-18-10z" fill="#FEC514"/>
+  <rect x="14" y="27" width="36" height="10" rx="3" fill="#24B2AB"/>
+  <path d="M14 40c2 6 9 10 18 10s16-4 18-10H14z" fill="#005571"/>
+</svg>

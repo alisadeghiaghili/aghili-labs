@@ -28,9 +28,116 @@ MARKS: dict[str, str] = {
   <circle cx="32" cy="32" r="18" fill="none" stroke="#DEA584" stroke-width="3"/>
   <text x="32" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#DEA584">R</text>
 </svg>""",
-    "ts": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TypeScript">
-  <rect width="64" height="64" rx="14" fill="#3178C6"/>
-  <text x="32" y="41" text-anchor="middle" font-family="Consolas, monospace" font-size="24" font-weight="700" fill="#fff">TS</text>
+    "go": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Go">
+  <rect width="64" height="64" rx="14" fill="#00ADD8"/>
+  <text x="32" y="42" text-anchor="middle" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="26" font-weight="800" fill="#fff" letter-spacing="-1">GO</text>
+</svg>""",
+    "julia": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Julia">
+  <rect width="64" height="64" rx="14" fill="#1C1917"/>
+  <circle cx="23" cy="24" r="7" fill="#CB3C33"/>
+  <circle cx="41" cy="24" r="7" fill="#389826"/>
+  <circle cx="32" cy="40" r="7" fill="#9558B2"/>
+</svg>""",
+    "java": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Java">
+  <rect width="64" height="64" rx="14" fill="#1A242F"/>
+  <path d="M26 44c6 1 12 1 18-1-2 2-6 3-10 3s-6-1-8-2z" fill="#E76F51"/>
+  <path d="M22 38c10 2 20 2 26-1-3 3-9 4-15 4s-9-2-11-3z" fill="#5382A1"/>
+  <path d="M30 14c2 3-1 6-2 9 3-2 6-5 5-9-1-2-2-3-3 0z" fill="#E76F51"/>
+  <path d="M36 17c2 3-1 5-2 8 3-2 5-4 4-8-1-1-1-2-2 0z" fill="#E76F51"/>
+  <path d="M24 33c9 1 17 0 22-2-2 2-6 3-11 3s-8-1-11-1z" fill="#E76F51"/>
+  <path d="M19 48c12 2 26 1 32-2-4 3-13 4-20 4s-10-1-12-2z" fill="#5382A1"/>
+</svg>""",
+    "scala": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Scala">
+  <rect width="64" height="64" rx="14" fill="#1A1A1A"/>
+  <path d="M20 18c0-3 10-5 24-5v6c-14 0-24 2-24-1z" fill="#DE3423"/>
+  <path d="M20 29c0-3 10-5 24-5v6c-14 0-24 2-24-1z" fill="#DE3423"/>
+  <path d="M20 40c0-3 10-5 24-5v6c-14 0-24 2-24-1z" fill="#DE3423"/>
+  <path d="M20 51c0-3 10-5 24-5v6c-14 0-24 2-24-1z" fill="#DE3423"/>
+</svg>""",
+    "mongodb": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MongoDB">
+  <rect width="64" height="64" rx="14" fill="#0D1F15"/>
+  <path d="M32 12c-1 3-9 14-9 22 0 7 4 12 9 16 5-4 9-9 9-16 0-8-8-19-9-22z" fill="#13AA52"/>
+  <path d="M32 12v38c5-4 9-9 9-16 0-8-8-19-9-22z" fill="#118E44"/>
+</svg>""",
+    "elasticsearch": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Elasticsearch">
+  <rect width="64" height="64" rx="14" fill="#1E252B"/>
+  <path d="M32 14c-9 0-16 4-18 10h36c-2-6-9-10-18-10z" fill="#FEC514"/>
+  <rect x="14" y="27" width="36" height="10" rx="3" fill="#24B2AB"/>
+  <path d="M14 40c2 6 9 10 18 10s16-4 18-10H14z" fill="#005571"/>
+</svg>""",
+    "kibana": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kibana">
+  <rect width="64" height="64" rx="14" fill="#1A1C29"/>
+  <path d="M18 16h8v32h-8z" fill="#F04E98"/>
+  <path d="M29 32c0-9 7-16 16-16v16H29z" fill="#005571"/>
+  <path d="M29 35h18c-1 8-8 13-18 13v-13z" fill="#F04E98"/>
+</svg>""",
+    "logstash": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logstash">
+  <rect width="64" height="64" rx="14" fill="#1A2530"/>
+  <path d="M18 16h8v24c0 4 3 8 8 8h12v8H34c-9 0-16-7-16-16V16z" fill="#24B2AB"/>
+  <circle cx="44" cy="26" r="6" fill="#FEC514"/>
+</svg>""",
+    "splunk": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Splunk">
+  <rect width="64" height="64" rx="14" fill="#121212"/>
+  <path d="M20 22l14 10-14 10" fill="none" stroke="#EA125E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36 42h10" stroke="#F18902" stroke-width="4.5" stroke-linecap="round"/>
+</svg>""",
+    "arduino": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Arduino">
+  <rect width="64" height="64" rx="14" fill="#005C63"/>
+  <circle cx="24" cy="32" r="10" fill="none" stroke="#00979D" stroke-width="3"/>
+  <circle cx="40" cy="32" r="10" fill="none" stroke="#00979D" stroke-width="3"/>
+  <path d="M21 32h6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M37 32h6M40 29v6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+</svg>""",
+    "raspberrypi": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Raspberry Pi">
+  <rect width="64" height="64" rx="14" fill="#1F131A"/>
+  <path d="M32 14c-3 4-8 5-11 3 3 5 8 5 11-3z" fill="#6CC04A"/>
+  <path d="M32 14c3 4 8 5 11 3-3 5-8 5-11-3z" fill="#6CC04A"/>
+  <circle cx="32" cy="24" r="4.5" fill="#BC1142"/>
+  <circle cx="24" cy="29" r="4.5" fill="#BC1142"/>
+  <circle cx="40" cy="29" r="4.5" fill="#BC1142"/>
+  <circle cx="22" cy="38" r="4.5" fill="#BC1142"/>
+  <circle cx="42" cy="38" r="4.5" fill="#BC1142"/>
+  <circle cx="27" cy="44" r="4.5" fill="#BC1142"/>
+  <circle cx="37" cy="44" r="4.5" fill="#BC1142"/>
+  <circle cx="32" cy="47" r="4.5" fill="#BC1142"/>
+  <circle cx="32" cy="35" r="4" fill="#A00E37"/>
+</svg>""",
+    "functional": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Functional Programming">
+  <rect width="64" height="64" rx="14" fill="#2E1065"/>
+  <text x="32" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#C4B5FD">λ</text>
+</svg>""",
+    "softwaredesign": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Software Design">
+  <rect width="64" height="64" rx="14" fill="#064E3B"/>
+  <rect x="16" y="16" width="14" height="14" rx="3" fill="#34D399"/>
+  <rect x="34" y="16" width="14" height="14" rx="3" fill="none" stroke="#34D399" stroke-width="2.5"/>
+  <rect x="16" y="34" width="14" height="14" rx="3" fill="none" stroke="#34D399" stroke-width="2.5"/>
+  <rect x="34" y="34" width="14" height="14" rx="3" fill="#34D399"/>
+</svg>""",
+    "cryptography": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cryptography">
+  <rect width="64" height="64" rx="14" fill="#1E1B4B"/>
+  <rect x="18" y="28" width="28" height="22" rx="4" fill="#A5B4FC"/>
+  <path d="M24 28v-7a8 8 0 0 1 16 0v7" fill="none" stroke="#A5B4FC" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="37" r="2.5" fill="#1E1B4B"/>
+  <path d="M32 39.5v4.5" stroke="#1E1B4B" stroke-width="2" stroke-linecap="round"/>
+</svg>""",
+    "blockchain": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Enterprise Blockchain">
+  <rect width="64" height="64" rx="14" fill="#0F172A"/>
+  <rect x="14" y="24" width="14" height="16" rx="3" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
+  <rect x="36" y="24" width="14" height="16" rx="3" fill="none" stroke="#818CF8" stroke-width="2.5"/>
+  <path d="M28 32h8" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 2"/>
+</svg>""",
+    "llm": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Large Language Models">
+  <rect width="64" height="64" rx="14" fill="#18181B"/>
+  <path d="M32 14l3.5 10.5L46 28l-10.5 3.5L32 42l-3.5-10.5L18 28l10.5-3.5L32 14z" fill="#F43F5E"/>
+  <circle cx="44" cy="42" r="4" fill="#FDA4AF"/>
+  <circle cx="20" cy="44" r="3" fill="#FDA4AF"/>
+</svg>""",
+    "mlpatterns": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ML Design Patterns">
+  <rect width="64" height="64" rx="14" fill="#1E293B"/>
+  <circle cx="22" cy="22" r="5" fill="#38BDF8"/>
+  <circle cx="42" cy="22" r="5" fill="#34D399"/>
+  <circle cx="32" cy="42" r="6" fill="#FBBF24"/>
+  <path d="M25 24l5 14M39 24l-5 14M27 22h10" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
 </svg>""",
     "powershell": """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PowerShell">
   <rect width="64" height="64" rx="14" fill="#012456"/>

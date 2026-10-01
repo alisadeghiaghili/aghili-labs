@@ -19,7 +19,7 @@ tools/              # maintenance scripts
 
 ## Courses
 
-Courses are grouped into seven categories:
+Courses are grouped into eight categories:
 
 1. Programming languages
 2. Shell, systems & tooling
@@ -28,6 +28,7 @@ Courses are grouped into seven categories:
 5. MLOps & pipelines
 6. Machine learning & AI
 7. Web & apps
+8. IoT, hardware & edge
 
 Each card links to `https://alisadeghiaghili.github.io/<slug>/`.
 
