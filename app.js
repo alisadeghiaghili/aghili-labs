@@ -447,12 +447,11 @@ const CATEGORIES = {
         soon: true,
       },
       {
-        slug: "learn-timeseries",
+        slug: "learn-ts",
         title: "تحلیل و پیش‌بینی سری‌های زمانی",
         en: "Time Series & Forecasting",
         desc: "فروش فردا، ترافیک هفته آینده، تقاضای فصل بعد. تجزیه روند و فصلی‌بودن، آزمون مانایی، مدل‌های ARIMA و Prophet و پیش‌بینی با شبکه‌های عصبی.",
         logo: "timeseries",
-        soon: true,
       },
       {
         slug: "learn-dl",

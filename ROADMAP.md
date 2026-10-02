@@ -26,10 +26,10 @@ The curriculum is partitioned into nine foundational disciplines:
 | 4 | **Cloud, Platforms & Ops** | Scalable infrastructure, platforms, observability & data cloud | 6 | 4 | 10 |
 | 5 | **Data & Analytics** | Relational, document, modeling, governance, storytelling & big data | 5 | 6 | 11 |
 | 6 | **MLOps & Pipelines** | Model lifecycle, data versioning, orchestration & stream processing | 5 | 0 | 5 |
-| 7 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning, LLMs & critical analysis | 7 | 6 | 13 |
+| 7 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning, LLMs & critical analysis | 8 | 5 | 13 |
 | 8 | **Web & Applications** | Data presentation, web applications, APIs & extraction | 6 | 0 | 6 |
 | 9 | **IoT, Hardware & Edge** | Physical computing, edge analytics, industrial automation & DLT | 0 | 3 | 3 |
-| **Sum** | | | **39** | **32** | **71** |
+| **Sum** | | | **40** | **31** | **71** |
 
 ---
 
@@ -100,7 +100,7 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-ml` — Machine Learning: Supervised/unsupervised algorithms, evaluation metrics, scikit-learn sandboxes. *(Active)*
 - `learn-mlmath` — ML Math: Linear algebra, vector calculus, matrix decompositions, loss optimization. *(Soon)*
 - `learn-mlstats` — ML Statistics: Hypothesis testing, probability distributions, Bayesian inference, confidence intervals. *(Soon)*
-- `learn-timeseries` — Time Series & Forecasting: Temporal dependence, trend/seasonality decomposition, stationarity, ARIMA models, ML & deep forecasting. *(Soon)*
+- `learn-ts` — Time Series & Forecasting: Temporal dependence, trend/seasonality decomposition, stationarity, ARIMA models, ML & deep forecasting. *(Active)*
 - `learn-dl` — Deep Learning: Neural architectures, backpropagation, PyTorch/TensorFlow models. *(Active)*
 - `learn-rl` — Reinforcement Learning: Markov Decision Processes, policy/value iteration, Q-learning. *(Active)*
 - `learn-nlp` — Natural Language Processing: Tokenization, embeddings, sequence models, sentiment classification. *(Active)*
