@@ -447,6 +447,14 @@ const CATEGORIES = {
         soon: true,
       },
       {
+        slug: "learn-timeseries",
+        title: "تحلیل و پیش‌بینی سری‌های زمانی",
+        en: "Time Series & Forecasting",
+        desc: "تحلیل داده‌های وابسته به زمان و مدل‌های پیش‌بینی — روند (Trend)، فصلی‌بودن (Seasonality)، مانایی (Stationarity)، مدل‌های کلاسیک ARIMA و روش‌های یادگیری ماشین و دیپ‌لرنینگ.",
+        logo: "timeseries",
+        soon: true,
+      },
+      {
         slug: "learn-dl",
         title: "یادگیری عمیق",
         en: "Deep Learning",

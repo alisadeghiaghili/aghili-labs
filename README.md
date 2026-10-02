@@ -19,7 +19,7 @@ tools/              # maintenance scripts
 
 ## Courses
 
-The 70 courses are grouped into nine foundational disciplines:
+The 71 courses are grouped into nine foundational disciplines:
 
 1. Programming languages
 2. Shell, systems & low-level tooling
