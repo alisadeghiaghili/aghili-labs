@@ -1,21 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Web Scraping and Crawling">
-  <rect width="64" height="64" rx="14" fill="#0C1524"/>
-  <g transform="translate(13 13)">
-    <!-- Browser Frame -->
-    <rect x="2" y="2" width="34" height="26" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1.8"/>
-    <line x1="2" y1="8" x2="36" y2="8" stroke="#334155" stroke-width="1.5"/>
-    <circle cx="6" cy="5" r="1.2" fill="#F87171"/>
-    <circle cx="10" cy="5" r="1.2" fill="#FBBF24"/>
-    <circle cx="14" cy="5" r="1.2" fill="#4ADE80"/>
-    <!-- Web Crawling Spider Threads -->
-    <path d="M11 14l8 5 8-5M19 19v9" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="11" cy="14" r="2.5" fill="#38BDF8"/>
-    <circle cx="27" cy="14" r="2.5" fill="#38BDF8"/>
-    <circle cx="19" cy="19" r="3" fill="#FBBF24"/>
-    <!-- Data Harvester Beacon -->
-    <circle cx="19" cy="28" r="4" fill="#A855F7"/>
-    <circle cx="19" cy="28" r="1.5" fill="#FFFFFF"/>
-    <!-- Inward Gathering Arrows -->
-    <path d="M7 24l4-2M31 24l-4-2" stroke="#34D399" stroke-width="1.8" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Web Scraping - HTML to Table">
+  <rect width="64" height="64" rx="14" fill="#0B1325"/>
+  <g transform="translate(10 10)">
+    <!-- Source: Web Browser Window (Top Left) -->
+    <rect x="1" y="2" width="24" height="20" rx="3" fill="#1E293B" stroke="#38BDF8" stroke-width="1.8"/>
+    <!-- Window Bar -->
+    <line x1="1" y1="7" x2="25" y2="7" stroke="#334155" stroke-width="1.2"/>
+    <circle cx="4.5" cy="4.5" r="1" fill="#EF4444"/>
+    <circle cx="8" cy="4.5" r="1" fill="#F59E0B"/>
+    <circle cx="11.5" cy="4.5" r="1" fill="#10B981"/>
+    <!-- Raw HTML Code brackets </> -->
+    <path d="M8 12l-3 3 3 3M18 12l3 3-3 3M14 11l-2 8" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Extraction Scraper Flow: Dynamic arrow from Web to Table -->
+    <path d="M26 12h5a3 3 0 0 1 3 3v8" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+    <polygon points="34,26 31,21 37,21" fill="#FBBF24"/>
+    
+    <!-- Destination: Structured Data Table (Bottom Right) -->
+    <g transform="translate(17 21)">
+      <!-- Table Container -->
+      <rect x="2" y="2" width="24" height="19" rx="3" fill="#064E3B" stroke="#34D399" stroke-width="1.8"/>
+      <!-- Header Row -->
+      <rect x="2" y="2" width="24" height="6" rx="2" fill="#047857"/>
+      <line x1="10" y1="2" x2="10" y2="21" stroke="#34D399" stroke-width="1.2"/>
+      <line x1="18" y1="2" x2="18" y2="21" stroke="#34D399" stroke-width="1.2"/>
+      <!-- Rows -->
+      <line x1="2" y1="12" x2="26" y2="12" stroke="#34D399" stroke-width="1.2"/>
+      <line x1="2" y1="16" x2="26" y2="16" stroke="#34D399" stroke-width="1.2"/>
+      <!-- Data Dots in cells -->
+      <circle cx="6" cy="14" r="1" fill="#A7F3D0"/>
+      <circle cx="14" cy="14" r="1" fill="#A7F3D0"/>
+      <circle cx="22" cy="14" r="1" fill="#A7F3D0"/>
+    </g>
   </g>
 </svg>

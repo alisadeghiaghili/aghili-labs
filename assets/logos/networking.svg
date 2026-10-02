@@ -1,26 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Networking">
-  <rect width="64" height="64" rx="14" fill="#0A1526"/>
-  <g transform="translate(13 13)">
-    <!-- Network Mesh Connection Lines -->
-    <line x1="19" y1="19" x2="6" y2="7" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="19" y1="19" x2="32" y2="7" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="19" y1="19" x2="6" y2="31" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="19" y1="19" x2="32" y2="31" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- Active Pulse Signals -->
-    <line x1="19" y1="19" x2="10" y2="10.5" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="19" y1="19" x2="27" y2="26.5" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- Outer Network Nodes -->
-    <circle cx="6" cy="7" r="4.5" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
-    <circle cx="32" cy="7" r="4.5" fill="#1E293B" stroke="#818CF8" stroke-width="2"/>
-    <circle cx="6" cy="31" r="4.5" fill="#1E293B" stroke="#FBBF24" stroke-width="2"/>
-    <circle cx="32" cy="31" r="4.5" fill="#1E293B" stroke="#34D399" stroke-width="2"/>
-    <!-- Inner Packet Pulses -->
-    <circle cx="6" cy="7" r="2" fill="#38BDF8"/>
-    <circle cx="32" cy="7" r="2" fill="#818CF8"/>
-    <circle cx="6" cy="31" r="2" fill="#FBBF24"/>
-    <circle cx="32" cy="31" r="2" fill="#34D399"/>
-    <!-- Center Router / Intelligent Switch Hub -->
-    <circle cx="19" cy="19" r="7.5" fill="#0284C7" stroke="#38BDF8" stroke-width="2"/>
-    <circle cx="19" cy="19" r="3" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Networking - LAN Topology">
+  <rect width="64" height="64" rx="14" fill="#0A1326"/>
+  <g transform="translate(10 11)">
+    <!-- Central Switch / Router Box -->
+    <rect x="12" y="2" width="20" height="10" rx="3" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+    <!-- Router Port LEDs -->
+    <circle cx="16" cy="7" r="1.5" fill="#4ADE80"/>
+    <circle cx="20" cy="7" r="1.5" fill="#4ADE80"/>
+    <circle cx="24" cy="7" r="1.5" fill="#FBBF24"/>
+    <circle cx="28" cy="7" r="1.5" fill="#38BDF8"/>
+    
+    <!-- Central Drop Line -->
+    <line x1="22" y1="12" x2="22" y2="22" stroke="#38BDF8" stroke-width="2"/>
+    
+    <!-- Horizontal Ethernet LAN Bus Line -->
+    <line x1="5" y1="22" x2="39" y2="22" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Drop Line 1 (Left: Server Rack) -->
+    <line x1="5" y1="22" x2="5" y2="27" stroke="#38BDF8" stroke-width="2"/>
+    <g transform="translate(0 27)">
+      <rect x="0" y="0" width="10" height="14" rx="2" fill="#1E293B" stroke="#818CF8" stroke-width="1.8"/>
+      <line x1="2" y1="4" x2="8" y2="4" stroke="#818CF8" stroke-width="1.2"/>
+      <line x1="2" y1="7" x2="8" y2="7" stroke="#818CF8" stroke-width="1.2"/>
+      <line x1="2" y1="10" x2="8" y2="10" stroke="#818CF8" stroke-width="1.2"/>
+      <circle cx="7" cy="4" r="0.8" fill="#4ADE80"/>
+      <circle cx="7" cy="7" r="0.8" fill="#4ADE80"/>
+    </g>
+    
+    <!-- Drop Line 2 (Center: Workstation PC) -->
+    <line x1="22" y1="22" x2="22" y2="27" stroke="#38BDF8" stroke-width="2"/>
+    <g transform="translate(16 27)">
+      <rect x="1" y="0" width="10" height="9" rx="1.5" fill="#1E293B" stroke="#60A5FA" stroke-width="1.8"/>
+      <line x1="4" y1="9" x2="8" y2="9" stroke="#60A5FA" stroke-width="1.8"/>
+      <line x1="6" y1="9" x2="6" y2="12" stroke="#60A5FA" stroke-width="1.5"/>
+      <line x1="3" y1="12" x2="9" y2="12" stroke="#60A5FA" stroke-width="1.5"/>
+      <circle cx="6" cy="4.5" r="1.5" fill="#38BDF8"/>
+    </g>
+    
+    <!-- Drop Line 3 (Right: Cloud Gateway / WAN) -->
+    <line x1="39" y1="22" x2="39" y2="27" stroke="#38BDF8" stroke-width="2"/>
+    <g transform="translate(32 27)">
+      <path d="M4 11h8a3.5 3.5 0 0 0 1-6.8 4 4 0 0 0-7.8-1A3 3 0 0 0 4 11z" fill="#1E293B" stroke="#34D399" stroke-width="1.8" stroke-linejoin="round"/>
+      <circle cx="8" cy="7.5" r="1.5" fill="#34D399"/>
+    </g>
   </g>
 </svg>
