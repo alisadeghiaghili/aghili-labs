@@ -1,11 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Reinforcement Learning">
-  <rect width="64" height="64" rx="14" fill="#13231B"/>
+  <rect width="64" height="64" rx="14" fill="#0A1D1A"/>
   <g transform="translate(13 13)">
-    <circle cx="19" cy="19" r="14" fill="none" stroke="#334155" stroke-width="2"/>
-    <path d="M19 5a14 14 0 0 1 14 14" fill="none" stroke="#4ADE80" stroke-width="3" stroke-linecap="round"/>
-    <polygon points="34,16 35,21 30,20" fill="#4ADE80"/>
-    <path d="M19 33a14 14 0 0 1-14-14" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
-    <polygon points="4,22 3,17 8,18" fill="#FBBF24"/>
-    <circle cx="19" cy="19" r="4" fill="#FFFFFF"/>
+    <!-- Policy Path -->
+    <path d="M6 30V18a4 4 0 0 1 4-4h13" fill="none" stroke="#2DD4BF" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Agent Node -->
+    <circle cx="6" cy="30" r="5" fill="#38BDF8"/>
+    <circle cx="6" cy="30" r="2" fill="#FFFFFF"/>
+    <!-- Action Step Arrow -->
+    <polygon points="26,14 21,11 21,17" fill="#2DD4BF"/>
+    <!-- Environment Feedback Loop -->
+    <path d="M28 20a10 10 0 0 1-14 8" fill="none" stroke="#4ADE80" stroke-width="2" stroke-dasharray="2.5 2.5" stroke-linecap="round"/>
+    <polygon points="12,28 15,25 16,30" fill="#4ADE80"/>
+    <!-- Reward Star (+R) -->
+    <g transform="translate(25 4)">
+      <polygon points="7,0 9,5 14,5 10,8 12,13 7,10 2,13 4,8 0,5 5,5" fill="#FBBF24"/>
+    </g>
   </g>
 </svg>

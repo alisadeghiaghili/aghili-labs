@@ -1,11 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NLP">
-  <rect width="64" height="64" rx="14" fill="#1E192B"/>
-  <g transform="translate(13 14)">
-    <rect x="2" y="5" width="10" height="7" rx="2" fill="#818CF8"/>
-    <rect x="14" y="5" width="10" height="7" rx="2" fill="#A78BFA"/>
-    <rect x="26" y="5" width="10" height="7" rx="2" fill="#C084FC"/>
-    <path d="M7 16v4c0 3 4 5 12 5s12-2 12-5v-4" fill="none" stroke="#F472B6" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="19" cy="30" r="4.5" fill="#38BDF8"/>
-    <line x1="19" y1="25" x2="19" y2="26" stroke="#38BDF8" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Natural Language Processing">
+  <rect width="64" height="64" rx="14" fill="#141126"/>
+  <g transform="translate(13 13)">
+    <!-- Text Token Blocks -->
+    <rect x="2" y="3" width="9" height="7" rx="2" fill="#818CF8"/>
+    <rect x="14" y="3" width="10" height="7" rx="2" fill="#C084FC"/>
+    <rect x="27" y="3" width="9" height="7" rx="2" fill="#F472B6"/>
+    <!-- Neural Attention Rays -->
+    <line x1="6.5" y1="10" x2="19" y2="20" stroke="#6366F1" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="19" y1="10" x2="19" y2="20" stroke="#A855F7" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="31.5" y1="10" x2="19" y2="20" stroke="#EC4899" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- Central Attention Core -->
+    <circle cx="19" cy="20" r="4.5" fill="#FBBF24"/>
+    <!-- Dense Semantic Embedding Vector Bars -->
+    <rect x="3" y="28" width="5.5" height="5" rx="1" fill="#38BDF8"/>
+    <rect x="10.5" y="28" width="5.5" height="5" rx="1" fill="#818CF8"/>
+    <rect x="18" y="28" width="5.5" height="5" rx="1" fill="#A855F7"/>
+    <rect x="25.5" y="28" width="5.5" height="5" rx="1" fill="#EC4899"/>
+    <rect x="33" y="28" width="5.5" height="5" rx="1" fill="#34D399"/>
   </g>
 </svg>

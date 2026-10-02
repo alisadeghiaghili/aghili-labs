@@ -1,8 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="dbt">
-  <rect width="64" height="64" rx="14" fill="#FF694B"/>
-  <g transform="translate(14 14)">
-    <path d="M18 2L34 11.2V29.8L18 39L2 29.8V11.2L18 2Z" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M18 2L18 20.5M18 20.5L2 11.2M18 20.5L34 11.2M18 20.5L18 39" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
-    <circle cx="18" cy="20.5" r="3.5" fill="#FF694B" stroke="#FFFFFF" stroke-width="2"/>
+  <rect width="64" height="64" rx="14" fill="#241410"/>
+  <g transform="translate(14 13)">
+    <!-- Official dbt Isometric Faceted Cube -->
+    <polygon points="18,3 33,11.5 18,20 3,11.5" fill="#FFA382"/>
+    <polygon points="3,11.5 18,20 18,37 3,28.5" fill="#FF694B"/>
+    <polygon points="18,20 33,11.5 33,28.5 18,37" fill="#D14524"/>
+    <circle cx="18" cy="20" r="3.5" fill="#241410"/>
+    <circle cx="18" cy="20" r="2" fill="#FFA382"/>
   </g>
 </svg>

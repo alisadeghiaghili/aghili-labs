@@ -104,7 +104,7 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-rl` — Reinforcement Learning: Markov Decision Processes, policy/value iteration, Q-learning. *(Active)*
 - `learn-nlp` — Natural Language Processing: Tokenization, embeddings, sequence models, sentiment classification. *(Active)*
 - `learn-cv` — Computer Vision: Convolutional operations, feature extraction, object detection. *(Active)*
-- `learn-datastructure` — Data Structures: Trees, heaps, hash tables, graphs, disjoint sets in visual sandboxes. *(Active)*
+- `learn-datastructure` — Data Structures (ساختمان داده): Trees, heaps, hash tables, graphs, disjoint sets in visual sandboxes. *(Active)*
 - `learn-algorithm` — Algorithms: Sorting, searching, dynamic programming, graph traversal, asymptotic complexity. *(Active)*
 - `learn-llm` — Large Language Models: Transformer attention mechanisms, prompting, RAG architectures, fine-tuning. *(Soon)*
 - `learn-ml-patterns` — ML Design Patterns: Feature store design, cascades, checkpointing, robust production patterns. *(Soon)*

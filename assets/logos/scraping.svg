@@ -1,8 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Web Scraping">
-  <rect width="64" height="64" rx="14" fill="#1C1829"/>
-  <g transform="translate(14 14)">
-    <circle cx="18" cy="18" r="7" fill="#8B5CF6"/>
-    <path d="M18 11V3M18 25v8M11 18H3M25 18h8M13 13L7 7M23 23l6 6M13 23l-6 6M23 13l6-6" stroke="#C084FC" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="18" cy="18" r="2.5" fill="#FBBF24"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Web Scraping & Crawling">
+  <rect width="64" height="64" rx="14" fill="#0C1524"/>
+  <g transform="translate(13 13)">
+    <!-- Browser Frame -->
+    <rect x="2" y="2" width="34" height="26" rx="4" fill="#1E293B" stroke="#334155" stroke-width="1.8"/>
+    <line x1="2" y1="8" x2="36" y2="8" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="6" cy="5" r="1.2" fill="#F87171"/>
+    <circle cx="10" cy="5" r="1.2" fill="#FBBF24"/>
+    <circle cx="14" cy="5" r="1.2" fill="#4ADE80"/>
+    <!-- Web Crawling Spider Threads -->
+    <path d="M11 14l8 5 8-5M19 19v9" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="11" cy="14" r="2.5" fill="#38BDF8"/>
+    <circle cx="27" cy="14" r="2.5" fill="#38BDF8"/>
+    <circle cx="19" cy="19" r="3" fill="#FBBF24"/>
+    <!-- Data Harvester Beacon -->
+    <circle cx="19" cy="28" r="4" fill="#A855F7"/>
+    <circle cx="19" cy="28" r="1.5" fill="#FFFFFF"/>
+    <!-- Inward Gathering Arrows -->
+    <path d="M7 24l4-2M31 24l-4-2" stroke="#34D399" stroke-width="1.8" stroke-linecap="round"/>
   </g>
 </svg>
