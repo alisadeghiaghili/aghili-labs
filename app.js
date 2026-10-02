@@ -354,7 +354,7 @@ const CATEGORIES = {
       },
       {
         slug: "learn-data-modeling",
-        title: "مدل‌سازی داده و معماری انبار",
+        title: "مدل‌سازی و معماری انبار داده",
         en: "Data Modeling & Dimensional Design",
         desc: "طراحی ساختار دیتابیس‌های عملیاتی و تحلیلی — دیاگرام‌های ERD، فرم‌های نرمال‌سازی، متدولوژی کیمبال، اسکیمای ستاره‌ای و تفاوت بنیادین OLTP و OLAP.",
         logo: "datamodeling",
@@ -622,6 +622,19 @@ function escapeHtml(value) {
 }
 
 /**
+ * Format course title to ensure Latin and symbolic titles (e.g. C++, API) maintain LTR isolation.
+ *
+ * @param {string} title
+ * @returns {string}
+ */
+function formatTitle(title) {
+  if (!/[\u0600-\u06FF]/.test(title)) {
+    return `<span dir="ltr">${escapeHtml(title)}</span>`;
+  }
+  return escapeHtml(title);
+}
+
+/**
  * Wrap Latin technical tokens so RTL layout isolates them.
  *
  * @param {string} text
@@ -652,7 +665,7 @@ function createCourseCard(course) {
       </a>
       <div class="course-heading">
         <a class="course-title-link" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'}>
-          <p class="course-title">${escapeHtml(course.title)}</p>
+          <p class="course-title">${formatTitle(course.title)}</p>
           <p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>
         </a>
         <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(course.title)}" aria-label="اشتراک‌گذاری ${escapeHtml(course.title)}">

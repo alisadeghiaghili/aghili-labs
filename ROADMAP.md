@@ -85,7 +85,7 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-mongodb` — MongoDB: Document data modeling, BSON schema design, aggregation pipelines. *(Soon)*
 - `learn-elasticsearch` — Elasticsearch: Inverted indexing, distributed search, BM25 text relevance, aggregations. *(Soon)*
 - `learn-data-storytelling` — Data Storytelling & Visualization: Gestalt principles, cognitive load reduction, decluttering, executive narrative. *(Soon)*
-- `learn-data-modeling` — Data Modeling & Dimensional Design: ERDs, normalization (1NF-BCNF), Kimball dimensional modeling, star/snowflake schemas, OLTP vs. OLAP. *(Soon)*
+- `learn-data-modeling` — Data Modeling & Dimensional Design (مدل‌سازی و معماری انبار داده): ERDs, normalization (1NF-BCNF), Kimball dimensional modeling, star/snowflake schemas, OLTP vs. OLAP. *(Soon)*
 - `learn-data-governance` — Data Governance & Quality: Data contracts, lineage tracking, metadata catalogs, PII security, quality rules. *(Soon)*
 - `learn-dashboard-kpi` — Dashboard Design & KPI Strategy: Metric selection matrices, leading vs. lagging indicators, cognitive hierarchy, alert fatigue prevention. *(Soon)*
 
