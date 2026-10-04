@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AI Agents and Multi-Agent Systems">
+  <rect width="64" height="64" rx="14" fill="#0B132B"/>
+  <g transform="translate(12 12)">
+    <!-- Central Autonomous Agent Core -->
+    <circle cx="20" cy="20" r="7" fill="#1C2541" stroke="#60A5FA" stroke-width="2"/>
+    <circle cx="20" cy="20" r="3.2" fill="#38BDF8"/>
+    <!-- Multi-Agent Orbiting Satellites / Tool Nodes -->
+    <circle cx="20" cy="5" r="3" fill="#8B5CF6"/>
+    <circle cx="34" cy="15" r="3" fill="#10B981"/>
+    <circle cx="31" cy="30" r="3" fill="#F59E0B"/>
+    <circle cx="9" cy="30" r="3" fill="#EC4899"/>
+    <circle cx="6" cy="15" r="3" fill="#06B6D4"/>
+    <!-- Communication Synapses -->
+    <line x1="20" y1="13" x2="20" y2="8" stroke="#8B5CF6" stroke-width="1.4" stroke-dasharray="2 1"/>
+    <line x1="25" y1="16" x2="31" y2="15" stroke="#10B981" stroke-width="1.4" stroke-dasharray="2 1"/>
+    <line x1="25" y1="24" x2="29" y2="28" stroke="#F59E0B" stroke-width="1.4" stroke-dasharray="2 1"/>
+    <line x1="15" y1="24" x2="11" y2="28" stroke="#EC4899" stroke-width="1.4" stroke-dasharray="2 1"/>
+    <line x1="15" y1="16" x2="9" y2="15" stroke="#06B6D4" stroke-width="1.4" stroke-dasharray="2 1"/>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TinyML">
+  <rect width="64" height="64" rx="14" fill="#022C22"/>
+  <g transform="translate(12 12)">
+    <!-- Microcontroller Chip Body (QFP IC) -->
+    <rect x="8" y="8" width="24" height="24" rx="3" fill="#064E3B" stroke="#34D399" stroke-width="1.8"/>
+    <!-- IC Pins Top & Bottom -->
+    <line x1="12" y1="4" x2="12" y2="8" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="17" y1="4" x2="17" y2="8" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="23" y1="4" x2="23" y2="8" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="28" y1="4" x2="28" y2="8" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="12" y1="32" x2="12" y2="36" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="17" y1="32" x2="17" y2="36" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="23" y1="32" x2="23" y2="36" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="28" y1="32" x2="28" y2="36" stroke="#6EE7B7" stroke-width="1.5"/>
+    <!-- IC Pins Left & Right -->
+    <line x1="4" y1="12" x2="8" y2="12" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="4" y1="17" x2="8" y2="17" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="4" y1="23" x2="8" y2="23" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="4" y1="28" x2="8" y2="28" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="32" y1="12" x2="36" y2="12" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="32" y1="17" x2="36" y2="17" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="32" y1="23" x2="36" y2="23" stroke="#6EE7B7" stroke-width="1.5"/>
+    <line x1="32" y1="28" x2="36" y2="28" stroke="#6EE7B7" stroke-width="1.5"/>
+    <!-- Neural Network inside Chip Die -->
+    <circle cx="14" cy="15" r="1.8" fill="#A7F3D0"/>
+    <circle cx="14" cy="25" r="1.8" fill="#A7F3D0"/>
+    <circle cx="26" cy="15" r="1.8" fill="#A7F3D0"/>
+    <circle cx="26" cy="25" r="1.8" fill="#A7F3D0"/>
+    <circle cx="20" cy="20" r="2.2" fill="#34D399"/>
+    <line x1="14" y1="15" x2="20" y2="20" stroke="#6EE7B7" stroke-width="1"/>
+    <line x1="14" y1="25" x2="20" y2="20" stroke="#6EE7B7" stroke-width="1"/>
+    <line x1="20" y1="20" x2="26" y2="15" stroke="#6EE7B7" stroke-width="1"/>
+    <line x1="20" y1="20" x2="26" y2="25" stroke="#6EE7B7" stroke-width="1"/>
+  </g>
+</svg>

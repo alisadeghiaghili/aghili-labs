@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Software and Model Licensing">
+  <rect width="64" height="64" rx="14" fill="#1E1B4B"/>
+  <g transform="translate(12 12)">
+    <!-- Legal Certificate / Shield -->
+    <path d="M20 2L35 7V19C35 28 28 35 20 38C12 35 5 28 5 19V7L20 2Z" fill="#312E81" stroke="#818CF8" stroke-width="1.8"/>
+    <!-- Open Source C keyhole / Copyright emblem -->
+    <circle cx="20" cy="18" r="8" fill="none" stroke="#C7D2FE" stroke-width="2"/>
+    <!-- Code bracket inside -->
+    <path d="M18 15L15 18L18 21M22 15L25 18L22 21" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Approved Ribbon -->
+    <path d="M16 27L20 31L24 27" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

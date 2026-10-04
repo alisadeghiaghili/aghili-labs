@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Industrial IoT">
+  <rect width="64" height="64" rx="14" fill="#1C1917"/>
+  <g transform="translate(12 12)">
+    <!-- Industrial Machine Gear -->
+    <circle cx="16" cy="24" r="10" fill="#292524" stroke="#78716C" stroke-width="1.8"/>
+    <circle cx="16" cy="24" r="4" fill="#1C1917"/>
+    <!-- Telemetry Waves / Signal (OPC-UA / MQTT) -->
+    <path d="M16 10C22 10 27 15 27 21" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16 6C25 6 31 12 31 21" fill="none" stroke="#FB923C" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16 2C28 2 35 9 35 21" fill="none" stroke="#FDBA74" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <!-- Edge Gateway Antenna Node -->
+    <circle cx="16" cy="2" r="2.2" fill="#F97316"/>
+  </g>
+</svg>

@@ -1,4 +1,9 @@
-# Learn with Ali — Curriculum Roadmap
+"""Update ROADMAP.md with 87 courses and updated topology."""
+from pathlib import Path
+
+ROADMAP = Path(r"c:\Users\alisa\Desktop\Projects\learn-with-ali\ROADMAP.md")
+
+content = """# Learn with Ali — Curriculum Roadmap
 
 This document outlines the architectural roadmap and curriculum expansion for the **Learn with Ali** free interactive learning platform.
 
@@ -150,3 +155,7 @@ Every upcoming course repository must meet the following criteria prior to flipp
 2. **Pedagogical Progression**: Multi-tiered challenges (Levels 1 to N), progressive disclosure of complexity, clear error diagnostics.
 3. **Responsive Visual Architecture**: Full desktop and mobile support adhering to the Editorial Luxury design system with RTL-first layout and isolated LTR technical tokens.
 4. **Zero Fluff**: Direct, concise technical instructions without unnecessary boilerplate.
+"""
+
+ROADMAP.write_text(content.strip() + "\n", encoding="utf-8")
+print("ROADMAP.md updated successfully with 87 courses!")
