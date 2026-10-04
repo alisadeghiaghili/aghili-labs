@@ -14,7 +14,7 @@ Every course adheres to an interactive-first paradigm: an isolated in-browser sa
 
 ---
 
-## Catalog Topology (9 Disciplines · 87 Courses)
+## Catalog Topology (9 Disciplines · 88 Courses)
 
 The curriculum is partitioned into nine foundational disciplines:
 
@@ -27,9 +27,9 @@ The curriculum is partitioned into nine foundational disciplines:
 | 5 | **Data & Analytics** | Relational, document, modeling, governance, DuckDB & big data | 5 | 7 | 12 |
 | 6 | **MLOps & Pipelines** | Model lifecycle, data versioning, DataOps, LLMOps, MLSecOps & stream processing | 5 | 4 | 9 |
 | 7 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning, LLMs, RAG, agents & optimization | 8 | 8 | 16 |
-| 8 | **Web & Applications** | Data presentation, web applications, APIs & extraction | 6 | 0 | 6 |
+| 8 | **Web & Applications** | Data presentation, web applications, DOM architecture, APIs & extraction | 6 | 1 | 7 |
 | 9 | **IoT, Hardware & Edge** | Physical computing, edge analytics, industrial automation, protocols & TinyML | 0 | 5 | 5 |
-| **Sum** | | | **40** | **47** | **87** |
+| **Sum** | | | **40** | **48** | **88** |
 
 ---
 
@@ -125,7 +125,8 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-agents` — AI Agents & Multi-Agent Systems: Autonomous tool execution, ReAct loops, Open Model Context Protocol (MCP), cognitive architectures, and agentic orchestration. *(Soon)*
 - `learn-optimization` — Operations Research & Optimization: Linear and mixed-integer programming (MILP), combinatorial optimization, OR-Tools, and logistical constraint solving. *(Soon)*
 
-### 8. Web & Applications (`web` · 6 Courses)
+### 8. Web & Applications (`web` · 7 Courses)
+- `learn-web-fundamentals` — Web Fundamentals & DOM Architecture: HTTP request/response lifecycle, DOM tree representation, CSS selectors, CSR vs. SSR, and browser developer tooling. *(Soon)*
 - `learn-django` — Django: Batteries-included web framework, ORM, MVC architecture, migrations. *(Active)*
 - `learn-flask` — Flask: Minimalist microframework, WSGI request cycle, route handlers, extensibility. *(Active)*
 - `learn-streamlit` — Streamlit: Rapid analytical web applications, reactive widgets, data caching. *(Active)*

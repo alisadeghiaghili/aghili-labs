@@ -638,6 +638,14 @@ const CATEGORIES = {
     blurb: "ساخت، انتشار و تعامل با داده در وب",
     courses: [
       {
+        slug: "learn-web-fundamentals",
+        title: "مبانی وب و معماری مرورگر",
+        en: "Web Fundamentals & DOM Architecture",
+        desc: "درک عمیق از نحوه کارکرد وب‌سرورها، پروتکل HTTP و ساختار درختی DOM در مرورگر. تگ‌های HTML، سلکتورهای کاربردی CSS، رندرینگ کلاینت (CSR/SSR) و مبانی تعامل با صفحه از طریق جاوااسکریپت.",
+        logo: "webfundamentals",
+        soon: true,
+      },
+      {
         slug: "learn-django",
         title: "جنگو",
         en: "Django",
