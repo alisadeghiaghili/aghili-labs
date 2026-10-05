@@ -1,5 +1,5 @@
 /**
- * Learn with Ali — course catalog renderer.
+ * Aghili Labs — course catalog renderer.
  * Course metadata, category filters, and scroll reveal.
  */
 
@@ -1072,8 +1072,8 @@ async function setupVisitors() {
   const el = document.getElementById("stat-visitors");
   if (!el) return;
 
-  const STORAGE_KEY = "learn-with-ali:unique-visitors";
-  const badgeUrl = "https://api.visitorbadge.io/api/combined?path=learn-with-ali";
+  const STORAGE_KEY = "aghili-labs:unique-visitors";
+  const badgeUrl = "https://api.visitorbadge.io/api/combined?path=aghili-labs";
 
   /**
    * Parse the visitor count out of a visitorbadge SVG payload.

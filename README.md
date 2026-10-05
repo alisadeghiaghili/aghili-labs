@@ -1,4 +1,4 @@
-# Learn with Ali
+# Aghili Labs
 
 Landing page for the free interactive learning suite by **Ali Sadeghi Aghili**.
 

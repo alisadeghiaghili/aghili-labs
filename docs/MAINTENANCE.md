@@ -1,4 +1,4 @@
-# Learn with Ali — maintenance notes
+# Aghili Labs — maintenance notes
 
 ## Adding a course
 

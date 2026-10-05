@@ -1,10 +1,10 @@
-# Learn with Ali — Curriculum Roadmap
+# Aghili Labs — Curriculum Roadmap
 
-This document outlines the architectural roadmap and curriculum expansion for the **Learn with Ali** free interactive learning platform.
+This document outlines the architectural roadmap and curriculum expansion for the **Aghili Labs** free interactive learning platform.
 
 ## Curriculum Vision
 
-The mission of **Learn with Ali** is to provide rigorous, free, interactive, browser-executable education centered around:
+The mission of **Aghili Labs** is to provide rigorous, free, interactive, browser-executable education centered around:
 - **Data Engineering & Distributed Systems**
 - **Applied Statistics, Data Science & Machine Learning**
 - **Industrial Automation, Business Processes & Industry 4.0**
