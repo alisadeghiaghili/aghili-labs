@@ -1676,6 +1676,12 @@ function setupNav() {
   const links = document.getElementById("nav-links");
   if (!burger || !links) return;
 
+  const closeMenu = () => {
+    links.classList.remove("is-open");
+    burger.classList.remove("is-open");
+    burger.setAttribute("aria-expanded", "false");
+  };
+
   burger.addEventListener("click", () => {
     const open = links.classList.toggle("is-open");
     burger.classList.toggle("is-open", open);
@@ -1683,11 +1689,21 @@ function setupNav() {
   });
 
   links.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      links.classList.remove("is-open");
-      burger.classList.remove("is-open");
-      burger.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!links.classList.contains("is-open")) return;
+    const target = event.target;
+    if (target instanceof Element && !burger.contains(target) && !links.contains(target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && links.classList.contains("is-open")) {
+      closeMenu();
+    }
   });
 }
 
