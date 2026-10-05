@@ -949,14 +949,34 @@ h3 {
   color: #fff;
 }
 
-.course-card.is-soon {
+.course-card.is-planned {
   opacity: 0.78;
 }
 
-.course-card.is-soon:hover {
+.course-card.is-planned:hover {
   transform: none;
   box-shadow: none;
   border-color: var(--hairline);
+}
+
+.course-tag.status-published {
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--teal);
+}
+
+.course-tag.status-near-complete {
+  background: rgba(180, 83, 9, 0.1);
+  color: var(--gold);
+}
+
+.course-tag.status-in-development {
+  background: rgba(28, 25, 23, 0.06);
+  color: var(--ink-soft);
+}
+
+.course-tag.status-planned {
+  background: rgba(28, 25, 23, 0.05);
+  color: var(--ink-faint);
 }
 
 /* CTA band */

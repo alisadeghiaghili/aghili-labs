@@ -8,7 +8,7 @@
    - `title` / `en` — Persian display name and English label
    - `desc` — one sentence, Persian
    - `logo` — filename stem under `assets/logos/`
-   - `soon: true` when the course is not live yet
+   - `status` — `"published"` | `"near_complete"` | `"in_development"` | `"planned"`
 
 ## Re-generating placeholder marks
 

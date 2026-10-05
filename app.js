@@ -12,7 +12,7 @@ const BASE = "https://alisadeghiaghili.github.io";
  * @property {string} en
  * @property {string} desc
  * @property {string} logo
- * @property {boolean} [soon]
+ * @property {"published" | "near_complete" | "in_development" | "planned"} status
  */
 
 /** @type {Record<string, { title: string, blurb: string, courses: Course[] }>} */
@@ -27,6 +27,7 @@ const CATEGORIES = {
         en: "Python",
         desc: "از اتوماسیون ساده تا هوش مصنوعی، همه‌چیز از پایتون شروع می‌شود. مدل حافظه، ساختارهای داده و حل چالش‌های الگوریتمی قدم‌به‌قدم.",
         logo: "python",
+        status: "near_complete",
       },
       {
         slug: "learn-r",
@@ -34,6 +35,7 @@ const CATEGORIES = {
         en: "R",
         desc: "وقتی تحلیل آماری اولویت اول باشد، R بهترین انتخاب است. کار با داده در tidyverse، رسم نمودار با ggplot2 و شبیه‌سازی آماری.",
         logo: "r",
+        status: "published",
       },
       {
         slug: "learn-cpp",
@@ -41,6 +43,7 @@ const CATEGORIES = {
         en: "C++",
         desc: "کنترل مستقیم حافظه و سخت‌افزار برای نوشتن برنامه‌هایی با بیشترین سرعت ممکن. اشاره‌گرها، مدیریت منابع و الگوهای شیءگرا.",
         logo: "cpp",
+        status: "in_development",
       },
       {
         slug: "learn-rust",
@@ -48,6 +51,7 @@ const CATEGORIES = {
         en: "Rust",
         desc: "ایمنی حافظه بدون Garbage Collector و بدون هزینه اضافی در زمان اجرا. سیستم مالکیت، قرض‌گیری و همروندی بدون رقابت داده.",
         logo: "rust",
+        status: "in_development",
       },
       {
         slug: "learn-go",
@@ -55,7 +59,7 @@ const CATEGORIES = {
         en: "Go",
         desc: "ساده، سریع و ساخته‌شده برای سرویس‌های ابری. همروندی سبک با Goroutine و کانال‌ها، کامپایل سریع و باینری تک‌فایل آماده استقرار.",
         logo: "go",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-julia",
@@ -63,7 +67,7 @@ const CATEGORIES = {
         en: "Julia",
         desc: "سرعت C با خوانایی پایتون، بدون نیاز به بازنویسی کد. چندریختی پویا (Multiple Dispatch)، محاسبات عددی و جبر خطی بومی.",
         logo: "julia",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-java",
@@ -71,7 +75,7 @@ const CATEGORIES = {
         en: "Java",
         desc: "پایه زیرساخت‌های سازمانی از Hadoop تا Kafka. رفتار JVM، مدل حافظه، همروندی و اکوسیستم بزرگ کلان‌داده.",
         logo: "java",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-scala",
@@ -79,7 +83,7 @@ const CATEGORIES = {
         en: "Scala",
         desc: "زبان بومی Apache Spark برای پردازش کلان‌داده. ترکیب پارادایم تابعی و شیءگرا با سیستم نوع قوی و Pattern Matching.",
         logo: "scala",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-functional-programming",
@@ -87,7 +91,7 @@ const CATEGORIES = {
         en: "Functional Programming",
         desc: "یک شیوه متفاوت حل مسئله که کدتان را قابل‌پیش‌بینی‌تر می‌کند. تغییرناپذیری، توابع خالص، ترکیب‌پذیری و Monadها.",
         logo: "functional",
-        soon: true,
+        status: "near_complete",
       },
     ],
   },
@@ -101,6 +105,7 @@ const CATEGORIES = {
         en: "Bash",
         desc: "زبان مشترک همه سرورهای لینوکسی و پایپ‌لاین‌های CI/CD. جریان‌های ورودی/خروجی، پایپ‌ها و پردازش متن با sed و awk.",
         logo: "bash",
+        status: "in_development",
       },
       {
         slug: "learn-powershell",
@@ -108,6 +113,7 @@ const CATEGORIES = {
         en: "PowerShell",
         desc: "برخلاف شل‌های معمولی، هر خروجی یک شیء ساختاریافته است. خط‌لوله اشیاء، مدیریت ریموت و خودکارسازی ویندوز و لینوکس.",
         logo: "powershell",
+        status: "near_complete",
       },
       {
         slug: "learn-cmd",
@@ -115,6 +121,7 @@ const CATEGORIES = {
         en: "Windows CMD",
         desc: "هنوز هم ساده‌ترین راه برای خودکارسازی سریع در ویندوز. دستورات فایل‌سیستم، متغیرهای محیطی و نوشتن اسکریپت‌های Batch.",
         logo: "cmd",
+        status: "published",
       },
       {
         slug: "learn-linux",
@@ -122,6 +129,7 @@ const CATEGORIES = {
         en: "Linux / Ubuntu",
         desc: "بیش از ۹۰٪ سرورهای دنیا لینوکس اجرا می‌کنند. معماری هسته، مدیریت فرآیندها، مجوزهای دسترسی و فایل‌سیستم.",
         logo: "linux",
+        status: "near_complete",
       },
       {
         slug: "learn-git",
@@ -129,6 +137,7 @@ const CATEGORIES = {
         en: "Git",
         desc: "بدون تسلط بر Git، همکاری تیمی روی کد غیرممکن است. شاخه‌بندی، Rebase، حل تعارض و بازیابی تغییرات گم‌شده.",
         logo: "git",
+        status: "near_complete",
       },
       {
         slug: "learn-networking",
@@ -136,6 +145,7 @@ const CATEGORIES = {
         en: "Networking",
         desc: "وقتی سرویس‌تان جواب نمی‌دهد باید بدانید از کجا شروع کنید. TCP/IP، مدل لایه‌ای OSI، DNS، مسیریابی و عیب‌یابی عملی.",
         logo: "networking",
+        status: "in_development",
       },
       {
         slug: "learn-cryptography",
@@ -143,7 +153,7 @@ const CATEGORIES = {
         en: "Applied Cryptography",
         desc: "پشت هر اتصال امن و هر امضای دیجیتال، رمزنگاری ایستاده. توابع هش، رمزنگاری متقارن و نامتقارن، امضا و زنجیره گواهی‌ها.",
         logo: "cryptography",
-        soon: true,
+        status: "planned",
       },
     ],
   },
@@ -157,7 +167,7 @@ const CATEGORIES = {
         en: "Software Design & Clean Code",
         desc: "کدی که امروز می‌نویسید، فردا باید قابل تغییر باشد. اصول SOLID، الگوهای طراحی GoF، معماری لایه‌ای و بازآرایی عملی کد.",
         logo: "softwaredesign",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-testing",
@@ -165,7 +175,7 @@ const CATEGORIES = {
         en: "Testing & Quality Engineering",
         desc: "تنها راه اطمینان از درستی کد، تست کردن آن است. توسعه آزمون‌محور (TDD)، تست واحد و یکپارچه‌سازی با pytest و اعتبارسنجی کیفیت داده.",
         logo: "testing",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-technical-docs",
@@ -173,7 +183,7 @@ const CATEGORIES = {
         en: "Technical Docs & ADRs",
         desc: "تصمیمات معماری که مستند نشوند، فراموش و تکرار می‌شوند. ثبت ADRها، تدوین RFC، مشخصات API و مدیریت دانش تیم مهندسی.",
         logo: "technicaldocs",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-ddd",
@@ -181,7 +191,7 @@ const CATEGORIES = {
         en: "Domain-Driven Design in Data & AI",
         desc: "وقتی پیچیدگی کسب‌وکار از پیچیدگی فنی بیشتر می‌شود. زبان مشترک تیم، مرزهای دامنه، Aggregateها و کاربرد در معماری Data Mesh.",
         logo: "ddd",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-bpmn",
@@ -189,7 +199,7 @@ const CATEGORIES = {
         en: "Business Process Modeling (BPMN)",
         desc: "قبل از خودکارسازی هر فرآیند، باید بتوانید آن را دقیق مدل کنید. استاندارد BPMN 2.0، گیت‌وی‌های تصمیم، استخرها و اتصال به موتورهای اجرا.",
         logo: "bpmn",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-scientific-writing",
@@ -197,7 +207,7 @@ const CATEGORIES = {
         en: "Scientific Writing & Research",
         desc: "تحقیقی که بد نوشته شود، خوانده نمی‌شود. ساختار IMRAD، طراحی متدولوژی، تکرارپذیری آزمایش‌ها و آماده‌سازی برای داوری همتا.",
         logo: "scientificwriting",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-tech-interviews",
@@ -205,7 +215,7 @@ const CATEGORIES = {
         en: "Technical Interviewing for Data & Systems",
         desc: "دانستن جواب کافی نیست؛ باید بتوانید فکرتان را بلند بیان کنید. System Design، لایوکدینگ الگوریتم و SQL و دفاع از تصمیمات معماری.",
         logo: "techinterviews",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-ai-pm",
@@ -213,7 +223,7 @@ const CATEGORIES = {
         en: "AI Project Management & ROI",
         desc: "هدایت پروژه‌های داده و پیش‌بینی بازگشت سرمایه بدون غرق شدن در ابهامات. متدولوژی چابک برای مدل‌های احتمالاتی، چرخه عمر CRISP-DM، محاسبه TCO و توجیه اقتصادی استنتاج.",
         logo: "aipm",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-licensing",
@@ -221,7 +231,7 @@ const CATEGORIES = {
         en: "Software, Data & AI Licensing",
         desc: "استفاده از یک کتابخانه یا وزن مدل با لایسنس اشتباه می‌تواند کل محصول را با ریسک حقوقی مواجه کند. لایسنس‌های متن‌باز، شرایط استفاده تجاری از وزن مدل‌ها، کپی‌رایت دیتاست‌ها و الزامات قانونی تجاری‌سازی.",
         logo: "licensing",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-distributed-systems",
@@ -229,7 +239,7 @@ const CATEGORIES = {
         en: "Distributed Systems Architecture",
         desc: "اصول مهندسی سیستم‌هایی که روی صدها ماشین اجرا می‌شوند و نباید از کار بیفتند. قضیه CAP، الگوریتم‌های اجماع Raft و Paxos، شاردینگ، همگام‌سازی داده و الگوهای رویدادمحور.",
         logo: "distributedsystems",
-        soon: true,
+        status: "planned",
       },
     ],
   },
@@ -243,6 +253,7 @@ const CATEGORIES = {
         en: "Docker",
         desc: "«روی سیستم من کار می‌کنه» را برای همیشه تمام کنید. لایه‌بندی ایمیج‌ها، مدیریت شبکه و حجم کانتینرها، Dockerfile و Docker Compose.",
         logo: "docker",
+        status: "in_development",
       },
       {
         slug: "learn-aws",
@@ -250,6 +261,7 @@ const CATEGORIES = {
         en: "Amazon Web Services",
         desc: "بزرگ‌ترین اکوسیستم ابری جهان از دید یک مهندس داده. S3، EC2، Lambda، IAM و الگوهای معماری داده‌محور در ابر.",
         logo: "aws",
+        status: "in_development",
       },
       {
         slug: "learn-azure",
@@ -257,6 +269,7 @@ const CATEGORIES = {
         en: "Microsoft Azure",
         desc: "انتخاب اول سازمان‌هایی که اکوسیستم مایکروسافت دارند. Data Factory، دریاچه داده ADLS Gen2، Synapse Analytics و مدیریت منابع.",
         logo: "azure",
+        status: "in_development",
       },
       {
         slug: "learn-databricks",
@@ -264,7 +277,7 @@ const CATEGORIES = {
         en: "Databricks",
         desc: "ادغام انبار داده و دریاچه داده در یک معماری واحد. پلتفرم Lakehouse، پردازش با Spark، مدیریت Delta Lake و بهینه‌سازی کوئری‌ها.",
         logo: "databricks",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-snowflake",
@@ -272,6 +285,7 @@ const CATEGORIES = {
         en: "Snowflake",
         desc: "پردازش و ذخیره‌سازی مستقل از هم، یعنی هزینه و سرعت را جداگانه کنترل کنید. SQL مقیاس‌پذیر، Time Travel، Clone بدون کپی و اشتراک داده.",
         logo: "snowflake",
+        status: "in_development",
       },
       {
         slug: "learn-grafana",
@@ -279,6 +293,7 @@ const CATEGORIES = {
         en: "Grafana",
         desc: "قبل از اینکه کاربر مشکل را گزارش کند، شما باید ببینیدش. داشبوردهای زنده، اتصال به منابع متریک متنوع و تنظیم هشدارها.",
         logo: "grafana",
+        status: "in_development",
       },
       {
         slug: "learn-pkgm",
@@ -286,6 +301,7 @@ const CATEGORIES = {
         en: "pip · conda · uv",
         desc: "تعارض وابستگی‌ها رایج‌ترین علت خرابی محیط توسعه است. مقایسه pip، conda و uv، محیط‌های مجازی و بیلدهای تکرارپذیر.",
         logo: "pkgm",
+        status: "in_development",
       },
       {
         slug: "learn-kibana",
@@ -293,7 +309,7 @@ const CATEGORIES = {
         en: "Kibana",
         desc: "رابط بصری استک Elastic برای کاوش در میلیون‌ها رکورد لاگ. جستجو در Discover، ساخت داشبوردهای تحلیلی و مانیتورینگ توزیع‌شده.",
         logo: "kibana",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-logstash",
@@ -301,7 +317,7 @@ const CATEGORIES = {
         en: "Logstash",
         desc: "لاگ‌ها از ده‌ها منبع مختلف می‌آیند و باید یک‌جا جمع و یکدست شوند. دریافت بلادرنگ، پارس با الگوهای Grok و ارسال به Elasticsearch.",
         logo: "logstash",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-splunk",
@@ -309,7 +325,7 @@ const CATEGORIES = {
         en: "Splunk",
         desc: "تحلیل حجم انبوه لاگ‌های ماشینی و شناسایی تهدیدات امنیتی. مدیریت رویدادهای امنیتی (SIEM)، گزارش‌گیری و تسلط بر زبان SPL.",
         logo: "splunk",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-kubernetes",
@@ -317,7 +333,7 @@ const CATEGORIES = {
         en: "Kubernetes",
         desc: "استاندارد جهانی مدیریت و اجرای خودکار کانتینرها در مقیاس ابری. معماری کلاستر، پادها، سرویس‌ها، مدیریت وضعیت با StatefulSet و استقرار خودکار برنامه‌ها.",
         logo: "kubernetes",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-gcp",
@@ -325,7 +341,7 @@ const CATEGORIES = {
         en: "Google Cloud Platform",
         desc: "پلتفرم ابری پیشرو در کلان‌داده و هوش مصنوعی مدرن. ذخیره‌سازی ابری GCS، کوئری‌های مقیاس‌پذیر در BigQuery، سرویس‌های بدون سرور Cloud Run و اکوسیستم Vertex AI.",
         logo: "gcp",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-terraform",
@@ -333,7 +349,7 @@ const CATEGORIES = {
         en: "Terraform & IaC",
         desc: "مدیریت و ایجاد زیرساخت‌های ابری به صورت کد تکرارپذیر. ساختار HCL، چرخه حیات منابع، مدیریت State، ماژول‌نویسی و استقرار امن بر روی ابرها.",
         logo: "terraform",
-        soon: true,
+        status: "planned",
       },
     ],
   },
@@ -347,6 +363,7 @@ const CATEGORIES = {
         en: "SQL",
         desc: "هر مهندس داده‌ای، هر روز SQL می‌نویسد. کوئری‌های تودرتو، توابع پنجره‌ای، CTEها، ایندکس‌گذاری و بهینه‌سازی اجرا در سندباکس زنده.",
         logo: "sql",
+        status: "in_development",
       },
       {
         slug: "learn-dax",
@@ -354,6 +371,7 @@ const CATEGORIES = {
         en: "DAX",
         desc: "اگر با Power BI کار می‌کنید، بدون DAX در سطح می‌مانید. Filter Context، Row Context، تابع CALCULATE و ساخت معیارهای سفارشی.",
         logo: "dax",
+        status: "in_development",
       },
       {
         slug: "learn-m",
@@ -361,6 +379,7 @@ const CATEGORIES = {
         en: "M",
         desc: "داده‌های خام را قبل از رسیدن به مدل داده پاک‌سازی و شکل بدهید. پایپ‌لاین ETL در Power Query، فرمول‌های سفارشی M و ادغام منابع مختلف.",
         logo: "m",
+        status: "in_development",
       },
       {
         slug: "learn-spark",
@@ -368,6 +387,7 @@ const CATEGORIES = {
         en: "Apache Spark",
         desc: "وقتی داده‌ها در یک ماشین جا نمی‌شوند. پردازش توزیع‌شده با DataFrames، بهینه‌ساز Catalyst و پردازش سریع حافظه‌محور.",
         logo: "spark",
+        status: "in_development",
       },
       {
         slug: "learn-hadoop",
@@ -375,6 +395,7 @@ const CATEGORIES = {
         en: "Hadoop",
         desc: "بنیان‌گذار انقلاب کلان‌داده که هنوز زیرساخت بسیاری از سیستم‌هاست. فایل‌سیستم توزیع‌شده HDFS، مدل MapReduce و مدیریت منابع YARN.",
         logo: "hadoop",
+        status: "in_development",
       },
       {
         slug: "learn-mongodb",
@@ -382,7 +403,7 @@ const CATEGORIES = {
         en: "MongoDB",
         desc: "وقتی ساختار داده‌ها از پیش مشخص نیست یا مرتب تغییر می‌کند. مدل‌سازی اسناد JSON/BSON، ایندکس‌گذاری و Aggregation Pipeline.",
         logo: "mongodb",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-elasticsearch",
@@ -390,7 +411,7 @@ const CATEGORIES = {
         en: "Elasticsearch",
         desc: "جستجوی میلی‌ثانیه‌ای در میلیاردها سند. ایندکس معکوس، رتبه‌بندی BM25، جستجوی فازی و تحلیل‌گرهای متنی سفارشی.",
         logo: "elasticsearch",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-data-storytelling",
@@ -398,7 +419,7 @@ const CATEGORIES = {
         en: "Data Storytelling & Visualization",
         desc: "نمودار زیبا کافی نیست؛ باید داستانی بگوید که تصمیم‌ساز را قانع کند. اصول گشتالت، کاهش شلوغی بصری و روایت‌گری داده‌محور.",
         logo: "datastorytelling",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-data-modeling",
@@ -406,7 +427,7 @@ const CATEGORIES = {
         en: "Data Modeling & Dimensional Design",
         desc: "طراحی اشتباه مدل داده، عملکرد کل سیستم را زمین می‌زند. ERD، نرمال‌سازی، متدولوژی کیمبال، اسکیمای ستاره‌ای و تفاوت OLTP با OLAP.",
         logo: "datamodeling",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-data-governance",
@@ -414,7 +435,7 @@ const CATEGORIES = {
         en: "Data Governance & Quality",
         desc: "مدل ML شما به اندازه داده‌ای که می‌خورد خوب است. قراردادهای داده، ردیابی تبار داده، کاتالوگ متادیتا، حفاظت PII و قواعد کیفیت.",
         logo: "datagovernance",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-dashboard-kpi",
@@ -422,7 +443,7 @@ const CATEGORIES = {
         en: "Dashboard Design & KPI Strategy",
         desc: "داشبوردی که همه‌چیز را نشان بدهد، هیچ‌چیز نمی‌گوید. انتخاب شاخص‌های کلیدی، سنجه‌های پیشرو و پسرو، چیدمان بصری و مهار خستگی هشدار.",
         logo: "dashboardkpi",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-duckdb",
@@ -430,7 +451,7 @@ const CATEGORIES = {
         en: "DuckDB & Modern In-Process Analytics",
         desc: "اجرای کوئری‌های تحلیلی پرسرعت روی سیستم محلی بدون نیاز به راه‌اندازی سرورهای سنگین. موتور ستونی برداری، پردازش موازی، کار با فایل‌های Parquet و جایگزینی پرسرعت برای Pandas.",
         logo: "duckdb",
-        soon: true,
+        status: "planned",
       },
     ],
   },
@@ -444,6 +465,7 @@ const CATEGORIES = {
         en: "Data Version Control",
         desc: "Git فایل‌های حجیم را نمی‌فهمد؛ DVC این خلأ را پر می‌کند. نسخه‌بندی دیتاست‌ها و مدل‌ها، کش محلی و ریموت و بازتولید دقیق آزمایش‌ها.",
         logo: "dvc",
+        status: "published",
       },
       {
         slug: "learn-dbt",
@@ -451,6 +473,7 @@ const CATEGORIES = {
         en: "dbt",
         desc: "اصول مهندسی نرم‌افزار را به دنیای SQL بیاورید. مدل‌سازی ماژولار، گراف وابستگی، تست خودکار داده، مستندسازی و تحول داده درون انبار.",
         logo: "dbt",
+        status: "published",
       },
       {
         slug: "learn-airflow",
@@ -458,6 +481,7 @@ const CATEGORIES = {
         en: "Apache Airflow",
         desc: "مطمئن شوید هر مرحله از پایپ‌لاین داده در زمان و ترتیب درست اجرا می‌شود. تعریف DAG با پایتون، زمان‌بندی، مانیتورینگ و مدیریت خطا.",
         logo: "airflow",
+        status: "in_development",
       },
       {
         slug: "learn-kafka",
@@ -465,6 +489,7 @@ const CATEGORIES = {
         en: "Apache Kafka",
         desc: "وقتی داده‌ها باید لحظه‌ای جریان پیدا کنند، نه دسته‌ای. معماری Topic و Partition، تولیدکننده و مصرف‌کننده، تضمین تحویل و مقیاس‌پذیری افقی.",
         logo: "kafka",
+        status: "in_development",
       },
       {
         slug: "learn-mlflow",
@@ -472,6 +497,7 @@ const CATEGORIES = {
         en: "MLflow",
         desc: "بدون ردیابی آزمایش‌ها، تکرارپذیری فقط یک آرزوست. ثبت پارامترها و معیارها، بسته‌بندی مدل، رجیستری و استقرار در پروداکشن.",
         logo: "mlflow",
+        status: "in_development",
       },
       {
         slug: "learn-dataops",
@@ -479,7 +505,7 @@ const CATEGORIES = {
         en: "DataOps",
         desc: "اعمال اصول چابک و مهندسی نرم‌افزار بر خطوط لوله داده. یکپارچه‌سازی و تحویل مداوم (CI/CD)، تست خودکار کیفیت داده، رصد سلامت پایپ‌لاین و کاهش زمان تحویل ارزش تجاری.",
         logo: "dataops",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-mlops",
@@ -487,7 +513,7 @@ const CATEGORIES = {
         en: "MLOps",
         desc: "پل ارتباطی میان مدل‌های تجربی علم داده و سیستم‌های پایدار عملیاتی. آموزش مداوم (CT)، خودکارسازی استقرار، پایش رانش داده و مفهوم (Drift) و مدیریت چرخه عمر مدل در پروداکشن.",
         logo: "mlops",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-llmops",
@@ -495,7 +521,7 @@ const CATEGORIES = {
         en: "LLMOps & Model Serving",
         desc: "مدیریت، استقرار و بهینه‌سازی مدل‌های زبانی در مقیاس بالا. موتورهای استنتاج فوق‌سریع مانند vLLM و Triton، کشینگ معنایی، فریمورک‌های گاردریل، و پایش هزینه و تاخیر توکن‌ها.",
         logo: "llmops",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-mlsecops",
@@ -503,7 +529,7 @@ const CATEGORIES = {
         en: "MLSecOps & AI Security",
         desc: "حفاظت از پایپ‌لاین‌ها، داده‌ها و مدل‌های هوش مصنوعی در برابر حملات سایبری جدید. مقابله با تزریق پرامپت (Prompt Injection)، مسموم‌سازی دیتا، سرقت وزن مدل‌ها و ایمن‌سازی زنجیره تامین یادگیری ماشین.",
         logo: "mlsecops",
-        soon: true,
+        status: "planned",
       },
     ],
   },
@@ -517,6 +543,7 @@ const CATEGORIES = {
         en: "Machine Learning",
         desc: "از فرضیه تا مدلی که واقعاً قابل ارزیابی باشد. رگرسیون، دسته‌بندی، خوشه‌بندی، اعتبارسنجی متقاطع و مهندسی ویژگی با scikit-learn.",
         logo: "ml",
+        status: "near_complete",
       },
       {
         slug: "learn-mlmath",
@@ -524,7 +551,7 @@ const CATEGORIES = {
         en: "ML Math",
         desc: "بدون ریاضی، مدل ML یک جعبه سیاه باقی می‌ماند. جبر خطی، مشتق‌گیری ماتریسی، بهینه‌سازی گرادیانی و شهود هندسی فضاهای برداری.",
         logo: "mlmath",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-mlstats",
@@ -532,7 +559,7 @@ const CATEGORIES = {
         en: "ML Statistics",
         desc: "تفاوت بین «به نظر کار می‌کند» و «اثبات آماری دارد». آزمون فرض، استنباط بیزی، توزیع‌های احتمال، فاصله اطمینان و تحلیل واریانس.",
         logo: "mlstats",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-ts",
@@ -540,6 +567,7 @@ const CATEGORIES = {
         en: "Time Series & Forecasting",
         desc: "فروش فردا، ترافیک هفته آینده، تقاضای فصل بعد. تجزیه روند و فصلی‌بودن، آزمون مانایی، مدل‌های ARIMA و Prophet و پیش‌بینی با شبکه‌های عصبی.",
         logo: "timeseries",
+        status: "near_complete",
       },
       {
         slug: "learn-dl",
@@ -547,6 +575,7 @@ const CATEGORIES = {
         en: "Deep Learning",
         desc: "از پرسپترون ساده تا شبکه‌هایی که خودشان ویژگی استخراج می‌کنند. توابع فعال‌ساز، پس‌انتشار خطا و آموزش عملی مدل با PyTorch.",
         logo: "dl",
+        status: "in_development",
       },
       {
         slug: "learn-rl",
@@ -554,6 +583,7 @@ const CATEGORIES = {
         en: "Reinforcement Learning",
         desc: "عاملی که با آزمون و خطا یاد می‌گیرد بهترین تصمیم را بگیرد. فرآیندهای مارکوف، Q-Learning، Deep Q-Networks و روش‌های Policy Gradient.",
         logo: "rl",
+        status: "in_development",
       },
       {
         slug: "learn-nlp",
@@ -561,6 +591,7 @@ const CATEGORIES = {
         en: "NLP",
         desc: "به ماشین بیاموزید متن انسانی را بخواند، بفهمد و تولید کند. توکن‌سازی، بازنمایی برداری، مدل‌های توالی و تحلیل معنایی.",
         logo: "nlp",
+        status: "in_development",
       },
       {
         slug: "learn-cv",
@@ -568,6 +599,7 @@ const CATEGORIES = {
         en: "Computer Vision",
         desc: "به ماشین بیاموزید تصاویر را ببیند و تفسیر کند. شبکه‌های پیچشی (CNN)، آشکارسازی اشیاء، تقسیم‌بندی تصویر و استخراج ویژگی‌های بصری.",
         logo: "cv",
+        status: "in_development",
       },
       {
         slug: "learn-datastructure",
@@ -575,6 +607,7 @@ const CATEGORIES = {
         en: "Data Structures",
         desc: "انتخاب ساختار داده نادرست، الگوریتم درست را هم کند می‌کند. آرایه، لیست پیوندی، پشته، صف، هش‌مپ، درخت، هرم و گراف در سندباکس تعاملی.",
         logo: "datastructure",
+        status: "in_development",
       },
       {
         slug: "learn-algorithm",
@@ -582,6 +615,7 @@ const CATEGORIES = {
         en: "Algorithms",
         desc: "تفاوت بین راه‌حلی که فقط کار می‌کند و راه‌حلی که مقیاس می‌شود. تحلیل Big-O، جستجو، مرتب‌سازی، برنامه‌نویسی پویا و الگوریتم‌های گراف.",
         logo: "algorithm",
+        status: "in_development",
       },
       {
         slug: "learn-llm",
@@ -589,7 +623,7 @@ const CATEGORIES = {
         en: "Large Language Models",
         desc: "درکی عمیق از فناوری‌ای که صنعت را متحول کرده. مکانیزم توجه، معماری ترنسفورمر، مهندسی پرامپت، روش‌های تطبیق وزن‌ها (LoRA) و ترازسازی مدل.",
         logo: "llm",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-ml-patterns",
@@ -597,7 +631,7 @@ const CATEGORIES = {
         en: "ML Design Patterns",
         desc: "راه‌حل‌های اثبات‌شده برای مسائل تکراری در مسیر آزمایشگاه تا پروداکشن. بازنمایی ویژگی، Cascade، Checkpoint، Feature Store و استقرار تاب‌آور.",
         logo: "mlpatterns",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-critical-thinking",
@@ -605,7 +639,7 @@ const CATEGORIES = {
         en: "Critical Thinking in Data & AI",
         desc: "همبستگی علیت نیست و هر عدد معنادار، لزوماً معنادار نیست. شناسایی همبستگی‌های کاذب، پارادوکس سیمپسون، سوگیری داده و خطرات p-hacking.",
         logo: "criticalthinking",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-rag",
@@ -613,7 +647,7 @@ const CATEGORIES = {
         en: "RAG & Vector Databases",
         desc: "پیوند مدل‌های زبانی به پایگاه‌های دانش اختصاصی بدون نیاز به آموزش پرهزینه مجدد. امبدینگ‌ها، الگوریتم‌های جستجوی برداری HNSW، پایگاه‌های داده برداری، رتبه‌بندی مجدد و ساخت پایپ‌لاین‌های پیشرفته بازیابی.",
         logo: "rag",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-agents",
@@ -621,7 +655,7 @@ const CATEGORIES = {
         en: "AI Agents & Multi-Agent Systems",
         desc: "گذار از چت‌بات‌های متنی ساده به سیستم‌های مستقلی که می‌توانند ابزارها را اجرا کنند و برنامه‌ریزی نمایند. الگوی ReAct، پروتکل باز MCP، حافظه و برنامه‌ریزی، و هماهنگ‌سازی چندین عامل همکار.",
         logo: "agents",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-optimization",
@@ -629,7 +663,7 @@ const CATEGORIES = {
         en: "Operations Research & Optimization",
         desc: "حل دقیق مسائل پیچیده تصمیم‌گیری، زمان‌بندی و زنجیره تامین که با یادگیری ماشین سنتی حل نمی‌شوند. برنامه‌ریزی خطی، عدد صحیح و الگوریتم‌های بهینه‌سازی با پایتون و OR-Tools.",
         logo: "optimization",
-        soon: true,
+        status: "planned",
       },
     ],
   },
@@ -643,7 +677,7 @@ const CATEGORIES = {
         en: "Web Fundamentals & DOM Architecture",
         desc: "درک عمیق از نحوه کارکرد وب‌سرورها، پروتکل HTTP و ساختار درختی DOM در مرورگر. تگ‌های HTML، سلکتورهای کاربردی CSS، رندرینگ کلاینت (CSR/SSR) و مبانی تعامل با صفحه از طریق جاوااسکریپت.",
         logo: "webfundamentals",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-django",
@@ -651,6 +685,7 @@ const CATEGORIES = {
         en: "Django",
         desc: "همه‌چیز از پنل مدیریت تا ORM و احراز هویت، از پیش آماده است. معماری MTV، سیستم مهاجرت و ساخت سریع سامانه‌های داده‌محور.",
         logo: "django",
+        status: "in_development",
       },
       {
         slug: "learn-flask",
@@ -658,6 +693,7 @@ const CATEGORIES = {
         en: "Flask",
         desc: "فقط آنچه نیاز دارید، نه بیشتر. چرخه درخواست HTTP، مسیریابی، قالب‌سازی Jinja و ساخت APIها و سرویس‌های سبک.",
         logo: "flask",
+        status: "in_development",
       },
       {
         slug: "learn-streamlit",
@@ -665,6 +701,7 @@ const CATEGORIES = {
         en: "Streamlit",
         desc: "فرانت‌اند بلد نیستید؟ فقط پایتون بنویسید. ویجت‌های تعاملی، کش داده، نمودارهای زنده و ساخت داشبوردهای ML در دقایق.",
         logo: "streamlit",
+        status: "in_development",
       },
       {
         slug: "learn-shiny",
@@ -672,6 +709,7 @@ const CATEGORIES = {
         en: "Shiny",
         desc: "تحلیل آماری R یا پایتون‌تان را مستقیماً تبدیل به اپلیکیشن وب کنید. برنامه‌نویسی واکنش‌گرا، ویجت‌های تعاملی و نمودارهای پویا.",
         logo: "shiny",
+        status: "in_development",
       },
       {
         slug: "learn-api",
@@ -679,6 +717,7 @@ const CATEGORIES = {
         en: "API",
         desc: "مدل ML شما بدون API قابل استفاده نیست. اصول REST، اعتبارسنجی با Pydantic، مستندسازی خودکار OpenAPI و پیاده‌سازی با FastAPI.",
         logo: "api",
+        status: "in_development",
       },
       {
         slug: "learn-scraping",
@@ -686,6 +725,7 @@ const CATEGORIES = {
         en: "Web Scraping",
         desc: "داده‌ای که نیاز دارید همیشه API ندارد. پروتکل HTTP، پارس HTML با BeautifulSoup، اتوماسیون مرورگر با Selenium و الگوهای کراولر صنعتی.",
         logo: "scraping",
+        status: "in_development",
       },
     ],
   },
@@ -699,7 +739,7 @@ const CATEGORIES = {
         en: "Arduino",
         desc: "دنیای فیزیکی را با کد کنترل کنید. خواندن سنسورها، فرمان دادن به موتورها، پروتکل‌های I2C و SPI و پروژه‌های عملی IoT.",
         logo: "arduino",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-raspberrypi",
@@ -707,7 +747,7 @@ const CATEGORIES = {
         en: "Raspberry Pi",
         desc: "یک کامپیوتر کامل لینوکسی در کف دست شما. برنامه‌نویسی GPIO، پردازش داده در لبه شبکه، مانیتورینگ خطوط تولید و اتصال به ابر.",
         logo: "raspberrypi",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-enterprise-blockchain",
@@ -715,7 +755,7 @@ const CATEGORIES = {
         en: "Enterprise Blockchain",
         desc: "وقتی اعتماد بین طرف‌ها باید با فناوری تضمین شود، نه قرارداد کاغذی. رهگیری تغییرناپذیر زنجیره تأمین، قراردادهای هوشمند و Hyperledger Fabric.",
         logo: "blockchain",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-iiot",
@@ -723,7 +763,7 @@ const CATEGORIES = {
         en: "Industrial IoT & Edge Protocols",
         desc: "پل ارتباطی میان تجهیزات صنعتی در کارخانه‌ها و پلتفرم‌های تحلیل داده ابری. پروتکل‌های ارتباطی استانداردی چون MQTT و OPC-UA، پردازش تله‌متری بلادرنگ و امنیت داده در لبه شبکه.",
         logo: "iiot",
-        soon: true,
+        status: "planned",
       },
       {
         slug: "learn-tinyml",
@@ -731,7 +771,7 @@ const CATEGORIES = {
         en: "TinyML & Embedded AI",
         desc: "اجرای مدل‌های یادگیری عمیق روی میکروکنترلرهای کوچک با مصرف انرژی در حد میلی‌وات. فشرده‌سازی و کوانتیزاسیون وزن‌ها، کار با TensorFlow Lite for Microcontrollers و بینایی ماشین سبک در سخت‌افزارهای امبدد.",
         logo: "tinyml",
-        soon: true,
+        status: "planned",
       },
     ],
   },
@@ -791,23 +831,48 @@ function formatDesc(text) {
 }
 
 /**
+ * Metadata map for course development statuses.
+ * @type {Record<"published" | "near_complete" | "in_development" | "planned", { label: string, className: string }>}
+ */
+const STATUS_META = {
+  published: {
+    label: "منتشرشده",
+    className: "status-published",
+  },
+  near_complete: {
+    label: "تقریباً تمام",
+    className: "status-near-complete",
+  },
+  in_development: {
+    label: "در حال توسعه",
+    className: "status-in-development",
+  },
+  planned: {
+    label: "برنامهریزیشده",
+    className: "status-planned",
+  },
+};
+
+/**
  * Build a course card element.
  *
  * @param {Course} course
  * @returns {HTMLElement}
  */
 function createCourseCard(course) {
+  const meta = STATUS_META[course.status] || STATUS_META.in_development;
+  const isPlanned = course.status === "planned";
   const courseUrl = `${BASE}/${course.slug}/`;
   const card = document.createElement("article");
-  card.className = `course-card reveal${course.soon ? " is-soon" : ""}`;
+  card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
 
   card.innerHTML = `
     <div class="course-top">
-      <a class="course-logo" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-label="${escapeHtml(course.title)}">
+      <a class="course-logo" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-label="${escapeHtml(course.title)}">
         <img src="assets/logos/${course.logo}.svg" alt="" width="48" height="48" loading="lazy" />
       </a>
       <div class="course-heading">
-        <a class="course-title-link" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'}>
+        <a class="course-title-link" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>
           <p class="course-title">${formatTitle(course.title)}</p>
           <p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>
         </a>
@@ -823,8 +888,8 @@ function createCourseCard(course) {
     </div>
     <p class="course-desc">${formatDesc(course.desc)}</p>
     <div class="course-foot">
-      <a class="course-tag" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'}>${course.soon ? "به‌زودی" : "شروع یادگیری"}</a>
-      <a class="course-go" href="${course.soon ? "#courses" : courseUrl}"${course.soon ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-hidden="true">${course.soon ? "…" : "↗"}</a>
+      <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(meta.label)}</a>
+      <a class="course-go" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-hidden="true">${isPlanned ? "…" : "↗"}</a>
     </div>
   `;
 
