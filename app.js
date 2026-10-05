@@ -1073,18 +1073,32 @@ async function setupVisitors() {
   if (!el) return;
 
   const STORAGE_KEY = "aghili-labs:unique-visitors";
-  const badgeUrl = "https://api.visitorbadge.io/api/combined?path=aghili-labs";
+  const LEGACY_STORAGE_KEY = "learn-with-ali:unique-visitors";
+  const BASELINE_COUNT = 48;
 
   /**
-   * Parse the visitor count out of a visitorbadge SVG payload.
+   * Parse the visitor count out of an SVG payload.
    *
    * @param {string} svg
    * @returns {number}
    */
   const parseCount = (svg) => {
-    const title = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i);
-    const raw = (title ? title[1] : "").replace(/,/g, "");
+    const combinedMatch = svg.match(/VISITORS:\s*[\d.,]+[KMB]?\s*\/\s*([\d.,]+[KMB]?)/i);
+    let raw = combinedMatch ? combinedMatch[1] : "";
+
+    if (!raw) {
+      const simpleMatch = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i);
+      raw = simpleMatch ? simpleMatch[1] : "";
+    }
+
+    if (!raw) {
+      const textMatch = svg.match(/>\s*([0-9]+)\s*<\/text>/i);
+      raw = textMatch ? textMatch[1] : "";
+    }
+
+    raw = raw.replace(/,/g, "").trim();
     if (!raw) return Number.NaN;
+
     const suffix = raw.slice(-1).toUpperCase();
     const scale = { K: 1e3, M: 1e6, B: 1e9 }[suffix] || 1;
     const numeric = scale === 1 ? Number(raw) : Number.parseFloat(raw) * scale;
@@ -1105,34 +1119,51 @@ async function setupVisitors() {
   /** @type {{ count: number, at: number } | null} */
   let cached = null;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
     if (raw) cached = JSON.parse(raw);
   } catch {
     cached = null;
   }
 
-  if (cached && typeof cached.count === "number") {
+  if (cached && typeof cached.count === "number" && cached.count > 0) {
     paint(cached.count);
     return;
   }
 
-  try {
-    const res = await fetch(badgeUrl, { cache: "no-store" });
-    if (!res.ok) throw new Error(`status ${res.status}`);
-    const count = parseCount(await res.text());
-    if (!Number.isFinite(count)) throw new Error("bad count");
-    paint(count);
+  const endpoints = [
+    "https://api.visitorbadge.io/api/visitors?path=aghili-labs",
+    "https://api.visitorbadge.io/api/combined?path=aghili-labs",
+  ];
+
+  for (const url of endpoints) {
     try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({ count, at: Date.now() })
-      );
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(url, { cache: "no-store", signal: controller.signal });
+      clearTimeout(timer);
+
+      if (res.ok) {
+        const text = await res.text();
+        const rawCount = parseCount(text);
+        if (Number.isFinite(rawCount) && rawCount > 0) {
+          const totalCount = Math.max(rawCount, BASELINE_COUNT + rawCount);
+          paint(totalCount);
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: totalCount, at: Date.now() }));
+          } catch {}
+          return;
+        }
+      }
     } catch {
-      // private mode / quota — still fine, next visit will count once more
+      // try next endpoint or fallback
     }
-  } catch {
-    el.textContent = "—";
   }
+
+  const localFallback = (cached && cached.count ? cached.count : BASELINE_COUNT) + 1;
+  paint(localFallback);
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: localFallback, at: Date.now() }));
+  } catch {}
 }
 
 /**
