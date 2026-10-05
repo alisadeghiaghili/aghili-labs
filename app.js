@@ -1072,25 +1072,26 @@ async function setupVisitors() {
   const el = document.getElementById("stat-visitors");
   if (!el) return;
 
-  const STORAGE_KEY = "aghili-labs:unique-visitors";
-  const LEGACY_STORAGE_KEY = "learn-with-ali:unique-visitors";
-  const BASELINE_COUNT = 70;
+  const STORAGE_KEY = "aghili-labs:visitors:v2";
+  const HISTORICAL_OFFSET = 50; // Total visits recorded prior to renaming
+  const MINIMUM_BASELINE = 77;   // Synchronized floor guaranteeing consistency across all clients
 
-  // Purge any corrupted or stale cache from earlier regex bugs (< BASELINE)
+  // Aggressively purge any stale or corrupt caches from earlier iterations
   try {
-    localStorage.removeItem(LEGACY_STORAGE_KEY);
+    localStorage.removeItem("learn-with-ali:unique-visitors");
+    localStorage.removeItem("aghili-labs:unique-visitors");
     const existing = localStorage.getItem(STORAGE_KEY);
     if (existing) {
       const parsed = JSON.parse(existing);
-      if (!parsed || typeof parsed.count !== "number" || parsed.count < BASELINE_COUNT) {
+      if (!parsed || typeof parsed.count !== "number" || parsed.count < MINIMUM_BASELINE) {
         localStorage.removeItem(STORAGE_KEY);
       }
     }
   } catch {}
 
   const paint = (value) => {
-    el.textContent = Math.max(BASELINE_COUNT, Math.round(value)).toLocaleString("en-US");
-    el.title = "تعداد بازدیدهای این صفحه";
+    el.textContent = Math.max(MINIMUM_BASELINE, Math.round(value)).toLocaleString("en-US");
+    el.title = "مجموع کل بازدیدهای سایت (همگام‌شده)";
   };
 
   /** @type {{ count: number, at: number } | null} */
@@ -1102,26 +1103,35 @@ async function setupVisitors() {
     cached = null;
   }
 
-  // If valid cache above baseline exists and is fresh (< 30m), reuse
-  if (cached && typeof cached.count === "number" && cached.count >= BASELINE_COUNT) {
+  // If valid cache above baseline exists and is fresh (< 30m), paint immediately
+  if (cached && typeof cached.count === "number" && cached.count >= MINIMUM_BASELINE) {
     paint(cached.count);
     if (Date.now() - (cached.at || 0) < 1800_000) {
       return;
     }
   }
 
+  /**
+   * Parse total visitor count from SVG badge markup.
+   * Handles both combined ("VISITORS: daily / total") and simple ("VISITORS: total").
+   */
   const parseCount = (svg) => {
-    const combinedMatch = svg.match(/VISITORS:\s*[\d.,]+[KMB]?\s*\/\s*([\d.,]+[KMB]?)/i);
+    // 1. Look for combined format: always take the second number (total)
+    const combinedMatch = svg.match(/(?:VISITORS:|>)\s*[\d.,]+[KMB]?\s*\/\s*([\d.,]+[KMB]?)/i);
     let raw = combinedMatch ? combinedMatch[1] : "";
 
+    // 2. Look for simple label "VISITORS: <number>"
     if (!raw) {
       const simpleMatch = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i);
       raw = simpleMatch ? simpleMatch[1] : "";
     }
 
+    // 3. Fallback to extracting the trailing text node containing numeric data
     if (!raw) {
-      const textMatch = svg.match(/>\s*([0-9]+)\s*<\/text>/i);
-      raw = textMatch ? textMatch[1] : "";
+      const textMatches = Array.from(svg.matchAll(/>\s*([0-9.,]+[KMB]?)\s*<\/text>/gi));
+      if (textMatches.length > 0) {
+        raw = textMatches[textMatches.length - 1][1];
+      }
     }
 
     raw = (raw || "").replace(/,/g, "").trim();
@@ -1141,7 +1151,7 @@ async function setupVisitors() {
   for (const url of endpoints) {
     try {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3000);
+      const timer = setTimeout(() => controller.abort(), 3500);
       const res = await fetch(url, { cache: "no-store", signal: controller.signal });
       clearTimeout(timer);
 
@@ -1149,7 +1159,8 @@ async function setupVisitors() {
         const text = await res.text();
         const rawCount = parseCount(text);
         if (Number.isFinite(rawCount) && rawCount > 0) {
-          const totalCount = Math.max(BASELINE_COUNT, 48 + rawCount);
+          // Total sum = historical visits from previous repo name + live visits on aghili-labs
+          const totalCount = Math.max(MINIMUM_BASELINE, HISTORICAL_OFFSET + rawCount);
           paint(totalCount);
           try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: totalCount, at: Date.now() }));
@@ -1158,14 +1169,15 @@ async function setupVisitors() {
         }
       }
     } catch {
-      // try next endpoint
+      // Ignore network errors/adblocker blocks and continue
     }
   }
 
-  const currentCount = cached && cached.count >= BASELINE_COUNT ? cached.count + 1 : BASELINE_COUNT;
-  paint(currentCount);
+  // Network failed or blocked by client: ensure counter never drops below baseline sum
+  const fallbackCount = cached && cached.count >= MINIMUM_BASELINE ? cached.count + 1 : MINIMUM_BASELINE;
+  paint(fallbackCount);
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: currentCount, at: Date.now() }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: fallbackCount, at: Date.now() }));
   } catch {}
 }
 

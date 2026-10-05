@@ -16,5 +16,5 @@ with sync_playwright() as p:
     page.reload(wait_until="networkidle")
     page.wait_for_timeout(1200)
     print("second visit:", page.locator("#stat-visitors").inner_text())
-    print("storage:", page.evaluate("() => localStorage.getItem('aghili-labs:unique-visitors')"))
+    print("storage:", page.evaluate("() => localStorage.getItem('aghili-labs:visitors:v2')"))
     browser.close()
