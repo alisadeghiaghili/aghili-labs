@@ -191,17 +191,53 @@
             </div>
 
             <div class="support-grid">
-              <article class="support-card reveal">
+              <article class="support-card reveal support-card-donate">
                 <div class="support-icon" aria-hidden="true">◆</div>
                 <h3 data-i18n="supportDonateTitle">دونیت</h3>
                 <p data-i18n="supportDonateBody">
                   کمک مالی کوچک هم اثر دارد. اگر این آموزش‌ها مسیر کاری یا یادگیری شما را
                   تغییر داده، یک دونیت چرخهٔ ساخت دوره‌های بعدی را روشن نگه می‌دارد.
                 </p>
-                <a class="btn btn-primary btn-block" href="https://github.com/sponsors/alisadeghiaghili" target="_blank" rel="noopener noreferrer">
-                  <span data-i18n="supportDonateBtn">حمایت مالی</span>
-                  <span class="btn-icon" aria-hidden="true">↗</span>
-                </a>
+
+                <!-- Dual Donation Switcher: CoffeeBede & Buy Me a Coffee -->
+                <div class="donate-switcher" role="tablist" aria-label="Donation methods">
+                  <button type="button" class="donate-tab-btn is-active" data-donate-target="domestic" role="tab" aria-selected="true" data-i18n="donateTabDomestic">
+                    ریالی (کافی‌بده)
+                  </button>
+                  <button type="button" class="donate-tab-btn" data-donate-target="international" role="tab" aria-selected="false" data-i18n="donateTabInternational">
+                    ارزی (Buy Me a Coffee)
+                  </button>
+                </div>
+
+                <!-- Domestic Panel (CoffeeBede) -->
+                <div class="donate-panel is-active" id="donate-panel-domestic" role="tabpanel">
+                  <div class="donate-qr-wrap">
+                    <img class="donate-qr-img" src="assets/qr-coffeebede.png" alt="QR Code کافی‌بده" width="110" height="110" loading="lazy" />
+                    <span class="donate-qr-hint" data-i18n="donateQrHintDomestic">اسکن با دوربین برای پرداخت سریع ریالی</span>
+                  </div>
+                  <a class="btn btn-primary btn-block btn-donate-action" href="https://www.coffeebede.com/alisadeghiaghili" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="donateBtnDomestic">پرداخت با کافی‌بده</span>
+                    <span class="btn-icon" aria-hidden="true">↗</span>
+                  </a>
+                  <div class="donate-banner-wrap">
+                    <a href="https://www.coffeebede.com/alisadeghiaghili" target="_blank" rel="noopener">
+                      <img class="donate-banner-img" src="https://www.coffeebede.com/banner.svg?u=alisadeghiaghili" width="468" height="100" alt="برام یه قهوه بخر" loading="lazy" />
+                    </a>
+                  </div>
+                </div>
+
+                <!-- International Panel (Buy Me a Coffee) -->
+                <div class="donate-panel" id="donate-panel-international" role="tabpanel" hidden>
+                  <div class="donate-qr-wrap">
+                    <img class="donate-qr-img" src="assets/qr-buymeacoffee.png" alt="QR Code Buy Me a Coffee" width="110" height="110" loading="lazy" />
+                    <span class="donate-qr-hint" data-i18n="donateQrHintInternational">اسکن برای پرداخت ارزی با Buy Me a Coffee</span>
+                  </div>
+                  <a class="btn btn-bmc btn-block btn-donate-action" href="https://buymeacoffee.com/alisadeghil" target="_blank" rel="noopener noreferrer">
+                    <span>☕ Buy me a coffee</span>
+                    <span class="btn-icon" aria-hidden="true">↗</span>
+                  </a>
+
+                </div>
               </article>
 
               <article class="support-card reveal" style="--delay: 80ms">
@@ -283,7 +319,7 @@
             اگر همین یک جمله را قبول دارید، کمک کنید این مسیر برای نفر بعدی هم باز بماند.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://github.com/sponsors/alisadeghiaghili" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-primary" href="#support">
               <span data-i18n="ctaDonate">حمایت مالی</span>
               <span class="btn-icon" aria-hidden="true">↗</span>
             </a>
@@ -312,7 +348,8 @@
           <a href="https://github.com/alisadeghiaghili" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://linktr.ee/aliaghili" target="_blank" rel="noopener noreferrer">Linktree</a>
           <a href="https://zil.ink/thedatascientist" target="_blank" rel="noopener noreferrer">zil.ink</a>
-          <a href="https://github.com/sponsors/alisadeghiaghili" target="_blank" rel="noopener noreferrer">Sponsors</a>
+          <a href="https://www.coffeebede.com/alisadeghiaghili" target="_blank" rel="noopener noreferrer">CoffeeBede</a>
+          <a href="https://buymeacoffee.com/alisadeghil" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
         </div>
       </div>
       <div class="container footer-base">
@@ -320,6 +357,6 @@
       </div>
     </footer>
 
-    <script src="app.js?v=20261005_v6"></script>
+    <script src="app.js?v=20261005_v7"></script>
   </body>
 </html>

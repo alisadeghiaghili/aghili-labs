@@ -1147,6 +1147,12 @@ const I18N = {
     supportContribTitle: "مشارکت",
     supportContribBody: "باگ، بهبود مستندات، ترجمه، مثال نو، یا ایدهٔ سطح جدید — هر مشارکت فنی همان‌قدر ارزشمند است که حمایت مالی. مخزن‌ها روی گیت‌هاب باز هستند.",
     supportContribBtn: "گیت‌هاب من",
+    donateTabDomestic: "ریالی (کافی‌بده)",
+    donateTabInternational: "ارزی (Buy Me a Coffee)",
+    donateQrHintDomestic: "اسکن با دوربین برای پرداخت سریع ریالی",
+    donateQrHintInternational: "اسکن برای پرداخت ارزی با Buy Me a Coffee",
+    donateBtnDomestic: "پرداخت با کافی‌بده",
+    donateBtnInternational: "Buy Me a Coffee",
     coursesHeading: "یک مسیر یادگیری، نُه دسته",
     coursesLede: "از پایهٔ برنامه‌نویسی تا مهندسی داده، یادگیری ماشین و ابر. هر دوره یک دکمه است — روی هر کدام کلیک کنید و مستقیم وارد محیط تعاملی شوید.",
     searchPlaceholder: "جستجوی دوره‌ها…",
@@ -1242,6 +1248,12 @@ const I18N = {
     supportContribTitle: "Contribute",
     supportContribBody: "Bug fixes, documentation improvements, translations, new interactive challenges, or architecture reviews—every technical contribution is deeply appreciated.",
     supportContribBtn: "My GitHub",
+    donateTabDomestic: "Iran / Rial (CoffeeBede)",
+    donateTabInternational: "International (Buy Me a Coffee)",
+    donateQrHintDomestic: "Scan to support via CoffeeBede (Rial)",
+    donateQrHintInternational: "Scan to support via Buy Me a Coffee",
+    donateBtnDomestic: "Support with CoffeeBede",
+    donateBtnInternational: "Buy Me a Coffee",
     coursesHeading: "One Learning Path, Nine Disciplines",
     coursesLede: "From programming fundamentals to data engineering, machine learning, and cloud. Each course is an interactive in-browser sandbox—click any card to launch immediately.",
     searchPlaceholder: "Search courses…",
@@ -1739,6 +1751,12 @@ function setLanguage(lang) {
   } catch {}
 
   renderCourses();
+  // Align donation tab with current language
+  const defaultTab = lang === "fa" ? "domestic" : "international";
+  const targetBtn = document.querySelector(`.donate-tab-btn[data-donate-target="${defaultTab}"]`);
+  if (targetBtn && !targetBtn.classList.contains("is-active")) {
+    targetBtn.click();
+  }
 }
 
 /**
@@ -1943,6 +1961,36 @@ showToast.timer = undefined;
  *
  * @returns {void}
  */
+
+/**
+ * Setup donation method switcher (CoffeeBede vs Buy Me a Coffee).
+ *
+ * @returns {void}
+ */
+function setupDonateTabs() {
+  const switcher = document.querySelector(".donate-switcher");
+  if (!switcher) return;
+
+  switcher.addEventListener("click", (e) => {
+    const btn = e.target.closest(".donate-tab-btn");
+    if (!btn) return;
+    const target = btn.dataset.donateTarget;
+    if (!target) return;
+
+    switcher.querySelectorAll(".donate-tab-btn").forEach((b) => {
+      const active = b === btn;
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    document.querySelectorAll(".donate-panel").forEach((panel) => {
+      const match = panel.id === `donate-panel-${target}`;
+      panel.classList.toggle("is-active", match);
+      panel.hidden = !match;
+    });
+  });
+}
+
 function setupShare() {
   const root = document.getElementById("course-root");
   if (!root) return;
@@ -1988,6 +2036,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupStats();
   setupVisitors();
   setupShare();
+  setupDonateTabs();
   setupReveal();
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());

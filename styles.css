@@ -1275,3 +1275,123 @@ html.js .reveal.is-in {
   text-align-last: start;
 }
 
+
+/* Dual Donation Switcher & Panels */
+.support-card-donate {
+  display: flex;
+  flex-direction: column;
+}
+
+.donate-switcher {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  margin-top: 1.1rem;
+}
+
+.donate-tab-btn {
+  flex: 1;
+  padding: 0.45rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--radius-sm) - 2px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  }
+
+.donate-tab-btn:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.donate-tab-btn.is-active {
+  color: #1c1917;
+  background: #fcd34d;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.donate-panel {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.donate-panel.is-active {
+  display: flex;
+}
+
+.donate-qr-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.85rem;
+}
+
+.donate-qr-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 0.35rem;
+  display: block;
+}
+
+.donate-qr-hint {
+  font-size: 0.68rem;
+  color: #57534e;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn-donate-action {
+  margin-top: 0;
+  width: 100%;
+}
+
+.btn-bmc {
+  background: #FFDD00;
+  color: #000000;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.btn-bmc:hover {
+  background: #ffe333;
+  color: #000000;
+}
+
+.btn-bmc .btn-icon {
+  background: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+.donate-banner-wrap {
+  margin-top: 0.65rem;
+  width: 100%;
+}
+
+.donate-banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.donate-bmc-script-wrap {
+  margin-top: 0.65rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

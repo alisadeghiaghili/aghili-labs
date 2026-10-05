@@ -37,7 +37,7 @@
       "file_type": "code",
       "norm_label": "applycoursefilters()",
       "source_file": "app.js",
-      "source_location": "L1523"
+      "source_location": "L1511"
     },
     {
       "id": "app_coursesearchtext",
@@ -49,7 +49,7 @@
       "file_type": "code",
       "norm_label": "coursesearchtext()",
       "source_file": "app.js",
-      "source_location": "L1500"
+      "source_location": "L1488"
     },
     {
       "id": "app_createcoursecard",
@@ -61,7 +61,7 @@
       "file_type": "code",
       "norm_label": "createcoursecard()",
       "source_file": "app.js",
-      "source_location": "L1440"
+      "source_location": "L1428"
     },
     {
       "id": "app_escapehtml",
@@ -85,7 +85,7 @@
       "file_type": "code",
       "norm_label": "forcereveal()",
       "source_file": "app.js",
-      "source_location": "L1512"
+      "source_location": "L1500"
     },
     {
       "id": "app_formatdesc",
@@ -121,7 +121,7 @@
       "file_type": "code",
       "norm_label": "rendercourses()",
       "source_file": "app.js",
-      "source_location": "L1573"
+      "source_location": "L1561"
     },
     {
       "id": "app_setlanguage",
@@ -133,19 +133,7 @@
       "file_type": "code",
       "norm_label": "setlanguage()",
       "source_file": "app.js",
-      "source_location": "L1706"
-    },
-    {
-      "id": "app_setupdonatetabs",
-      "label": "setupDonateTabs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "setupdonatetabs()",
-      "source_file": "app.js",
-      "source_location": "L1970"
+      "source_location": "L1694"
     },
     {
       "id": "app_setuplanguage",
@@ -157,7 +145,7 @@
       "file_type": "code",
       "norm_label": "setuplanguage()",
       "source_file": "app.js",
-      "source_location": "L1767"
+      "source_location": "L1749"
     },
     {
       "id": "app_setupnav",
@@ -169,7 +157,7 @@
       "file_type": "code",
       "norm_label": "setupnav()",
       "source_file": "app.js",
-      "source_location": "L1674"
+      "source_location": "L1662"
     },
     {
       "id": "app_setupreveal",
@@ -181,7 +169,7 @@
       "file_type": "code",
       "norm_label": "setupreveal()",
       "source_file": "app.js",
-      "source_location": "L1630"
+      "source_location": "L1618"
     },
     {
       "id": "app_setupshare",
@@ -193,7 +181,7 @@
       "file_type": "code",
       "norm_label": "setupshare()",
       "source_file": "app.js",
-      "source_location": "L1994"
+      "source_location": "L1946"
     },
     {
       "id": "app_setupstats",
@@ -205,7 +193,7 @@
       "file_type": "code",
       "norm_label": "setupstats()",
       "source_file": "app.js",
-      "source_location": "L1796"
+      "source_location": "L1778"
     },
     {
       "id": "app_setupvisitors",
@@ -217,7 +205,7 @@
       "file_type": "code",
       "norm_label": "setupvisitors()",
       "source_file": "app.js",
-      "source_location": "L1816"
+      "source_location": "L1798"
     },
     {
       "id": "app_showtoast",
@@ -229,7 +217,7 @@
       "file_type": "code",
       "norm_label": "showtoast()",
       "source_file": "app.js",
-      "source_location": "L1935"
+      "source_location": "L1917"
     },
     {
       "id": "tools_generate_16_logos_get_simple_icon",
@@ -426,7 +414,7 @@
       "file_type": "code",
       "norm_label": "coursefilters",
       "source_file": "app.js",
-      "source_location": "L1492"
+      "source_location": "L1480"
     },
     {
       "id": "app_filters",
@@ -459,7 +447,7 @@
       "file_type": "code",
       "norm_label": "status_meta",
       "source_file": "app.js",
-      "source_location": "L1415"
+      "source_location": "L1403"
     },
     {
       "id": "claude",
@@ -1239,7 +1227,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1562",
+      "source_location": "L1550",
       "weight": 1.0
     },
     {
@@ -1251,7 +1239,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1449",
+      "source_location": "L1437",
       "weight": 1.0
     },
     {
@@ -1263,7 +1251,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1449",
+      "source_location": "L1437",
       "weight": 1.0
     },
     {
@@ -1275,7 +1263,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1458",
+      "source_location": "L1446",
       "weight": 1.0
     },
     {
@@ -1311,7 +1299,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1607",
+      "source_location": "L1595",
       "weight": 1.0
     },
     {
@@ -1323,7 +1311,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1615",
+      "source_location": "L1603",
       "weight": 1.0
     },
     {
@@ -1335,7 +1323,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1622",
+      "source_location": "L1610",
       "weight": 1.0
     },
     {
@@ -1347,7 +1335,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1753",
+      "source_location": "L1741",
       "weight": 1.0
     },
     {
@@ -1359,7 +1347,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1772",
+      "source_location": "L1754",
       "weight": 1.0
     },
     {
@@ -1371,7 +1359,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2024",
+      "source_location": "L1976",
       "weight": 1.0
     },
     {
@@ -1515,7 +1503,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1573",
+      "source_location": "L1561",
       "weight": 1.0
     },
     {
@@ -1527,7 +1515,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1630",
+      "source_location": "L1618",
       "weight": 1.0
     },
     {
@@ -1539,7 +1527,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1674",
+      "source_location": "L1662",
       "weight": 1.0
     },
     {
@@ -1551,7 +1539,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1767",
+      "source_location": "L1749",
       "weight": 1.0
     },
     {
@@ -1563,7 +1551,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1796",
+      "source_location": "L1778",
       "weight": 1.0
     },
     {
@@ -1575,19 +1563,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1816",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupdonatetabs",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1970",
+      "source_location": "L1798",
       "weight": 1.0
     },
     {
@@ -1599,7 +1575,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1994",
+      "source_location": "L1946",
       "weight": 1.0
     },
     {
@@ -2052,7 +2028,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1415",
+      "source_location": "L1403",
       "weight": 1.0
     },
     {
@@ -2063,7 +2039,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1440",
+      "source_location": "L1428",
       "weight": 1.0
     },
     {
@@ -2074,7 +2050,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1492",
+      "source_location": "L1480",
       "weight": 1.0
     },
     {
@@ -2085,7 +2061,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1500",
+      "source_location": "L1488",
       "weight": 1.0
     },
     {
@@ -2096,7 +2072,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1512",
+      "source_location": "L1500",
       "weight": 1.0
     },
     {
@@ -2107,7 +2083,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1523",
+      "source_location": "L1511",
       "weight": 1.0
     },
     {
@@ -2118,7 +2094,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1706",
+      "source_location": "L1694",
       "weight": 1.0
     },
     {
@@ -2129,7 +2105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1935",
+      "source_location": "L1917",
       "weight": 1.0
     },
     {
@@ -2750,5 +2726,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "68882b478be078cdb714a2fd947144df73d08ce2"
+  "built_at_commit": "a2a0670efbfbe2c7caf8beeab34006d5f31274a1"
 }

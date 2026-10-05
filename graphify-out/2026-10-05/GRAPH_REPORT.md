@@ -1,17 +1,17 @@
 # Graph Report - learn-with-ali  (2026-10-05)
 
 ## Corpus Check
-- 20 files · ~100,244 words
+- 20 files · ~61,994 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: .ico 2, (none) 1, .css 1)
 
 ## Summary
-- 105 nodes · 132 edges · 11 communities (5 shown, 6 thin omitted)
+- 104 nodes · 131 edges · 11 communities (5 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `68882b47`
+- Built from commit: `a2a0670e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -46,7 +46,7 @@
 ## Communities (11 total, 6 thin omitted)
 
 ### Community 1 - "app.js"
-Cohesion: 0.12
+Cohesion: 0.13
 Nodes (18): applyCourseFilters(), CATEGORIES, COURSE_DESC_DE, COURSE_DESC_EN, courseFilters, createCourseCard(), escapeHtml(), FILTERS (+10 more)
 
 ### Community 3 - "upgrade_logos.py"
@@ -67,7 +67,7 @@ Nodes (4): Adding a course, Aghili Labs — maintenance notes, Deploy, Re-genera
 
 ## Knowledge Gaps
 - **29 isolated node(s):** `CATEGORIES`, `FILTERS`, `COURSE_DESC_EN`, `COURSE_DESC_DE`, `I18N` (+24 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 59 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 58 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
@@ -76,7 +76,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `CATEGORIES`, `FILTERS`, `COURSE_DESC_EN` to the rest of the system?**
   _29 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `app.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12681159420289856 - nodes in this community are weakly interconnected._
 - **Should `pathlib` be split into smaller, more focused modules?**
   _Cohesion score 0.1437908496732026 - nodes in this community are weakly interconnected._
 - **Should `Detailed Course Breakdown` be split into smaller, more focused modules?**
