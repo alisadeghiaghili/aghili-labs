@@ -1377,21 +1377,3 @@ html.js .reveal.is-in {
   color: #000000;
 }
 
-.donate-banner-wrap {
-  margin-top: 0.65rem;
-  width: 100%;
-}
-
-.donate-banner-img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  display: block;
-}
-
-.donate-bmc-script-wrap {
-  margin-top: 0.65rem;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
