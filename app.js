@@ -13,6 +13,7 @@ const BASE = "https://alisadeghiaghili.github.io";
  * @property {string} desc
  * @property {string} logo
  * @property {"published" | "near_complete" | "in_development" | "planned"} status
+ * @property {string[]} contentLanguages
  */
 
 /** @type {Record<string, { title: string, blurb: string, courses: Course[] }>} */
@@ -28,6 +29,7 @@ const CATEGORIES = {
         desc: "از اتوماسیون ساده تا هوش مصنوعی، همه‌چیز از پایتون شروع می‌شود. مدل حافظه، ساختارهای داده و حل چالش‌های الگوریتمی قدم‌به‌قدم.",
         logo: "python",
         status: "near_complete",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-r",
@@ -36,6 +38,7 @@ const CATEGORIES = {
         desc: "وقتی تحلیل آماری اولویت اول باشد، R بهترین انتخاب است. کار با داده در tidyverse، رسم نمودار با ggplot2 و شبیه‌سازی آماری.",
         logo: "r",
         status: "published",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-cpp",
@@ -44,6 +47,7 @@ const CATEGORIES = {
         desc: "کنترل مستقیم حافظه و سخت‌افزار برای نوشتن برنامه‌هایی با بیشترین سرعت ممکن. اشاره‌گرها، مدیریت منابع و الگوهای شیءگرا.",
         logo: "cpp",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-rust",
@@ -52,6 +56,7 @@ const CATEGORIES = {
         desc: "ایمنی حافظه بدون Garbage Collector و بدون هزینه اضافی در زمان اجرا. سیستم مالکیت، قرض‌گیری و همروندی بدون رقابت داده.",
         logo: "rust",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-go",
@@ -60,6 +65,7 @@ const CATEGORIES = {
         desc: "ساده، سریع و ساخته‌شده برای سرویس‌های ابری. همروندی سبک با Goroutine و کانال‌ها، کامپایل سریع و باینری تک‌فایل آماده استقرار.",
         logo: "go",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-julia",
@@ -68,6 +74,7 @@ const CATEGORIES = {
         desc: "سرعت C با خوانایی پایتون، بدون نیاز به بازنویسی کد. چندریختی پویا (Multiple Dispatch)، محاسبات عددی و جبر خطی بومی.",
         logo: "julia",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-java",
@@ -76,6 +83,7 @@ const CATEGORIES = {
         desc: "پایه زیرساخت‌های سازمانی از Hadoop تا Kafka. رفتار JVM، مدل حافظه، همروندی و اکوسیستم بزرگ کلان‌داده.",
         logo: "java",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-scala",
@@ -84,6 +92,7 @@ const CATEGORIES = {
         desc: "زبان بومی Apache Spark برای پردازش کلان‌داده. ترکیب پارادایم تابعی و شیءگرا با سیستم نوع قوی و Pattern Matching.",
         logo: "scala",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-functional-programming",
@@ -92,6 +101,7 @@ const CATEGORIES = {
         desc: "یک شیوه متفاوت حل مسئله که کدتان را قابل‌پیش‌بینی‌تر می‌کند. تغییرناپذیری، توابع خالص، ترکیب‌پذیری و Monadها.",
         logo: "functional",
         status: "near_complete",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -106,6 +116,7 @@ const CATEGORIES = {
         desc: "زبان مشترک همه سرورهای لینوکسی و پایپ‌لاین‌های CI/CD. جریان‌های ورودی/خروجی، پایپ‌ها و پردازش متن با sed و awk.",
         logo: "bash",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-powershell",
@@ -114,6 +125,7 @@ const CATEGORIES = {
         desc: "برخلاف شل‌های معمولی، هر خروجی یک شیء ساختاریافته است. خط‌لوله اشیاء، مدیریت ریموت و خودکارسازی ویندوز و لینوکس.",
         logo: "powershell",
         status: "near_complete",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-cmd",
@@ -122,6 +134,7 @@ const CATEGORIES = {
         desc: "هنوز هم ساده‌ترین راه برای خودکارسازی سریع در ویندوز. دستورات فایل‌سیستم، متغیرهای محیطی و نوشتن اسکریپت‌های Batch.",
         logo: "cmd",
         status: "published",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-linux",
@@ -130,6 +143,7 @@ const CATEGORIES = {
         desc: "بیش از ۹۰٪ سرورهای دنیا لینوکس اجرا می‌کنند. معماری هسته، مدیریت فرآیندها، مجوزهای دسترسی و فایل‌سیستم.",
         logo: "linux",
         status: "near_complete",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-git",
@@ -138,6 +152,7 @@ const CATEGORIES = {
         desc: "بدون تسلط بر Git، همکاری تیمی روی کد غیرممکن است. شاخه‌بندی، Rebase، حل تعارض و بازیابی تغییرات گم‌شده.",
         logo: "git",
         status: "near_complete",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-networking",
@@ -146,6 +161,7 @@ const CATEGORIES = {
         desc: "وقتی سرویس‌تان جواب نمی‌دهد باید بدانید از کجا شروع کنید. TCP/IP، مدل لایه‌ای OSI، DNS، مسیریابی و عیب‌یابی عملی.",
         logo: "networking",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-cryptography",
@@ -154,6 +170,7 @@ const CATEGORIES = {
         desc: "پشت هر اتصال امن و هر امضای دیجیتال، رمزنگاری ایستاده. توابع هش، رمزنگاری متقارن و نامتقارن، امضا و زنجیره گواهی‌ها.",
         logo: "cryptography",
         status: "planned",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -168,6 +185,7 @@ const CATEGORIES = {
         desc: "کدی که امروز می‌نویسید، فردا باید قابل تغییر باشد. اصول SOLID، الگوهای طراحی GoF، معماری لایه‌ای و بازآرایی عملی کد.",
         logo: "softwaredesign",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-testing",
@@ -176,6 +194,7 @@ const CATEGORIES = {
         desc: "تنها راه اطمینان از درستی کد، تست کردن آن است. توسعه آزمون‌محور (TDD)، تست واحد و یکپارچه‌سازی با pytest و اعتبارسنجی کیفیت داده.",
         logo: "testing",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-technical-docs",
@@ -184,6 +203,7 @@ const CATEGORIES = {
         desc: "تصمیمات معماری که مستند نشوند، فراموش و تکرار می‌شوند. ثبت ADRها، تدوین RFC، مشخصات API و مدیریت دانش تیم مهندسی.",
         logo: "technicaldocs",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-ddd",
@@ -192,6 +212,7 @@ const CATEGORIES = {
         desc: "وقتی پیچیدگی کسب‌وکار از پیچیدگی فنی بیشتر می‌شود. زبان مشترک تیم، مرزهای دامنه، Aggregateها و کاربرد در معماری Data Mesh.",
         logo: "ddd",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-bpmn",
@@ -200,6 +221,7 @@ const CATEGORIES = {
         desc: "قبل از خودکارسازی هر فرآیند، باید بتوانید آن را دقیق مدل کنید. استاندارد BPMN 2.0، گیت‌وی‌های تصمیم، استخرها و اتصال به موتورهای اجرا.",
         logo: "bpmn",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-scientific-writing",
@@ -208,6 +230,7 @@ const CATEGORIES = {
         desc: "تحقیقی که بد نوشته شود، خوانده نمی‌شود. ساختار IMRAD، طراحی متدولوژی، تکرارپذیری آزمایش‌ها و آماده‌سازی برای داوری همتا.",
         logo: "scientificwriting",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-tech-interviews",
@@ -216,6 +239,7 @@ const CATEGORIES = {
         desc: "دانستن جواب کافی نیست؛ باید بتوانید فکرتان را بلند بیان کنید. System Design، لایوکدینگ الگوریتم و SQL و دفاع از تصمیمات معماری.",
         logo: "techinterviews",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-ai-pm",
@@ -224,6 +248,7 @@ const CATEGORIES = {
         desc: "هدایت پروژه‌های داده و پیش‌بینی بازگشت سرمایه بدون غرق شدن در ابهامات. متدولوژی چابک برای مدل‌های احتمالاتی، چرخه عمر CRISP-DM، محاسبه TCO و توجیه اقتصادی استنتاج.",
         logo: "aipm",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-licensing",
@@ -232,6 +257,7 @@ const CATEGORIES = {
         desc: "استفاده از یک کتابخانه یا وزن مدل با لایسنس اشتباه می‌تواند کل محصول را با ریسک حقوقی مواجه کند. لایسنس‌های متن‌باز، شرایط استفاده تجاری از وزن مدل‌ها، کپی‌رایت دیتاست‌ها و الزامات قانونی تجاری‌سازی.",
         logo: "licensing",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-distributed-systems",
@@ -240,6 +266,7 @@ const CATEGORIES = {
         desc: "اصول مهندسی سیستم‌هایی که روی صدها ماشین اجرا می‌شوند و نباید از کار بیفتند. قضیه CAP، الگوریتم‌های اجماع Raft و Paxos، شاردینگ، همگام‌سازی داده و الگوهای رویدادمحور.",
         logo: "distributedsystems",
         status: "planned",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -254,6 +281,7 @@ const CATEGORIES = {
         desc: "«روی سیستم من کار می‌کنه» را برای همیشه تمام کنید. لایه‌بندی ایمیج‌ها، مدیریت شبکه و حجم کانتینرها، Dockerfile و Docker Compose.",
         logo: "docker",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-aws",
@@ -262,6 +290,7 @@ const CATEGORIES = {
         desc: "بزرگ‌ترین اکوسیستم ابری جهان از دید یک مهندس داده. S3، EC2، Lambda، IAM و الگوهای معماری داده‌محور در ابر.",
         logo: "aws",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-azure",
@@ -270,6 +299,7 @@ const CATEGORIES = {
         desc: "انتخاب اول سازمان‌هایی که اکوسیستم مایکروسافت دارند. Data Factory، دریاچه داده ADLS Gen2، Synapse Analytics و مدیریت منابع.",
         logo: "azure",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-databricks",
@@ -278,6 +308,7 @@ const CATEGORIES = {
         desc: "ادغام انبار داده و دریاچه داده در یک معماری واحد. پلتفرم Lakehouse، پردازش با Spark، مدیریت Delta Lake و بهینه‌سازی کوئری‌ها.",
         logo: "databricks",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-snowflake",
@@ -286,6 +317,7 @@ const CATEGORIES = {
         desc: "پردازش و ذخیره‌سازی مستقل از هم، یعنی هزینه و سرعت را جداگانه کنترل کنید. SQL مقیاس‌پذیر، Time Travel، Clone بدون کپی و اشتراک داده.",
         logo: "snowflake",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-grafana",
@@ -294,6 +326,7 @@ const CATEGORIES = {
         desc: "قبل از اینکه کاربر مشکل را گزارش کند، شما باید ببینیدش. داشبوردهای زنده، اتصال به منابع متریک متنوع و تنظیم هشدارها.",
         logo: "grafana",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-pkgm",
@@ -302,6 +335,7 @@ const CATEGORIES = {
         desc: "تعارض وابستگی‌ها رایج‌ترین علت خرابی محیط توسعه است. مقایسه pip، conda و uv، محیط‌های مجازی و بیلدهای تکرارپذیر.",
         logo: "pkgm",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-kibana",
@@ -310,6 +344,7 @@ const CATEGORIES = {
         desc: "رابط بصری استک Elastic برای کاوش در میلیون‌ها رکورد لاگ. جستجو در Discover، ساخت داشبوردهای تحلیلی و مانیتورینگ توزیع‌شده.",
         logo: "kibana",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-logstash",
@@ -318,6 +353,7 @@ const CATEGORIES = {
         desc: "لاگ‌ها از ده‌ها منبع مختلف می‌آیند و باید یک‌جا جمع و یکدست شوند. دریافت بلادرنگ، پارس با الگوهای Grok و ارسال به Elasticsearch.",
         logo: "logstash",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-splunk",
@@ -326,6 +362,7 @@ const CATEGORIES = {
         desc: "تحلیل حجم انبوه لاگ‌های ماشینی و شناسایی تهدیدات امنیتی. مدیریت رویدادهای امنیتی (SIEM)، گزارش‌گیری و تسلط بر زبان SPL.",
         logo: "splunk",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-kubernetes",
@@ -334,6 +371,7 @@ const CATEGORIES = {
         desc: "استاندارد جهانی مدیریت و اجرای خودکار کانتینرها در مقیاس ابری. معماری کلاستر، پادها، سرویس‌ها، مدیریت وضعیت با StatefulSet و استقرار خودکار برنامه‌ها.",
         logo: "kubernetes",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-gcp",
@@ -342,6 +380,7 @@ const CATEGORIES = {
         desc: "پلتفرم ابری پیشرو در کلان‌داده و هوش مصنوعی مدرن. ذخیره‌سازی ابری GCS، کوئری‌های مقیاس‌پذیر در BigQuery، سرویس‌های بدون سرور Cloud Run و اکوسیستم Vertex AI.",
         logo: "gcp",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-terraform",
@@ -350,6 +389,7 @@ const CATEGORIES = {
         desc: "مدیریت و ایجاد زیرساخت‌های ابری به صورت کد تکرارپذیر. ساختار HCL، چرخه حیات منابع، مدیریت State، ماژول‌نویسی و استقرار امن بر روی ابرها.",
         logo: "terraform",
         status: "planned",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -364,6 +404,7 @@ const CATEGORIES = {
         desc: "هر مهندس داده‌ای، هر روز SQL می‌نویسد. کوئری‌های تودرتو، توابع پنجره‌ای، CTEها، ایندکس‌گذاری و بهینه‌سازی اجرا در سندباکس زنده.",
         logo: "sql",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-dax",
@@ -372,6 +413,7 @@ const CATEGORIES = {
         desc: "اگر با Power BI کار می‌کنید، بدون DAX در سطح می‌مانید. Filter Context، Row Context، تابع CALCULATE و ساخت معیارهای سفارشی.",
         logo: "dax",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-m",
@@ -380,6 +422,7 @@ const CATEGORIES = {
         desc: "داده‌های خام را قبل از رسیدن به مدل داده پاک‌سازی و شکل بدهید. پایپ‌لاین ETL در Power Query، فرمول‌های سفارشی M و ادغام منابع مختلف.",
         logo: "m",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-spark",
@@ -388,6 +431,7 @@ const CATEGORIES = {
         desc: "وقتی داده‌ها در یک ماشین جا نمی‌شوند. پردازش توزیع‌شده با DataFrames، بهینه‌ساز Catalyst و پردازش سریع حافظه‌محور.",
         logo: "spark",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-hadoop",
@@ -396,6 +440,7 @@ const CATEGORIES = {
         desc: "بنیان‌گذار انقلاب کلان‌داده که هنوز زیرساخت بسیاری از سیستم‌هاست. فایل‌سیستم توزیع‌شده HDFS، مدل MapReduce و مدیریت منابع YARN.",
         logo: "hadoop",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-mongodb",
@@ -404,6 +449,7 @@ const CATEGORIES = {
         desc: "وقتی ساختار داده‌ها از پیش مشخص نیست یا مرتب تغییر می‌کند. مدل‌سازی اسناد JSON/BSON، ایندکس‌گذاری و Aggregation Pipeline.",
         logo: "mongodb",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-elasticsearch",
@@ -412,6 +458,7 @@ const CATEGORIES = {
         desc: "جستجوی میلی‌ثانیه‌ای در میلیاردها سند. ایندکس معکوس، رتبه‌بندی BM25، جستجوی فازی و تحلیل‌گرهای متنی سفارشی.",
         logo: "elasticsearch",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-data-storytelling",
@@ -420,6 +467,7 @@ const CATEGORIES = {
         desc: "نمودار زیبا کافی نیست؛ باید داستانی بگوید که تصمیم‌ساز را قانع کند. اصول گشتالت، کاهش شلوغی بصری و روایت‌گری داده‌محور.",
         logo: "datastorytelling",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-data-modeling",
@@ -428,6 +476,7 @@ const CATEGORIES = {
         desc: "طراحی اشتباه مدل داده، عملکرد کل سیستم را زمین می‌زند. ERD، نرمال‌سازی، متدولوژی کیمبال، اسکیمای ستاره‌ای و تفاوت OLTP با OLAP.",
         logo: "datamodeling",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-data-governance",
@@ -436,6 +485,7 @@ const CATEGORIES = {
         desc: "مدل ML شما به اندازه داده‌ای که می‌خورد خوب است. قراردادهای داده، ردیابی تبار داده، کاتالوگ متادیتا، حفاظت PII و قواعد کیفیت.",
         logo: "datagovernance",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-dashboard-kpi",
@@ -444,6 +494,7 @@ const CATEGORIES = {
         desc: "داشبوردی که همه‌چیز را نشان بدهد، هیچ‌چیز نمی‌گوید. انتخاب شاخص‌های کلیدی، سنجه‌های پیشرو و پسرو، چیدمان بصری و مهار خستگی هشدار.",
         logo: "dashboardkpi",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-duckdb",
@@ -452,6 +503,7 @@ const CATEGORIES = {
         desc: "اجرای کوئری‌های تحلیلی پرسرعت روی سیستم محلی بدون نیاز به راه‌اندازی سرورهای سنگین. موتور ستونی برداری، پردازش موازی، کار با فایل‌های Parquet و جایگزینی پرسرعت برای Pandas.",
         logo: "duckdb",
         status: "planned",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -466,6 +518,7 @@ const CATEGORIES = {
         desc: "Git فایل‌های حجیم را نمی‌فهمد؛ DVC این خلأ را پر می‌کند. نسخه‌بندی دیتاست‌ها و مدل‌ها، کش محلی و ریموت و بازتولید دقیق آزمایش‌ها.",
         logo: "dvc",
         status: "published",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-dbt",
@@ -474,6 +527,7 @@ const CATEGORIES = {
         desc: "اصول مهندسی نرم‌افزار را به دنیای SQL بیاورید. مدل‌سازی ماژولار، گراف وابستگی، تست خودکار داده، مستندسازی و تحول داده درون انبار.",
         logo: "dbt",
         status: "published",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-airflow",
@@ -482,6 +536,7 @@ const CATEGORIES = {
         desc: "مطمئن شوید هر مرحله از پایپ‌لاین داده در زمان و ترتیب درست اجرا می‌شود. تعریف DAG با پایتون، زمان‌بندی، مانیتورینگ و مدیریت خطا.",
         logo: "airflow",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-kafka",
@@ -490,6 +545,7 @@ const CATEGORIES = {
         desc: "وقتی داده‌ها باید لحظه‌ای جریان پیدا کنند، نه دسته‌ای. معماری Topic و Partition، تولیدکننده و مصرف‌کننده، تضمین تحویل و مقیاس‌پذیری افقی.",
         logo: "kafka",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-mlflow",
@@ -498,6 +554,7 @@ const CATEGORIES = {
         desc: "بدون ردیابی آزمایش‌ها، تکرارپذیری فقط یک آرزوست. ثبت پارامترها و معیارها، بسته‌بندی مدل، رجیستری و استقرار در پروداکشن.",
         logo: "mlflow",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-dataops",
@@ -506,6 +563,7 @@ const CATEGORIES = {
         desc: "اعمال اصول چابک و مهندسی نرم‌افزار بر خطوط لوله داده. یکپارچه‌سازی و تحویل مداوم (CI/CD)، تست خودکار کیفیت داده، رصد سلامت پایپ‌لاین و کاهش زمان تحویل ارزش تجاری.",
         logo: "dataops",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-mlops",
@@ -514,6 +572,7 @@ const CATEGORIES = {
         desc: "پل ارتباطی میان مدل‌های تجربی علم داده و سیستم‌های پایدار عملیاتی. آموزش مداوم (CT)، خودکارسازی استقرار، پایش رانش داده و مفهوم (Drift) و مدیریت چرخه عمر مدل در پروداکشن.",
         logo: "mlops",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-llmops",
@@ -522,6 +581,7 @@ const CATEGORIES = {
         desc: "مدیریت، استقرار و بهینه‌سازی مدل‌های زبانی در مقیاس بالا. موتورهای استنتاج فوق‌سریع مانند vLLM و Triton، کشینگ معنایی، فریمورک‌های گاردریل، و پایش هزینه و تاخیر توکن‌ها.",
         logo: "llmops",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-mlsecops",
@@ -530,6 +590,7 @@ const CATEGORIES = {
         desc: "حفاظت از پایپ‌لاین‌ها، داده‌ها و مدل‌های هوش مصنوعی در برابر حملات سایبری جدید. مقابله با تزریق پرامپت (Prompt Injection)، مسموم‌سازی دیتا، سرقت وزن مدل‌ها و ایمن‌سازی زنجیره تامین یادگیری ماشین.",
         logo: "mlsecops",
         status: "planned",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -544,6 +605,7 @@ const CATEGORIES = {
         desc: "از فرضیه تا مدلی که واقعاً قابل ارزیابی باشد. رگرسیون، دسته‌بندی، خوشه‌بندی، اعتبارسنجی متقاطع و مهندسی ویژگی با scikit-learn.",
         logo: "ml",
         status: "near_complete",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-mlmath",
@@ -552,6 +614,7 @@ const CATEGORIES = {
         desc: "بدون ریاضی، مدل ML یک جعبه سیاه باقی می‌ماند. جبر خطی، مشتق‌گیری ماتریسی، بهینه‌سازی گرادیانی و شهود هندسی فضاهای برداری.",
         logo: "mlmath",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-mlstats",
@@ -560,6 +623,7 @@ const CATEGORIES = {
         desc: "تفاوت بین «به نظر کار می‌کند» و «اثبات آماری دارد». آزمون فرض، استنباط بیزی، توزیع‌های احتمال، فاصله اطمینان و تحلیل واریانس.",
         logo: "mlstats",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-ts",
@@ -568,6 +632,7 @@ const CATEGORIES = {
         desc: "فروش فردا، ترافیک هفته آینده، تقاضای فصل بعد. تجزیه روند و فصلی‌بودن، آزمون مانایی، مدل‌های ARIMA و Prophet و پیش‌بینی با شبکه‌های عصبی.",
         logo: "timeseries",
         status: "near_complete",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-dl",
@@ -576,6 +641,7 @@ const CATEGORIES = {
         desc: "از پرسپترون ساده تا شبکه‌هایی که خودشان ویژگی استخراج می‌کنند. توابع فعال‌ساز، پس‌انتشار خطا و آموزش عملی مدل با PyTorch.",
         logo: "dl",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-rl",
@@ -584,6 +650,7 @@ const CATEGORIES = {
         desc: "عاملی که با آزمون و خطا یاد می‌گیرد بهترین تصمیم را بگیرد. فرآیندهای مارکوف، Q-Learning، Deep Q-Networks و روش‌های Policy Gradient.",
         logo: "rl",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-nlp",
@@ -592,6 +659,7 @@ const CATEGORIES = {
         desc: "به ماشین بیاموزید متن انسانی را بخواند، بفهمد و تولید کند. توکن‌سازی، بازنمایی برداری، مدل‌های توالی و تحلیل معنایی.",
         logo: "nlp",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-cv",
@@ -600,6 +668,7 @@ const CATEGORIES = {
         desc: "به ماشین بیاموزید تصاویر را ببیند و تفسیر کند. شبکه‌های پیچشی (CNN)، آشکارسازی اشیاء، تقسیم‌بندی تصویر و استخراج ویژگی‌های بصری.",
         logo: "cv",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-datastructure",
@@ -608,6 +677,7 @@ const CATEGORIES = {
         desc: "انتخاب ساختار داده نادرست، الگوریتم درست را هم کند می‌کند. آرایه، لیست پیوندی، پشته، صف، هش‌مپ، درخت، هرم و گراف در سندباکس تعاملی.",
         logo: "datastructure",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-algorithm",
@@ -616,6 +686,7 @@ const CATEGORIES = {
         desc: "تفاوت بین راه‌حلی که فقط کار می‌کند و راه‌حلی که مقیاس می‌شود. تحلیل Big-O، جستجو، مرتب‌سازی، برنامه‌نویسی پویا و الگوریتم‌های گراف.",
         logo: "algorithm",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-llm",
@@ -624,6 +695,7 @@ const CATEGORIES = {
         desc: "درکی عمیق از فناوری‌ای که صنعت را متحول کرده. مکانیزم توجه، معماری ترنسفورمر، مهندسی پرامپت، روش‌های تطبیق وزن‌ها (LoRA) و ترازسازی مدل.",
         logo: "llm",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-ml-patterns",
@@ -632,6 +704,7 @@ const CATEGORIES = {
         desc: "راه‌حل‌های اثبات‌شده برای مسائل تکراری در مسیر آزمایشگاه تا پروداکشن. بازنمایی ویژگی، Cascade، Checkpoint، Feature Store و استقرار تاب‌آور.",
         logo: "mlpatterns",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-critical-thinking",
@@ -640,6 +713,7 @@ const CATEGORIES = {
         desc: "همبستگی علیت نیست و هر عدد معنادار، لزوماً معنادار نیست. شناسایی همبستگی‌های کاذب، پارادوکس سیمپسون، سوگیری داده و خطرات p-hacking.",
         logo: "criticalthinking",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-rag",
@@ -648,6 +722,7 @@ const CATEGORIES = {
         desc: "پیوند مدل‌های زبانی به پایگاه‌های دانش اختصاصی بدون نیاز به آموزش پرهزینه مجدد. امبدینگ‌ها، الگوریتم‌های جستجوی برداری HNSW، پایگاه‌های داده برداری، رتبه‌بندی مجدد و ساخت پایپ‌لاین‌های پیشرفته بازیابی.",
         logo: "rag",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-agents",
@@ -656,6 +731,7 @@ const CATEGORIES = {
         desc: "گذار از چت‌بات‌های متنی ساده به سیستم‌های مستقلی که می‌توانند ابزارها را اجرا کنند و برنامه‌ریزی نمایند. الگوی ReAct، پروتکل باز MCP، حافظه و برنامه‌ریزی، و هماهنگ‌سازی چندین عامل همکار.",
         logo: "agents",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-optimization",
@@ -664,6 +740,7 @@ const CATEGORIES = {
         desc: "حل دقیق مسائل پیچیده تصمیم‌گیری، زمان‌بندی و زنجیره تامین که با یادگیری ماشین سنتی حل نمی‌شوند. برنامه‌ریزی خطی، عدد صحیح و الگوریتم‌های بهینه‌سازی با پایتون و OR-Tools.",
         logo: "optimization",
         status: "planned",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -678,6 +755,7 @@ const CATEGORIES = {
         desc: "درک عمیق از نحوه کارکرد وب‌سرورها، پروتکل HTTP و ساختار درختی DOM در مرورگر. تگ‌های HTML، سلکتورهای کاربردی CSS، رندرینگ کلاینت (CSR/SSR) و مبانی تعامل با صفحه از طریق جاوااسکریپت.",
         logo: "webfundamentals",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-django",
@@ -686,6 +764,7 @@ const CATEGORIES = {
         desc: "همه‌چیز از پنل مدیریت تا ORM و احراز هویت، از پیش آماده است. معماری MTV، سیستم مهاجرت و ساخت سریع سامانه‌های داده‌محور.",
         logo: "django",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-flask",
@@ -694,6 +773,7 @@ const CATEGORIES = {
         desc: "فقط آنچه نیاز دارید، نه بیشتر. چرخه درخواست HTTP، مسیریابی، قالب‌سازی Jinja و ساخت APIها و سرویس‌های سبک.",
         logo: "flask",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-streamlit",
@@ -702,6 +782,7 @@ const CATEGORIES = {
         desc: "فرانت‌اند بلد نیستید؟ فقط پایتون بنویسید. ویجت‌های تعاملی، کش داده، نمودارهای زنده و ساخت داشبوردهای ML در دقایق.",
         logo: "streamlit",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-shiny",
@@ -710,6 +791,7 @@ const CATEGORIES = {
         desc: "تحلیل آماری R یا پایتون‌تان را مستقیماً تبدیل به اپلیکیشن وب کنید. برنامه‌نویسی واکنش‌گرا، ویجت‌های تعاملی و نمودارهای پویا.",
         logo: "shiny",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-api",
@@ -718,6 +800,7 @@ const CATEGORIES = {
         desc: "مدل ML شما بدون API قابل استفاده نیست. اصول REST، اعتبارسنجی با Pydantic، مستندسازی خودکار OpenAPI و پیاده‌سازی با FastAPI.",
         logo: "api",
         status: "in_development",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-scraping",
@@ -726,6 +809,7 @@ const CATEGORIES = {
         desc: "داده‌ای که نیاز دارید همیشه API ندارد. پروتکل HTTP، پارس HTML با BeautifulSoup، اتوماسیون مرورگر با Selenium و الگوهای کراولر صنعتی.",
         logo: "scraping",
         status: "in_development",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -740,6 +824,7 @@ const CATEGORIES = {
         desc: "دنیای فیزیکی را با کد کنترل کنید. خواندن سنسورها، فرمان دادن به موتورها، پروتکل‌های I2C و SPI و پروژه‌های عملی IoT.",
         logo: "arduino",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-raspberrypi",
@@ -748,6 +833,7 @@ const CATEGORIES = {
         desc: "یک کامپیوتر کامل لینوکسی در کف دست شما. برنامه‌نویسی GPIO، پردازش داده در لبه شبکه، مانیتورینگ خطوط تولید و اتصال به ابر.",
         logo: "raspberrypi",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-enterprise-blockchain",
@@ -756,6 +842,7 @@ const CATEGORIES = {
         desc: "وقتی اعتماد بین طرف‌ها باید با فناوری تضمین شود، نه قرارداد کاغذی. رهگیری تغییرناپذیر زنجیره تأمین، قراردادهای هوشمند و Hyperledger Fabric.",
         logo: "blockchain",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-iiot",
@@ -764,6 +851,7 @@ const CATEGORIES = {
         desc: "پل ارتباطی میان تجهیزات صنعتی در کارخانه‌ها و پلتفرم‌های تحلیل داده ابری. پروتکل‌های ارتباطی استانداردی چون MQTT و OPC-UA، پردازش تله‌متری بلادرنگ و امنیت داده در لبه شبکه.",
         logo: "iiot",
         status: "planned",
+        contentLanguages: ["en"],
       },
       {
         slug: "learn-tinyml",
@@ -772,6 +860,7 @@ const CATEGORIES = {
         desc: "اجرای مدل‌های یادگیری عمیق روی میکروکنترلرهای کوچک با مصرف انرژی در حد میلی‌وات. فشرده‌سازی و کوانتیزاسیون وزن‌ها، کار با TensorFlow Lite for Microcontrollers و بینایی ماشین سبک در سخت‌افزارهای امبدد.",
         logo: "tinyml",
         status: "planned",
+        contentLanguages: ["en"],
       },
     ],
   },
@@ -834,6 +923,301 @@ function formatDesc(text) {
  * Metadata map for course development statuses.
  * @type {Record<"published" | "near_complete" | "in_development" | "planned", { label: string, className: string }>}
  */
+
+/**
+ * Localization dictionary supporting Persian (default), English, and German.
+ */
+const I18N = {
+  fa: {
+    dir: "rtl",
+    brandTitle: "Aghili Labs — آموزش برای همه",
+    brandDesc: "مجموعه‌ای از دوره‌های تعاملی رایگان علی صادقی عقیلی در برنامه‌نویسی، داده، یادگیری ماشین و زیرساخت. آموزش حق همه است.",
+    navAbout: "داستان",
+    navSupport: "حمایت",
+    navCourses: "دوره‌ها",
+    navCta: "حمایت کنید",
+    heroEyebrow: "آموزش رایگان · تعاملی · عمیق",
+    heroHeading: "آموزش حق همه است.<br />نه امتیاز چند نفر.",
+    heroLede: "من <strong>علی صادقی عقیلی</strong> و اینجا تجربه‌هام در برنامه‌نویسی و داده رو در قالب دوره‌های رایگان به اشتراک می‌ذارم.<br /><br />این مجموعه رو اول برای تیمم ساختم. بعد برای ادای دین به مردم کشورم، که با وجود همهٔ سختی‌ها همچنان دارن تلاش می‌کنن، بیشتر توسعه‌اش دادم. حالا می‌خوام برای آدم‌های بیشتری در دسترس باشه، چون باور دارم هر انسانی روی زمین شایستهٔ دسترسی به آموزش باکیفیته.",
+    heroBrowse: "مرور دوره‌ها",
+    heroSupport: "چطور حمایت کنم",
+    heroStatsCourses: "دورهٔ تعاملی",
+    heroStatsCategories: "دستهٔ آموزشی",
+    heroStatsVisitors: "بازدید",
+    heroStatsFree: "رایگان و متن‌باز",
+    quoteCardLabel: "چرا این مجموعه وجود دارد",
+    quoteText: "«کتاب خوندن کافی نیست. باید دست به کار بشی، اشتباه کنی و دوباره امتحان کنی. این دوره‌ها برای همین ساخته شدن.»",
+    aboutHeading: "از تجربهٔ صنعت تا آموزش آزاد",
+    aboutCard1Title: "سابقه",
+    aboutCard1Body: "من علی صادقی عقیلی هستم. دکترای صنایع با گرایش اتوماسیون دارم و بیش از ۱۴ ساله در زمینهٔ برنامه‌نویسی، مهندسی داده، علم داده و صنعت ۴.۰ کار می‌کنم؛ از ساخت ETL و پایپ‌لاین‌های داده تا مدل‌سازی آماری، یادگیری ماشین و سامانه‌های صنعتی.<br /><br />در این مدت، در زمینهٔ هوش مصنوعی و داده به سازمان‌های زیادی در ایران مشاوره داده‌ام و در آموزشگاه‌های تهران، از جمله مرکز آموزش‌های دانشگاه صنعتی شریف، برنامه‌نویسی، داشبوردینگ، مهندسی داده و یادگیری ماشین تدریس می‌کنم. این دوره‌ها رو هم بر پایهٔ همین تجربه‌های کاری و آموزشی ساخته‌ام.",
+    aboutCard2Title: "مأموریت",
+    aboutCard2Body: "اولویت من مردم کشورم هستن؛ آدم‌هایی که با وجود همهٔ سختی‌ها، هنوز برای یادگرفتن و ساختن آینده‌ای بهتر تلاش می‌کنن. دلم می‌خواد هزینه، یک مانع دیگه سر راهشون نباشه. کسی که شوق یادگیری داره، باید فرصتش رو هم داشته باشه؛ حتی اگر نتونه هزینهٔ یک دوره رو پرداخت کنه.<br /><br />اما یادگیری مرز نمی‌شناسه. آرزوم اینه که این آموزش‌ها به آدم‌های بیشتری، هر جای دنیا که هستن، برسن و بهشون کمک کنن چیزی یاد بگیرن، مسئله‌ای رو حل کنن یا قدمی برای بهترکردن زندگی‌شون بردارن.<br /><br />تلاشم اینه که با حمایت داوطلبانهٔ شما، این آموزش‌ها رایگان بمونن و روزبه‌روز بهتر و کامل‌تر بشن. اگر این مجموعه براتون مفید بوده و امکان حمایتش رو دارین، کمک شما فرصت ادامهٔ این مسیر رو فراهم می‌کنه؛ تا نفر بعدی هم بتونه بدون نگرانی از هزینه، یادگیری رو شروع کنه.",
+    aboutCard3Title: "روش آموزش",
+    aboutCard3Body: "هر دوره یک محیط تعاملی است: سندباکس زنده، چالش‌های پلکانی، بازخورد فوری و بصری‌سازی مفاهیم. یادگیری با دست و آزمودن — نه فقط با خواندن.",
+    supportHeading: "اگر این مسیر برایتان مفید است، کنارش بایستید",
+    supportLede: "دونیت مالی مستقیم‌ترین کمک است و چرخهٔ تولید محتوا را زنده نگه می‌دارد. اما اگر فعلاً نمی‌توانید، اشتراک‌گذاری یا مشارکت فنی همان‌قدر دلگرم‌کننده است — شاید حتی بیشتر.",
+    supportDonateTitle: "دونیت",
+    supportDonateBody: "کمک مالی کوچک هم اثر دارد. اگر این آموزش‌ها مسیر کاری یا یادگیری شما را تغییر داده، یک دونیت چرخهٔ ساخت دوره‌های بعدی را روشن نگه می‌دارد.",
+    supportDonateBtn: "حمایت مالی",
+    supportShareTitle: "اشتراک‌گذاری",
+    supportShareBody: "دوره‌ها را به کسانی برسانید که به‌شان نیاز دارند. اگر می‌دانید کسی دنبال یادگیری Python، SQL، داده یا هر مسیر دیگری است، از فهرست زیر لینک همان دوره را کپی کنید و برایش بفرستید.",
+    supportShareBtn: "برو به فهرست دوره‌ها",
+    supportContribTitle: "مشارکت",
+    supportContribBody: "باگ، بهبود مستندات، ترجمه، مثال نو، یا ایدهٔ سطح جدید — هر مشارکت فنی همان‌قدر ارزشمند است که حمایت مالی. مخزن‌ها روی گیت‌هاب باز هستند.",
+    supportContribBtn: "گیت‌هاب من",
+    coursesHeading: "یک مسیر یادگیری، نُه دسته",
+    coursesLede: "از پایهٔ برنامه‌نویسی تا مهندسی داده، یادگیری ماشین و ابر. هر دوره یک دکمه است — روی هر کدام کلیک کنید و مستقیم وارد محیط تعاملی شوید.",
+    searchPlaceholder: "جستجوی دوره‌ها…",
+    searchAria: "جستجو در دوره‌ها",
+    emptyTitle: "نتیجه‌ای پیدا نشد",
+    emptyHint: "عبارت دیگری را امتحان کنید یا دسته‌بندی را تغییر دهید.",
+    ctaHeading: "آموزش نباید پشت دیوار بماند.",
+    ctaLede: "اگر همین یک جمله را قبول دارید، کمک کنید این مسیر برای نفر بعدی هم باز بماند.",
+    ctaDonate: "حمایت مالی",
+    ctaStart: "شروع یادگیری",
+    footerText: "مجموعه‌ای از دوره‌های تعاملی رایگان، ساخته‌شده توسط علی صادقی عقیلی — برای مردم ایران و هر کسی که می‌خواهد یاد بگیرد.",
+    footerCopy: "© <span id=\"year\">2026</span> Ali Sadeghi Aghili · آموزش آزاد برای همه",
+    visitorsTitle: "مجموع کل بازدیدهای سایت (همگام‌شده)",
+    shareLabel: "اشتراک‌گذاری",
+    copiedToast: "لینک کپی شد!",
+    courseUnit: "دوره",
+    courseContentLangNote: "محتوای دوره فعلاً به انگلیسی است",
+    statusLabels: {
+      published: "منتشرشده",
+      near_complete: "تقریباً تمام",
+      in_development: "در حال توسعه",
+      planned: "برنامهریزیشده",
+    },
+    filterLabels: {
+      all: "همه",
+      languages: "زبان‌ها",
+      systems: "شل و سیستم",
+      architecture: "معماری و مهندسی",
+      platforms: "ابر و پلتفرم",
+      data: "داده",
+      mlops: "MLOps",
+      ml: "ML / AI",
+      web: "وب",
+      iot: "اینترنت اشیاء و لبه",
+    },
+    categoryTitles: {
+      languages: "زبان‌های برنامه‌نویسی",
+      systems: "شل، سیستم و ابزار",
+      architecture: "معماری، متدولوژی و مهندسی",
+      platforms: "ابر، پلتفرم و عملیات",
+      data: "داده و تحلیل",
+      mlops: "MLOps و پایپ‌لاین",
+      ml: "یادگیری ماشین و هوش مصنوعی",
+      web: "وب و اپلیکیشن",
+      iot: "اینترنت اشیاء، سخت‌افزار و لبه",
+    },
+    categoryBlurbs: {
+      languages: "پایه‌های محکم برای هر مسیر فنی",
+      systems: "کنترل ماشین از خط فرمان تا شبکه و لینوکس",
+      architecture: "توسعه نرم‌افزار تمیز، طراحی سیستم و فرآیندهای مهندسی",
+      platforms: "از کانتینرها تا ابر، زیرساخت و مانیتورینگ",
+      data: "پایگاه‌های داده، انباره داده و پردازش در مقیاس بزرگ",
+      mlops: "خودکارسازی پایپ‌لاین‌های یادگیری ماشین و استقرار مدل‌ها",
+      ml: "الگوریتم‌ها، یادگیری عمیق، شبکه‌های عصبی و هوش مصنوعی مولد",
+      web: "ساخت رابط‌های کاربری، داشبوردها و استخراج داده از وب",
+      iot: "پیوند دنیای فیزیکی، سنسورها و پردازش داده در لبه",
+    },
+  },
+  en: {
+    dir: "ltr",
+    brandTitle: "Aghili Labs — Free Education for Everyone",
+    brandDesc: "Free interactive course suite by Ali Sadeghi Aghili covering programming, data engineering, machine learning, systems, and cloud. Education is a human right.",
+    navAbout: "Story",
+    navSupport: "Support",
+    navCourses: "Courses",
+    navCta: "Support Us",
+    heroEyebrow: "Free · Interactive · In-depth Education",
+    heroHeading: "Education is a human right.<br />Not a privilege for a few.",
+    heroLede: "I am <strong>Ali Sadeghi Aghili</strong>, and here I share my hands-on experience in software engineering, data, and AI through free interactive courses.<br /><br />I first built this suite for my team, then expanded it for the resilient people of my home country, and now open it to the world—because every human being on Earth deserves free access to rigorous, high-quality education.",
+    heroBrowse: "Browse Courses",
+    heroSupport: "How to Support",
+    heroStatsCourses: "Interactive Courses",
+    heroStatsCategories: "Disciplines",
+    heroStatsVisitors: "Visitors",
+    heroStatsFree: "Free & Open Source",
+    quoteCardLabel: "Why This Exists",
+    quoteText: "“Reading books is not enough. You have to build, make mistakes, and try again. That is what these courses were built for.”",
+    aboutHeading: "From Industry Practice to Open Education",
+    aboutCard1Title: "Background",
+    aboutCard1Body: "I am Ali Sadeghi Aghili. I hold a Ph.D. in Industrial Engineering with an automation focus and have spent over 14 years working in software engineering, data engineering, data science, and Industry 4.0—from building resilient ETL pipelines to statistical modeling, ML, and industrial telemetry systems.<br /><br />During this time, I have consulted for numerous organizations and taught programming, dashboarding, and machine learning at prestigious institutions in Tehran, including Sharif University of Technology. These courses distill that exact real-world engineering experience.",
+    aboutCard2Title: "Mission",
+    aboutCard2Body: "My priority has always been the people of my home country—those who, despite every hardship, keep striving to learn and build a brighter future. I want cost never to stand as another hurdle in their path. Whoever has the hunger to learn deserves the chance to do so.<br /><br />Yet learning knows no geographic borders. My wish is for these courses to reach curious minds worldwide, helping them master skills, solve problems, or improve their lives.<br /><br />With your voluntary sponsorship, these courses will remain 100% free and keep expanding—ensuring the next person can begin learning without financial worry.",
+    aboutCard3Title: "Pedagogy",
+    aboutCard3Body: "Every course is a standalone interactive environment: browser sandboxes, leveled challenges, instant validation, and intuitive mental models. True mastery comes from active doing, not passive viewing.",
+    supportHeading: "If this platform helps you, stand with it",
+    supportLede: "Financial sponsorship directly sustains new course authoring and infrastructure. But if you cannot donate, sharing these courses or contributing code is just as meaningful—perhaps even more.",
+    supportDonateTitle: "Donate",
+    supportDonateBody: "Every contribution counts. If these courses advanced your career or learning path, a small sponsorship keeps the next release cycle alive.",
+    supportDonateBtn: "Support Financially",
+    supportShareTitle: "Share",
+    supportShareBody: "Introduce these courses to colleagues and students. If you know anyone learning Python, SQL, data, or cloud, copy the course link and share it.",
+    supportShareBtn: "Go to Course Catalog",
+    supportContribTitle: "Contribute",
+    supportContribBody: "Bug fixes, documentation improvements, translations, new interactive challenges, or architecture reviews—every technical contribution is deeply appreciated.",
+    supportContribBtn: "My GitHub",
+    coursesHeading: "One Learning Path, Nine Disciplines",
+    coursesLede: "From programming fundamentals to data engineering, machine learning, and cloud. Each course is an interactive in-browser sandbox—click any card to launch immediately.",
+    searchPlaceholder: "Search courses…",
+    searchAria: "Search courses",
+    emptyTitle: "No courses found",
+    emptyHint: "Try another search term or change category filters.",
+    ctaHeading: "Education should not stay behind paywalls.",
+    ctaLede: "If you agree with this principle, help ensure this learning journey remains open for the next person.",
+    ctaDonate: "Support Financially",
+    ctaStart: "Start Learning",
+    footerText: "A collection of free interactive courses built by Ali Sadeghi Aghili — for the people of Iran and anyone eager to learn.",
+    footerCopy: "© <span id=\"year\">2026</span> Ali Sadeghi Aghili · Free education for everyone",
+    visitorsTitle: "Total unique visits (synchronized)",
+    shareLabel: "Share",
+    copiedToast: "Link copied to clipboard!",
+    courseUnit: "courses",
+    courseContentLangNote: "Course content is currently in English",
+    statusLabels: {
+      published: "Published",
+      near_complete: "Nearly Complete",
+      in_development: "In Development",
+      planned: "Planned",
+    },
+    filterLabels: {
+      all: "All",
+      languages: "Languages",
+      systems: "Systems & Shell",
+      architecture: "Architecture",
+      platforms: "Cloud & Platforms",
+      data: "Data & Analytics",
+      mlops: "MLOps",
+      ml: "ML & AI",
+      web: "Web & Apps",
+      iot: "IoT & Edge",
+    },
+    categoryTitles: {
+      languages: "Programming Languages",
+      systems: "Shell, Systems & Tooling",
+      architecture: "Architecture & Engineering",
+      platforms: "Cloud, Platforms & Ops",
+      data: "Data & Analytics",
+      mlops: "MLOps & Pipelines",
+      ml: "Machine Learning & AI",
+      web: "Web & Applications",
+      iot: "IoT, Hardware & Edge",
+    },
+    categoryBlurbs: {
+      languages: "Solid foundations for every technical path",
+      systems: "Machine control from command-line to networking and Linux",
+      architecture: "Clean code, distributed system design, and software craftsmanship",
+      platforms: "From containers to cloud infrastructure and telemetry",
+      data: "Relational, document, modeling, governance, and big data",
+      mlops: "Model lifecycle, data versioning, and continuous training",
+      ml: "Foundational mathematics, deep learning, LLMs, RAG, and agents",
+      web: "Web interfaces, reactive dashboards, DOM architecture, and APIs",
+      iot: "Physical computing, sensors, industrial automation, and edge ML",
+    },
+  },
+  de: {
+    dir: "ltr",
+    brandTitle: "Aghili Labs — Freie Bildung für alle",
+    brandDesc: "Kostenlose interaktive Lernplattform von Ali Sadeghi Aghili für Programmierung, Data Engineering, Machine Learning, Systeme und Cloud.",
+    navAbout: "Über uns",
+    navSupport: "Unterstützen",
+    navCourses: "Kurse",
+    navCta: "Unterstützen",
+    heroEyebrow: "Kostenlose · Interaktive · Fundierte Bildung",
+    heroHeading: "Bildung gehört allen.<br />Kein Privileg für wenige.",
+    heroLede: "Ich bin <strong>Ali Sadeghi Aghili</strong> und teile hier meine Praxiserfahrung in Software-Engineering, Daten und KI in Form kostenloser interaktiver Kurse.<br /><br />Ich habe diese Plattform ursprünglich für mein Team entwickelt, für die Menschen in meinem Heimatland ausgebaut und öffne sie nun weltweit – weil jeder Mensch auf der Welt Zugang zu erstklassiger Bildung verdient.",
+    heroBrowse: "Kurse durchsuchen",
+    heroSupport: "Wie unterstützen",
+    heroStatsCourses: "Interaktive Kurse",
+    heroStatsCategories: "Fachbereiche",
+    heroStatsVisitors: "Besuche",
+    heroStatsFree: "Kostenlos & Open Source",
+    quoteCardLabel: "Warum es diese Plattform gibt",
+    quoteText: "„Bücher zu lesen reicht nicht aus. Man muss anpacken, Fehler machen und es erneut versuchen. Genau dafür sind diese Kurse da.“",
+    aboutHeading: "Aus der Industriepraxis zur freien Bildung",
+    aboutCard1Title: "Werdegang",
+    aboutCard1Body: "Ich bin Ali Sadeghi Aghili. Ich habe einen Doktortitel in Wirtschaftsingenieurwesen mit Schwerpunkt Automatisierung und arbeite seit über 14 Jahren in Softwareentwicklung, Data Engineering, Data Science und Industrie 4.0 – von ETL-Pipelines bis hin zu statistischer Modellierung, maschinellem Lernen und industrieller Telemetrie.<br /><br />In dieser Zeit habe ich zahlreiche Unternehmen beraten und an führenden Institutionen in Teheran, unter anderem an der Sharif University of Technology, unterrichtet. Diese Kurse destillieren diese fundierte Praxiserfahrung.",
+    aboutCard2Title: "Mission",
+    aboutCard2Body: "Meine Priorität gilt den Menschen in meiner Heimat – jenen, die trotz aller Widrigkeiten unermüdlich lernen und an einer besseren Zukunft bauen. Kosten dürfen kein Hindernis sein. Wer den Wissensdrang hat, verdient auch die Chance dazu.<br /><br />Doch Lernen kennt keine Landesgrenzen. Ich wünsche mir, dass diese Kurse Menschen überall auf der Welt erreichen und ihnen helfen, neue Fähigkeiten zu erlernen.<br /><br />Durch freiwillige Unterstützung bleiben diese Kurse dauerhaft kostenlos und wachsen kontinuierlich weiter.",
+    aboutCard3Title: "Pädagogik",
+    aboutCard3Body: "Jeder Kurs ist eine eigenständige interaktive Umgebung: Browser-Sandboxen, gestufte Aufgaben, sofortiges Feedback und intuitive mentale Modelle. Wahres Verständnis entsteht durch aktives Tun.",
+    supportHeading: "Wenn Ihnen dieser Weg hilft, unterstützen Sie ihn",
+    supportLede: "Finanzielle Unterstützung sichert die Entwicklung neuer Kurse. Wenn Sie aktuell nicht spenden können, ist das Teilen dieser Kurse oder technische Mitwirkung genauso wertvoll.",
+    supportDonateTitle: "Spenden",
+    supportDonateBody: "Jeder Beitrag zählt. Wenn diese Kurse Ihre berufliche Laufbahn vorangebracht haben, hilft eine Spende, den nächsten Entwicklungszyklus zu finanzieren.",
+    supportDonateBtn: "Finanziell unterstützen",
+    supportShareTitle: "Teilen",
+    supportShareBody: "Erzählen Sie Kolleginnen, Kollegen und Studierenden von diesen Kursen. Wenn jemand Python, SQL, Daten oder Cloud lernen möchte, senden Sie den Link weiter.",
+    supportShareBtn: "Zum Kurskatalog",
+    supportContribTitle: "Mitwirken",
+    supportContribBody: "Fehlerbehebungen, Verbesserungen der Dokumentation, Übersetzungen oder neue interaktive Aufgaben – jeder technische Beitrag ist willkommen.",
+    supportContribBtn: "Mein GitHub",
+    coursesHeading: "Ein Lernpfad, neun Fachbereiche",
+    coursesLede: "Von Grundlagen der Programmierung bis hin zu Data Engineering, Machine Learning und Cloud. Jeder Kurs ist eine interaktive Sandbox – mit einem Klick direkt starten.",
+    searchPlaceholder: "Kurse durchsuchen…",
+    searchAria: "Kurse durchsuchen",
+    emptyTitle: "Keine Kurse gefunden",
+    emptyHint: "Versuchen Sie einen anderen Suchbegriff oder wählen Sie eine andere Kategorie.",
+    ctaHeading: "Bildung darf nicht hinter Bezahlschranken stehen.",
+    ctaLede: "Wenn Sie diesem Leitsatz zustimmen, helfen Sie mit, diesen Weg für die nächste Person offen zu halten.",
+    ctaDonate: "Finanziell unterstützen",
+    ctaStart: "Lernen starten",
+    footerText: "Kostenlose interaktive Kurse von Ali Sadeghi Aghili – für die Menschen im Iran und alle Wissbegierigen weltweit.",
+    footerCopy: "© <span id=\"year\">2026</span> Ali Sadeghi Aghili · Freie Bildung für alle",
+    visitorsTitle: "Gesamtzahl der Besuche (synchronisiert)",
+    shareLabel: "Teilen",
+    copiedToast: "Link in Zwischenablage kopiert!",
+    courseUnit: "Kurse",
+    courseContentLangNote: "Der Kursinhalt ist derzeit auf Englisch",
+    statusLabels: {
+      published: "Veröffentlicht",
+      near_complete: "Fast fertig",
+      in_development: "In Entwicklung",
+      planned: "Geplant",
+    },
+    filterLabels: {
+      all: "Alle",
+      languages: "Sprachen",
+      systems: "Systeme & Shell",
+      architecture: "Architektur",
+      platforms: "Cloud & Plattformen",
+      data: "Daten & Analytik",
+      mlops: "MLOps",
+      ml: "ML & KI",
+      web: "Web & Apps",
+      iot: "IoT & Edge",
+    },
+    categoryTitles: {
+      languages: "Programmiersprachen",
+      systems: "Shell, Systeme & Tools",
+      architecture: "Architektur & Software-Handwerk",
+      platforms: "Cloud, Plattformen & Ops",
+      data: "Daten & Analytik",
+      mlops: "MLOps & Pipelines",
+      ml: "Machine Learning & KI",
+      web: "Web & Anwendungen",
+      iot: "IoT, Hardware & Edge",
+    },
+    categoryBlurbs: {
+      languages: "Solide Grundlagen für jeden technischen Weg",
+      systems: "Maschinensteuerung von der Kommandozeile bis zu Linux",
+      architecture: "Sauberer Code, verteiltes Systemdesign und Engineering",
+      platforms: "Von Containern bis Cloud-Infrastruktur und Monitoring",
+      data: "Relationale Datenbanken, Data Warehousing und Big Data",
+      mlops: "Modell-Lebenszyklus, Versionierung und kontinuierliches Training",
+      ml: "Mathematische Grundlagen, Deep Learning, LLMs und Agenten",
+      web: "Weboberflächen, reaktive Dashboards, DOM und APIs",
+      iot: "Physical Computing, Sensorik, Automatisierung und Edge-KI",
+    },
+  },
+};
+
+/** @type {"fa" | "en" | "de"} */
+let currentLang = "fa";
+
 const STATUS_META = {
   published: {
     label: "منتشرشده",
@@ -860,11 +1244,17 @@ const STATUS_META = {
  * @returns {HTMLElement}
  */
 function createCourseCard(course) {
+  const dict = I18N[currentLang] || I18N.fa;
   const meta = STATUS_META[course.status] || STATUS_META.in_development;
   const isPlanned = course.status === "planned";
   const courseUrl = `${BASE}/${course.slug}/`;
   const card = document.createElement("article");
   card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
+
+  const displayTitle = currentLang === "fa" ? formatTitle(course.title) : escapeHtml(course.en);
+  const displaySub = currentLang === "fa" ? escapeHtml(course.en) : formatTitle(course.title);
+  const statusLabel = dict.statusLabels[course.status] || meta.label;
+  const langNote = dict.courseContentLangNote;
 
   card.innerHTML = `
     <div class="course-top">
@@ -873,10 +1263,10 @@ function createCourseCard(course) {
       </a>
       <div class="course-heading">
         <a class="course-title-link" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>
-          <p class="course-title">${formatTitle(course.title)}</p>
-          <p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>
+          <p class="course-title">${displayTitle}</p>
+          <p class="course-en" dir="${currentLang === "fa" ? "ltr" : "rtl"}">${displaySub}</p>
         </a>
-        <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(course.title)}" aria-label="اشتراک‌گذاری ${escapeHtml(course.title)}">
+        <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(course.title)}" aria-label="${dict.shareLabel} ${escapeHtml(course.title)}">
           <svg class="course-share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <circle cx="18" cy="5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
             <circle cx="6" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
@@ -887,8 +1277,9 @@ function createCourseCard(course) {
       </div>
     </div>
     <p class="course-desc">${formatDesc(course.desc)}</p>
+    <p class="course-lang-note">${escapeHtml(langNote)}</p>
     <div class="course-foot">
-      <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(meta.label)}</a>
+      <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(statusLabel)}</a>
       <a class="course-go" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-hidden="true">${isPlanned ? "…" : "↗"}</a>
     </div>
   `;
@@ -976,32 +1367,39 @@ function renderCourses() {
   const filterBar = document.querySelector(".filter-bar");
   if (!root || !filterBar) return;
 
+  const dict = I18N[currentLang] || I18N.fa;
+
   filterBar.replaceChildren();
   FILTERS.forEach((f, index) => {
     const btn = document.createElement("button");
-    btn.className = `filter-chip${index === 0 ? " is-active" : ""}`;
+    const isActive = courseFilters.filter === f.id;
+    btn.className = `filter-chip${isActive ? " is-active" : ""}`;
     btn.type = "button";
     btn.setAttribute("role", "tab");
-    btn.setAttribute("aria-selected", index === 0 ? "true" : "false");
+    btn.setAttribute("aria-selected", isActive ? "true" : "false");
     btn.dataset.filter = f.id;
-    btn.textContent = f.label;
+    btn.textContent = dict.filterLabels[f.id] || f.label;
     filterBar.appendChild(btn);
   });
 
+  root.replaceChildren();
   Object.entries(CATEGORIES).forEach(([key, cat]) => {
     const section = document.createElement("section");
     section.className = "category";
     section.dataset.category = key;
     section.id = `cat-${key}`;
 
+    const title = dict.categoryTitles[key] || cat.title;
+    const blurb = dict.categoryBlurbs[key] || cat.blurb;
+
     const head = document.createElement("div");
     head.className = "category-head reveal";
     head.innerHTML = `
       <div>
-        <h3>${escapeHtml(cat.title)}</h3>
-        <p>${escapeHtml(cat.blurb)}</p>
+        <h3>${escapeHtml(title)}</h3>
+        <p>${escapeHtml(blurb)}</p>
       </div>
-      <p>${cat.courses.length} دوره</p>
+      <p>${cat.courses.length} ${dict.courseUnit}</p>
     `;
 
     const grid = document.createElement("div");
@@ -1013,30 +1411,7 @@ function renderCourses() {
     root.appendChild(section);
   });
 
-  filterBar.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement)) return;
-    const filter = target.dataset.filter;
-    if (!filter) return;
-
-    courseFilters.filter = filter;
-
-    filterBar.querySelectorAll(".filter-chip").forEach((chip) => {
-      const active = chip === target;
-      chip.classList.toggle("is-active", active);
-      chip.setAttribute("aria-selected", active ? "true" : "false");
-    });
-
-    applyCourseFilters();
-  });
-
-  const searchInput = document.getElementById("course-search");
-  if (searchInput) {
-    searchInput.addEventListener("input", () => {
-      courseFilters.query = searchInput.value.trim().toLowerCase();
-      applyCourseFilters();
-    });
-  }
+  applyCourseFilters();
 }
 
 /**
@@ -1113,6 +1488,97 @@ function setupNav() {
  *
  * @returns {void}
  */
+
+/**
+ * Switch the application language (fa, en, or de).
+ *
+ * @param {"fa" | "en" | "de"} lang
+ * @returns {void}
+ */
+function setLanguage(lang) {
+  if (!I18N[lang]) return;
+  currentLang = lang;
+  const dict = I18N[lang];
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = dict.dir;
+  document.title = dict.brandTitle;
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute("content", dict.brandDesc);
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (key && dict[key] !== undefined) {
+      el.textContent = dict[key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-html");
+    if (key && dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  const searchInput = document.getElementById("course-search");
+  if (searchInput) {
+    searchInput.setAttribute("placeholder", dict.searchPlaceholder);
+    searchInput.setAttribute("aria-label", dict.searchAria);
+  }
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("is-active", btn.dataset.lang === lang);
+  });
+
+  try {
+    localStorage.setItem("aghili-labs:lang", lang);
+    const url = new URL(window.location.href);
+    if (lang === "fa") {
+      url.searchParams.delete("lang");
+    } else {
+      url.searchParams.set("lang", lang);
+    }
+    window.history.replaceState({}, "", url.toString());
+  } catch {}
+
+  renderCourses();
+}
+
+/**
+ * Initialize language settings from URL param or localStorage.
+ *
+ * @returns {void}
+ */
+function setupLanguage() {
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetLang = btn.dataset.lang;
+      if (targetLang && targetLang !== currentLang) {
+        setLanguage(targetLang);
+      }
+    });
+  });
+
+  let detected = "fa";
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const qLang = params.get("lang");
+    if (qLang && (qLang === "en" || qLang === "de" || qLang === "fa")) {
+      detected = qLang;
+    } else {
+      const stored = localStorage.getItem("aghili-labs:lang");
+      if (stored && (stored === "en" || stored === "de" || stored === "fa")) {
+        detected = stored;
+      }
+    }
+  } catch {}
+
+  if (detected !== "fa") {
+    setLanguage(detected);
+  }
+}
+
 function setupStats() {
   const el = document.getElementById("stat-courses");
   if (!el) return;
@@ -1320,6 +1786,7 @@ function setupShare() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  setupLanguage();
   renderCourses();
   setupNav();
   setupStats();

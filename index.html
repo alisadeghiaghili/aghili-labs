@@ -35,11 +35,16 @@
           <span>Aghili Labs</span>
         </a>
         <div class="nav-links" id="nav-links">
-          <a href="#about">داستان</a>
-          <a href="#support">حمایت</a>
-          <a href="#courses">دوره‌ها</a>
+          <a href="#about" data-i18n="navAbout">داستان</a>
+          <a href="#support" data-i18n="navSupport">حمایت</a>
+          <a href="#courses" data-i18n="navCourses">دوره‌ها</a>
+          <div class="lang-switch" role="group" aria-label="Language selection">
+            <button class="lang-btn is-active" type="button" data-lang="fa" aria-label="فارسی">فا</button>
+            <button class="lang-btn" type="button" data-lang="en" aria-label="English">EN</button>
+            <button class="lang-btn" type="button" data-lang="de" aria-label="Deutsch">DE</button>
+          </div>
           <a class="nav-cta" href="#support">
-            <span>حمایت کنید</span>
+            <span data-i18n="navCta">حمایت کنید</span>
             <span class="nav-cta-icon" aria-hidden="true">↗</span>
           </a>
         </div>
@@ -55,12 +60,12 @@
         <div class="hero-ambient" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">آموزش رایگان · تعاملی · عمیق</p>
+            <p class="eyebrow" data-i18n="heroEyebrow">آموزش رایگان · تعاملی · عمیق</p>
             <h1>
               آموزش حق همه است.<br />
               نه امتیاز چند نفر.
             </h1>
-            <p class="lede">
+            <p class="lede" data-i18n-html="heroLede">
               من <strong>علی صادقی عقیلی</strong> و اینجا تجربه‌هام در برنامه‌نویسی و داده رو
               در قالب دوره‌های رایگان به اشتراک می‌ذارم.
               <br /><br />
@@ -71,30 +76,30 @@
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#courses">
-                <span>مرور دوره‌ها</span>
+                <span data-i18n="heroBrowse">مرور دوره‌ها</span>
                 <span class="btn-icon" aria-hidden="true">←</span>
               </a>
               <a class="btn btn-ghost" href="#support">
-                <span>چطور حمایت کنم</span>
+                <span data-i18n="heroSupport">چطور حمایت کنم</span>
                 <span class="btn-icon" aria-hidden="true">←</span>
               </a>
             </div>
             <dl class="hero-stats">
               <div>
                 <dt id="stat-courses">88</dt>
-                <dd>دورهٔ تعاملی</dd>
+                <dd data-i18n="heroStatsCourses">دورهٔ تعاملی</dd>
               </div>
               <div>
                 <dt>9</dt>
-                <dd>دستهٔ آموزشی</dd>
+                <dd data-i18n="heroStatsCategories">دستهٔ آموزشی</dd>
               </div>
               <div>
                 <dt id="stat-visitors">77</dt>
-                <dd>بازدید</dd>
+                <dd data-i18n="heroStatsVisitors">بازدید</dd>
               </div>
               <div>
                 <dt>100%</dt>
-                <dd>رایگان و متن‌باز</dd>
+                <dd data-i18n="heroStatsFree">رایگان و متن‌باز</dd>
               </div>
             </dl>
           </div>
@@ -102,7 +107,7 @@
           <div class="hero-panel reveal" style="--delay: 120ms">
             <div class="bezel">
               <div class="bezel-core hero-card">
-                <p class="hero-card-label">چرا این مجموعه وجود دارد</p>
+                <p class="hero-card-label" data-i18n="quoteCardLabel">چرا این مجموعه وجود دارد</p>
                 <blockquote>
                   «کتاب خوندن کافی نیست. باید دست به کار بشی، اشتباه کنی و دوباره امتحان کنی. این دوره‌ها برای همین ساخته شدن.»
                 </blockquote>
@@ -123,11 +128,11 @@
       <section class="section about" id="about">
         <div class="container">
           <div class="section-head reveal">
-            <h2>از تجربهٔ صنعت تا آموزش آزاد</h2>
+            <h2 data-i18n="aboutHeading">از تجربهٔ صنعت تا آموزش آزاد</h2>
           </div>
           <div class="about-grid">
             <article class="about-card reveal">
-              <h3>سابقه</h3>
+              <h3 data-i18n="aboutCard1Title">سابقه</h3>
               <p>
                 من علی صادقی عقیلی هستم. دکترای صنایع با گرایش اتوماسیون دارم و بیش از 
                 ۱۴ ساله در زمینهٔ برنامه‌نویسی، مهندسی داده، علم داده و صنعت ۴.۰ کار می‌کنم؛
@@ -140,7 +145,7 @@
               </p>
             </article>
             <article class="about-card reveal" style="--delay: 80ms">
-              <h3>مأموریت</h3>
+              <h3 data-i18n="aboutCard2Title">مأموریت</h3>
               <p>
                 اولویت من مردم کشورم هستن؛ آدم‌هایی که با وجود همهٔ سختی‌ها،
                 هنوز برای یادگرفتن و ساختن آینده‌ای بهتر تلاش می‌کنن.
@@ -162,7 +167,7 @@
               </p>
             </article>
             <article class="about-card reveal" style="--delay: 160ms">
-              <h3>روش آموزش</h3>
+              <h3 data-i18n="aboutCard3Title">روش آموزش</h3>
               <p>
                 هر دوره یک محیط تعاملی است: سندباکس زنده، چالش‌های پلکانی، بازخورد فوری و
                 بصری‌سازی مفاهیم. یادگیری با دست و آزمودن — نه فقط با خواندن.
@@ -177,7 +182,7 @@
         <div class="container">
           <div class="support-shell">
             <div class="section-head reveal">
-              <h2>اگر این مسیر برایتان مفید است، کنارش بایستید</h2>
+              <h2 data-i18n="supportHeading">اگر این مسیر برایتان مفید است، کنارش بایستید</h2>
               <p class="section-lede">
                 دونیت مالی مستقیم‌ترین کمک است و چرخهٔ تولید محتوا را زنده نگه می‌دارد. اما
                 اگر فعلاً نمی‌توانید، اشتراک‌گذاری یا مشارکت فنی همان‌قدر دلگرم‌کننده است —
@@ -188,40 +193,40 @@
             <div class="support-grid">
               <article class="support-card reveal">
                 <div class="support-icon" aria-hidden="true">◆</div>
-                <h3>دونیت</h3>
+                <h3 data-i18n="supportDonateTitle">دونیت</h3>
                 <p>
                   کمک مالی کوچک هم اثر دارد. اگر این آموزش‌ها مسیر کاری یا یادگیری شما را
                   تغییر داده، یک دونیت چرخهٔ ساخت دوره‌های بعدی را روشن نگه می‌دارد.
                 </p>
                 <a class="btn btn-primary btn-block" href="https://github.com/sponsors/alisadeghiaghili" target="_blank" rel="noopener noreferrer">
-                  <span>حمایت مالی</span>
+                  <span data-i18n="supportDonateBtn">حمایت مالی</span>
                   <span class="btn-icon" aria-hidden="true">↗</span>
                 </a>
               </article>
 
               <article class="support-card reveal" style="--delay: 80ms">
                 <div class="support-icon" aria-hidden="true">◈</div>
-                <h3>اشتراک‌گذاری</h3>
+                <h3 data-i18n="supportShareTitle">اشتراک‌گذاری</h3>
                 <p>
                   دوره‌ها را به کسانی برسانید که به‌شان نیاز دارند. اگر می‌دانید کسی دنبال
                   یادگیری Python، SQL، داده یا هر مسیر دیگری است، از فهرست زیر لینک همان
                   دوره را کپی کنید و برایش بفرستید.
                 </p>
                 <a class="btn btn-dark btn-block" href="#courses">
-                  <span>برو به فهرست دوره‌ها</span>
+                  <span data-i18n="supportShareBtn">برو به فهرست دوره‌ها</span>
                   <span class="btn-icon" aria-hidden="true">←</span>
                 </a>
               </article>
 
               <article class="support-card reveal" style="--delay: 160ms">
                 <div class="support-icon" aria-hidden="true">✦</div>
-                <h3>مشارکت</h3>
+                <h3 data-i18n="supportContribTitle">مشارکت</h3>
                 <p>
                   باگ، بهبود مستندات، ترجمه، مثال نو، یا ایدهٔ سطح جدید — هر مشارکت فنی
                   همان‌قدر ارزشمند است که حمایت مالی. مخزن‌ها روی گیت‌هاب باز هستند.
                 </p>
                 <a class="btn btn-dark btn-block" href="https://github.com/alisadeghiaghili" target="_blank" rel="noopener noreferrer">
-                  <span>گیت‌هاب من</span>
+                  <span data-i18n="supportContribBtn">گیت‌هاب من</span>
                   <span class="btn-icon" aria-hidden="true">↗</span>
                 </a>
               </article>
@@ -234,7 +239,7 @@
       <section class="section courses" id="courses">
         <div class="container">
           <div class="section-head reveal">
-            <h2>یک مسیر یادگیری، نُه دسته</h2>
+            <h2 data-i18n="coursesHeading">یک مسیر یادگیری، نُه دسته</h2>
             <p class="section-lede">
               از پایهٔ برنامه‌نویسی تا مهندسی داده، یادگیری ماشین و ابر. هر دوره یک دکمه
               است — روی هر کدام کلیک کنید و مستقیم وارد محیط تعاملی شوید.
@@ -264,8 +269,8 @@
           <div id="course-root"></div>
 
           <div id="course-empty" class="course-empty" hidden aria-live="polite">
-            <p class="course-empty-title">نتیجه‌ای پیدا نشد</p>
-            <p class="course-empty-hint">عبارت دیگری را امتحان کنید یا دسته‌بندی را تغییر دهید.</p>
+            <p class="course-empty-title" data-i18n="emptyTitle">نتیجه‌ای پیدا نشد</p>
+            <p class="course-empty-hint" data-i18n="emptyHint">عبارت دیگری را امتحان کنید یا دسته‌بندی را تغییر دهید.</p>
           </div>
         </div>
       </section>
@@ -273,7 +278,7 @@
       <!-- CTA band -->
       <section class="section cta-band">
         <div class="container cta-inner reveal">
-          <h2>آموزش نباید پشت دیوار بماند.</h2>
+          <h2 data-i18n="ctaHeading">آموزش نباید پشت دیوار بماند.</h2>
           <p>
             اگر همین یک جمله را قبول دارید، کمک کنید این مسیر برای نفر بعدی هم باز بماند.
           </p>
@@ -311,10 +316,10 @@
         </div>
       </div>
       <div class="container footer-base">
-        <span>© <span id="year">2026</span> Ali Sadeghi Aghili · Free education for everyone</span>
+        <span data-i18n-html="footerCopy">© <span id="year">2026</span> Ali Sadeghi Aghili · Free education for everyone</span>
       </div>
     </footer>
 
-    <script src="app.js?v=20261005_v4"></script>
+    <script src="app.js?v=20261005_v5"></script>
   </body>
 </html>

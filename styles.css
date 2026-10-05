@@ -167,6 +167,39 @@ strong {
   transform: translate(-2px, -2px) scale(1.05);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(28, 25, 23, 0.05);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 2px;
+  margin-inline: 0.25rem;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+.lang-btn:hover {
+  color: var(--ink);
+}
+
+.lang-btn.is-active {
+  background: var(--ink);
+  color: var(--white);
+}
+
 .nav-burger {
   display: none;
   width: 2.55rem;
@@ -977,6 +1010,47 @@ h3 {
 .course-tag.status-planned {
   background: rgba(28, 25, 23, 0.05);
   color: var(--ink-faint);
+}
+
+.course-lang-note {
+  font-size: 0.74rem;
+  color: var(--ink-faint);
+  margin: 0.35rem 0 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  line-height: 1.4;
+}
+
+.course-lang-note::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* LTR localization styles */
+html[dir="ltr"] body {
+  direction: ltr;
+  text-align: left;
+}
+
+html[lang="en"],
+html[lang="de"] {
+  --font-display: "Fraunces", "Plus Jakarta Sans", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+html[dir="ltr"] .btn .btn-icon {
+  transform: rotate(180deg);
+}
+
+html[dir="ltr"] .btn:hover .btn-icon {
+  transform: rotate(180deg) translate(-2px, -1px) scale(1.05);
 }
 
 /* CTA band */
