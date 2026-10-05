@@ -1074,14 +1074,42 @@ async function setupVisitors() {
 
   const STORAGE_KEY = "aghili-labs:unique-visitors";
   const LEGACY_STORAGE_KEY = "learn-with-ali:unique-visitors";
-  const BASELINE_COUNT = 48;
+  const BASELINE_COUNT = 70;
 
-  /**
-   * Parse the visitor count out of an SVG payload.
-   *
-   * @param {string} svg
-   * @returns {number}
-   */
+  // Purge any corrupted or stale cache from earlier regex bugs (< BASELINE)
+  try {
+    localStorage.removeItem(LEGACY_STORAGE_KEY);
+    const existing = localStorage.getItem(STORAGE_KEY);
+    if (existing) {
+      const parsed = JSON.parse(existing);
+      if (!parsed || typeof parsed.count !== "number" || parsed.count < BASELINE_COUNT) {
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+  } catch {}
+
+  const paint = (value) => {
+    el.textContent = Math.max(BASELINE_COUNT, Math.round(value)).toLocaleString("en-US");
+    el.title = "تعداد بازدیدهای این صفحه";
+  };
+
+  /** @type {{ count: number, at: number } | null} */
+  let cached = null;
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) cached = JSON.parse(raw);
+  } catch {
+    cached = null;
+  }
+
+  // If valid cache above baseline exists and is fresh (< 30m), reuse
+  if (cached && typeof cached.count === "number" && cached.count >= BASELINE_COUNT) {
+    paint(cached.count);
+    if (Date.now() - (cached.at || 0) < 1800_000) {
+      return;
+    }
+  }
+
   const parseCount = (svg) => {
     const combinedMatch = svg.match(/VISITORS:\s*[\d.,]+[KMB]?\s*\/\s*([\d.,]+[KMB]?)/i);
     let raw = combinedMatch ? combinedMatch[1] : "";
@@ -1096,7 +1124,7 @@ async function setupVisitors() {
       raw = textMatch ? textMatch[1] : "";
     }
 
-    raw = raw.replace(/,/g, "").trim();
+    raw = (raw || "").replace(/,/g, "").trim();
     if (!raw) return Number.NaN;
 
     const suffix = raw.slice(-1).toUpperCase();
@@ -1104,31 +1132,6 @@ async function setupVisitors() {
     const numeric = scale === 1 ? Number(raw) : Number.parseFloat(raw) * scale;
     return Number.isFinite(numeric) ? numeric : Number.NaN;
   };
-
-  /**
-   * Paint a count into the hero stat.
-   *
-   * @param {number} value
-   * @returns {void}
-   */
-  const paint = (value) => {
-    el.textContent = Math.max(0, Math.round(value)).toLocaleString("en-US");
-    el.title = "تعداد بازدیدهای این صفحه";
-  };
-
-  /** @type {{ count: number, at: number } | null} */
-  let cached = null;
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
-    if (raw) cached = JSON.parse(raw);
-  } catch {
-    cached = null;
-  }
-
-  if (cached && typeof cached.count === "number" && cached.count > 0) {
-    paint(cached.count);
-    return;
-  }
 
   const endpoints = [
     "https://api.visitorbadge.io/api/visitors?path=aghili-labs",
@@ -1138,7 +1141,7 @@ async function setupVisitors() {
   for (const url of endpoints) {
     try {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
+      const timer = setTimeout(() => controller.abort(), 3000);
       const res = await fetch(url, { cache: "no-store", signal: controller.signal });
       clearTimeout(timer);
 
@@ -1146,7 +1149,7 @@ async function setupVisitors() {
         const text = await res.text();
         const rawCount = parseCount(text);
         if (Number.isFinite(rawCount) && rawCount > 0) {
-          const totalCount = Math.max(rawCount, BASELINE_COUNT + rawCount);
+          const totalCount = Math.max(BASELINE_COUNT, 48 + rawCount);
           paint(totalCount);
           try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: totalCount, at: Date.now() }));
@@ -1155,14 +1158,14 @@ async function setupVisitors() {
         }
       }
     } catch {
-      // try next endpoint or fallback
+      // try next endpoint
     }
   }
 
-  const localFallback = (cached && cached.count ? cached.count : BASELINE_COUNT) + 1;
-  paint(localFallback);
+  const currentCount = cached && cached.count >= BASELINE_COUNT ? cached.count + 1 : BASELINE_COUNT;
+  paint(currentCount);
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: localFallback, at: Date.now() }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: currentCount, at: Date.now() }));
   } catch {}
 }
 
