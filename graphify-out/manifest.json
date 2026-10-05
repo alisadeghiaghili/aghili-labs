@@ -1,0 +1,704 @@
+{
+  "app.js": {
+    "mtime": 1791221984.1308084,
+    "seen": 1791222274.4474657,
+    "ast_hash": "67e5275306dab772c18cb19bc98d90eb",
+    "semantic_hash": ""
+  },
+  "tools/apply_user_selections.py": {
+    "mtime": 1791222219.9793918,
+    "seen": 1791222274.4474657,
+    "ast_hash": "5abe4fbe4813482040cb512580c5855e",
+    "semantic_hash": ""
+  },
+  "tools/build_comparison_view.py": {
+    "mtime": 1791222219.9811673,
+    "seen": 1791222274.4474657,
+    "ast_hash": "fa9e543ee033b8a2d59a42e4cabfa0dc",
+    "semantic_hash": ""
+  },
+  "tools/generate_16_logos.py": {
+    "mtime": 1791222219.984178,
+    "seen": 1791222274.4474657,
+    "ast_hash": "5b4a93fd2cb05aa12f62b46367cabb90",
+    "semantic_hash": ""
+  },
+  "tools/generate_logos.py": {
+    "mtime": 1791222219.9855876,
+    "seen": 1791222274.4474657,
+    "ast_hash": "3f06ea52f19cc27c5ec7614f0b7730b1",
+    "semantic_hash": ""
+  },
+  "tools/make_shiny_go.py": {
+    "mtime": 1791222219.987098,
+    "seen": 1791222274.4474657,
+    "ast_hash": "612ba18ba55879e32dd55c7b0aedb3ac",
+    "semantic_hash": ""
+  },
+  "tools/make_webfundamentals_logo.py": {
+    "mtime": 1791222219.987098,
+    "seen": 1791222274.4474657,
+    "ast_hash": "faa11bb32abfb05630d6d9fb72260b16",
+    "semantic_hash": ""
+  },
+  "tools/refine_custom_logos.py": {
+    "mtime": 1791222219.98913,
+    "seen": 1791222274.4474657,
+    "ast_hash": "fd136a3a1f1edf18fb329f2e065a9577",
+    "semantic_hash": ""
+  },
+  "tools/rewrite_descs.py": {
+    "mtime": 1791222219.9909139,
+    "seen": 1791222274.4474657,
+    "ast_hash": "34b3c86155f4720a4ba8db84ad98bca7",
+    "semantic_hash": ""
+  },
+  "tools/screenshot_preview.py": {
+    "mtime": 1791222219.9922502,
+    "seen": 1791222274.4474657,
+    "ast_hash": "336c428c419e7151fc0e9c011f68633b",
+    "semantic_hash": ""
+  },
+  "tools/test_new_concepts.py": {
+    "mtime": 1791222219.9937727,
+    "seen": 1791222274.4474657,
+    "ast_hash": "5c212367dd78e36b0d320378d104d774",
+    "semantic_hash": ""
+  },
+  "tools/test_visitors.py": {
+    "mtime": 1791222219.9952922,
+    "seen": 1791222274.4474657,
+    "ast_hash": "77c4ca36846756fee2215f14d5f03d4a",
+    "semantic_hash": "77c4ca36846756fee2215f14d5f03d4a"
+  },
+  "tools/update_favicon.py": {
+    "mtime": 1791222219.99781,
+    "seen": 1791222274.4474657,
+    "ast_hash": "09305e87887cdb7ed262d28adcf0a7e2",
+    "semantic_hash": ""
+  },
+  "tools/upgrade_logos.py": {
+    "mtime": 1791222219.99781,
+    "seen": 1791222274.4474657,
+    "ast_hash": "a3c108eebe287f4d37060de4fb5d33ac",
+    "semantic_hash": ""
+  },
+  "tools/vectorize_favicon.py": {
+    "mtime": 1791222219.9998205,
+    "seen": 1791222274.4474657,
+    "ast_hash": "51b6ac1f7ffc73d788020ba6da459a70",
+    "semantic_hash": ""
+  },
+  "tools/verify_logos.py": {
+    "mtime": 1791222220.0018334,
+    "seen": 1791222274.4474657,
+    "ast_hash": "c91836e9eb8cbd56dacffc9aa3ad10a8",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1791221018.9265501,
+    "seen": 1791222274.4474657,
+    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1791218321.441613,
+    "seen": 1791222274.4474657,
+    "ast_hash": "d6ff2e7f2cb7644593d57a14c9107e63",
+    "semantic_hash": ""
+  },
+  "ROADMAP.md": {
+    "mtime": 1791218276.8247316,
+    "seen": 1791222274.4474657,
+    "ast_hash": "d651920408eda657dc40d370943a487a",
+    "semantic_hash": ""
+  },
+  "docs/MAINTENANCE.md": {
+    "mtime": 1791218328.6226754,
+    "seen": 1791222274.4474657,
+    "ast_hash": "f3bc8970a3ee86e252fa4c6a14e17549",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1791222034.7017248,
+    "seen": 1791222274.4474657,
+    "ast_hash": "87e939147c3f9e7c8c9f23e16abe551f",
+    "semantic_hash": ""
+  },
+  "assets/apple-touch-icon.png": {
+    "mtime": 1791208740.4907837,
+    "seen": 1791222274.4474657,
+    "ast_hash": "199181c2520f0770bb6ab26c3b53c49e",
+    "semantic_hash": ""
+  },
+  "assets/brand/favicon-192.png": {
+    "mtime": 1791203180.5368805,
+    "seen": 1791222274.4474657,
+    "ast_hash": "02b6ded99e7cbf1ac86b0ed6908b98af",
+    "semantic_hash": ""
+  },
+  "assets/brand/favicon-64.png": {
+    "mtime": 1791203180.520203,
+    "seen": 1791222274.4474657,
+    "ast_hash": "7f097334306f0acafa4ccb33e90f8ffe",
+    "semantic_hash": ""
+  },
+  "assets/brand/logo.png": {
+    "mtime": 1791203180.3793058,
+    "seen": 1791222274.4474657,
+    "ast_hash": "333f316dadb5f2abcd58de7881b59d6a",
+    "semantic_hash": ""
+  },
+  "assets/brand/mark.png": {
+    "mtime": 1791203180.505836,
+    "seen": 1791222274.4474657,
+    "ast_hash": "784479c59bf25cb5e5ebbc970ee9c05c",
+    "semantic_hash": ""
+  },
+  "assets/favicon-16x16.png": {
+    "mtime": 1791208740.4458709,
+    "seen": 1791222274.4474657,
+    "ast_hash": "c3ce419e35a68ec5470d37597f361992",
+    "semantic_hash": ""
+  },
+  "assets/favicon-32x32.png": {
+    "mtime": 1791208740.4267638,
+    "seen": 1791222274.4474657,
+    "ast_hash": "c483d9a6fb9d22f1ffb8e0dbb265dd38",
+    "semantic_hash": ""
+  },
+  "assets/favicon.svg": {
+    "mtime": 1791208835.7013347,
+    "seen": 1791222274.4474657,
+    "ast_hash": "315472762e54e038d84a74df89331438",
+    "semantic_hash": ""
+  },
+  "assets/logos/agents.svg": {
+    "mtime": 1791129957.5219004,
+    "seen": 1791222274.4474657,
+    "ast_hash": "0812ae99dd5b307cb63873e3bb913c5c",
+    "semantic_hash": ""
+  },
+  "assets/logos/aipm.svg": {
+    "mtime": 1791129957.5083005,
+    "seen": 1791222274.4474657,
+    "ast_hash": "37d97ab8206235cf25e9aa48f0498ce8",
+    "semantic_hash": ""
+  },
+  "assets/logos/airflow.svg": {
+    "mtime": 1790877333.221322,
+    "seen": 1791222274.4474657,
+    "ast_hash": "e3d15040106d2e2c59200b734b5a049b",
+    "semantic_hash": ""
+  },
+  "assets/logos/algorithm.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "28b6ac2ef5c67174a23c6bebf43e4473",
+    "semantic_hash": ""
+  },
+  "assets/logos/api.svg": {
+    "mtime": 1790945652.699244,
+    "seen": 1791222274.4474657,
+    "ast_hash": "d434d2863e8cfc677adf4615bd70152f",
+    "semantic_hash": ""
+  },
+  "assets/logos/arduino.svg": {
+    "mtime": 1790945652.7624006,
+    "seen": 1791222274.4474657,
+    "ast_hash": "b8e87c9090fb2fe9c9666cd9f68ca51e",
+    "semantic_hash": ""
+  },
+  "assets/logos/aws.svg": {
+    "mtime": 1790877333.2233143,
+    "seen": 1791222274.4474657,
+    "ast_hash": "d37de4286bfcb86d1341ceefe5068cd1",
+    "semantic_hash": ""
+  },
+  "assets/logos/azure.svg": {
+    "mtime": 1790877333.2243142,
+    "seen": 1791222274.4474657,
+    "ast_hash": "7893622b4307a6f2e79131881b9cdacb",
+    "semantic_hash": ""
+  },
+  "assets/logos/bash.svg": {
+    "mtime": 1790782803.932,
+    "seen": 1791222274.4474657,
+    "ast_hash": "1becd8ec8239e67ed735601d246e6f1d",
+    "semantic_hash": ""
+  },
+  "assets/logos/blockchain.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "b84ba53369ada18d26355e8700689a3a",
+    "semantic_hash": ""
+  },
+  "assets/logos/bpmn.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "bea1d788ce89b9669f834512ee5be2a8",
+    "semantic_hash": ""
+  },
+  "assets/logos/cmd.svg": {
+    "mtime": 1790893888.3499472,
+    "seen": 1791222274.4474657,
+    "ast_hash": "a9fde2b46371f8f33da72c7aa4b0a9c7",
+    "semantic_hash": ""
+  },
+  "assets/logos/cpp.svg": {
+    "mtime": 1790877333.2253141,
+    "seen": 1791222274.4474657,
+    "ast_hash": "3ba000868c527852ba27a2155f909c17",
+    "semantic_hash": ""
+  },
+  "assets/logos/criticalthinking.svg": {
+    "mtime": 1790890371.1584945,
+    "seen": 1791222274.4474657,
+    "ast_hash": "1f007c51a0f804f298ba103ea94c1615",
+    "semantic_hash": ""
+  },
+  "assets/logos/cryptography.svg": {
+    "mtime": 1790893888.3529513,
+    "seen": 1791222274.4474657,
+    "ast_hash": "521c35a6e0c593c91b3444a2f8d89620",
+    "semantic_hash": ""
+  },
+  "assets/logos/cv.svg": {
+    "mtime": 1790893888.347947,
+    "seen": 1791222274.4474657,
+    "ast_hash": "bd2af99db1434b03737e0d350c525a9c",
+    "semantic_hash": ""
+  },
+  "assets/logos/dashboardkpi.svg": {
+    "mtime": 1790890371.1571336,
+    "seen": 1791222274.4474657,
+    "ast_hash": "1fdf3ac42876e88c45b052c1d1604702",
+    "semantic_hash": ""
+  },
+  "assets/logos/databricks.svg": {
+    "mtime": 1790877333.2263205,
+    "seen": 1791222274.4474657,
+    "ast_hash": "caec94846d2739659ca73cd1b93c525b",
+    "semantic_hash": ""
+  },
+  "assets/logos/datagovernance.svg": {
+    "mtime": 1790890371.1561356,
+    "seen": 1791222274.4474657,
+    "ast_hash": "62a1ca55975600bed40603068de14cc7",
+    "semantic_hash": ""
+  },
+  "assets/logos/datamodeling.svg": {
+    "mtime": 1790946788.35891,
+    "seen": 1791222274.4474657,
+    "ast_hash": "8593bdfe8ae78e6597832b40c924d682",
+    "semantic_hash": ""
+  },
+  "assets/logos/dataops.svg": {
+    "mtime": 1791129957.5138495,
+    "seen": 1791222274.4474657,
+    "ast_hash": "3a0fb9690f17dbef4dc8ee4cae6aba6b",
+    "semantic_hash": ""
+  },
+  "assets/logos/datastorytelling.svg": {
+    "mtime": 1790890371.1525922,
+    "seen": 1791222274.4474657,
+    "ast_hash": "f8febd9a9f27c436b7d3acfe5262b1b2",
+    "semantic_hash": ""
+  },
+  "assets/logos/datastructure.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "72c16e9d220428d17915943e24a39a55",
+    "semantic_hash": ""
+  },
+  "assets/logos/dax.svg": {
+    "mtime": 1790628426.0033157,
+    "seen": 1791222274.4474657,
+    "ast_hash": "eecf12334add2dd6bb2996bfbdcc2e90",
+    "semantic_hash": ""
+  },
+  "assets/logos/dbt.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "3d9aa6d84a77bd49c400db525b7b5c05",
+    "semantic_hash": ""
+  },
+  "assets/logos/ddd.svg": {
+    "mtime": 1790890371.1624968,
+    "seen": 1791222274.4474657,
+    "ast_hash": "68117d12925245d6dc6cfa1c58e1101a",
+    "semantic_hash": ""
+  },
+  "assets/logos/distributedsystems.svg": {
+    "mtime": 1791129957.511835,
+    "seen": 1791222274.4474657,
+    "ast_hash": "3ff0e8f901688c96fae1fb5d53ae6ca3",
+    "semantic_hash": ""
+  },
+  "assets/logos/django.svg": {
+    "mtime": 1790877333.2274823,
+    "seen": 1791222274.4474657,
+    "ast_hash": "7cd4f7496c0075c7c91ff1caa10ea67e",
+    "semantic_hash": ""
+  },
+  "assets/logos/dl.svg": {
+    "mtime": 1790893888.348945,
+    "seen": 1791222274.4474657,
+    "ast_hash": "44a4b9513ead1f32e27fbe4c5913b365",
+    "semantic_hash": ""
+  },
+  "assets/logos/docker.svg": {
+    "mtime": 1790782803.9381256,
+    "seen": 1791222274.4474657,
+    "ast_hash": "73daf94591c03c1651b4986b39f227d7",
+    "semantic_hash": ""
+  },
+  "assets/logos/duckdb.svg": {
+    "mtime": 1791129957.5033054,
+    "seen": 1791222274.4474657,
+    "ast_hash": "9645f3aa8900d39d4d3e97d966db017d",
+    "semantic_hash": ""
+  },
+  "assets/logos/dvc.svg": {
+    "mtime": 1790782803.9391198,
+    "seen": 1791222274.4474657,
+    "ast_hash": "f67814859a29fcabfe783a9283f9518e",
+    "semantic_hash": ""
+  },
+  "assets/logos/elasticsearch.svg": {
+    "mtime": 1790893685.8487477,
+    "seen": 1791222274.4474657,
+    "ast_hash": "46ff287fb4c6c62f26be32be09a6eee2",
+    "semantic_hash": ""
+  },
+  "assets/logos/flask.svg": {
+    "mtime": 1790877333.2284856,
+    "seen": 1791222274.4474657,
+    "ast_hash": "f10cc7da290bef389072ebe8a0478c98",
+    "semantic_hash": ""
+  },
+  "assets/logos/functional.svg": {
+    "mtime": 1790945652.8330953,
+    "seen": 1791222274.4474657,
+    "ast_hash": "fad673fcb71e29dc0c88cb62df179e27",
+    "semantic_hash": ""
+  },
+  "assets/logos/gcp.svg": {
+    "mtime": 1791129957.4994648,
+    "seen": 1791222274.4474657,
+    "ast_hash": "c760fe8b98fbb729732765e1e06de891",
+    "semantic_hash": ""
+  },
+  "assets/logos/git.svg": {
+    "mtime": 1790945652.8894649,
+    "seen": 1791222274.4474657,
+    "ast_hash": "187bcebd5ffb8d242f929d221d2b3e5f",
+    "semantic_hash": ""
+  },
+  "assets/logos/go.svg": {
+    "mtime": 1790951291.1511476,
+    "seen": 1791222274.4474657,
+    "ast_hash": "f0bfc42e8ad2f0cb1d0dec3471495a69",
+    "semantic_hash": ""
+  },
+  "assets/logos/grafana.svg": {
+    "mtime": 1790877333.2304835,
+    "seen": 1791222274.4474657,
+    "ast_hash": "de67c840ee63db09af4243637182274b",
+    "semantic_hash": ""
+  },
+  "assets/logos/hadoop.svg": {
+    "mtime": 1790877333.2314842,
+    "seen": 1791222274.4474657,
+    "ast_hash": "9261ae727e7b45995d640a742dbb1157",
+    "semantic_hash": ""
+  },
+  "assets/logos/iiot.svg": {
+    "mtime": 1791129957.5277317,
+    "seen": 1791222274.4474657,
+    "ast_hash": "5f3669cb17af56bc47145f13fbb68e3b",
+    "semantic_hash": ""
+  },
+  "assets/logos/java.svg": {
+    "mtime": 1790893671.9825492,
+    "seen": 1791222274.4474657,
+    "ast_hash": "01db64cd7015c917ab27980d3fb00890",
+    "semantic_hash": ""
+  },
+  "assets/logos/julia.svg": {
+    "mtime": 1790893674.6898303,
+    "seen": 1791222274.4474657,
+    "ast_hash": "04d0aeba8776679676f0491f6965f2ab",
+    "semantic_hash": ""
+  },
+  "assets/logos/kafka.svg": {
+    "mtime": 1790782803.947999,
+    "seen": 1791222274.4474657,
+    "ast_hash": "2e6d0b85dfa494340ec9611f4612dfec",
+    "semantic_hash": ""
+  },
+  "assets/logos/kibana.svg": {
+    "mtime": 1790893689.694588,
+    "seen": 1791222274.4474657,
+    "ast_hash": "1a3604b46f2cb377d496d76334d00d11",
+    "semantic_hash": ""
+  },
+  "assets/logos/kubernetes.svg": {
+    "mtime": 1791129957.4994648,
+    "seen": 1791222274.4474657,
+    "ast_hash": "5552e5b8dfb9bed13c6938762a8e4286",
+    "semantic_hash": ""
+  },
+  "assets/logos/licensing.svg": {
+    "mtime": 1791129957.5098183,
+    "seen": 1791222274.4474657,
+    "ast_hash": "6aff4bce6b0b2c686419b134d333d48b",
+    "semantic_hash": ""
+  },
+  "assets/logos/linux.svg": {
+    "mtime": 1790782803.9490244,
+    "seen": 1791222274.4474657,
+    "ast_hash": "88a190174d72ae110a656beff5c0a005",
+    "semantic_hash": ""
+  },
+  "assets/logos/llm.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "0844796e0239d83e95bbb497992e3ff0",
+    "semantic_hash": ""
+  },
+  "assets/logos/llmops.svg": {
+    "mtime": 1791129957.5178742,
+    "seen": 1791222274.4474657,
+    "ast_hash": "a44e33958f977a1bc8ac3df1cf44e80e",
+    "semantic_hash": ""
+  },
+  "assets/logos/logstash.svg": {
+    "mtime": 1790893690.5824182,
+    "seen": 1791222274.4474657,
+    "ast_hash": "6681686b2413762e0e3d906fb8ba334f",
+    "semantic_hash": ""
+  },
+  "assets/logos/m.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "408876f005d17a3cc072681142547d21",
+    "semantic_hash": ""
+  },
+  "assets/logos/ml.svg": {
+    "mtime": 1790782803.9501922,
+    "seen": 1791222274.4474657,
+    "ast_hash": "bfd7313d76abec7ed96f7c0ce1aabc4a",
+    "semantic_hash": ""
+  },
+  "assets/logos/mlflow.svg": {
+    "mtime": 1790893694.8693664,
+    "seen": 1791222274.4474657,
+    "ast_hash": "07abd71884fba66c9f8446a4c184b7ab",
+    "semantic_hash": ""
+  },
+  "assets/logos/mlmath.svg": {
+    "mtime": 1790893888.345945,
+    "seen": 1791222274.4474657,
+    "ast_hash": "5be2353f97ce5260cad48bff812b219e",
+    "semantic_hash": ""
+  },
+  "assets/logos/mlops.svg": {
+    "mtime": 1791129957.5158627,
+    "seen": 1791222274.4474657,
+    "ast_hash": "19b263af469371349b8a22b5a1e1b887",
+    "semantic_hash": ""
+  },
+  "assets/logos/mlpatterns.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "975c5f47b0579514a54b3201d171c485",
+    "semantic_hash": ""
+  },
+  "assets/logos/mlsecops.svg": {
+    "mtime": 1791129957.5178742,
+    "seen": 1791222274.4474657,
+    "ast_hash": "1165cd7220d4d1283b5d99ad1e360a76",
+    "semantic_hash": ""
+  },
+  "assets/logos/mlstats.svg": {
+    "mtime": 1790893888.346946,
+    "seen": 1791222274.4474657,
+    "ast_hash": "d10bbbe355199af2c603a5b15bff6add",
+    "semantic_hash": ""
+  },
+  "assets/logos/mongodb.svg": {
+    "mtime": 1790893679.4652107,
+    "seen": 1791222274.4474657,
+    "ast_hash": "644e4ee2c7f861d6fa81e153b2efb26b",
+    "semantic_hash": ""
+  },
+  "assets/logos/networking.svg": {
+    "mtime": 1790949459.4143927,
+    "seen": 1791222274.4474657,
+    "ast_hash": "fb2e07a1fad9fbf184ec5e7375464af9",
+    "semantic_hash": ""
+  },
+  "assets/logos/nlp.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "d9f2259a43a247ba1a7513778c2cbd94",
+    "semantic_hash": ""
+  },
+  "assets/logos/optimization.svg": {
+    "mtime": 1791129957.5257213,
+    "seen": 1791222274.4474657,
+    "ast_hash": "e46c7065b8041fecda50f327f6867b66",
+    "semantic_hash": ""
+  },
+  "assets/logos/pkgm.svg": {
+    "mtime": 1790877333.2334864,
+    "seen": 1791222274.4474657,
+    "ast_hash": "4dabcc5187f570dcc90557c31d56108a",
+    "semantic_hash": ""
+  },
+  "assets/logos/powershell.svg": {
+    "mtime": 1790877333.2344832,
+    "seen": 1791222274.4474657,
+    "ast_hash": "ecb9e33ba4dcf0220cb46b20493dc04b",
+    "semantic_hash": ""
+  },
+  "assets/logos/python.svg": {
+    "mtime": 1790877333.2344832,
+    "seen": 1791222274.4474657,
+    "ast_hash": "fc0a5b1f08be193eb939f01be5395097",
+    "semantic_hash": ""
+  },
+  "assets/logos/r.svg": {
+    "mtime": 1790782803.9552367,
+    "seen": 1791222274.4474657,
+    "ast_hash": "1f704c886b8374b5b9fbc59e0644315b",
+    "semantic_hash": ""
+  },
+  "assets/logos/rag.svg": {
+    "mtime": 1791129957.5198889,
+    "seen": 1791222274.4474657,
+    "ast_hash": "0b2638879a81b23a456b59c88563c01f",
+    "semantic_hash": ""
+  },
+  "assets/logos/raspberrypi.svg": {
+    "mtime": 1790893681.6910768,
+    "seen": 1791222274.4474657,
+    "ast_hash": "e88379029727c179b2ebbe96ebe9a6c4",
+    "semantic_hash": ""
+  },
+  "assets/logos/rl.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4474657,
+    "ast_hash": "cd26eb7ec905189cd0c3f75349f9669b",
+    "semantic_hash": ""
+  },
+  "assets/logos/rust.svg": {
+    "mtime": 1790877333.2364855,
+    "seen": 1791222274.4474657,
+    "ast_hash": "10373e1faedea7be9b84d0fc5e52c689",
+    "semantic_hash": ""
+  },
+  "assets/logos/scala.svg": {
+    "mtime": 1790893673.1399384,
+    "seen": 1791222274.4474657,
+    "ast_hash": "542fd6ea4dd162b6921c64fa62d673d9",
+    "semantic_hash": ""
+  },
+  "assets/logos/scientificwriting.svg": {
+    "mtime": 1790890371.1595004,
+    "seen": 1791222274.4487739,
+    "ast_hash": "782495a0849538990aeaf33346162b5a",
+    "semantic_hash": ""
+  },
+  "assets/logos/scraping.svg": {
+    "mtime": 1790949472.8767319,
+    "seen": 1791222274.4487739,
+    "ast_hash": "5cd5bbe2c7d6cf02df8452e8acf7a922",
+    "semantic_hash": ""
+  },
+  "assets/logos/shiny.svg": {
+    "mtime": 1790951311.0705452,
+    "seen": 1791222274.4487739,
+    "ast_hash": "ce80c9e82223bc71b6ccdacb4225ca46",
+    "semantic_hash": ""
+  },
+  "assets/logos/snowflake.svg": {
+    "mtime": 1790877333.2364855,
+    "seen": 1791222274.4487739,
+    "ast_hash": "901eab2607489334c0445b957b407415",
+    "semantic_hash": ""
+  },
+  "assets/logos/softwaredesign.svg": {
+    "mtime": 1790893888.3529513,
+    "seen": 1791222274.4487739,
+    "ast_hash": "3dab1c2cc0b2ec42973b76aa1f1b3422",
+    "semantic_hash": ""
+  },
+  "assets/logos/spark.svg": {
+    "mtime": 1790877333.2377243,
+    "seen": 1791222274.4487739,
+    "ast_hash": "3aae6b457f86a8ffaea79dad353c666a",
+    "semantic_hash": ""
+  },
+  "assets/logos/splunk.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4487739,
+    "ast_hash": "4e9ff1daae95ad9132d78c1ce39a9e41",
+    "semantic_hash": ""
+  },
+  "assets/logos/sql.svg": {
+    "mtime": 1790945652.9529674,
+    "seen": 1791222274.4487739,
+    "ast_hash": "f183c1577dc60594d1b9de9ebbe05b0a",
+    "semantic_hash": ""
+  },
+  "assets/logos/streamlit.svg": {
+    "mtime": 1790877333.238722,
+    "seen": 1791222274.4487739,
+    "ast_hash": "a48aff4cfcbd4e40f481cae251549287",
+    "semantic_hash": ""
+  },
+  "assets/logos/techinterviews.svg": {
+    "mtime": 1790946773.1513786,
+    "seen": 1791222274.4487739,
+    "ast_hash": "6bc94a671b5669bfade7c4ccc3cf8f1d",
+    "semantic_hash": ""
+  },
+  "assets/logos/technicaldocs.svg": {
+    "mtime": 1790890371.1605308,
+    "seen": 1791222274.4487739,
+    "ast_hash": "3bad674c1aad025fad3bbfde260a6917",
+    "semantic_hash": ""
+  },
+  "assets/logos/terraform.svg": {
+    "mtime": 1791129957.5033054,
+    "seen": 1791222274.4487739,
+    "ast_hash": "d5d2ebbe9db7f35ffc478b279ded68b6",
+    "semantic_hash": ""
+  },
+  "assets/logos/testing.svg": {
+    "mtime": 1790890371.161495,
+    "seen": 1791222274.4487739,
+    "ast_hash": "baeb162563203c8f7d12c522c430bf55",
+    "semantic_hash": ""
+  },
+  "assets/logos/timeseries.svg": {
+    "mtime": 1790950528.2604415,
+    "seen": 1791222274.4487739,
+    "ast_hash": "9f90b25590011e7c7818a552738109c1",
+    "semantic_hash": ""
+  },
+  "assets/logos/tinyml.svg": {
+    "mtime": 1791129957.5606472,
+    "seen": 1791222274.4487739,
+    "ast_hash": "78ce4b02bc497da166f6402bd988292f",
+    "semantic_hash": ""
+  },
+  "assets/logos/webfundamentals.svg": {
+    "mtime": 1791130649.7590702,
+    "seen": 1791222274.4487739,
+    "ast_hash": "ec2b9ae4af3bd9174895ea52fa5dd0e8",
+    "semantic_hash": ""
+  }
+}

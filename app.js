@@ -927,6 +927,188 @@ function formatDesc(text) {
 /**
  * Localization dictionary supporting Persian (default), English, and German.
  */
+const COURSE_DESC_EN = {
+  "learn-python": "From simple automation to machine learning. Memory model, data structures, and algorithmic challenges step-by-step.",
+  "learn-r": "Statistical computing, data manipulation in the tidyverse, publication-ready graphics with ggplot2, and simulation.",
+  "learn-cpp": "Direct memory and hardware control for maximum performance. Pointers, resource management (RAII), and modern C++.",
+  "learn-rust": "Memory safety without garbage collection. Ownership, borrowing lifetimes, and fearless concurrency.",
+  "learn-go": "Built for cloud scale and concurrent systems. Lightweight goroutines, channels, fast compilation, and single-binary deployments.",
+  "learn-julia": "C speed with Python expressiveness for numerical computing, multiple dispatch, and scientific machine learning.",
+  "learn-java": "Enterprise infrastructure backbone from Hadoop to Kafka. JVM internals, memory model, concurrency, and big data architecture.",
+  "learn-scala": "Apache Spark's native language for big data processing. Combining functional and object-oriented paradigms with strong typing.",
+  "learn-functional-programming": "Predictable, maintainable code through immutability, pure functions, composition, and monadic structures.",
+  "learn-bash": "The universal language of Linux servers and CI/CD pipelines. I/O streams, pipes, and text processing with sed and awk.",
+  "learn-powershell": "Structured object pipelines, remote system administration, and automation for Windows and cross-platform environments.",
+  "learn-cmd": "Fast automation in Windows environments. File system commands, environment variables, and batch scripting.",
+  "learn-linux": "The foundation powering over 90% of global servers. Kernel architecture, process management, permissions, and file systems.",
+  "learn-git": "Essential version control for engineering teams. Branching models, rebasing, merge conflict resolution, and history recovery.",
+  "learn-networking": "Practical networking for software engineers. TCP/IP, OSI layers, DNS, routing, and real-world network troubleshooting.",
+  "learn-cryptography": "Security foundations behind digital signatures and TLS. Cryptographic hashes, symmetric and asymmetric ciphers, and PKI.",
+  "learn-software-design": "Writing maintainable, evolvable code. SOLID principles, GoF design patterns, layered architecture, and refactoring.",
+  "learn-testing": "Test-driven development (TDD), unit and integration testing with pytest, mocking, and data validation pipelines.",
+  "learn-technical-docs": "Architecture decision records (ADRs), RFCs, API specifications, and sustainable engineering knowledge management.",
+  "learn-ddd": "Tackling domain complexity with strategic design, ubiquitous language, bounded contexts, aggregates, and Data Mesh.",
+  "learn-bpmn": "End-to-end business process modeling with BPMN 2.0 standards, decision gateways, pools, and execution engines.",
+  "learn-scientific-writing": "Rigorous technical reporting, IMRAD structure, reproducible experiments, and peer-review publication readiness.",
+  "learn-tech-interviews": "Mastering technical interviews. System design, live algorithmic coding, SQL challenges, and architecture defense.",
+  "learn-ai-pm": "Managing AI and data initiatives. Agile for probabilistic systems, CRISP-DM lifecycle, TCO, and ROI estimation.",
+  "learn-licensing": "Legal requirements in open source, foundation model weights, dataset copyrights, and commercial compliance.",
+  "learn-distributed-systems": "Engineering resilient distributed architectures. CAP theorem, Raft and Paxos consensus, sharding, and event-driven patterns.",
+  "learn-docker": "Containerization essentials. Multi-stage image builds, container networking, volume persistence, and Docker Compose.",
+  "learn-aws": "Core AWS cloud services for data engineers. S3, EC2, Lambda, IAM, and cloud-native data architectures.",
+  "learn-azure": "Microsoft enterprise cloud ecosystem. Azure Data Factory, ADLS Gen2, Synapse Analytics, and cloud resource management.",
+  "learn-databricks": "Unified lakehouse platform. Distributed Spark computing, Delta Lake architecture, and query optimization.",
+  "learn-snowflake": "Decoupled compute and storage in modern data warehousing. Scalable SQL, Time Travel, zero-copy cloning, and data sharing.",
+  "learn-grafana": "Real-time observability and dashboarding. Connecting metrics sources, writing PromQL queries, and proactive alerting.",
+  "learn-pkgm": "Modern Python dependency management. Comparing pip, conda, and uv with virtual environments and reproducible builds.",
+  "learn-kibana": "Visual analytics for Elastic Stack. Exploring log data in Discover, dashboard creation, and distributed monitoring.",
+  "learn-logstash": "Centralized log ingestion and transformation. Real-time pipelines, Grok parsing, and routing to Elasticsearch.",
+  "learn-splunk": "Enterprise machine data analytics and SIEM. Security monitoring, incident investigation, and SPL query mastery.",
+  "learn-kubernetes": "Production container orchestration. Cluster architecture, Pods, Deployments, Services, and StatefulSets at scale.",
+  "learn-gcp": "Google Cloud for big data and AI. Cloud Storage, scalable analytics with BigQuery, serverless Cloud Run, and Vertex AI.",
+  "learn-terraform": "Infrastructure as Code (IaC). Declarative HCL syntax, resource lifecycles, state management, and modular cloud provisioning.",
+  "learn-sql": "The definitive data language. Window functions, CTEs, subqueries, indexing strategies, and query plan optimization.",
+  "learn-dax": "Advanced analytics in Power BI. Evaluation contexts, row and filter context, CALCULATE internals, and time intelligence.",
+  "learn-m": "Power Query data transformation language. Ingesting, cleaning, and shaping heterogeneous data sources for reporting models.",
+  "learn-spark": "Large-scale distributed data processing. Spark DataFrames, Catalyst optimizer, partitioning, and in-memory execution.",
+  "learn-hadoop": "Distributed storage and processing fundamentals. HDFS architecture, MapReduce paradigms, and YARN resource negotiation.",
+  "learn-mongodb": "Document database modeling. Flexible JSON/BSON schemas, compound indexing, and aggregation pipelines.",
+  "learn-elasticsearch": "Sub-second search across billions of documents. Inverted indexes, BM25 scoring, fuzzy matching, and text analyzers.",
+  "learn-data-storytelling": "Transforming numbers into persuasive narratives. Gestalt design principles, reducing visual cognitive load, and executive reporting.",
+  "learn-data-modeling": "Designing robust data schemas. ER diagrams, normalization, Kimball dimensional modeling, star schemas, and OLTP vs OLAP.",
+  "learn-data-governance": "Ensuring data quality and compliance. Data contracts, lineage tracking, metadata catalogs, PII privacy, and auditing.",
+  "learn-dashboard-kpi": "Designing actionable executive dashboards. Leading vs lagging indicators, information hierarchy, and cognitive ergonomics.",
+  "learn-duckdb": "Blazing-fast in-process analytical SQL. Columnar vectorized execution, zero-copy Parquet reading, and serverless analytics.",
+  "learn-dvc": "Version control for data and machine learning models. Git-like dataset tracking, remote storage caching, and reproducible pipelines.",
+  "learn-dbt": "Software engineering best practices applied to SQL transformations. Modular models, DAG lineage, automated testing, and documentation.",
+  "learn-airflow": "Authoring and orchestrating complex data workflows. Python DAG definitions, task dependencies, sensor triggers, and failure recovery.",
+  "learn-kafka": "High-throughput distributed event streaming. Topics, partitions, producer/consumer patterns, and exactly-once processing semantics.",
+  "learn-mlflow": "End-to-end machine learning lifecycle management. Experiment tracking, model packaging, registry governance, and serving.",
+  "learn-dataops": "Agile principles for data engineering. Continuous integration and delivery (CI/CD), automated quality checks, and pipeline observability.",
+  "learn-mlops": "Bridging machine learning prototypes to reliable production systems. Continuous training (CT), model monitoring, drift detection, and automated deployment.",
+  "learn-llmops": "Deploying and managing large language models at scale. High-throughput inference engines (vLLM, Triton), prompt routing, semantic caching, and cost monitoring.",
+  "learn-mlsecops": "Defending AI pipelines and models against novel cyber threats. Prompt injection defense, data poisoning detection, weight extraction mitigation, and model provenance.",
+  "learn-ml": "Applied machine learning from hypothesis to evaluation. Regression, classification, clustering, cross-validation, and feature engineering with scikit-learn.",
+  "learn-mlmath": "Mathematical foundations of machine learning. Linear algebra, matrix calculus, multivariate gradients, and vector space geometry.",
+  "learn-mlstats": "Statistical rigor for data science. Hypothesis testing, Bayesian inference, probability distributions, confidence intervals, and ANOVA.",
+  "learn-ts": "Time series forecasting and analysis. Trend and seasonality decomposition, stationarity tests, ARIMA, Prophet, and neural network forecasting.",
+  "learn-dl": "Deep learning from perceptrons to modern neural architectures. Activation functions, backpropagation, and hands-on PyTorch modeling.",
+  "learn-rl": "Reinforcement learning and autonomous decision agents. Markov decision processes, Q-learning, deep Q-networks (DQN), and policy gradients.",
+  "learn-nlp": "Natural language processing foundations. Tokenization, word and sentence embeddings, sequence models, transformers, and semantic parsing.",
+  "learn-cv": "Computer vision and image analysis. Convolutional neural networks (CNNs), object detection, semantic segmentation, and visual feature extraction.",
+  "learn-datastructure": "Essential data structures for software engineers. Arrays, linked lists, stacks, queues, hash tables, trees, heaps, and graphs.",
+  "learn-algorithm": "Designing and analyzing scalable algorithms. Big-O complexity, search algorithms, sorting, dynamic programming, and graph algorithms.",
+  "learn-llm": "Deep dive into Large Language Models. Self-attention mechanisms, Transformer architectures, prompt engineering, LoRA fine-tuning, and alignment.",
+  "learn-ml-patterns": "Battle-tested architectural patterns in machine learning. Feature stores, cascading models, checkpointing, and resilient serving topologies.",
+  "learn-critical-thinking": "Analytical defense against faulty reasoning. Correlation vs causation, Simpson's paradox, selection bias, and avoiding p-hacking pitfalls.",
+  "learn-rag": "Retrieval-Augmented Generation for enterprise knowledge. Vector databases, dense embeddings, HNSW indexing, reranking, and semantic retrieval.",
+  "learn-agents": "Autonomous agent architectures. ReAct patterns, Model Context Protocol (MCP), tool execution, working memory, and multi-agent coordination.",
+  "learn-optimization": "Mathematical programming and combinatorial optimization. Linear programming, integer programming, and constraint solving with Google OR-Tools.",
+  "learn-web-fundamentals": "Core web architecture. HTTP protocols, client-server models, DOM tree manipulation, semantic HTML, responsive CSS, and modern JavaScript.",
+  "learn-django": "Batteries-included Python web framework. MTV architecture, built-in ORM, automated migrations, authentication, and secure admin interfaces.",
+  "learn-flask": "Lightweight Python microframework. HTTP request lifecycles, routing, Jinja templating, and building modular microservices.",
+  "learn-streamlit": "Rapid data app development in pure Python. Interactive widgets, data caching, live visualization, and deploying machine learning prototypes.",
+  "learn-shiny": "Reactive web applications for R and Python. Reactive graphs, dynamic inputs, statistical dashboards, and interactive visual analytics.",
+  "learn-api": "Designing robust web APIs. RESTful principles, Pydantic data validation, automated OpenAPI documentation, and async FastAPI services.",
+  "learn-scraping": "Web data extraction and harvesting. HTTP requests, HTML parsing with BeautifulSoup, browser automation with Selenium, and resilient scrapers.",
+  "learn-arduino": "Embedded programming and physical computing. Microcontroller I/O, analog/digital sensors, actuator control, and I2C/SPI communication.",
+  "learn-raspberrypi": "Single-board computing for Industry 4.0. Linux on ARM, GPIO programming, edge telemetry, industrial sensor gateways, and cloud sync.",
+  "learn-enterprise-blockchain": "Permissioned distributed ledgers for Industry 4.0. Immutable supply chain tracking, smart contracts, and Hyperledger Fabric.",
+  "learn-iiot": "Industrial Internet of Things architecture. Connecting operational technology (OT) to cloud platforms with MQTT, OPC-UA, and edge telemetry processing.",
+  "learn-tinyml": "Machine learning on ultra-low-power microcontrollers. Quantization, model compression, TensorFlow Lite for Microcontrollers, and edge sensor inference."
+};
+
+const COURSE_DESC_DE = {
+  "learn-python": "Von einfacher Automatisierung bis Machine Learning. Speichermodell, Datenstrukturen und algorithmische Aufgaben Schritt für Schritt.",
+  "learn-r": "Statistische Datenanalyse, Datenbereinigung im tidyverse, publikationsreife Grafiken mit ggplot2 und Simulationen.",
+  "learn-cpp": "Direkte Speicher- und Hardwarekontrolle für maximale Ausführungsgeschwindigkeit. Zeiger, Ressourcenmanagement (RAII) und modernes C++.",
+  "learn-rust": "Speichersicherheit ohne Garbage Collector. Ownership-System, Borrowing-Lifetimes und daten-rennfreie Nebenläufigkeit.",
+  "learn-go": "Entwickelt für Cloud-Dienste und skalierbare Systeme. Leichtgewichtige Goroutinen, Kanäle, schnelle Kompilierung und Single-Binary-Deployments.",
+  "learn-julia": "C-Geschwindigkeit mit Python-Lesbarkeit für numerische Berechnungen, Multiple Dispatch und wissenschaftliches Rechnen.",
+  "learn-java": "Das Rückgrat moderner Unternehmenssysteme von Hadoop bis Kafka. JVM-Interna, Speichermodell, Nebenläufigkeit und Big-Data-Architektur.",
+  "learn-scala": "Die native Sprache von Apache Spark für verteilte Datenverarbeitung. Funktionale und objektorientierte Paradigmen mit starkem Typsystem.",
+  "learn-functional-programming": "Vorhersehbarer, wartbarer Code durch Unveränderlichkeit, reine Funktionen, Komposition und monadische Strukturen.",
+  "learn-bash": "Die universelle Sprache von Linux-Servern und CI/CD-Pipelines. E/A-Datenströme, Pipes und Textverarbeitung mit sed und awk.",
+  "learn-powershell": "Strukturierte Objekt-Pipelines, Remote-Systemadministration und plattformübergreifende Automatisierung für Windows und Linux.",
+  "learn-cmd": "Schnelle Automatisierung in Windows-Umgebungen. Dateisystembefehle, Umgebungsvariablen und Batch-Skripte.",
+  "learn-linux": "Das Fundament von über 90 % aller weltweiten Server. Kernel-Architektur, Prozessverwaltung, Zugriffsrechte und Dateisysteme.",
+  "learn-git": "Unverzichtbare Versionskontrolle für Entwicklungsteams. Verzweigungsmodelle, Rebase, Konfliktlösung und Versionshistorie.",
+  "learn-networking": "Praxisnahe Netzwerkgrundlagen für Software-Engineers. TCP/IP, OSI-Schichten, DNS, Routing und Fehlerdiagnose in realen Systemen.",
+  "learn-cryptography": "Sicherheitsfundamente digitaler Signaturen und Verschlüsselung. Kryptografische Hashes, symmetrische und asymmetrische Verfahren und PKI.",
+  "learn-software-design": "Wartbaren, zukunftssicheren Code schreiben. SOLID-Prinzipien, GoF-Entwurfsmuster, Schichtenarchitektur und Refactoring.",
+  "learn-testing": "Testgetriebene Entwicklung (TDD), Unit- und Integrationstests mit pytest, Mocking und Validierung von Datenpipelines.",
+  "learn-technical-docs": "Architektur-Entscheidungsprotokolle (ADRs), RFCs, API-Spezifikationen und nachhaltiges Wissensmanagement im Team.",
+  "learn-ddd": "Beherrschung fachlicher Komplexität mit Domain-Driven Design, Ubiquitous Language, Bounded Contexts und Data-Mesh-Architekturen.",
+  "learn-bpmn": "End-to-End-Geschäftsprozessmodellierung nach BPMN 2.0-Standards, Entscheidungsgateways, Pools und Anbindung an Ausführungs-Engines.",
+  "learn-scientific-writing": "Präzise wissenschaftliche Dokumentation, IMRAD-Struktur, reproduzierbare Experimente und Vorbereitung auf Peer-Reviews.",
+  "learn-tech-interviews": "Erfolgreich in technischen Interviews. System Design, Live-Coding von Algorithmen, komplexe SQL-Aufgaben und Architekturentscheidungen.",
+  "learn-ai-pm": "Steuerung von KI- und Datenprojekten. Agile Methoden für probabilistische Systeme, CRISP-DM, TCO-Berechnung und ROI-Ermittlung.",
+  "learn-licensing": "Rechtliche Grundlagen bei Open-Source-Lizenzen, Modellgewichten, Urheberrechten an Datensätzen und kommerzieller Nutzung.",
+  "learn-distributed-systems": "Entwicklung hochverfügbarer verteilter Systeme. CAP-Theorem, Raft- und Paxos-Konsens, Sharding und ereignisgesteuerte Architekturen.",
+  "learn-docker": "Praktische Containerisierung. Mehrstufige Builds, Container-Netzwerke, Datenvolumen und Multi-Container-Orchestrierung mit Docker Compose.",
+  "learn-aws": "Zentrale AWS-Cloud-Dienste für Data Engineers. S3, EC2, Lambda, IAM und moderne cloud-native Datenarchitekturen.",
+  "learn-azure": "Das Microsoft-Cloud-Ökosystem für Unternehmen. Azure Data Factory, ADLS Gen2, Synapse Analytics und Cloud-Ressourcenverwaltung.",
+  "learn-databricks": "Integrierte Lakehouse-Plattform. Verteilte Berechnungen mit Spark, Delta-Lake-Architektur und Query-Optimierung.",
+  "learn-snowflake": "Entkoppelte Rechen- und Speicherkapazitäten im modernen Data Warehousing. Skalierbares SQL, Time Travel und Zero-Copy Cloning.",
+  "learn-grafana": "Echtzeit-Monitoring und Observability. Anbindung verschiedener Datenquellen, Schreiben von PromQL-Abfragen und Alarmsysteme.",
+  "learn-pkgm": "Modernes Python-Paketmanagement. Vergleich von pip, conda und uv mit virtuellen Umgebungen und reproduzierbaren Builds.",
+  "learn-kibana": "Visuelle Datenanalyse im Elastic Stack. Erkundung von Logdaten in Discover, interaktive Dashboards und Systemüberwachung.",
+  "learn-logstash": "Zentrale Log-Erfassung und Transformation. Echtzeit-Pipelines, Grok-Muster für Parsing und Weiterleitung an Elasticsearch.",
+  "learn-splunk": "Analyse großer Mengen an Maschinendaten und SIEM. Sicherheitsüberwachung, Ereignisanalyse und SPL-Abfragen.",
+  "learn-kubernetes": "Container-Orchestrierung im Produktivbetrieb. Cluster-Architektur, Pods, Deployments, Services und StatefulSets.",
+  "learn-gcp": "Google Cloud für Big Data und künstliche Intelligenz. Cloud Storage, Analysen mit BigQuery, Cloud Run und Vertex AI.",
+  "learn-terraform": "Infrastructure as Code (IaC). Deklarative HCL-Syntax, Ressourcen-Lebenszyklen, Statusverwaltung und Cloud-Bereitstellung.",
+  "learn-sql": "Die fundamentale Datensprache. Fensterfunktionen, CTEs, Unterabfragen, Indexierung und Ausführungsplan-Optimierung.",
+  "learn-dax": "Fortgeschrittene Datenanalyse in Power BI. Filter- und Zeilenkontexte, CALCULATE-Funktion und Zeitintelligenz-Kennzahlen.",
+  "learn-m": "Power-Query-Transformationssprache. Bereinigung, Strukturierung und Zusammenführung heterogener Datenquellen.",
+  "learn-spark": "Verteilte Datenverarbeitung im großen Maßstab. Spark DataFrames, Catalyst-Optimierer, Partitionierung und In-Memory-Berechnungen.",
+  "learn-hadoop": "Grundlagen verteilter Datenspeicherung und -verarbeitung. HDFS-Architektur, MapReduce-Paradigmen und YARN-Ressourcenverwaltung.",
+  "learn-mongodb": "Dokumentenorientierte Datenbanken. Flexible JSON/BSON-Schemas, zusammengesetzte Indizes und Aggregation Pipelines.",
+  "learn-elasticsearch": "Blitzschnelle Volltextsuche in Milliarden Dokumenten. Invertierte Indizes, BM25-Relevanz, unscharfe Suche und Textanalyse.",
+  "learn-data-storytelling": "Daten in überzeugende Berichte verwandeln. Gestaltgesetze der visuellen Wahrnehmung und datengestützte Entscheidungsfindung.",
+  "learn-data-modeling": "Solide Datenschemata entwerfen. ER-Diagramme, Normalisierung, Kimball-Dimensionierung, Sternschemata und OLTP vs OLAP.",
+  "learn-data-governance": "Datenqualität und Compliance sicherstellen. Datenverträge, Lineage-Tracking, Metadatenkataloge und Datenschutz.",
+  "learn-dashboard-kpi": "Effektive Management-Dashboards gestalten. Früh- und Spätindikatoren, Informationshierarchie und Benutzeroberflächen.",
+  "learn-duckdb": "Ultraschnelles In-Process Analytical SQL. Spaltenbasierte vektorisierte Ausführung, Parquet-Direktabfragen und Ad-hoc-Analytik.",
+  "learn-dvc": "Versionskontrolle für Daten und Machine-Learning-Modelle. Datensatz-Tracking, Remote-Storage-Caching und reproduzierbare Pipelines.",
+  "learn-dbt": "Software-Engineering-Best-Practices für SQL. Modulare Transformationsmodelle, DAG-Abhängigkeiten, automatisierte Tests und Dokumentation.",
+  "learn-airflow": "Orchestrierung komplexer Daten-Workflows. Python-DAG-Definitionen, Aufgabenabhängigkeiten, Sensoren und Fehlerbehandlung.",
+  "learn-kafka": "Verteilte Event-Streaming-Plattform. Topics, Partitionen, Producer- und Consumer-Muster und Exactly-Once-Verarbeitung.",
+  "learn-mlflow": "Ganzheitliches Management des ML-Lebenszyklus. Experiment-Tracking, Modell-Packaging, Registry und Deployment.",
+  "learn-dataops": "Agile Methoden für Daten-Pipelines. Kontinuierliche Integration und Bereitstellung (CI/CD), Datenqualitätsprüfungen und Monitoring.",
+  "learn-mlops": "Von experimentellen Modellen zu stabilen Produktionssystemen. Kontinuierliches Training (CT), Modellüberwachung und Drift-Erkennung.",
+  "learn-llmops": "Skalierung und Betrieb großer Sprachmodelle. Hochleistungs-Inferenz-Engines (vLLM, Triton), Prompt-Routing und Kostenkontrolle.",
+  "learn-mlsecops": "Sicherheit für KI-Pipelines. Schutz vor Prompt-Injections, Erkennung von Data Poisoning und Absicherung der ML-Lieferkette.",
+  "learn-ml": "Angewandtes Machine Learning von der Hypothese zur Evaluation. Regression, Klassifikation, Clustering und Feature-Engineering mit scikit-learn.",
+  "learn-mlmath": "Mathematische Grundlagen des maschinellen Lernens. Lineare Algebra, Matrix-Kalkül, Gradientenoptimierung und Vektorräume.",
+  "learn-mlstats": "Statistische Fundamente für Data Science. Hypothesentests, Bayessche Inferenz, Wahrscheinlichkeitsverteilungen und Konfidenzintervalle.",
+  "learn-ts": "Zeitreihenanalyse und Vorhersagemodelle. Zerlegung von Trend und Saisonalität, Stationaritätstests, ARIMA, Prophet und neuronale Netze.",
+  "learn-dl": "Deep Learning von Perzeptronen bis zu modernen Netzen. Aktivierungsfunktionen, Backpropagation und praktisches Modelltraining mit PyTorch.",
+  "learn-rl": "Reinforcement Learning und autonome Entscheidungsagenten. Markov-Entscheidungsprozesse, Q-Learning, DQN und Policy Gradients.",
+  "learn-nlp": "Verarbeitung natürlicher Sprache. Tokenisierung, Worteinbettungen, Sequenzmodelle, Transformer-Architekturen und semantische Analyse.",
+  "learn-cv": "Computer Vision und Bildverarbeitung. Convolutional Neural Networks (CNNs), Objekterkennung, Bildsegmentierung und Feature-Extraktion.",
+  "learn-datastructure": "Fundamentale Datenstrukturen für Softwareentwickler. Arrays, verkettete Listen, Stacks, Queues, Hashmaps, Bäume und Graphen.",
+  "learn-algorithm": "Entwurf und Analyse skalierbarer Algorithmen. Big-O-Komplexität, Suchverfahren, Sortieren, dynamische Programmierung und Graphalgorithmen.",
+  "learn-llm": "Fundiertes Verständnis großer Sprachmodelle. Self-Attention, Transformer-Architektur, Prompt-Engineering, LoRA-Finetuning und Modell-Alignment.",
+  "learn-ml-patterns": "Praxiserprobte Architekturmuster für Machine Learning. Feature Stores, Kaskadierung, Checkpointing und resiliente Inferenzsysteme.",
+  "learn-critical-thinking": "Analytisches und kritisches Denken bei Daten. Korrelation vs Kausalität, Simpson-Paradoxon, Selektionsverzerrung und p-Hacking-Fallen.",
+  "learn-rag": "Retrieval-Augmented Generation für Wissensdatenbanken. Vektordatenbanken, HNSW-Indizierung, Reranking und semantische Dokumentensuche.",
+  "learn-agents": "Autonome KI-Agentenarchitekturen. ReAct-Muster, Model Context Protocol (MCP), Werkzeugausführung und Multi-Agenten-Orchestrierung.",
+  "learn-optimization": "Mathematische Optimierung und Operations Research. Lineare und ganzzahlige Programmierung sowie Constraint-Solving mit Google OR-Tools.",
+  "learn-web-fundamentals": "Web-Grundlagen und Architektur. HTTP-Protokolle, Client-Server-Modelle, DOM-Manipulation, semantisches HTML, CSS und JavaScript.",
+  "learn-django": "Ganzheitliches Python-Webframework. MTV-Architektur, integriertes ORM, automatisierte Migrationen, Authentifizierung und Admin-Panel.",
+  "learn-flask": "Leichtgewichtiges Python-Mikroframework. HTTP-Lebenszyklus, Routing, Jinja-Templates und Entwicklung modularer APIs.",
+  "learn-streamlit": "Schnelle Erstellung von Daten-Webapps mit reinem Python. Interaktive Widgets, Daten-Caching, Live-Visualisierung und ML-Dashboards.",
+  "learn-shiny": "Reaktive Webanwendungen für R und Python. Reaktive Graphen, dynamische Benutzeroberflächen und statistische Echtzeit-Dashboards.",
+  "learn-api": "Design robuster Web-APIs. RESTful-Prinzipien, Pydantic-Validierung, automatisierte OpenAPI-Dokumentation und FastAPI.",
+  "learn-scraping": "Strukturierte Datenextraktion aus dem Web. HTTP-Anfragen, HTML-Parsing mit BeautifulSoup, Browserautomatisierung mit Selenium und Crawler.",
+  "learn-arduino": "Mikrocontroller-Programmierung und Physical Computing. E/A-Pins, analoge und digitale Sensoren, Motorsteuerung und I2C/SPI-Protokolle.",
+  "learn-raspberrypi": "Single-Board-Computer für Industrie 4.0. Embedded Linux, GPIO-Programmierung, Edge-Telemetrie und Anbindung an Cloud-Dienste.",
+  "learn-enterprise-blockchain": "Permissioned Distributed Ledgers für Industrie 4.0. Unveränderliche Lieferkettenverfolgung, Smart Contracts und Hyperledger Fabric.",
+  "learn-iiot": "Industrial Internet of Things (IIoT). Verbindung von Betriebstechnik (OT) mit IT-Cloudplattformen via MQTT, OPC-UA und Edge-Verarbeitung.",
+  "learn-tinyml": "Machine Learning auf ressourcenbeschränkten Mikrocontrollern. Quantisierung, Gewichtsreduktion, TensorFlow Lite for Microcontrollers und Sensor-KI."
+};
+
 const I18N = {
   fa: {
     dir: "rtl",
@@ -1251,10 +1433,17 @@ function createCourseCard(course) {
   const card = document.createElement("article");
   card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
 
+  card.dataset.slug = course.slug;
   const displayTitle = currentLang === "fa" ? formatTitle(course.title) : escapeHtml(course.en);
   const displaySub = currentLang === "fa" ? escapeHtml(course.en) : formatTitle(course.title);
   const statusLabel = dict.statusLabels[course.status] || meta.label;
   const langNote = dict.courseContentLangNote;
+  const localizedDesc = currentLang === "de"
+    ? (COURSE_DESC_DE[course.slug] || COURSE_DESC_EN[course.slug] || course.desc)
+    : currentLang === "en"
+    ? (COURSE_DESC_EN[course.slug] || course.desc)
+    : course.desc;
+  const displayDesc = currentLang === "fa" ? formatDesc(course.desc) : escapeHtml(localizedDesc);
 
   card.innerHTML = `
     <div class="course-top">
@@ -1276,7 +1465,7 @@ function createCourseCard(course) {
         </button>
       </div>
     </div>
-    <p class="course-desc">${formatDesc(course.desc)}</p>
+    <p class="course-desc">${displayDesc}</p>
     <p class="course-lang-note">${escapeHtml(langNote)}</p>
     <div class="course-foot">
       <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(statusLabel)}</a>
@@ -1297,7 +1486,9 @@ const courseFilters = { filter: "all", query: "" };
  * @returns {string}
  */
 function courseSearchText(course) {
-  return [course.title, course.en, course.desc, course.slug].join(" ").toLowerCase();
+  const enDesc = (typeof COURSE_DESC_EN !== "undefined" && COURSE_DESC_EN[course.slug]) || "";
+  const deDesc = (typeof COURSE_DESC_DE !== "undefined" && COURSE_DESC_DE[course.slug]) || "";
+  return [course.title, course.en, course.desc, enDesc, deDesc, course.slug].join(" ").toLowerCase();
 }
 
 /**
@@ -1347,8 +1538,13 @@ function applyCourseFilters() {
 
     const count = section.querySelector(".category-head > p:last-child");
     if (count) {
-      count.textContent =
-        visibleInSection === 1 ? "۱ دوره" : `${String(visibleInSection).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)])} دوره`;
+      const dict = I18N[currentLang] || I18N.fa;
+      if (currentLang === "fa") {
+        count.textContent =
+          visibleInSection === 1 ? "۱ دوره" : `${String(visibleInSection).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)])} دوره`;
+      } else {
+        count.textContent = `${visibleInSection} ${dict.courseUnit}`;
+      }
     }
 
     if (showSection) forceReveal(section);
