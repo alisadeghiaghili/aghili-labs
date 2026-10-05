@@ -115,15 +115,12 @@ strong {
 }
 
 .nav-mark {
-  width: 2.15rem;
-  height: 2.15rem;
-  border-radius: 0.85rem;
-  display: grid;
-  place-items: center;
-  background: var(--ink);
-  color: var(--white);
-  font-family: "Fraunces", "Times New Roman", serif;
-  font-size: 0.85rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.65rem;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav-links {
