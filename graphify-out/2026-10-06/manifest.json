@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1791230148.4164822,
-    "seen": 1791230278.8745716,
-    "ast_hash": "fa5ec92d19e8b65291593a6969076ea4",
+    "mtime": 1791234284.8153255,
+    "seen": 1791234344.4925358,
+    "ast_hash": "79e7af93731c553c90c44e90a758ef0c",
     "semantic_hash": ""
   },
   "assets/apple-touch-icon.png": {
@@ -612,15 +612,105 @@
     "semantic_hash": ""
   },
   "assets/qr-buymeacoffee.png": {
-    "mtime": 1791223134.9465413,
-    "seen": 1791224057.245695,
-    "ast_hash": "aca2f161a46fb2ed8f637d7e521cebd2",
+    "mtime": 1791234210.7284322,
+    "seen": 1791234344.4925358,
+    "ast_hash": "b69191ac9f2b0d94744fb7b355f866d9",
     "semantic_hash": ""
   },
   "assets/qr-coffeebede.png": {
     "mtime": 1791223134.9455092,
     "seen": 1791224057.245695,
     "ast_hash": "8f23ce36bc086c19dce551fe6e97b1c0",
+    "semantic_hash": ""
+  },
+  "tools/apply_user_selections.py": {
+    "mtime": 1791233113.7955923,
+    "seen": 1791234344.4925358,
+    "ast_hash": "5abe4fbe4813482040cb512580c5855e",
+    "semantic_hash": ""
+  },
+  "tools/build_comparison_view.py": {
+    "mtime": 1791233113.7965605,
+    "seen": 1791234344.4925358,
+    "ast_hash": "fa9e543ee033b8a2d59a42e4cabfa0dc",
+    "semantic_hash": ""
+  },
+  "tools/generate_16_logos.py": {
+    "mtime": 1791233113.798882,
+    "seen": 1791234344.4925358,
+    "ast_hash": "5b4a93fd2cb05aa12f62b46367cabb90",
+    "semantic_hash": ""
+  },
+  "tools/generate_logos.py": {
+    "mtime": 1791233113.799915,
+    "seen": 1791234344.4925358,
+    "ast_hash": "3f06ea52f19cc27c5ec7614f0b7730b1",
+    "semantic_hash": ""
+  },
+  "tools/make_shiny_go.py": {
+    "mtime": 1791233113.8008828,
+    "seen": 1791234344.4925358,
+    "ast_hash": "612ba18ba55879e32dd55c7b0aedb3ac",
+    "semantic_hash": ""
+  },
+  "tools/make_webfundamentals_logo.py": {
+    "mtime": 1791233113.8018835,
+    "seen": 1791234344.4925358,
+    "ast_hash": "faa11bb32abfb05630d6d9fb72260b16",
+    "semantic_hash": ""
+  },
+  "tools/refine_custom_logos.py": {
+    "mtime": 1791233113.8028827,
+    "seen": 1791234344.4925358,
+    "ast_hash": "fd136a3a1f1edf18fb329f2e065a9577",
+    "semantic_hash": ""
+  },
+  "tools/rewrite_descs.py": {
+    "mtime": 1791233113.805015,
+    "seen": 1791234344.4925358,
+    "ast_hash": "34b3c86155f4720a4ba8db84ad98bca7",
+    "semantic_hash": ""
+  },
+  "tools/screenshot_preview.py": {
+    "mtime": 1791233113.8061342,
+    "seen": 1791234344.4925358,
+    "ast_hash": "336c428c419e7151fc0e9c011f68633b",
+    "semantic_hash": ""
+  },
+  "tools/test_new_concepts.py": {
+    "mtime": 1791233113.807255,
+    "seen": 1791234344.4925358,
+    "ast_hash": "5c212367dd78e36b0d320378d104d774",
+    "semantic_hash": ""
+  },
+  "tools/test_visitors.py": {
+    "mtime": 1791233113.8089023,
+    "seen": 1791234344.4925358,
+    "ast_hash": "77c4ca36846756fee2215f14d5f03d4a",
+    "semantic_hash": ""
+  },
+  "tools/update_favicon.py": {
+    "mtime": 1791233113.8094504,
+    "seen": 1791234344.4925358,
+    "ast_hash": "09305e87887cdb7ed262d28adcf0a7e2",
+    "semantic_hash": ""
+  },
+  "tools/upgrade_logos.py": {
+    "mtime": 1791233113.8105383,
+    "seen": 1791234344.4925358,
+    "ast_hash": "a3c108eebe287f4d37060de4fb5d33ac",
+    "semantic_hash": ""
+  },
+  "tools/vectorize_favicon.py": {
+    "mtime": 1791233113.811636,
+    "seen": 1791234344.4925358,
+    "ast_hash": "51b6ac1f7ffc73d788020ba6da459a70",
+    "semantic_hash": ""
+  },
+  "tools/verify_logos.py": {
+    "mtime": 1791233113.812741,
+    "seen": 1791234344.4925358,
+    "ast_hash": "c91836e9eb8cbd56dacffc9aa3ad10a8",
     "semantic_hash": ""
   }
 }

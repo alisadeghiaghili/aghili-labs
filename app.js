@@ -1147,12 +1147,17 @@ const I18N = {
     supportContribTitle: "مشارکت",
     supportContribBody: "باگ، بهبود مستندات، ترجمه، مثال نو، یا ایدهٔ سطح جدید — هر مشارکت فنی همان‌قدر ارزشمند است که حمایت مالی. مخزن‌ها روی گیت‌هاب باز هستند.",
     supportContribBtn: "گیت‌هاب من",
+    langFa: "فا",
+    authorName: "علی صادقی عقیلی",
+    authorSub: "Ali Sadeghi Aghili",
     donateTabDomestic: "ریالی (کافی‌بده)",
     donateTabInternational: "ارزی (Buy Me a Coffee)",
     donateQrHintDomestic: "اسکن با دوربین برای پرداخت سریع ریالی",
     donateQrHintInternational: "اسکن برای پرداخت ارزی با Buy Me a Coffee",
     donateBtnDomestic: "پرداخت با کافی‌بده",
-    donateBtnInternational: "Buy Me a Coffee",
+    donateBtnInternational: "☕ Buy Me a Coffee",
+    footerCoffeeBede: "کافی‌بده",
+    footerBmc: "Buy Me a Coffee",
     coursesHeading: "یک مسیر یادگیری، نُه دسته",
     coursesLede: "از پایهٔ برنامه‌نویسی تا مهندسی داده، یادگیری ماشین و ابر. هر دوره یک دکمه است — روی هر کدام کلیک کنید و مستقیم وارد محیط تعاملی شوید.",
     searchPlaceholder: "جستجوی دوره‌ها…",
@@ -1248,12 +1253,17 @@ const I18N = {
     supportContribTitle: "Contribute",
     supportContribBody: "Bug fixes, documentation improvements, translations, new interactive challenges, or architecture reviews—every technical contribution is deeply appreciated.",
     supportContribBtn: "My GitHub",
+    langFa: "FA",
+    authorName: "Ali Sadeghi Aghili",
+    authorSub: "Founder & Author",
     donateTabDomestic: "Iran / Rial (CoffeeBede)",
     donateTabInternational: "International (Buy Me a Coffee)",
     donateQrHintDomestic: "Scan to support via CoffeeBede (Rial)",
     donateQrHintInternational: "Scan to support via Buy Me a Coffee",
     donateBtnDomestic: "Support with CoffeeBede",
-    donateBtnInternational: "Buy Me a Coffee",
+    donateBtnInternational: "☕ Buy Me a Coffee",
+    footerCoffeeBede: "CoffeeBede",
+    footerBmc: "Buy Me a Coffee",
     coursesHeading: "One Learning Path, Nine Disciplines",
     coursesLede: "From programming fundamentals to data engineering, machine learning, and cloud. Each course is an interactive in-browser sandbox—click any card to launch immediately.",
     searchPlaceholder: "Search courses…",
@@ -1349,6 +1359,17 @@ const I18N = {
     supportContribTitle: "Mitwirken",
     supportContribBody: "Fehlerbehebungen, Verbesserungen der Dokumentation, Übersetzungen oder neue interaktive Aufgaben – jeder technische Beitrag ist willkommen.",
     supportContribBtn: "Mein GitHub",
+    langFa: "FA",
+    authorName: "Ali Sadeghi Aghili",
+    authorSub: "Gründer & Autor",
+    donateTabDomestic: "Iran / Rial (CoffeeBede)",
+    donateTabInternational: "International (Buy Me a Coffee)",
+    donateQrHintDomestic: "Scannen für Unterstützung via CoffeeBede (Rial)",
+    donateQrHintInternational: "Scannen für internationale Unterstützung via Buy Me a Coffee",
+    donateBtnDomestic: "Mit CoffeeBede unterstützen",
+    donateBtnInternational: "☕ Buy Me a Coffee",
+    footerCoffeeBede: "CoffeeBede",
+    footerBmc: "Buy Me a Coffee",
     coursesHeading: "Ein Lernpfad, neun Fachbereiche",
     coursesLede: "Von Grundlagen der Programmierung bis hin zu Data Engineering, Machine Learning und Cloud. Jeder Kurs ist eine interaktive Sandbox – mit einem Klick direkt starten.",
     searchPlaceholder: "Kurse durchsuchen…",
@@ -1446,8 +1467,10 @@ function createCourseCard(course) {
   card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
 
   card.dataset.slug = course.slug;
-  const displayTitle = currentLang === "fa" ? formatTitle(course.title) : escapeHtml(course.en);
-  const displaySub = currentLang === "fa" ? escapeHtml(course.en) : formatTitle(course.title);
+  const shareTitle = currentLang === "fa" ? course.title : course.en;
+  const titleHtml = currentLang === "fa"
+    ? `<p class="course-title">${formatTitle(course.title)}</p><p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>`
+    : `<p class="course-title">${escapeHtml(course.en)}</p>`;
   const statusLabel = dict.statusLabels[course.status] || meta.label;
   const langNote = dict.courseContentLangNote;
   const localizedDesc = currentLang === "de"
@@ -1459,15 +1482,14 @@ function createCourseCard(course) {
 
   card.innerHTML = `
     <div class="course-top">
-      <a class="course-logo" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-label="${escapeHtml(course.title)}">
+      <a class="course-logo" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-label="${escapeHtml(shareTitle)}">
         <img src="assets/logos/${course.logo}.svg" alt="" width="48" height="48" loading="lazy" />
       </a>
       <div class="course-heading">
         <a class="course-title-link" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>
-          <p class="course-title">${displayTitle}</p>
-          <p class="course-en" dir="${currentLang === "fa" ? "ltr" : "rtl"}">${displaySub}</p>
+          ${titleHtml}
         </a>
-        <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(course.title)}" aria-label="${dict.shareLabel} ${escapeHtml(course.title)}">
+        <button class="course-share" type="button" data-course-url="${courseUrl}" data-course-title="${escapeHtml(shareTitle)}" aria-label="${dict.shareLabel} ${escapeHtml(shareTitle)}">
           <svg class="course-share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <circle cx="18" cy="5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
             <circle cx="6" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
@@ -1751,6 +1773,11 @@ function setLanguage(lang) {
     searchInput.setAttribute("aria-label", dict.searchAria);
   }
 
+  const statVisitors = document.getElementById("stat-visitors");
+  if (statVisitors) {
+    statVisitors.title = dict.visitorsTitle || "Visitors";
+  }
+
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.classList.toggle("is-active", btn.dataset.lang === lang);
   });
@@ -1767,11 +1794,39 @@ function setLanguage(lang) {
   } catch {}
 
   renderCourses();
-  // Align donation tab with current language
-  const defaultTab = lang === "fa" ? "domestic" : "international";
-  const targetBtn = document.querySelector(`.donate-tab-btn[data-donate-target="${defaultTab}"]`);
-  if (targetBtn && !targetBtn.classList.contains("is-active")) {
-    targetBtn.click();
+
+  // Donation channels:
+  // Persian (fa): Show both CoffeeBede & Buy Me a Coffee with switcher
+  // Non-Persian (en, de): Only show Buy Me a Coffee (hide CoffeeBede & switcher)
+  const donateSwitcher = document.querySelector(".donate-switcher");
+  const domesticPanel = document.getElementById("donate-panel-domestic");
+  const internationalPanel = document.getElementById("donate-panel-international");
+  const footerCoffeeBede = document.getElementById("footer-link-coffeebede");
+
+  if (lang === "fa") {
+    if (donateSwitcher) donateSwitcher.style.display = "";
+    if (footerCoffeeBede) footerCoffeeBede.style.display = "";
+    const activeBtn = document.querySelector(".donate-tab-btn.is-active") || document.querySelector('.donate-tab-btn[data-donate-target="domestic"]');
+    const target = activeBtn?.dataset.donateTarget || "domestic";
+    if (domesticPanel) {
+      domesticPanel.classList.toggle("is-active", target === "domestic");
+      domesticPanel.hidden = target !== "domestic";
+    }
+    if (internationalPanel) {
+      internationalPanel.classList.toggle("is-active", target === "international");
+      internationalPanel.hidden = target !== "international";
+    }
+  } else {
+    if (donateSwitcher) donateSwitcher.style.display = "none";
+    if (footerCoffeeBede) footerCoffeeBede.style.display = "none";
+    if (domesticPanel) {
+      domesticPanel.classList.remove("is-active");
+      domesticPanel.hidden = true;
+    }
+    if (internationalPanel) {
+      internationalPanel.classList.add("is-active");
+      internationalPanel.hidden = false;
+    }
   }
 }
 
@@ -1804,9 +1859,7 @@ function setupLanguage() {
     }
   } catch {}
 
-  if (detected !== "fa") {
-    setLanguage(detected);
-  }
+  setLanguage(detected);
 }
 
 function setupStats() {
@@ -1852,7 +1905,8 @@ async function setupVisitors() {
 
   const paint = (value) => {
     el.textContent = Math.max(MINIMUM_BASELINE, Math.round(value)).toLocaleString("en-US");
-    el.title = "مجموع کل بازدیدهای سایت (همگام‌شده)";
+    const dict = I18N[currentLang] || I18N.fa;
+    el.title = dict.visitorsTitle || "Visitors";
   };
 
   /** @type {{ count: number, at: number } | null} */
@@ -2035,12 +2089,13 @@ function setupShare() {
       input.remove();
     }
 
+    const dict = I18N[currentLang] || I18N.fa;
     btn.classList.add("is-copied");
-    btn.setAttribute("aria-label", `کپی شد: ${title}`);
-    showToast("لینک کپی شد");
+    btn.setAttribute("aria-label", `${dict.copiedToast} (${title})`);
+    showToast(dict.copiedToast);
     window.setTimeout(() => {
       btn.classList.remove("is-copied");
-      btn.setAttribute("aria-label", `اشتراک‌گذاری ${title}`);
+      btn.setAttribute("aria-label", `${dict.shareLabel} ${title}`);
     }, 1600);
   });
 }
