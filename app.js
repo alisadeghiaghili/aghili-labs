@@ -38,7 +38,7 @@ const CATEGORIES = {
         desc: "وقتی تحلیل آماری اولویت اول باشد، R بهترین انتخاب است. کار با داده در tidyverse، رسم نمودار با ggplot2 و شبیه‌سازی آماری.",
         logo: "r",
         status: "published",
-        contentLanguages: ["en"],
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-cpp",
@@ -116,7 +116,7 @@ const CATEGORIES = {
         desc: "زبان مشترک همه سرورهای لینوکسی و پایپ‌لاین‌های CI/CD. جریان‌های ورودی/خروجی، پایپ‌ها و پردازش متن با sed و awk.",
         logo: "bash",
         status: "in_development",
-        contentLanguages: ["en"],
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-powershell",
@@ -125,7 +125,7 @@ const CATEGORIES = {
         desc: "برخلاف شل‌های معمولی، هر خروجی یک شیء ساختاریافته است. خط‌لوله اشیاء، مدیریت ریموت و خودکارسازی ویندوز و لینوکس.",
         logo: "powershell",
         status: "near_complete",
-        contentLanguages: ["en"],
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-cmd",
@@ -134,7 +134,7 @@ const CATEGORIES = {
         desc: "هنوز هم ساده‌ترین راه برای خودکارسازی سریع در ویندوز. دستورات فایل‌سیستم، متغیرهای محیطی و نوشتن اسکریپت‌های Batch.",
         logo: "cmd",
         status: "published",
-        contentLanguages: ["en"],
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-linux",
@@ -518,7 +518,7 @@ const CATEGORIES = {
         desc: "Git فایل‌های حجیم را نمی‌فهمد؛ DVC این خلأ را پر می‌کند. نسخه‌بندی دیتاست‌ها و مدل‌ها، کش محلی و ریموت و بازتولید دقیق آزمایش‌ها.",
         logo: "dvc",
         status: "published",
-        contentLanguages: ["en"],
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-dbt",
@@ -527,7 +527,7 @@ const CATEGORIES = {
         desc: "اصول مهندسی نرم‌افزار را به دنیای SQL بیاورید. مدل‌سازی ماژولار، گراف وابستگی، تست خودکار داده، مستندسازی و تحول داده درون انبار.",
         logo: "dbt",
         status: "published",
-        contentLanguages: ["en"],
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-airflow",
@@ -800,7 +800,7 @@ const CATEGORIES = {
         desc: "مدل ML شما بدون API قابل استفاده نیست. اصول REST، اعتبارسنجی با Pydantic، مستندسازی خودکار OpenAPI و پیاده‌سازی با FastAPI.",
         logo: "api",
         status: "in_development",
-        contentLanguages: ["en"],
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-scraping",
@@ -1175,11 +1175,12 @@ const I18N = {
     copiedToast: "لینک کپی شد!",
     courseUnit: "دوره",
     courseContentLangNote: "محتوای دوره فعلاً به انگلیسی است",
+    courseContentLangNoteMulti: "محتوای دوره به فارسی، انگلیسی و آلمانی در دسترس است",
     statusLabels: {
       published: "منتشرشده",
       near_complete: "تقریباً تمام",
       in_development: "در حال توسعه",
-      planned: "برنامهریزیشده",
+      planned: "برنامه‌ریزی‌شده",
     },
     filterLabels: {
       all: "همه",
@@ -1281,6 +1282,7 @@ const I18N = {
     copiedToast: "Link copied to clipboard!",
     courseUnit: "courses",
     courseContentLangNote: "Course content is currently in English",
+    courseContentLangNoteMulti: "Course content is available in English, Persian, and German",
     statusLabels: {
       published: "Published",
       near_complete: "Nearly Complete",
@@ -1387,6 +1389,7 @@ const I18N = {
     copiedToast: "Link in Zwischenablage kopiert!",
     courseUnit: "Kurse",
     courseContentLangNote: "Der Kursinhalt ist derzeit auf Englisch",
+    courseContentLangNoteMulti: "Der Kursinhalt ist auf Deutsch, Englisch und Persisch verfügbar",
     statusLabels: {
       published: "Veröffentlicht",
       near_complete: "Fast fertig",
@@ -1447,7 +1450,7 @@ const STATUS_META = {
     className: "status-in-development",
   },
   planned: {
-    label: "برنامهریزیشده",
+    label: "برنامه‌ریزی‌شده",
     className: "status-planned",
   },
 };
@@ -1472,7 +1475,10 @@ function createCourseCard(course) {
     ? `<p class="course-title">${formatTitle(course.title)}</p><p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>`
     : `<p class="course-title">${escapeHtml(course.en)}</p>`;
   const statusLabel = dict.statusLabels[course.status] || meta.label;
-  const langNote = dict.courseContentLangNote;
+  const isMultiLang = Array.isArray(course.contentLanguages) && course.contentLanguages.length > 1;
+  const langNote = isMultiLang
+    ? (dict.courseContentLangNoteMulti || dict.courseContentLangNote)
+    : dict.courseContentLangNote;
   const localizedDesc = currentLang === "de"
     ? (COURSE_DESC_DE[course.slug] || COURSE_DESC_EN[course.slug] || course.desc)
     : currentLang === "en"
@@ -1500,7 +1506,7 @@ function createCourseCard(course) {
       </div>
     </div>
     <p class="course-desc">${displayDesc}</p>
-    <p class="course-lang-note">${escapeHtml(langNote)}</p>
+    <p class="course-lang-note${isMultiLang ? " is-multilang" : ""}">${escapeHtml(langNote)}</p>
     <div class="course-foot">
       <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(statusLabel)}</a>
       <a class="course-go" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-hidden="true">${isPlanned ? "…" : "↗"}</a>

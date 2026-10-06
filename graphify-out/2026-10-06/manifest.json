@@ -1,8 +1,8 @@
 {
   "app.js": {
-    "mtime": 1791232468.968884,
-    "seen": 1791233085.1754034,
-    "ast_hash": "bfaab933809b0485cd111a3a117364c3",
+    "mtime": 1791272994.2907302,
+    "seen": 1791273201.9678571,
+    "ast_hash": "74ab068c9a81b0bea02d1c3b7407c353",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1791234284.8153255,
-    "seen": 1791234344.4925358,
-    "ast_hash": "79e7af93731c553c90c44e90a758ef0c",
+    "mtime": 1791272685.3347719,
+    "seen": 1791273201.9678571,
+    "ast_hash": "b334ac0406368343c3716c7f695bae85",
     "semantic_hash": ""
   },
   "assets/apple-touch-icon.png": {
