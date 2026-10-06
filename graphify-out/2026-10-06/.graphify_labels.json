@@ -1,5 +1,5 @@
 {
-  "0": "generate_logos.py",
+  "0": "init",
   "1": "app.js",
   "2": "pathlib",
   "3": "upgrade_logos.py",

@@ -992,24 +992,6 @@ h3 {
   transform: translate(-50%, 0);
 }
 
-.course-go {
-  width: 2.15rem;
-  height: 2.15rem;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: rgba(28, 25, 23, 0.05);
-  color: var(--ink);
-  text-decoration: none;
-  transition: transform 0.55s var(--ease), background 0.45s var(--ease), color 0.45s var(--ease);
-}
-
-.course-card:hover .course-go {
-  transform: translate(-2px, -2px);
-  background: var(--accent);
-  color: #fff;
-}
-
 .course-card.is-planned {
   opacity: 0.78;
 }

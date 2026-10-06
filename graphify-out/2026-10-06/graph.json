@@ -4,28 +4,76 @@
   "graph": {},
   "nodes": [
     {
-      "id": "tools_generate_logos_main",
-      "label": "main()",
+      "id": "app_init",
+      "label": "init()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "generate_logos.py",
+      "community_name": "init",
       "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "tools/generate_logos.py",
-      "source_location": "L369"
+      "norm_label": "init()",
+      "source_file": "app.js",
+      "source_location": "L2164"
     },
     {
-      "id": "tools_generate_logos_write",
-      "label": "write()",
+      "id": "app_setupdonatetabs",
+      "label": "setupDonateTabs()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "generate_logos.py",
+      "community_name": "init",
       "file_type": "code",
-      "norm_label": "write()",
-      "source_file": "tools/generate_logos.py",
-      "source_location": "L8"
+      "norm_label": "setupdonatetabs()",
+      "source_file": "app.js",
+      "source_location": "L2101"
+    },
+    {
+      "id": "app_setupnav",
+      "label": "setupNav()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "init",
+      "file_type": "code",
+      "norm_label": "setupnav()",
+      "source_file": "app.js",
+      "source_location": "L1757"
+    },
+    {
+      "id": "app_setupreveal",
+      "label": "setupReveal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "init",
+      "file_type": "code",
+      "norm_label": "setupreveal()",
+      "source_file": "app.js",
+      "source_location": "L1713"
+    },
+    {
+      "id": "app_setupstats",
+      "label": "setupStats()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "init",
+      "file_type": "code",
+      "norm_label": "setupstats()",
+      "source_file": "app.js",
+      "source_location": "L1926"
+    },
+    {
+      "id": "app_setupvisitors",
+      "label": "setupVisitors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "init",
+      "file_type": "code",
+      "norm_label": "setupvisitors()",
+      "source_file": "app.js",
+      "source_location": "L1946"
     },
     {
       "id": "app_coursesearchtext",
@@ -40,42 +88,6 @@
       "source_location": "L1522"
     },
     {
-      "id": "app_setupdonatetabs",
-      "label": "setupDonateTabs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "setupdonatetabs()",
-      "source_file": "app.js",
-      "source_location": "L2086"
-    },
-    {
-      "id": "app_setupnav",
-      "label": "setupNav()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "setupnav()",
-      "source_file": "app.js",
-      "source_location": "L1742"
-    },
-    {
-      "id": "app_setupreveal",
-      "label": "setupReveal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "setupreveal()",
-      "source_file": "app.js",
-      "source_location": "L1698"
-    },
-    {
       "id": "app_setupshare",
       "label": "setupShare()",
       "_callable": true,
@@ -85,31 +97,7 @@
       "file_type": "code",
       "norm_label": "setupshare()",
       "source_file": "app.js",
-      "source_location": "L2110"
-    },
-    {
-      "id": "app_setupstats",
-      "label": "setupStats()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "setupstats()",
-      "source_file": "app.js",
-      "source_location": "L1911"
-    },
-    {
-      "id": "app_setupvisitors",
-      "label": "setupVisitors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "setupvisitors()",
-      "source_file": "app.js",
-      "source_location": "L1931"
+      "source_location": "L2125"
     },
     {
       "id": "app_showtoast",
@@ -121,7 +109,7 @@
       "file_type": "code",
       "norm_label": "showtoast()",
       "source_file": "app.js",
-      "source_location": "L2051"
+      "source_location": "L2066"
     },
     {
       "id": "app_applycoursefilters",
@@ -157,7 +145,7 @@
       "file_type": "code",
       "norm_label": "setupfilters()",
       "source_file": "app.js",
-      "source_location": "L1653"
+      "source_location": "L1665"
     },
     {
       "id": "app_setupsearch",
@@ -169,7 +157,7 @@
       "file_type": "code",
       "norm_label": "setupsearch()",
       "source_file": "app.js",
-      "source_location": "L1683"
+      "source_location": "L1695"
     },
     {
       "id": "app_setlanguage",
@@ -181,7 +169,7 @@
       "file_type": "code",
       "norm_label": "setlanguage()",
       "source_file": "app.js",
-      "source_location": "L1790"
+      "source_location": "L1805"
     },
     {
       "id": "app_setuplanguage",
@@ -193,7 +181,7 @@
       "file_type": "code",
       "norm_label": "setuplanguage()",
       "source_file": "app.js",
-      "source_location": "L1884"
+      "source_location": "L1899"
     },
     {
       "id": "tools_generate_16_logos_get_simple_icon",
@@ -304,6 +292,30 @@
       "source_location": "L16"
     },
     {
+      "id": "tools_generate_logos_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "build_comparison_view.py",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "tools/generate_logos.py",
+      "source_location": "L369"
+    },
+    {
+      "id": "tools_generate_logos_write",
+      "label": "write()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "build_comparison_view.py",
+      "file_type": "code",
+      "norm_label": "write()",
+      "source_file": "tools/generate_logos.py",
+      "source_location": "L8"
+    },
+    {
       "id": "tools_screenshot_preview_main",
       "label": "main()",
       "_callable": true,
@@ -373,29 +385,7 @@
       "file_type": "code",
       "norm_label": "rendercourses()",
       "source_file": "app.js",
-      "source_location": "L1596"
-    },
-    {
-      "id": "tools_generate_logos",
-      "label": "generate_logos.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "generate_logos.py",
-      "file_type": "code",
-      "norm_label": "generate_logos.py",
-      "source_file": "tools/generate_logos.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "tools_generate_logos_rationale_1",
-      "label": "Generate consistent brand SVG marks for each learn-* course.",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "generate_logos.py",
-      "file_type": "rationale",
-      "norm_label": "generate consistent brand svg marks for each learn-* course.",
-      "source_file": "tools/generate_logos.py",
-      "source_location": "L1"
+      "source_location": "L1599"
     },
     {
       "id": "app",
@@ -719,6 +709,17 @@
       "source_location": "L1"
     },
     {
+      "id": "tools_generate_logos",
+      "label": "generate_logos.py",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "build_comparison_view.py",
+      "file_type": "code",
+      "norm_label": "generate_logos.py",
+      "source_file": "tools/generate_logos.py",
+      "source_location": "L1"
+    },
+    {
       "id": "tools_apply_user_selections_rationale_1",
       "label": "Apply user choices: 1. Revert 5 logos to Option 1 (api, arduino, functional,\u2026",
       "_origin": "ast",
@@ -738,6 +739,17 @@
       "file_type": "rationale",
       "norm_label": "build interactive comparison view between git 751ca20 (old - 1) and head (new -...",
       "source_file": "tools/build_comparison_view.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "tools_generate_logos_rationale_1",
+      "label": "Generate consistent brand SVG marks for each learn-* course.",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "build_comparison_view.py",
+      "file_type": "rationale",
+      "norm_label": "generate consistent brand svg marks for each learn-* course.",
+      "source_file": "tools/generate_logos.py",
       "source_location": "L1"
     },
     {
@@ -1181,6 +1193,18 @@
       "type": "external"
     },
     {
+      "id": "urllib_request",
+      "label": "urllib_request",
+      "_origin": "semantic",
+      "community": 2,
+      "community_name": "pathlib",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "urllib_request",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "xml_etree_elementtree",
       "label": "xml_etree_elementtree",
       "_origin": "semantic",
@@ -1201,18 +1225,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "re",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "urllib_request",
-      "label": "urllib_request",
-      "_origin": "semantic",
-      "community": 3,
-      "community_name": "upgrade_logos.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "urllib_request",
       "source_file": "",
       "type": "external"
     },
@@ -1263,7 +1275,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1585",
+      "source_location": "L1587",
       "weight": 1.0
     },
     {
@@ -1327,6 +1339,138 @@
       "weight": 1.0
     },
     {
+      "source": "app_init",
+      "target": "app_setuplanguage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2165",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_rendercourses",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2166",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupfilters",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2167",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupsearch",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2168",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupnav",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2169",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupstats",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2170",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupvisitors",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2171",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupshare",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2172",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupdonatetabs",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2173",
+      "weight": 1.0
+    },
+    {
+      "source": "app_init",
+      "target": "app_setupreveal",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L2174",
+      "weight": 1.0
+    },
+    {
+      "source": "app_rendercourses",
+      "target": "app_applycoursefilters",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app.js",
+      "source_location": "L1623",
+      "weight": 1.0
+    },
+    {
       "source": "app_rendercourses",
       "target": "app_escapehtml",
       "relation": "calls",
@@ -1335,7 +1479,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1630",
+      "source_location": "L1642",
       "weight": 1.0
     },
     {
@@ -1347,19 +1491,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1638",
-      "weight": 1.0
-    },
-    {
-      "source": "app_rendercourses",
-      "target": "app_applycoursefilters",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1645",
+      "source_location": "L1650",
       "weight": 1.0
     },
     {
@@ -1371,7 +1503,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1842",
+      "source_location": "L1857",
       "weight": 1.0
     },
     {
@@ -1383,7 +1515,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1674",
+      "source_location": "L1686",
       "weight": 1.0
     },
     {
@@ -1395,7 +1527,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1889",
+      "source_location": "L1904",
       "weight": 1.0
     },
     {
@@ -1407,7 +1539,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1689",
+      "source_location": "L1701",
       "weight": 1.0
     },
     {
@@ -1419,7 +1551,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2141",
+      "source_location": "L2156",
       "weight": 1.0
     },
     {
@@ -1552,126 +1684,6 @@
       "context": "call",
       "source_file": "tools/upgrade_logos.py",
       "source_location": "L58",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_rendercourses",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1596",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupfilters",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1653",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupsearch",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1683",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupreveal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1698",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupnav",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1742",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setuplanguage",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1884",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupstats",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1911",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupvisitors",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L1931",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupdonatetabs",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L2086",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_setupshare",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L2110",
       "weight": 1.0
     },
     {
@@ -2184,13 +2196,101 @@
     },
     {
       "source": "app",
+      "target": "app_rendercourses",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1599",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupfilters",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1665",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupsearch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1695",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupreveal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1713",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupnav",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1757",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
       "target": "app_setlanguage",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1790",
+      "source_location": "L1805",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setuplanguage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1899",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupstats",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1926",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupvisitors",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L1946",
       "weight": 1.0
     },
     {
@@ -2212,7 +2312,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2051",
+      "source_location": "L2066",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupdonatetabs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L2101",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_setupshare",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L2125",
       "weight": 1.0
     },
     {
@@ -2819,8 +2941,20 @@
       "source_file": "tools/verify_logos.py",
       "source_location": "L1",
       "weight": 1.0
+    },
+    {
+      "source": "app",
+      "target": "app_init",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "app.js",
+      "source_location": "L2180",
+      "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a56d8e976b0a110061054b466f790169c4061d82"
+  "built_at_commit": "de86c4635a08ebd952bad98b1d80d7a0fea4ef7a"
 }

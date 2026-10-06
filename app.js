@@ -1503,7 +1503,6 @@ function createCourseCard(course) {
     <p class="course-lang-note${isMultiLang ? " is-multilang" : ""}">${escapeHtml(langNote)}</p>
     <div class="course-foot">
       <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(statusLabel)}</a>
-      <a class="course-go" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'} aria-hidden="true">${isPlanned ? "…" : "↗"}</a>
     </div>
   `;
 
