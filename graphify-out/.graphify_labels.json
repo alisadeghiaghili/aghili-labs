@@ -11,5 +11,7 @@
   "9": "createCourseCard",
   "10": "CLAUDE.md",
   "11": "applyCourseFilters",
-  "12": "setLanguage"
+  "12": "setLanguage",
+  "13": "setupCourseVisitors",
+  "14": "generate_logos.py"
 }

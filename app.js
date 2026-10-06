@@ -1120,7 +1120,7 @@ const I18N = {
     navCta: "حمایت کنید",
     heroEyebrow: "آموزش رایگان · تعاملی · عمیق",
     heroHeading: "آموزش حق همه است.<br />نه امتیاز چند نفر.",
-    heroLede: "من <strong>علی صادقی عقیلی</strong> و اینجا تجربه‌هام در برنامه‌نویسی و داده رو در قالب دوره‌های رایگان به اشتراک می‌ذارم.<br /><br />این مجموعه رو اول برای تیمم ساختم. بعد برای ادای دین به مردم کشورم، که با وجود همهٔ سختی‌ها همچنان دارن تلاش می‌کنن، بیشتر توسعه‌اش دادم. حالا می‌خوام برای آدم‌های بیشتری در دسترس باشه، چون باور دارم هر انسانی روی زمین شایستهٔ دسترسی به آموزش باکیفیته.",
+    heroLede: "من <strong>علی صادقی عقیلی</strong> هستم. اینجا تجربههام در برنامهنویسی و داده رو در قالب دورههای رایگان به اشتراک میذارم.<br /><br />این مجموعه رو اول برای تیمم ساختم. بعد، برای ادای دین به مردم کشورم گسترشش دادم؛ آدمهایی که با وجود همهٔ سختیها، همچنان دارن تلاش میکنن.<br /><br />حالا میخوام این آموزشها فراتر از ایران هم در دسترس باشن، چون باور دارم همه باید فرصت یادگیری باکیفیت داشته باشن؛ فارغ از اینکه کجا زندگی میکنن.",
     heroBrowse: "مرور دوره‌ها",
     heroSupport: "چطور حمایت کنم",
     heroStatsCourses: "دورهٔ تعاملی",
@@ -1128,10 +1128,10 @@ const I18N = {
     heroStatsVisitors: "بازدید",
     heroStatsFree: "رایگان و متن‌باز",
     quoteCardLabel: "چرا این مجموعه وجود دارد",
-    quoteText: "«کتاب خوندن کافی نیست. باید دست به کار بشی، اشتباه کنی و دوباره امتحان کنی. این دوره‌ها برای همین ساخته شدن.»",
+    quoteText: "«خوندن بهتنهایی کافی نیست. باید دست به کار بشی، اشتباه کنی و دوباره امتحان کنی. این دورهها برای همین ساخته شدن.»",
     aboutHeading: "از تجربهٔ صنعت تا آموزش آزاد",
     aboutCard1Title: "سابقه",
-    aboutCard1Body: "من علی صادقی عقیلی هستم. دکترای صنایع با گرایش اتوماسیون دارم و بیش از ۱۴ ساله در زمینهٔ برنامه‌نویسی، مهندسی داده، علم داده و صنعت ۴.۰ کار می‌کنم؛ از ساخت ETL و پایپ‌لاین‌های داده تا مدل‌سازی آماری، یادگیری ماشین و سامانه‌های صنعتی.<br /><br />در این مدت، در زمینهٔ هوش مصنوعی و داده به سازمان‌های زیادی در ایران مشاوره داده‌ام و در آموزشگاه‌های تهران، از جمله مرکز آموزش‌های دانشگاه صنعتی شریف، برنامه‌نویسی، داشبوردینگ، مهندسی داده و یادگیری ماشین تدریس می‌کنم. این دوره‌ها رو هم بر پایهٔ همین تجربه‌های کاری و آموزشی ساخته‌ام.",
+    aboutCard1Body: "دکترای مهندسی صنایع با گرایش اتوماسیون دارم. فعالیت حرفهایام در حوزهٔ داده رو از سال ۱۳۹۱ شروع کردم و امروز در زمینهٔ برنامهنویسی، مهندسی داده، علم داده و حوزههای مرتبط با انقلاب صنعتی چهارم کار میکنم؛ از ساخت ETL و پایپ‌لاین‌های داده تا مدل‌سازی آماری، یادگیری ماشین و سامانه‌های صنعتی.<br /><br />در این مدت، در زمینهٔ هوش مصنوعی و داده به سازمان‌های زیادی در ایران مشاوره داده‌ام و در آموزشگاه‌های تهران، از جمله مرکز آموزش‌های دانشگاه صنعتی شریف، برنامه‌نویسی، داشبوردینگ، مهندسی داده و یادگیری ماشین تدریس می‌کنم. این دوره‌ها رو هم بر پایهٔ همین تجربه‌های کاری و آموزشی ساخته‌ام.",
     aboutCard2Title: "مأموریت",
     aboutCard2Body: "اولویت من مردم کشورم هستن؛ آدم‌هایی که با وجود همهٔ سختی‌ها، هنوز برای یادگرفتن و ساختن آینده‌ای بهتر تلاش می‌کنن. دلم می‌خواد هزینه، یک مانع دیگه سر راهشون نباشه. کسی که شوق یادگیری داره، باید فرصتش رو هم داشته باشه؛ حتی اگر نتونه هزینهٔ یک دوره رو پرداخت کنه.<br /><br />اما یادگیری مرز نمی‌شناسه. آرزوم اینه که این آموزش‌ها به آدم‌های بیشتری، هر جای دنیا که هستن، برسن و بهشون کمک کنن چیزی یاد بگیرن، مسئله‌ای رو حل کنن یا قدمی برای بهترکردن زندگی‌شون بردارن.<br /><br />تلاشم اینه که با حمایت داوطلبانهٔ شما، این آموزش‌ها رایگان بمونن و روزبه‌روز بهتر و کامل‌تر بشن. اگر این مجموعه براتون مفید بوده و امکان حمایتش رو دارین، کمک شما فرصت ادامهٔ این مسیر رو فراهم می‌کنه؛ تا نفر بعدی هم بتونه بدون نگرانی از هزینه، یادگیری رو شروع کنه.",
     aboutCard3Title: "روش آموزش",
@@ -1169,6 +1169,7 @@ const I18N = {
     footerText: "مجموعه‌ای از دوره‌های تعاملی رایگان، ساخته‌شده توسط علی صادقی عقیلی — برای مردم ایران و هر کسی که می‌خواهد یاد بگیرد.",
     footerCopy: "© <span id=\"year\">2026</span> Ali Sadeghi Aghili · آموزش آزاد برای همه",
     visitorsTitle: "مجموع کل بازدیدهای سایت (همگام‌شده)",
+    courseVisitorsTooltip: "تعداد بازدیدکنندگان این دوره",
     shareLabel: "اشتراک‌گذاری",
     copiedToast: "لینک کپی شد!",
     courseUnit: "دوره",
@@ -1225,7 +1226,7 @@ const I18N = {
     navCta: "Support Us",
     heroEyebrow: "Free · Interactive · In-depth Education",
     heroHeading: "Education is a human right.<br />Not a privilege for a few.",
-    heroLede: "I am <strong>Ali Sadeghi Aghili</strong>, and here I share my hands-on experience in software engineering, data, and AI through free interactive courses.<br /><br />I first built this suite for my team, then expanded it for the resilient people of my home country, and now open it to the world—because every human being on Earth deserves free access to rigorous, high-quality education.",
+    heroLede: "I’m <strong>Ali Sadeghi Aghili</strong>. Here, I share my experience in programming and data through free courses.<br /><br />I originally built this collection for my team. I then expanded it to give back to people in Iran who keep working toward a better future despite the challenges they face.<br /><br />Now I want these courses to reach learners beyond Iran, too. I believe everyone should have access to quality learning, wherever they live.",
     heroBrowse: "Browse Courses",
     heroSupport: "How to Support",
     heroStatsCourses: "Interactive Courses",
@@ -1233,10 +1234,10 @@ const I18N = {
     heroStatsVisitors: "Visitors",
     heroStatsFree: "Free & Open Source",
     quoteCardLabel: "Why This Exists",
-    quoteText: "“Reading books is not enough. You have to build, make mistakes, and try again. That is what these courses were built for.”",
+    quoteText: "“Reading alone isn’t enough. You need to put what you learn into practice, make mistakes, and try again. That’s what these courses are for.”",
     aboutHeading: "From Industry Practice to Open Education",
     aboutCard1Title: "Background",
-    aboutCard1Body: "I am Ali Sadeghi Aghili. I hold a Ph.D. in Industrial Engineering with an automation focus and have spent over 14 years working in software engineering, data engineering, data science, and Industry 4.0—from building resilient ETL pipelines to statistical modeling, ML, and industrial telemetry systems.<br /><br />During this time, I have consulted for numerous organizations and taught programming, dashboarding, and machine learning at prestigious institutions in Tehran, including Sharif University of Technology. These courses distill that exact real-world engineering experience.",
+    aboutCard1Body: "I hold a PhD in Industrial Engineering, specializing in automation. I began my professional career in the data field in 2012. Today, my work spans programming, data engineering, data science, and areas related to Industry 4.0—from building resilient ETL pipelines to statistical modeling, ML, and industrial telemetry systems.<br /><br />During this time, I have consulted for numerous organizations and taught programming, dashboarding, and machine learning at prestigious institutions in Tehran, including Sharif University of Technology. These courses distill that exact real-world engineering experience.",
     aboutCard2Title: "Mission",
     aboutCard2Body: "My priority has always been the people of my home country—those who, despite every hardship, keep striving to learn and build a brighter future. I want cost never to stand as another hurdle in their path. Whoever has the hunger to learn deserves the chance to do so.<br /><br />Yet learning knows no geographic borders. My wish is for these courses to reach curious minds worldwide, helping them master skills, solve problems, or improve their lives.<br /><br />With your voluntary sponsorship, these courses will remain 100% free and keep expanding—ensuring the next person can begin learning without financial worry.",
     aboutCard3Title: "Pedagogy",
@@ -1274,6 +1275,7 @@ const I18N = {
     footerText: "A collection of free interactive courses built by Ali Sadeghi Aghili — for the people of Iran and anyone eager to learn.",
     footerCopy: "© <span id=\"year\">2026</span> Ali Sadeghi Aghili · Free education for everyone",
     visitorsTitle: "Total unique visits (synchronized)",
+    courseVisitorsTooltip: "Learners & visitors for this course",
     shareLabel: "Share",
     copiedToast: "Link copied to clipboard!",
     courseUnit: "courses",
@@ -1330,7 +1332,7 @@ const I18N = {
     navCta: "Unterstützen",
     heroEyebrow: "Kostenlose · Interaktive · Fundierte Bildung",
     heroHeading: "Bildung gehört allen.<br />Kein Privileg für wenige.",
-    heroLede: "Ich bin <strong>Ali Sadeghi Aghili</strong> und teile hier meine Praxiserfahrung in Software-Engineering, Daten und KI in Form kostenloser interaktiver Kurse.<br /><br />Ich habe diese Plattform ursprünglich für mein Team entwickelt, für die Menschen in meinem Heimatland ausgebaut und öffne sie nun weltweit – weil jeder Mensch auf der Welt Zugang zu erstklassiger Bildung verdient.",
+    heroLede: "Ich bin <strong>Ali Sadeghi Aghili</strong>. Hier gebe ich meine Erfahrung in der Programmierung und der Arbeit mit Daten in kostenlosen Kursen weiter.<br /><br />Diese Sammlung habe ich ursprünglich für mein Team entwickelt. Später habe ich sie erweitert, um den Menschen im Iran etwas zurückzugeben – Menschen, die trotz aller Schwierigkeiten weiter an einer besseren Zukunft arbeiten.<br /><br />Jetzt möchte ich mit diesen Kursen auch Menschen außerhalb des Iran erreichen. Denn ich glaube, dass alle Zugang zu guten Lernangeboten haben sollten – unabhängig davon, wo sie leben.",
     heroBrowse: "Kurse durchsuchen",
     heroSupport: "Wie unterstützen",
     heroStatsCourses: "Interaktive Kurse",
@@ -1338,10 +1340,10 @@ const I18N = {
     heroStatsVisitors: "Besuche",
     heroStatsFree: "Kostenlos & Open Source",
     quoteCardLabel: "Warum es diese Plattform gibt",
-    quoteText: "„Bücher zu lesen reicht nicht aus. Man muss anpacken, Fehler machen und es erneut versuchen. Genau dafür sind diese Kurse da.“",
+    quoteText: "„Lesen allein reicht nicht. Du musst das Gelernte ausprobieren, Fehler machen und es noch einmal versuchen. Genau dafür sind diese Kurse da.“",
     aboutHeading: "Aus der Industriepraxis zur freien Bildung",
     aboutCard1Title: "Werdegang",
-    aboutCard1Body: "Ich bin Ali Sadeghi Aghili. Ich habe einen Doktortitel in Wirtschaftsingenieurwesen mit Schwerpunkt Automatisierung und arbeite seit über 14 Jahren in Softwareentwicklung, Data Engineering, Data Science und Industrie 4.0 – von ETL-Pipelines bis hin zu statistischer Modellierung, maschinellem Lernen und industrieller Telemetrie.<br /><br />In dieser Zeit habe ich zahlreiche Unternehmen beraten und an führenden Institutionen in Teheran, unter anderem an der Sharif University of Technology, unterrichtet. Diese Kurse destillieren diese fundierte Praxiserfahrung.",
+    aboutCard1Body: "Ich habe in Industrial Engineering mit Schwerpunkt Automatisierung promoviert. Seit 2012 bin ich beruflich im Datenbereich tätig. Heute arbeite ich in der Programmierung, im Data Engineering, in der Data Science und in Bereichen rund um Industry 4.0 – von ETL-Pipelines bis hin zu statistischer Modellierung, maschinellem Lernen und industrieller Telemetrie.<br /><br />In dieser Zeit habe ich zahlreiche Unternehmen beraten und an führenden Institutionen in Teheran, unter anderem an der Sharif University of Technology, unterrichtet. Diese Kurse destillieren diese fundierte Praxiserfahrung.",
     aboutCard2Title: "Mission",
     aboutCard2Body: "Meine Priorität gilt den Menschen in meiner Heimat – jenen, die trotz aller Widrigkeiten unermüdlich lernen und an einer besseren Zukunft bauen. Kosten dürfen kein Hindernis sein. Wer den Wissensdrang hat, verdient auch die Chance dazu.<br /><br />Doch Lernen kennt keine Landesgrenzen. Ich wünsche mir, dass diese Kurse Menschen überall auf der Welt erreichen und ihnen helfen, neue Fähigkeiten zu erlernen.<br /><br />Durch freiwillige Unterstützung bleiben diese Kurse dauerhaft kostenlos und wachsen kontinuierlich weiter.",
     aboutCard3Title: "Pädagogik",
@@ -1379,6 +1381,7 @@ const I18N = {
     footerText: "Kostenlose interaktive Kurse von Ali Sadeghi Aghili – für die Menschen im Iran und alle Wissbegierigen weltweit.",
     footerCopy: "© <span id=\"year\">2026</span> Ali Sadeghi Aghili · Freie Bildung für alle",
     visitorsTitle: "Gesamtzahl der Besuche (synchronisiert)",
+    courseVisitorsTooltip: "Besuchende dieses Kurses",
     shareLabel: "Teilen",
     copiedToast: "Link in Zwischenablage kopiert!",
     courseUnit: "Kurse",
@@ -1450,6 +1453,66 @@ const STATUS_META = {
 };
 
 /**
+ * Known baseline and fallback visitor telemetry configurations for courses.
+ * Guaranteed zero-latency initial rendering with offline fallback.
+ * @type {Record<string, { countApi?: string, badgeUrl?: string, baseCount?: number }>}
+ */
+const KNOWN_COURSE_VISITORS = {
+  "learn-r": {
+    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-r",
+    badgeUrl: "https://api.visitorbadge.io/api/visitors?path=alisadeghiaghili.learn-r",
+    baseCount: 2,
+  },
+  "learn-cmd": {
+    badgeUrl: "https://api.visitorbadge.io/api/combined?path=alisadeghiaghili-learn-cmd-unique",
+    baseCount: 4,
+  },
+  "learn-dvc": {
+    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-dvc",
+    baseCount: 1,
+  },
+  "learn-dbt": {
+    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-dbt",
+    baseCount: 1,
+  },
+  "learn-powershell": {
+    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-powershell",
+    baseCount: 1,
+  },
+  "learn-python": {
+    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-python",
+    badgeUrl: "https://api.visitorbadge.io/api/visitors?path=alisadeghiaghili.learn-python",
+    baseCount: 2,
+  },
+  "learn-api": {
+    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-api-unique",
+    baseCount: 4,
+  },
+};
+
+const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v1";
+
+/**
+ * In-memory cache of course visitor counts for synchronous zero-latency rendering.
+ * @type {Record<string, number>}
+ */
+const courseVisitorsCache = {};
+
+try {
+  const rawCourseVisitors = localStorage.getItem(COURSE_VISITORS_STORAGE_KEY);
+  if (rawCourseVisitors) {
+    const parsed = JSON.parse(rawCourseVisitors);
+    if (parsed && typeof parsed === "object") {
+      Object.entries(parsed).forEach(([slug, item]) => {
+        if (item && typeof item.count === "number" && Number.isFinite(item.count) && item.count > 0) {
+          courseVisitorsCache[slug] = item.count;
+        }
+      });
+    }
+  }
+} catch {}
+
+/**
  * Build a course card element.
  *
  * @param {Course} course
@@ -1459,6 +1522,7 @@ function createCourseCard(course) {
   const dict = I18N[currentLang] || I18N.fa;
   const meta = STATUS_META[course.status] || STATUS_META.in_development;
   const isPlanned = course.status === "planned";
+  const isPublished = course.status === "published";
   const courseUrl = `${BASE}/${course.slug}/`;
   const card = document.createElement("article");
   card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
@@ -1479,6 +1543,21 @@ function createCourseCard(course) {
     ? (COURSE_DESC_EN[course.slug] || course.desc)
     : course.desc;
   const displayDesc = currentLang === "fa" ? formatDesc(course.desc) : escapeHtml(localizedDesc);
+
+  const cachedCount = courseVisitorsCache[course.slug] ?? KNOWN_COURSE_VISITORS[course.slug]?.baseCount;
+  const visitorCountText = typeof cachedCount === "number"
+    ? Math.round(cachedCount).toLocaleString("en-US")
+    : "…";
+
+  const visitorsBadgeHtml = isPublished
+    ? `<span class="course-visitors" data-course-visitors="${course.slug}" title="${escapeHtml(dict.courseVisitorsTooltip || dict.visitorsTitle || 'بازدید')}" aria-label="${escapeHtml(dict.courseVisitorsTooltip || dict.visitorsTitle || 'بازدید')}: ${visitorCountText}">
+        <svg class="course-visitors-icon" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M1.5 8s2.5-4.5 6.5-4.5 6.5 4.5 6.5 4.5-2.5 4.5-6.5 4.5-6.5-4.5z"/>
+          <circle cx="8" cy="8" r="2.2"/>
+        </svg>
+        <span class="course-visitors-count">${visitorCountText}</span>
+      </span>`
+    : "";
 
   card.innerHTML = `
     <div class="course-top">
@@ -1502,7 +1581,10 @@ function createCourseCard(course) {
     <p class="course-desc">${displayDesc}</p>
     <p class="course-lang-note${isMultiLang ? " is-multilang" : ""}">${escapeHtml(langNote)}</p>
     <div class="course-foot">
-      <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(statusLabel)}</a>
+      <div class="course-foot-meta">
+        <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(statusLabel)}</a>
+        ${visitorsBadgeHtml}
+      </div>
     </div>
   `;
 
@@ -1654,6 +1736,7 @@ function renderCourses() {
   });
 
   applyCourseFilters();
+  setupCourseVisitors();
 }
 
 /**
@@ -2056,6 +2139,217 @@ async function setupVisitors() {
   } catch {}
 }
 
+const REPO_VISITOR_PATHS = [
+  "src/ui/visitor-counter.ts",
+  "js/visitor-counter.js",
+  "assets/js/visitor-counter.js",
+  "js/visitor.js",
+];
+
+/**
+ * Parse visitor count from badge SVG.
+ * Handles both combined ("VISITORS: daily / total") and simple ("VISITORS: total").
+ *
+ * @param {string} svg
+ * @returns {number | null}
+ */
+function parseCourseVisitorSvg(svg) {
+  if (!svg || typeof svg !== "string") return null;
+
+  // 1. Look for combined format: always take the second number (total)
+  const combinedMatch = svg.match(/(?:VISITORS:|>)\s*[\d.,]+[KMB]?\s*\/\s*([\d.,]+[KMB]?)/i);
+  let raw = combinedMatch ? combinedMatch[1] : "";
+
+  // 2. Look for simple label "VISITORS: <number>"
+  if (!raw) {
+    const simpleMatch = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i);
+    raw = simpleMatch ? simpleMatch[1] : "";
+  }
+
+  // 3. Fallback to extracting the trailing text node containing numeric data
+  if (!raw) {
+    const textMatches = Array.from(svg.matchAll(/>\s*([0-9.,]+[KMB]?)\s*<\/text>/gi));
+    if (textMatches.length > 0) {
+      raw = textMatches[textMatches.length - 1][1];
+    }
+  }
+
+  raw = (raw || "").replace(/,/g, "").trim();
+  if (!raw) return null;
+
+  const suffix = raw.slice(-1).toUpperCase();
+  const scale = { K: 1e3, M: 1e6, B: 1e9 }[suffix] || 1;
+  const numPart = scale > 1 ? raw.slice(0, -1) : raw;
+  const numeric = Number.parseFloat(numPart) * scale;
+  return Number.isFinite(numeric) && numeric >= 0 ? Math.round(numeric) : null;
+}
+
+/**
+ * Dynamically extract visitor counter configuration from the course's GitHub repository.
+ * Inspects official repo source files (e.g. src/ui/visitor-counter.ts, js/visitor-counter.js).
+ *
+ * @param {string} slug
+ * @returns {Promise<{ countApi?: string, badgeUrl?: string, baseCount?: number } | null>}
+ */
+async function fetchRepoVisitorConfig(slug) {
+  for (const filePath of REPO_VISITOR_PATHS) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(`https://raw.githubusercontent.com/alisadeghiaghili/${slug}/main/${filePath}`, {
+        signal: controller.signal,
+      });
+      clearTimeout(timer);
+      if (res.ok) {
+        const text = await res.text();
+        const badgeMatch = text.match(/BADGE_URL\s*=\s*['"]([^'"]+)['"]/);
+        const countKeyMatch = text.match(/COUNT_KEY\s*=\s*['"]([^'"]+)['"]/);
+        const countApiBaseMatch = text.match(/COUNT_API_BASE\s*=\s*['"]([^'"]+)['"]/);
+        const baseCountMatch = text.match(/(?:BASE_COUNT|BASELINE_FALLBACK)\s*=\s*(\d+)/);
+
+        let countApi = undefined;
+        if (countKeyMatch) {
+          const apiBase = countApiBaseMatch ? countApiBaseMatch[1] : "https://countapi.mileshilliard.com/api/v1";
+          countApi = `${apiBase}/get/${countKeyMatch[1]}`;
+        }
+
+        return {
+          badgeUrl: badgeMatch ? badgeMatch[1] : undefined,
+          countApi,
+          baseCount: baseCountMatch ? Number.parseInt(baseCountMatch[1], 10) : undefined,
+        };
+      }
+    } catch {}
+  }
+  return null;
+}
+
+/**
+ * Fetch and resolve the visitor count for a given course slug.
+ * Reads config directly from the course repository with seamless fallback.
+ *
+ * @param {string} slug
+ * @returns {Promise<number | null>}
+ */
+async function fetchCourseVisitorCount(slug) {
+  // 1. Discover configuration dynamically from repo files
+  let config = await fetchRepoVisitorConfig(slug);
+
+  // 2. Fallback to known registry or default repo badge path
+  if (!config) {
+    config = KNOWN_COURSE_VISITORS[slug] || {
+      badgeUrl: `https://api.visitorbadge.io/api/combined?path=${slug}`,
+    };
+  }
+
+  // 3. Try primary CountAPI if available (JSON, high speed, CORS-enabled)
+  if (config.countApi) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(config.countApi, { signal: controller.signal });
+      clearTimeout(timer);
+      if (res.ok) {
+        const data = await res.json();
+        if (typeof data.value === "number" && Number.isFinite(data.value) && data.value > 0) {
+          return config.baseCount ? Math.max(config.baseCount, data.value) : data.value;
+        }
+      }
+    } catch {}
+  }
+
+  // 4. Try SVG Badge API (visitorbadge.io)
+  if (config.badgeUrl) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(config.badgeUrl, {
+        signal: controller.signal,
+        headers: {
+          Accept: "image/svg+xml, */*",
+          "Accept-Language": "en-US,en;q=0.9",
+        },
+      });
+      clearTimeout(timer);
+      if (res.ok) {
+        const svg = await res.text();
+        const parsed = parseCourseVisitorSvg(svg);
+        if (parsed !== null && parsed > 0) {
+          return config.baseCount ? Math.max(config.baseCount, parsed) : parsed;
+        }
+      }
+    } catch {}
+  }
+
+  return config.baseCount ?? null;
+}
+
+/**
+ * Fetch and update visitor counts for all completed/published courses.
+ *
+ * @returns {Promise<void>}
+ */
+async function setupCourseVisitors() {
+  const elements = Array.from(document.querySelectorAll("[data-course-visitors]"));
+  if (elements.length === 0) return;
+
+  /** @type {Record<string, { count: number, at: number }>} */
+  let storage = {};
+  try {
+    const raw = localStorage.getItem(COURSE_VISITORS_STORAGE_KEY);
+    if (raw) storage = JSON.parse(raw) || {};
+  } catch {}
+
+  const now = Date.now();
+  const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+
+  const slugs = Array.from(new Set(elements.map((el) => el.getAttribute("data-course-visitors")).filter(Boolean)));
+
+  await Promise.allSettled(
+    slugs.map(async (slug) => {
+      const cached = storage[slug];
+      if (cached && typeof cached.count === "number" && Number.isFinite(cached.count) && cached.count > 0) {
+        courseVisitorsCache[slug] = cached.count;
+        updateCourseVisitorsUI(slug, cached.count);
+        if (now - (cached.at || 0) < CACHE_TTL) {
+          return;
+        }
+      }
+
+      const count = await fetchCourseVisitorCount(slug);
+      if (count !== null && Number.isFinite(count) && count > 0) {
+        courseVisitorsCache[slug] = count;
+        storage[slug] = { count, at: Date.now() };
+        try {
+          localStorage.setItem(COURSE_VISITORS_STORAGE_KEY, JSON.stringify(storage));
+        } catch {}
+        updateCourseVisitorsUI(slug, count);
+      }
+    })
+  );
+}
+
+/**
+ * Update the DOM elements displaying visitor count for a course slug.
+ *
+ * @param {string} slug
+ * @param {number} count
+ * @returns {void}
+ */
+function updateCourseVisitorsUI(slug, count) {
+  const dict = I18N[currentLang] || I18N.fa;
+  const formatted = Math.round(count).toLocaleString("en-US");
+  const targets = document.querySelectorAll(`[data-course-visitors="${slug}"]`);
+  targets.forEach((el) => {
+    const countEl = el.querySelector(".course-visitors-count");
+    if (countEl) {
+      countEl.textContent = formatted;
+    }
+    el.setAttribute("title", dict.courseVisitorsTooltip || dict.visitorsTitle || "بازدید");
+    el.setAttribute("aria-label", `${dict.courseVisitorsTooltip || "بازدید"}: ${formatted}`);
+  });
+}
+
 /**
  * Show a brief toast message.
  *
@@ -2168,6 +2462,7 @@ function init() {
   setupNav();
   setupStats();
   setupVisitors();
+  setupCourseVisitors();
   setupShare();
   setupDonateTabs();
   setupReveal();

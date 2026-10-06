@@ -926,6 +926,50 @@ h3 {
   background: rgba(15, 118, 110, 0.14);
 }
 
+.course-foot-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.course-visitors {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(28, 25, 23, 0.04);
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid var(--hairline);
+  user-select: none;
+  cursor: default;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.course-visitors:hover {
+  background: rgba(15, 118, 110, 0.08);
+  border-color: rgba(15, 118, 110, 0.22);
+  color: var(--teal);
+}
+
+.course-visitors-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.course-visitors-count {
+  font-family: var(--font-body);
+}
+
 .course-share {
   width: 2.5rem;
   height: 2.5rem;

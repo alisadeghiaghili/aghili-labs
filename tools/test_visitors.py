@@ -11,10 +11,22 @@ with sync_playwright() as p:
     ctx = browser.new_context()
     page = ctx.new_page()
     page.goto(uri, wait_until="networkidle")
-    page.wait_for_timeout(1800)
+    page.wait_for_timeout(2500)
     print("first visit:", page.locator("#stat-visitors").inner_text())
+
+    # Check course card visitors
+    course_badges = page.locator(".course-visitors")
+    badge_count = course_badges.count()
+    print("course visitor badges count:", badge_count)
+    for i in range(badge_count):
+        badge = course_badges.nth(i)
+        slug = badge.get_attribute("data-course-visitors")
+        count_text = badge.locator(".course-visitors-count").inner_text()
+        print(f"  badge {slug}: {count_text}")
+
     page.reload(wait_until="networkidle")
-    page.wait_for_timeout(1200)
+    page.wait_for_timeout(1500)
     print("second visit:", page.locator("#stat-visitors").inner_text())
-    print("storage:", page.evaluate("() => localStorage.getItem('aghili-labs:visitors:v2')"))
+    print("site visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:visitors:v2')"))
+    print("course visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:course-visitors:v1')"))
     browser.close()
