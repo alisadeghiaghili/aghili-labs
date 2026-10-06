@@ -1562,6 +1562,7 @@ function applyCourseFilters() {
       const matches = !query || haystack.includes(query);
       const show = matches;
       card.hidden = !show;
+      card.style.display = show ? "" : "none";
       if (show) visibleInSection += 1;
     });
 
@@ -1569,6 +1570,7 @@ function applyCourseFilters() {
       courseFilters.filter === "all" || section.dataset.category === courseFilters.filter;
     const showSection = categoryMatches && visibleInSection > 0;
     section.hidden = !showSection;
+    section.style.display = showSection ? "" : "none";
     if (showSection) visibleTotal += visibleInSection;
 
     const count = section.querySelector(".category-head > p:last-child");
@@ -1586,6 +1588,7 @@ function applyCourseFilters() {
   });
 
   empty.hidden = visibleTotal > 0;
+  empty.style.display = visibleTotal > 0 ? "none" : "";
 }
 
 /**
@@ -1610,6 +1613,15 @@ function renderCourses() {
     btn.setAttribute("aria-selected", isActive ? "true" : "false");
     btn.dataset.filter = f.id;
     btn.textContent = dict.filterLabels[f.id] || f.label;
+    btn.addEventListener("click", () => {
+      courseFilters.filter = f.id;
+      filterBar.querySelectorAll(".filter-chip").forEach((chip) => {
+        const active = chip === btn;
+        chip.classList.toggle("is-active", active);
+        chip.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      applyCourseFilters();
+    });
     filterBar.appendChild(btn);
   });
 
@@ -1658,7 +1670,7 @@ function setupFilters() {
     const target = event.target;
     if (!(target instanceof Element)) return;
     const btn = target.closest(".filter-chip");
-    if (!(btn instanceof HTMLButtonElement)) return;
+    if (!btn) return;
 
     const filter = btn.dataset.filter;
     if (!filter) return;
@@ -1684,10 +1696,13 @@ function setupSearch() {
   const searchInput = document.getElementById("course-search");
   if (!searchInput) return;
 
-  searchInput.addEventListener("input", () => {
+  const onSearch = () => {
     courseFilters.query = searchInput.value.trim().toLowerCase();
     applyCourseFilters();
-  });
+  };
+
+  searchInput.addEventListener("input", onSearch);
+  searchInput.addEventListener("search", onSearch);
 }
 
 /**
@@ -2146,7 +2161,7 @@ function setupShare() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function init() {
   setupLanguage();
   renderCourses();
   setupFilters();
@@ -2159,4 +2174,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupReveal();
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
