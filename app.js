@@ -1557,7 +1557,8 @@ function applyCourseFilters() {
       const title = card.querySelector(".course-title")?.textContent || "";
       const en = card.querySelector(".course-en")?.textContent || "";
       const desc = card.querySelector(".course-desc")?.textContent || "";
-      const haystack = `${title} ${en} ${desc}`.toLowerCase();
+      const slug = card.dataset.slug || "";
+      const haystack = `${title} ${en} ${desc} ${slug}`.toLowerCase();
       const matches = !query || haystack.includes(query);
       const show = matches;
       card.hidden = !show;
@@ -1642,6 +1643,51 @@ function renderCourses() {
   });
 
   applyCourseFilters();
+}
+
+/**
+ * Setup category filter chip clicks.
+ *
+ * @returns {void}
+ */
+function setupFilters() {
+  const filterBar = document.querySelector(".filter-bar");
+  if (!filterBar) return;
+
+  filterBar.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const btn = target.closest(".filter-chip");
+    if (!(btn instanceof HTMLButtonElement)) return;
+
+    const filter = btn.dataset.filter;
+    if (!filter) return;
+
+    courseFilters.filter = filter;
+
+    filterBar.querySelectorAll(".filter-chip").forEach((chip) => {
+      const active = chip === btn;
+      chip.classList.toggle("is-active", active);
+      chip.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    applyCourseFilters();
+  });
+}
+
+/**
+ * Setup real-time course search input.
+ *
+ * @returns {void}
+ */
+function setupSearch() {
+  const searchInput = document.getElementById("course-search");
+  if (!searchInput) return;
+
+  searchInput.addEventListener("input", () => {
+    courseFilters.query = searchInput.value.trim().toLowerCase();
+    applyCourseFilters();
+  });
 }
 
 /**
@@ -2103,6 +2149,8 @@ function setupShare() {
 document.addEventListener("DOMContentLoaded", () => {
   setupLanguage();
   renderCourses();
+  setupFilters();
+  setupSearch();
   setupNav();
   setupStats();
   setupVisitors();
