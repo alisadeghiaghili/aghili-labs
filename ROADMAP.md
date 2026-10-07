@@ -44,7 +44,7 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-julia` — Julia: High-performance scientific computing, multiple dispatch, numerical optimization. *(Planned)*
 - `learn-java` — Java: Enterprise data platforms, big data infrastructure, JVM internals. *(Planned)*
 - `learn-scala` — Scala: Functional-object-oriented hybrid, Apache Spark big data pipelines. *(Planned)*
-- `learn-functional-programming` — Functional Programming: Immutability, pure functions, monads, stateless pipelines. *(Nearly Complete)*
+- `learn-fp` — Functional Programming: Immutability, pure functions, monads, stateless pipelines. *(Nearly Complete)*
 
 ### 2. Shell, Systems & Tooling (`systems` · 7 Courses)
 - `learn-bash` — Bash: Linux command-line, pipes, text streams, automation scripting. *(In Development)*

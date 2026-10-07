@@ -1,8 +1,8 @@
 {
   "app.js": {
-    "mtime": 1791375095.7117908,
-    "seen": 1791375166.9684129,
-    "ast_hash": "2dfa0a1b7dba5bf333b5d4548cb2e06e",
+    "mtime": 1791376648.5649412,
+    "seen": 1791376705.4532964,
+    "ast_hash": "ac29083602e207ef9570baa6fb752936",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1791218276.8247316,
-    "seen": 1791222274.4474657,
-    "ast_hash": "d651920408eda657dc40d370943a487a",
+    "mtime": 1791376663.2880492,
+    "seen": 1791376705.4532964,
+    "ast_hash": "4bcd4fe974091a7f45c9dff821bb85aa",
     "semantic_hash": ""
   },
   "docs/MAINTENANCE.md": {
