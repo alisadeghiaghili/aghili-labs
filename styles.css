@@ -392,6 +392,12 @@ h3 {
   text-align: center;
 }
 
+html[lang="fa"] .hero-stats dt {
+  font-family: "Vazirmatn", "Baloo Bhaijaan 2", "Lalezar", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
 .hero-stats dd {
   margin: 0.35rem 0 0;
   color: var(--ink-soft);

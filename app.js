@@ -1466,31 +1466,15 @@ const KNOWN_COURSE_VISITORS = {
   "learn-cmd": {
     badgeUrl: "https://api.visitorbadge.io/api/combined?path=alisadeghiaghili-learn-cmd-unique",
     baseCount: 4,
+    hasOffset: true,
   },
   "learn-dvc": {
     badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-dvc",
     baseCount: 1,
   },
-  "learn-dbt": {
-    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-dbt",
-    baseCount: 1,
-  },
-  "learn-powershell": {
-    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-powershell",
-    baseCount: 1,
-  },
-  "learn-python": {
-    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-python",
-    badgeUrl: "https://api.visitorbadge.io/api/visitors?path=alisadeghiaghili.learn-python",
-    baseCount: 2,
-  },
-  "learn-api": {
-    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-api-unique",
-    baseCount: 4,
-  },
 };
 
-const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v1";
+const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v2";
 
 /**
  * In-memory cache of course visitor counts for synchronous zero-latency rendering.
@@ -1499,6 +1483,7 @@ const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v1";
 const courseVisitorsCache = {};
 
 try {
+  localStorage.removeItem("aghili-labs:course-visitors:v1");
   const rawCourseVisitors = localStorage.getItem(COURSE_VISITORS_STORAGE_KEY);
   if (rawCourseVisitors) {
     const parsed = JSON.parse(rawCourseVisitors);
@@ -1522,7 +1507,8 @@ function createCourseCard(course) {
   const dict = I18N[currentLang] || I18N.fa;
   const meta = STATUS_META[course.status] || STATUS_META.in_development;
   const isPlanned = course.status === "planned";
-  const isPublished = course.status === "published";
+  const hasVisitorCounter = Boolean(KNOWN_COURSE_VISITORS[course.slug] || courseVisitorsCache[course.slug]);
+  const isPublished = course.status === "published" && hasVisitorCounter;
   const courseUrl = `${BASE}/${course.slug}/`;
   const card = document.createElement("article");
   card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
@@ -1937,6 +1923,7 @@ function setLanguage(lang) {
   } catch {}
 
   renderCourses();
+  setupStats();
 
   // Donation channels:
   // Persian (fa): Show both CoffeeBede & Buy Me a Coffee with switcher
@@ -2005,11 +1992,41 @@ function setupLanguage() {
   setLanguage(detected);
 }
 
-function setupStats() {
-  const el = document.getElementById("stat-courses");
+function toPersianDigits(val) {
+  const farsi = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+  return String(val).replace(/\d/g, (d) => farsi[Number(d)]);
+}
+
+let currentVisitorsCount = 214;
+
+function updateVisitorsDisplay() {
+  const el = document.getElementById("stat-visitors");
   if (!el) return;
-  const all = Object.values(CATEGORIES).flatMap((c) => c.courses);
-  el.textContent = String(all.length);
+  const count = Math.max(214, Math.round(currentVisitorsCount));
+  el.textContent = currentLang === "fa" ? toPersianDigits(count) : count.toLocaleString("en-US");
+  const dict = I18N[currentLang] || I18N.fa;
+  el.title = dict.visitorsTitle || "Visitors";
+}
+
+function setupStats() {
+  const coursesEl = document.getElementById("stat-courses");
+  const catsEl = document.getElementById("stat-categories");
+  const freeEl = document.getElementById("stat-free");
+
+  const totalCourses = Object.values(CATEGORIES).flatMap((c) => c.courses).length || 88;
+  const totalCats = Object.keys(CATEGORIES).length || 9;
+
+  if (coursesEl) {
+    coursesEl.textContent = currentLang === "fa" ? toPersianDigits(totalCourses) : String(totalCourses);
+  }
+  if (catsEl) {
+    catsEl.textContent = currentLang === "fa" ? toPersianDigits(totalCats) : String(totalCats);
+  }
+  if (freeEl) {
+    freeEl.textContent = currentLang === "fa" ? "۱۰۰٪" : "100%";
+  }
+
+  updateVisitorsDisplay();
 }
 
 /**
@@ -2029,14 +2046,15 @@ async function setupVisitors() {
   const el = document.getElementById("stat-visitors");
   if (!el) return;
 
-  const STORAGE_KEY = "aghili-labs:visitors:v2";
+  const STORAGE_KEY = "aghili-labs:visitors:v3";
   const HISTORICAL_OFFSET = 50; // Total visits recorded prior to renaming
-  const MINIMUM_BASELINE = 77;   // Synchronized floor guaranteeing consistency across all clients
+  const MINIMUM_BASELINE = 214;  // Synchronized floor guaranteeing consistency across all clients
 
   // Aggressively purge any stale or corrupt caches from earlier iterations
   try {
     localStorage.removeItem("learn-with-ali:unique-visitors");
     localStorage.removeItem("aghili-labs:unique-visitors");
+    localStorage.removeItem("aghili-labs:visitors:v2");
     const existing = localStorage.getItem(STORAGE_KEY);
     if (existing) {
       const parsed = JSON.parse(existing);
@@ -2047,9 +2065,8 @@ async function setupVisitors() {
   } catch {}
 
   const paint = (value) => {
-    el.textContent = Math.max(MINIMUM_BASELINE, Math.round(value)).toLocaleString("en-US");
-    const dict = I18N[currentLang] || I18N.fa;
-    el.title = dict.visitorsTitle || "Visitors";
+    currentVisitorsCount = Math.max(MINIMUM_BASELINE, Math.round(value));
+    updateVisitorsDisplay();
   };
 
   /** @type {{ count: number, at: number } | null} */
@@ -2110,7 +2127,14 @@ async function setupVisitors() {
     try {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(url, { cache: "no-store", signal: controller.signal });
+      const res = await fetch(url, {
+        cache: "no-store",
+        signal: controller.signal,
+        headers: {
+          "Accept-Language": "en-US,en;q=0.9",
+          "Accept": "image/svg+xml, */*",
+        },
+      });
       clearTimeout(timer);
 
       if (res.ok) {
