@@ -13,7 +13,7 @@
       "file_type": "code",
       "norm_label": "init()",
       "source_file": "app.js",
-      "source_location": "L2482"
+      "source_location": "L2503"
     },
     {
       "id": "app_setupdonatetabs",
@@ -25,7 +25,7 @@
       "file_type": "code",
       "norm_label": "setupdonatetabs()",
       "source_file": "app.js",
-      "source_location": "L2419"
+      "source_location": "L2440"
     },
     {
       "id": "app_setupnav",
@@ -61,7 +61,7 @@
       "file_type": "code",
       "norm_label": "setupshare()",
       "source_file": "app.js",
-      "source_location": "L2443"
+      "source_location": "L2464"
     },
     {
       "id": "app_showtoast",
@@ -73,7 +73,7 @@
       "file_type": "code",
       "norm_label": "showtoast()",
       "source_file": "app.js",
-      "source_location": "L2384"
+      "source_location": "L2405"
     },
     {
       "id": "app_coursesearchtext",
@@ -133,7 +133,7 @@
       "file_type": "code",
       "norm_label": "setupcoursevisitors()",
       "source_file": "app.js",
-      "source_location": "L2317"
+      "source_location": "L2338"
     },
     {
       "id": "app_updatecoursevisitorsui",
@@ -145,7 +145,7 @@
       "file_type": "code",
       "norm_label": "updatecoursevisitorsui()",
       "source_file": "app.js",
-      "source_location": "L2364"
+      "source_location": "L2385"
     },
     {
       "id": "app_applycoursefilters",
@@ -1452,7 +1452,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2298",
+      "source_location": "L2307",
       "weight": 1.0
     },
     {
@@ -1488,7 +1488,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2483",
+      "source_location": "L2504",
       "weight": 1.0
     },
     {
@@ -1500,7 +1500,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2484",
+      "source_location": "L2505",
       "weight": 1.0
     },
     {
@@ -1512,7 +1512,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2485",
+      "source_location": "L2506",
       "weight": 1.0
     },
     {
@@ -1524,7 +1524,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2486",
+      "source_location": "L2507",
       "weight": 1.0
     },
     {
@@ -1536,7 +1536,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2487",
+      "source_location": "L2508",
       "weight": 1.0
     },
     {
@@ -1548,7 +1548,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2488",
+      "source_location": "L2509",
       "weight": 1.0
     },
     {
@@ -1560,7 +1560,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2489",
+      "source_location": "L2510",
       "weight": 1.0
     },
     {
@@ -1572,7 +1572,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2490",
+      "source_location": "L2511",
       "weight": 1.0
     },
     {
@@ -1584,7 +1584,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2491",
+      "source_location": "L2512",
       "weight": 1.0
     },
     {
@@ -1596,7 +1596,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2492",
+      "source_location": "L2513",
       "weight": 1.0
     },
     {
@@ -1608,7 +1608,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2493",
+      "source_location": "L2514",
       "weight": 1.0
     },
     {
@@ -1692,7 +1692,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2338",
+      "source_location": "L2359",
       "weight": 1.0
     },
     {
@@ -1704,7 +1704,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2344",
+      "source_location": "L2365",
       "weight": 1.0
     },
     {
@@ -1752,7 +1752,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2474",
+      "source_location": "L2495",
       "weight": 1.0
     },
     {
@@ -2649,7 +2649,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2317",
+      "source_location": "L2338",
       "weight": 1.0
     },
     {
@@ -2660,7 +2660,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2364",
+      "source_location": "L2385",
       "weight": 1.0
     },
     {
@@ -2671,7 +2671,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2384",
+      "source_location": "L2405",
       "weight": 1.0
     },
     {
@@ -2682,7 +2682,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2419",
+      "source_location": "L2440",
       "weight": 1.0
     },
     {
@@ -2693,7 +2693,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2443",
+      "source_location": "L2464",
       "weight": 1.0
     },
     {
@@ -3310,10 +3310,10 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app.js",
-      "source_location": "L2499",
+      "source_location": "L2520",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "751975ef0d6b02176f8c32d8a1e8bd61a94d2f05"
+  "built_at_commit": "8d06c548801471b13f6cc8c50dcc78e95d505694"
 }

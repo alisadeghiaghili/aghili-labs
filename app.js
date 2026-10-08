@@ -1460,7 +1460,7 @@ const STATUS_META = {
 const KNOWN_COURSE_VISITORS = {
   "learn-r": {
     countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-r",
-    badgeUrl: "https://api.visitorbadge.io/api/visitors?path=alisadeghiaghili.learn-r",
+    historicalOffset: 18,
     baseCount: 45,
   },
   "learn-cmd": {
@@ -1474,7 +1474,7 @@ const KNOWN_COURSE_VISITORS = {
   },
 };
 
-const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v3";
+const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v4";
 
 /**
  * In-memory cache of course visitor counts for synchronous zero-latency rendering.
@@ -2225,6 +2225,7 @@ async function fetchRepoVisitorConfig(slug) {
         const countKeyMatch = text.match(/COUNT_KEY\s*=\s*['"]([^'"]+)['"]/);
         const countApiBaseMatch = text.match(/COUNT_API_BASE\s*=\s*['"]([^'"]+)['"]/);
         const baseCountMatch = text.match(/(?:BASE_COUNT|BASELINE_FALLBACK)\s*=\s*(\d+)/);
+        const offsetMatch = text.match(/HISTORICAL_OFFSET\s*=\s*(\d+)/);
         const hasOffset = /BASE_COUNT\s*\+\s*\(\s*parsed\s*-\s*1\s*\)/.test(text);
 
         let countApi = undefined;
@@ -2234,8 +2235,9 @@ async function fetchRepoVisitorConfig(slug) {
         }
 
         return {
-          badgeUrl: badgeMatch ? badgeMatch[1] : undefined,
+          badgeUrl: countApi ? undefined : (badgeMatch ? badgeMatch[1] : undefined),
           countApi,
+          historicalOffset: offsetMatch ? Number.parseInt(offsetMatch[1], 10) : 0,
           baseCount: baseCountMatch ? Number.parseInt(baseCountMatch[1], 10) : undefined,
           hasOffset,
         };
@@ -2264,67 +2266,47 @@ async function fetchCourseVisitorCount(slug) {
   // If this course has no visitor counter configured in repo or registry, do not guess
   if (!config) return null;
 
-  const promises = [];
-
-  // Try CountAPI if available (JSON, high speed, CORS-enabled)
+  // 3. Try primary CountAPI if available (read-only 'get', zero increment)
   if (config.countApi) {
-    promises.push(
-      (async () => {
-        try {
-          const controller = new AbortController();
-          const timer = setTimeout(() => controller.abort(), 3500);
-          const res = await fetch(config.countApi, { signal: controller.signal });
-          clearTimeout(timer);
-          if (res.ok) {
-            const data = await res.json();
-            if (typeof data.value === "number" && Number.isFinite(data.value) && data.value > 0) {
-              return data.value;
-            }
-          }
-        } catch {}
-        return null;
-      })()
-    );
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(config.countApi, { signal: controller.signal });
+      clearTimeout(timer);
+      if (res.ok) {
+        const data = await res.json();
+        if (typeof data.value === "number" && Number.isFinite(data.value) && data.value > 0) {
+          const total = data.value + (config.historicalOffset || 0);
+          return config.baseCount ? Math.max(config.baseCount, total) : total;
+        }
+      }
+    } catch {}
   }
 
-  // Try SVG Badge API (visitorbadge.io)
+  // 4. Try SVG Badge API (visitorbadge.io) if no countApi configured
   if (config.badgeUrl) {
-    promises.push(
-      (async () => {
-        try {
-          const controller = new AbortController();
-          const timer = setTimeout(() => controller.abort(), 3500);
-          const res = await fetch(config.badgeUrl, {
-            signal: controller.signal,
-            headers: {
-              Accept: "image/svg+xml, */*",
-              "Accept-Language": "en-US,en;q=0.9",
-            },
-          });
-          clearTimeout(timer);
-          if (res.ok) {
-            const svg = await res.text();
-            const parsed = parseCourseVisitorSvg(svg);
-            if (parsed !== null && parsed > 0) {
-              if (config.hasOffset && config.baseCount) {
-                return Math.max(config.baseCount, config.baseCount + (parsed - 1));
-              }
-              return parsed;
-            }
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3500);
+      const res = await fetch(config.badgeUrl, {
+        signal: controller.signal,
+        headers: {
+          Accept: "image/svg+xml, */*",
+          "Accept-Language": "en-US,en;q=0.9",
+        },
+      });
+      clearTimeout(timer);
+      if (res.ok) {
+        const svg = await res.text();
+        const parsed = parseCourseVisitorSvg(svg);
+        if (parsed !== null && parsed > 0) {
+          if (config.hasOffset && config.baseCount) {
+            return Math.max(config.baseCount, config.baseCount + (parsed - 1));
           }
-        } catch {}
-        return null;
-      })()
-    );
-  }
-
-  const results = await Promise.allSettled(promises);
-  const validCounts = results
-    .map((r) => (r.status === "fulfilled" ? r.value : null))
-    .filter((v) => typeof v === "number" && Number.isFinite(v) && v > 0);
-
-  if (validCounts.length > 0) {
-    return Math.max(...validCounts, config.baseCount || 0);
+          return config.baseCount ? Math.max(config.baseCount, parsed) : parsed;
+        }
+      }
+    } catch {}
   }
 
   return config.baseCount ?? null;

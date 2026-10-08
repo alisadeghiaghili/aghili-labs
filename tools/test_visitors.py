@@ -29,5 +29,5 @@ with sync_playwright() as p:
     page.wait_for_timeout(1500)
     print("second visit:", repr(page.locator("#stat-visitors").inner_text()))
     print("site visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:visitors:v2')"))
-    print("course visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:course-visitors:v3')"))
+    print("course visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:course-visitors:v4')"))
     browser.close()
