@@ -2180,21 +2180,16 @@ const REPO_VISITOR_PATHS = [
 function parseCourseVisitorSvg(svg) {
   if (!svg || typeof svg !== "string") return null;
 
-  // 1. Look for combined format: always take the second number (total)
-  const combinedMatch = svg.match(/(?:VISITORS:|>)\s*[\d.,]+[KMB]?\s*\/\s*([\d.,]+[KMB]?)/i);
-  let raw = combinedMatch ? combinedMatch[1] : "";
+  // 1. Look for primary count label "VISITORS: <number>" (matches first number in "VISITORS: X / Y")
+  const match = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i) ||
+                svg.match(/aria-label=["']VISITORS:\s*([\d.,]+[KMB]?)/i);
+  let raw = match ? match[1] : "";
 
-  // 2. Look for simple label "VISITORS: <number>"
+  // 2. Fallback to extracting first numeric text node before slash or closing tag
   if (!raw) {
-    const simpleMatch = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i);
-    raw = simpleMatch ? simpleMatch[1] : "";
-  }
-
-  // 3. Fallback to extracting the trailing text node containing numeric data
-  if (!raw) {
-    const textMatches = Array.from(svg.matchAll(/>\s*([0-9.,]+[KMB]?)\s*<\/text>/gi));
+    const textMatches = Array.from(svg.matchAll(/>\s*([0-9.,]+[KMB]?)(?:\s*\/|\s*<)/gi));
     if (textMatches.length > 0) {
-      raw = textMatches[textMatches.length - 1][1];
+      raw = textMatches[0][1];
     }
   }
 
@@ -2213,7 +2208,7 @@ function parseCourseVisitorSvg(svg) {
  * Inspects official repo source files (e.g. src/ui/visitor-counter.ts, js/visitor-counter.js).
  *
  * @param {string} slug
- * @returns {Promise<{ countApi?: string, badgeUrl?: string, baseCount?: number } | null>}
+ * @returns {Promise<{ countApi?: string, badgeUrl?: string, baseCount?: number, hasOffset?: boolean } | null>}
  */
 async function fetchRepoVisitorConfig(slug) {
   for (const filePath of REPO_VISITOR_PATHS) {
@@ -2230,6 +2225,7 @@ async function fetchRepoVisitorConfig(slug) {
         const countKeyMatch = text.match(/COUNT_KEY\s*=\s*['"]([^'"]+)['"]/);
         const countApiBaseMatch = text.match(/COUNT_API_BASE\s*=\s*['"]([^'"]+)['"]/);
         const baseCountMatch = text.match(/(?:BASE_COUNT|BASELINE_FALLBACK)\s*=\s*(\d+)/);
+        const hasOffset = /BASE_COUNT\s*\+\s*\(\s*parsed\s*-\s*1\s*\)/.test(text);
 
         let countApi = undefined;
         if (countKeyMatch) {
@@ -2241,6 +2237,7 @@ async function fetchRepoVisitorConfig(slug) {
           badgeUrl: badgeMatch ? badgeMatch[1] : undefined,
           countApi,
           baseCount: baseCountMatch ? Number.parseInt(baseCountMatch[1], 10) : undefined,
+          hasOffset,
         };
       }
     } catch {}
@@ -2259,12 +2256,13 @@ async function fetchCourseVisitorCount(slug) {
   // 1. Discover configuration dynamically from repo files
   let config = await fetchRepoVisitorConfig(slug);
 
-  // 2. Fallback to known registry or default repo badge path
+  // 2. Fallback to known registry
   if (!config) {
-    config = KNOWN_COURSE_VISITORS[slug] || {
-      badgeUrl: `https://api.visitorbadge.io/api/combined?path=${slug}`,
-    };
+    config = KNOWN_COURSE_VISITORS[slug];
   }
+
+  // If this course has no visitor counter configured in repo or registry, do not guess
+  if (!config) return null;
 
   // 3. Try primary CountAPI if available (JSON, high speed, CORS-enabled)
   if (config.countApi) {
@@ -2299,6 +2297,9 @@ async function fetchCourseVisitorCount(slug) {
         const svg = await res.text();
         const parsed = parseCourseVisitorSvg(svg);
         if (parsed !== null && parsed > 0) {
+          if (config.hasOffset && config.baseCount) {
+            return Math.max(config.baseCount, config.baseCount + (parsed - 1));
+          }
           return config.baseCount ? Math.max(config.baseCount, parsed) : parsed;
         }
       }

@@ -12,7 +12,8 @@ with sync_playwright() as p:
     page = ctx.new_page()
     page.goto(uri, wait_until="networkidle")
     page.wait_for_timeout(2500)
-    print("first visit:", page.locator("#stat-visitors").inner_text())
+    stat_text = page.locator("#stat-visitors").inner_text()
+    print("first visit:", repr(stat_text))
 
     # Check course card visitors
     course_badges = page.locator(".course-visitors")
@@ -26,7 +27,7 @@ with sync_playwright() as p:
 
     page.reload(wait_until="networkidle")
     page.wait_for_timeout(1500)
-    print("second visit:", page.locator("#stat-visitors").inner_text())
+    print("second visit:", repr(page.locator("#stat-visitors").inner_text()))
     print("site visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:visitors:v2')"))
-    print("course visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:course-visitors:v1')"))
+    print("course visitors storage:", page.evaluate("() => localStorage.getItem('aghili-labs:course-visitors:v2')"))
     browser.close()
