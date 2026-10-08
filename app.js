@@ -1469,12 +1469,13 @@ const KNOWN_COURSE_VISITORS = {
     baseCount: 44,
   },
   "learn-dvc": {
-    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-dvc",
-    baseCount: 1,
+    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-dvc",
+    historicalOffset: 203,
+    baseCount: 204,
   },
 };
 
-const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v5";
+const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v6";
 
 /**
  * In-memory cache of course visitor counts for synchronous zero-latency rendering.
