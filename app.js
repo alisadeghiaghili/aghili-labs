@@ -1461,7 +1461,7 @@ const KNOWN_COURSE_VISITORS = {
   "learn-r": {
     countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-r",
     badgeUrl: "https://api.visitorbadge.io/api/visitors?path=alisadeghiaghili.learn-r",
-    baseCount: 2,
+    baseCount: 45,
   },
   "learn-cmd": {
     badgeUrl: "https://api.visitorbadge.io/api/combined?path=alisadeghiaghili-learn-cmd-unique",
@@ -1474,7 +1474,7 @@ const KNOWN_COURSE_VISITORS = {
   },
 };
 
-const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v2";
+const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v3";
 
 /**
  * In-memory cache of course visitor counts for synchronous zero-latency rendering.
@@ -2264,46 +2264,67 @@ async function fetchCourseVisitorCount(slug) {
   // If this course has no visitor counter configured in repo or registry, do not guess
   if (!config) return null;
 
-  // 3. Try primary CountAPI if available (JSON, high speed, CORS-enabled)
+  const promises = [];
+
+  // Try CountAPI if available (JSON, high speed, CORS-enabled)
   if (config.countApi) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(config.countApi, { signal: controller.signal });
-      clearTimeout(timer);
-      if (res.ok) {
-        const data = await res.json();
-        if (typeof data.value === "number" && Number.isFinite(data.value) && data.value > 0) {
-          return config.baseCount ? Math.max(config.baseCount, data.value) : data.value;
-        }
-      }
-    } catch {}
+    promises.push(
+      (async () => {
+        try {
+          const controller = new AbortController();
+          const timer = setTimeout(() => controller.abort(), 3500);
+          const res = await fetch(config.countApi, { signal: controller.signal });
+          clearTimeout(timer);
+          if (res.ok) {
+            const data = await res.json();
+            if (typeof data.value === "number" && Number.isFinite(data.value) && data.value > 0) {
+              return data.value;
+            }
+          }
+        } catch {}
+        return null;
+      })()
+    );
   }
 
-  // 4. Try SVG Badge API (visitorbadge.io)
+  // Try SVG Badge API (visitorbadge.io)
   if (config.badgeUrl) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(config.badgeUrl, {
-        signal: controller.signal,
-        headers: {
-          Accept: "image/svg+xml, */*",
-          "Accept-Language": "en-US,en;q=0.9",
-        },
-      });
-      clearTimeout(timer);
-      if (res.ok) {
-        const svg = await res.text();
-        const parsed = parseCourseVisitorSvg(svg);
-        if (parsed !== null && parsed > 0) {
-          if (config.hasOffset && config.baseCount) {
-            return Math.max(config.baseCount, config.baseCount + (parsed - 1));
+    promises.push(
+      (async () => {
+        try {
+          const controller = new AbortController();
+          const timer = setTimeout(() => controller.abort(), 3500);
+          const res = await fetch(config.badgeUrl, {
+            signal: controller.signal,
+            headers: {
+              Accept: "image/svg+xml, */*",
+              "Accept-Language": "en-US,en;q=0.9",
+            },
+          });
+          clearTimeout(timer);
+          if (res.ok) {
+            const svg = await res.text();
+            const parsed = parseCourseVisitorSvg(svg);
+            if (parsed !== null && parsed > 0) {
+              if (config.hasOffset && config.baseCount) {
+                return Math.max(config.baseCount, config.baseCount + (parsed - 1));
+              }
+              return parsed;
+            }
           }
-          return config.baseCount ? Math.max(config.baseCount, parsed) : parsed;
-        }
-      }
-    } catch {}
+        } catch {}
+        return null;
+      })()
+    );
+  }
+
+  const results = await Promise.allSettled(promises);
+  const validCounts = results
+    .map((r) => (r.status === "fulfilled" ? r.value : null))
+    .filter((v) => typeof v === "number" && Number.isFinite(v) && v > 0);
+
+  if (validCounts.length > 0) {
+    return Math.max(...validCounts, config.baseCount || 0);
   }
 
   return config.baseCount ?? null;

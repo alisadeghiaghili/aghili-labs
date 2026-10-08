@@ -1,7 +1,7 @@
-# Graph Report - learn-with-ali  (2026-10-07)
+# Graph Report - learn-with-ali  (2026-10-08)
 
 ## Corpus Check
-- 20 files · ~65,128 words
+- 20 files · ~65,145 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: .ico 2, (none) 1, .css 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f38853a2`
+- Built from commit: `751975ef`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
