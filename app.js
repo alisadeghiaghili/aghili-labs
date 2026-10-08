@@ -1464,9 +1464,9 @@ const KNOWN_COURSE_VISITORS = {
     baseCount: 45,
   },
   "learn-cmd": {
-    badgeUrl: "https://api.visitorbadge.io/api/combined?path=alisadeghiaghili-learn-cmd-unique",
-    baseCount: 4,
-    hasOffset: true,
+    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-cmd",
+    historicalOffset: 43,
+    baseCount: 44,
   },
   "learn-dvc": {
     badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-dvc",
@@ -1474,7 +1474,7 @@ const KNOWN_COURSE_VISITORS = {
   },
 };
 
-const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v4";
+const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v5";
 
 /**
  * In-memory cache of course visitor counts for synchronous zero-latency rendering.
