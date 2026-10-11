@@ -2031,15 +2031,14 @@ function setupStats() {
 }
 
 /**
- * Load and increment the page visitor counter.
- * Uses visitorbadge.io (CORS-enabled SVG with count in the title).
+ * Display the shared page visitor count, incrementing once per unique visit.
  *
- * @returns {Promise<void>}
- */
-/**
- * Count unique visitors (once per browser) via visitorbadge.io.
- * The badge endpoint increments on every request, so we only call it
- * on a browser's first visit; return visits reuse the cached number.
+ * The counter lives on visitorbadge.io at `path=aghili-labs` (a single shared
+ * number on their server, so every browser reads the same value). We read it
+ * with the read-only `/api/get` endpoint — which does NOT increment — and only
+ * bump it via `/api/hit` on a browser's first visit of the day. This guarantees
+ * all browsers agree on one stable number that grows with genuine new visitors
+ * instead of inflating on every page load (the old behavior).
  *
  * @returns {Promise<void>}
  */
@@ -2047,22 +2046,23 @@ async function setupVisitors() {
   const el = document.getElementById("stat-visitors");
   if (!el) return;
 
-  const STORAGE_KEY = "aghili-labs:visitors:v3";
-  const HISTORICAL_OFFSET = 50; // Total visits recorded prior to renaming
+  const STORAGE_KEY = "aghili-labs:visitors:v4";
+  const LAST_VISIT_KEY = "aghili-labs:last-visit-date";
+  const COUNTER_PATH = "aghili-labs";
+  const GET_URL = `https://api.visitorbadge.io/api/get?path=${COUNTER_PATH}`;   // read-only
+  const HIT_URL = `https://api.visitorbadge.io/api/hit?path=${COUNTER_PATH}`;   // +1
+  const HISTORICAL_OFFSET = 50;  // Total visits recorded prior to renaming
   const MINIMUM_BASELINE = 214;  // Synchronized floor guaranteeing consistency across all clients
 
-  // Aggressively purge any stale or corrupt caches from earlier iterations
+  // Aggressively purge any stale caches from earlier iterations (incl. the
+  // per-load-incrementing v3) so old inflated numbers never linger.
   try {
-    localStorage.removeItem("learn-with-ali:unique-visitors");
-    localStorage.removeItem("aghili-labs:unique-visitors");
-    localStorage.removeItem("aghili-labs:visitors:v2");
-    const existing = localStorage.getItem(STORAGE_KEY);
-    if (existing) {
-      const parsed = JSON.parse(existing);
-      if (!parsed || typeof parsed.count !== "number" || parsed.count < MINIMUM_BASELINE) {
-        localStorage.removeItem(STORAGE_KEY);
-      }
-    }
+    [
+      "learn-with-ali:unique-visitors",
+      "aghili-labs:unique-visitors",
+      "aghili-labs:visitors:v2",
+      "aghili-labs:visitors:v3",
+    ].forEach((k) => localStorage.removeItem(k));
   } catch {}
 
   const paint = (value) => {
@@ -2070,97 +2070,102 @@ async function setupVisitors() {
     updateVisitorsDisplay();
   };
 
-  /** @type {{ count: number, at: number } | null} */
-  let cached = null;
+  // Local cache doubles as a floor so the number never visibly drops for a
+  // returning browser (mirrors the course counters' "never downgrade" rule).
+  let floor = MINIMUM_BASELINE;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) cached = JSON.parse(raw);
-  } catch {
-    cached = null;
-  }
-
-  // If valid cache above baseline exists and is fresh (< 30m), paint immediately
-  if (cached && typeof cached.count === "number" && cached.count >= MINIMUM_BASELINE) {
-    paint(cached.count);
-    if (Date.now() - (cached.at || 0) < 1800_000) {
-      return;
-    }
-  }
-
-  /**
-   * Parse total visitor count from SVG badge markup.
-   * Handles both combined ("VISITORS: daily / total") and simple ("VISITORS: total").
-   */
-  const parseCount = (svg) => {
-    // 1. Look for combined format: always take the second number (total)
-    const combinedMatch = svg.match(/(?:VISITORS:|>)\s*[\d.,]+[KMB]?\s*\/\s*([\d.,]+[KMB]?)/i);
-    let raw = combinedMatch ? combinedMatch[1] : "";
-
-    // 2. Look for simple label "VISITORS: <number>"
-    if (!raw) {
-      const simpleMatch = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i);
-      raw = simpleMatch ? simpleMatch[1] : "";
-    }
-
-    // 3. Fallback to extracting the trailing text node containing numeric data
-    if (!raw) {
-      const textMatches = Array.from(svg.matchAll(/>\s*([0-9.,]+[KMB]?)\s*<\/text>/gi));
-      if (textMatches.length > 0) {
-        raw = textMatches[textMatches.length - 1][1];
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed.count === "number" && Number.isFinite(parsed.count) && parsed.count >= MINIMUM_BASELINE) {
+        floor = parsed.count;
       }
     }
+  } catch {
+    floor = MINIMUM_BASELINE;
+  }
+  paint(floor);
 
-    raw = (raw || "").replace(/,/g, "").trim();
-    if (!raw) return Number.NaN;
-
-    const suffix = raw.slice(-1).toUpperCase();
-    const scale = { K: 1e3, M: 1e6, B: 1e9 }[suffix] || 1;
-    const numeric = scale === 1 ? Number(raw) : Number.parseFloat(raw) * scale;
-    return Number.isFinite(numeric) ? numeric : Number.NaN;
+  // Has this browser already been counted today (UTC day)? Set the flag up
+  // front so a fast reload can never double-increment.
+  const isNewDailyVisit = () => {
+    try {
+      const today = new Date().toISOString().slice(0, 10);
+      if (localStorage.getItem(LAST_VISIT_KEY) === today) return false;
+      localStorage.setItem(LAST_VISIT_KEY, today);
+      return true;
+    } catch {
+      return false;
+    }
   };
 
-  const endpoints = [
-    "https://api.visitorbadge.io/api/visitors?path=aghili-labs",
-    "https://api.visitorbadge.io/api/combined?path=aghili-labs",
-  ];
-
-  for (const url of endpoints) {
+  /**
+   * Fetch and parse a counter value. Tolerates a bare number or JSON
+   * ({ "value": n } / { "count": n } / { "visitors": n }).
+   *
+   * @param {string} url
+   * @returns {Promise<number | null>}
+   */
+  const fetchCount = async (url, ms = 3500) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), ms);
     try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
       const res = await fetch(url, {
         cache: "no-store",
         signal: controller.signal,
-        headers: {
-          "Accept-Language": "en-US,en;q=0.9",
-          "Accept": "image/svg+xml, */*",
-        },
+        headers: { Accept: "application/json, text/plain, */*" },
       });
-      clearTimeout(timer);
-
-      if (res.ok) {
-        const text = await res.text();
-        const rawCount = parseCount(text);
-        if (Number.isFinite(rawCount) && rawCount > 0) {
-          // Total sum = historical visits from previous repo name + live visits on aghili-labs
-          const totalCount = Math.max(MINIMUM_BASELINE, HISTORICAL_OFFSET + rawCount);
-          paint(totalCount);
-          try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: totalCount, at: Date.now() }));
-          } catch {}
-          return;
+      if (!res.ok) return null;
+      const text = (await res.text()).trim();
+      let n = NaN;
+      if (/^\d+$/.test(text)) {
+        n = Number(text);
+      } else {
+        try {
+          const j = JSON.parse(text);
+          n = Number(j.value ?? j.count ?? j.visitors ?? j);
+        } catch {
+          const m = text.match(/\d+/);
+          n = m ? Number(m[0]) : NaN;
         }
       }
+      return Number.isFinite(n) && n >= 0 ? n : null;
     } catch {
-      // Ignore network errors/adblocker blocks and continue
+      return null;
+    } finally {
+      clearTimeout(timer);
     }
+  };
+
+  try {
+    // 1. Read the shared counter WITHOUT incrementing (every browser sees this).
+    let value = await fetchCount(GET_URL);
+
+    // 2. Genuinely new unique (daily) visit → bump the shared counter once.
+    if (isNewDailyVisit()) {
+      try {
+        await fetch(HIT_URL, { cache: "no-store" });
+      } catch {}
+      value = value === null ? value : value + 1;
+    }
+
+    // 3. Render. Unknown base (null) falls back to the floor.
+    if (value !== null) {
+      const total = Math.max(floor, MINIMUM_BASELINE, HISTORICAL_OFFSET + value);
+      paint(total);
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: total, at: Date.now() }));
+      } catch {}
+      return;
+    }
+  } catch {
+    // Ignore network errors/adblocker blocks; keep the floor.
   }
 
-  // Network failed or blocked by client: ensure counter never drops below baseline sum
-  const fallbackCount = cached && cached.count >= MINIMUM_BASELINE ? cached.count + 1 : MINIMUM_BASELINE;
-  paint(fallbackCount);
+  // 4. Read failed / blocked: hold the floor (never drop, never inflate).
+  paint(floor);
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: fallbackCount, at: Date.now() }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: floor, at: Date.now() }));
   } catch {}
 }
 
