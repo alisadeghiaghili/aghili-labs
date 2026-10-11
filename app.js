@@ -403,7 +403,7 @@ const CATEGORIES = {
         en: "SQL",
         desc: "هر مهندس داده‌ای، هر روز SQL می‌نویسد. کوئری‌های تودرتو، توابع پنجره‌ای، CTEها، ایندکس‌گذاری و بهینه‌سازی اجرا در سندباکس زنده.",
         logo: "sql",
-        status: "in_development",
+        status: "near_complete",
         contentLanguages: ["en"],
       },
       {
@@ -799,7 +799,7 @@ const CATEGORIES = {
         en: "API",
         desc: "مدل ML شما بدون API قابل استفاده نیست. اصول REST، اعتبارسنجی با Pydantic، مستندسازی خودکار OpenAPI و پیاده‌سازی با FastAPI.",
         logo: "api",
-        status: "in_development",
+        status: "near_complete",
         contentLanguages: ["fa", "en", "de"],
       },
       {
