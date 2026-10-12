@@ -1,8 +1,8 @@
 {
   "app.js": {
-    "mtime": 1791481028.7604685,
-    "seen": 1791481084.052956,
-    "ast_hash": "ca05d36c4a3af263666ffb9f9c1800e3",
+    "mtime": 1791790692.6214905,
+    "seen": 1791790800.703098,
+    "ast_hash": "00b81528fca6f719735aefcb46242b5a",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -12,15 +12,15 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1791218321.441613,
-    "seen": 1791222274.4474657,
-    "ast_hash": "d6ff2e7f2cb7644593d57a14c9107e63",
+    "mtime": 1791790791.9996724,
+    "seen": 1791790800.703676,
+    "ast_hash": "50959661654eb6293677bc870131c3d5",
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1791376663.2880492,
-    "seen": 1791376705.4532964,
-    "ast_hash": "4bcd4fe974091a7f45c9dff821bb85aa",
+    "mtime": 1791790781.7226722,
+    "seen": 1791790800.703676,
+    "ast_hash": "9e42aef089e2b0fdcddccfc830aed79d",
     "semantic_hash": ""
   },
   "docs/MAINTENANCE.md": {
@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1791481076.09292,
-    "seen": 1791481084.052956,
-    "ast_hash": "0c3b7bac828a2b963707e1a943ce4da9",
+    "mtime": 1791790229.0763998,
+    "seen": 1791790242.8117137,
+    "ast_hash": "d30948a0020bc900b0d3f24f7b8e677f",
     "semantic_hash": ""
   },
   "assets/apple-touch-icon.png": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "tools/test_visitors.py": {
-    "mtime": 1791481038.608333,
-    "seen": 1791481084.052956,
-    "ast_hash": "2c19875163d6e8bc2ec436c9842af9ee",
+    "mtime": 1791789956.0451455,
+    "seen": 1791789989.5969167,
+    "ast_hash": "7accb572da2ca8d2513a0e25366d3f7a",
     "semantic_hash": ""
   },
   "tools/update_favicon.py": {
@@ -711,6 +711,24 @@
     "mtime": 1791233113.812741,
     "seen": 1791234344.4925358,
     "ast_hash": "c91836e9eb8cbd56dacffc9aa3ad10a8",
+    "semantic_hash": ""
+  },
+  "tools/check_deployed.py": {
+    "mtime": 1791562695.1985357,
+    "seen": 1791789989.5969167,
+    "ast_hash": "aa5646050a5fc2344b8e5b23345f225c",
+    "semantic_hash": ""
+  },
+  "tools/test_counter.py": {
+    "mtime": 1791789956.0432172,
+    "seen": 1791789989.5969167,
+    "ast_hash": "ad6291f1b40de1d726f5581d20943445",
+    "semantic_hash": ""
+  },
+  "assets/logos/sdd.svg": {
+    "mtime": 1791790627.2884064,
+    "seen": 1791790800.703676,
+    "ast_hash": "599cf91e9ce3745f5dd43e1e9770367d",
     "semantic_hash": ""
   }
 }

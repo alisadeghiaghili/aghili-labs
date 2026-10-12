@@ -1,17 +1,17 @@
-# Graph Report - learn-with-ali  (2026-10-08)
+# Graph Report - learn-with-ali  (2026-10-12)
 
 ## Corpus Check
-- 20 files · ~65,174 words
+- 22 files · ~65,803 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: .ico 2, (none) 1, .css 1)
 
 ## Summary
-- 118 nodes · 168 edges · 14 communities (9 shown, 5 thin omitted)
+- 127 nodes · 183 edges · 13 communities (10 shown, 3 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7eecd1b8`
+- Built from commit: `6c034831`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,6 +20,7 @@
 - app.js
 - pathlib
 - upgrade_logos.py
+- test_counter.py
 - Detailed Course Breakdown
 - Aghili Labs
 - Aghili Labs — maintenance notes
@@ -56,7 +57,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (14 total, 5 thin omitted)
+## Communities (13 total, 3 thin omitted)
 
 ### Community 0 - "init"
 Cohesion: 0.33
@@ -67,12 +68,16 @@ Cohesion: 0.15
 Nodes (15): CATEGORIES, COURSE_DESC_DE, COURSE_DESC_EN, courseFilters, courseVisitorsCache, fetchCourseVisitorCount(), fetchRepoVisitorConfig(), FILTERS (+7 more)
 
 ### Community 3 - "upgrade_logos.py"
-Cohesion: 0.27
+Cohesion: 0.23
 Nodes (6): extract_inner(), fetch(), main(), upgrade_devicon(), upgrade_simpleicon(), wrap_svg()
+
+### Community 4 - "test_counter.py"
+Cohesion: 0.19
+Nodes (3): fetch(), main(), parse_count()
 
 ### Community 6 - "Detailed Course Breakdown"
 Cohesion: 0.13
-Nodes (14): 1. Programming Languages (`languages` · 9 Courses), 2. Shell, Systems & Tooling (`systems` · 7 Courses), 3. Architecture & Methodology (`architecture` · 10 Courses), 4. Cloud, Platforms & Ops (`platforms` · 13 Courses), 5. Data & Analytics (`data` · 12 Courses), 6. MLOps & Pipelines (`mlops` · 9 Courses), 7. Machine Learning & AI (`ml` · 16 Courses), 8. Web & Applications (`web` · 7 Courses) (+6 more)
+Nodes (14): 1. Programming Languages (`languages` · 9 Courses), 2. Shell, Systems & Tooling (`systems` · 7 Courses), 3. Architecture & Methodology (`architecture` · 11 Courses), 4. Cloud, Platforms & Ops (`platforms` · 13 Courses), 5. Data & Analytics (`data` · 12 Courses), 6. MLOps & Pipelines (`mlops` · 9 Courses), 7. Machine Learning & AI (`ml` · 16 Courses), 8. Web & Applications (`web` · 7 Courses) (+6 more)
 
 ### Community 7 - "Aghili Labs"
 Cohesion: 0.25
@@ -96,19 +101,17 @@ Nodes (6): setLanguage(), setupLanguage(), setupStats(), setupVisitors(), toPers
 
 ## Knowledge Gaps
 - **32 isolated node(s):** `CATEGORIES`, `FILTERS`, `COURSE_DESC_EN`, `COURSE_DESC_DE`, `I18N` (+27 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 57 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 59 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `init()` connect `init` to `app.js`, `applyCourseFilters`, `setupStats`, `createCourseCard`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **What connects `CATEGORIES`, `FILTERS`, `COURSE_DESC_EN` to the rest of the system?**
   _32 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `app.js` be split into smaller, more focused modules?**
   _Cohesion score 0.14705882352941177 - nodes in this community are weakly interconnected._
 - **Should `pathlib` be split into smaller, more focused modules?**
-  _Cohesion score 0.11904761904761904 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09538461538461539 - nodes in this community are weakly interconnected._
 - **Should `Detailed Course Breakdown` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
