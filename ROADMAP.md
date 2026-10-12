@@ -14,7 +14,7 @@ Every course adheres to an interactive-first paradigm: an isolated in-browser sa
 
 ---
 
-## Catalog Topology (9 Disciplines · 88 Courses)
+## Catalog Topology (9 Disciplines · 89 Courses)
 
 The curriculum is partitioned into nine foundational disciplines:
 
@@ -22,14 +22,14 @@ The curriculum is partitioned into nine foundational disciplines:
 |---|------------|---------------|:---------:|:---------------:|:--------------:|:-------:|:-----:|
 | 1 | **Programming Languages** | Core computational paradigms, memory models, and syntax | 1 | 2 | 2 | 4 | 9 |
 | 2 | **Shell, Systems & Tooling** | Low-level machine control, OS, networking & security | 1 | 3 | 2 | 1 | 7 |
-| 3 | **Architecture & Methodology** | Software design, testing, technical docs, DDD, BPMN, AI PM & research methods | 0 | 0 | 0 | 10 | 10 |
+| 3 | **Architecture & Methodology** | Software design, testing, technical docs, DDD, SDD, BPMN, AI PM & research methods | 0 | 0 | 1 | 10 | 11 |
 | 4 | **Cloud, Platforms & Ops** | Scalable infrastructure, platforms, observability, Kubernetes & data cloud | 0 | 0 | 6 | 7 | 13 |
 | 5 | **Data & Analytics** | Relational, document, modeling, governance, DuckDB & big data | 0 | 0 | 5 | 7 | 12 |
 | 6 | **MLOps & Pipelines** | Model lifecycle, data versioning, DataOps, LLMOps, MLSecOps & stream processing | 2 | 0 | 3 | 4 | 9 |
 | 7 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning, LLMs, RAG, agents & optimization | 0 | 2 | 6 | 8 | 16 |
 | 8 | **Web & Applications** | Data presentation, web applications, DOM architecture, APIs & extraction | 0 | 0 | 6 | 1 | 7 |
 | 9 | **IoT, Hardware & Edge** | Physical computing, edge analytics, industrial automation, protocols & TinyML | 0 | 0 | 0 | 5 | 5 |
-| **Sum** | | | **4** | **7** | **30** | **47** | **88** |
+| **Sum** | | | **4** | **7** | **31** | **47** | **89** |
 
 ---
 
@@ -55,16 +55,17 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-networking` — Networking: TCP/IP, OSI layers, DNS, routing, diagnostics for data & DevOps. *(In Development)*
 - `learn-cryptography` — Applied Cryptography: Hashing, symmetric/asymmetric encryption, digital signatures, data integrity. *(Planned)*
 
-### 3. Architecture & Methodology (`architecture` · 10 Courses)
+### 3. Architecture & Methodology (`architecture` · 11 Courses)
 - `learn-software-design` — Software Design & Clean Code: SOLID principles, design patterns, refactoring, Clean Architecture. *(Planned)*
 - `learn-testing` — Testing & Quality Engineering: Test-Driven Development (TDD), unit/integration testing, pytest, fixtures, mocks, data validation. *(Planned)*
 - `learn-technical-docs` — Technical Docs & ADRs: Architecture Decision Records, RFCs, API specs, data contracts, engineering knowledge. *(Planned)*
 - `learn-ddd` — Domain-Driven Design in Data & AI: Ubiquitous language, bounded contexts, aggregates, Data Mesh domain ownership. *(Planned)*
+- `learn-sdd` — Spec-Driven Development (SDD): Specification-first methodology, OpenAPI/AsyncAPI contract-driven design, schema definitions, and AI-assisted generation workflows. *(Planned)*
 - `learn-bpmn` — Business Process Modeling (BPMN 2.0): Organizational workflows, decision gateways, events, automation engine integration. *(Planned)*
 - `learn-scientific-writing` — Scientific Writing & Research: Empirical methodology, IMRAD structure, reproducibility, peer review. *(Planned)*
 - `learn-tech-interviews` — Technical Interviewing for Data & Systems: Data system design, live algorithm and SQL coding, architecture defense. *(Planned)*
 - `learn-ai-pm` — AI Project Management & ROI: Agile frameworks for probabilistic systems, CRISP-DM lifecycle, TCO modeling, and inference economic justification. *(Planned)*
-- `learn-licensing` — Software, Data & AI Licensing: Open-source licenses (MIT/Apache/GPL), commercial model weights permissions, dataset copyrights, and compliance. *(Planned)*
+- `learn-licensing` — Software, Data & AI Licensing: Open-source licenses (MIT/Apache/GPL), commercial model weights permissions, dataset copyrights, and compliance. *(In Development)*
 - `learn-distributed-systems` — Distributed Systems Architecture: CAP theorem, Raft/Paxos consensus, sharding, replication, data synchronization, and event-driven topologies. *(Planned)*
 
 ### 4. Cloud, Platforms & Ops (`platforms` · 13 Courses)

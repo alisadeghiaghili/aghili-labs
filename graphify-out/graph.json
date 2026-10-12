@@ -13,7 +13,7 @@
       "file_type": "code",
       "norm_label": "init()",
       "source_file": "app.js",
-      "source_location": "L2486"
+      "source_location": "L2502"
     },
     {
       "id": "app_setupdonatetabs",
@@ -25,7 +25,7 @@
       "file_type": "code",
       "norm_label": "setupdonatetabs()",
       "source_file": "app.js",
-      "source_location": "L2423"
+      "source_location": "L2439"
     },
     {
       "id": "app_setupnav",
@@ -37,7 +37,7 @@
       "file_type": "code",
       "norm_label": "setupnav()",
       "source_file": "app.js",
-      "source_location": "L1826"
+      "source_location": "L1837"
     },
     {
       "id": "app_setupreveal",
@@ -49,7 +49,7 @@
       "file_type": "code",
       "norm_label": "setupreveal()",
       "source_file": "app.js",
-      "source_location": "L1782"
+      "source_location": "L1793"
     },
     {
       "id": "app_setupshare",
@@ -61,7 +61,7 @@
       "file_type": "code",
       "norm_label": "setupshare()",
       "source_file": "app.js",
-      "source_location": "L2447"
+      "source_location": "L2463"
     },
     {
       "id": "app_showtoast",
@@ -73,7 +73,7 @@
       "file_type": "code",
       "norm_label": "showtoast()",
       "source_file": "app.js",
-      "source_location": "L2388"
+      "source_location": "L2404"
     },
     {
       "id": "app_coursesearchtext",
@@ -85,7 +85,7 @@
       "file_type": "code",
       "norm_label": "coursesearchtext()",
       "source_file": "app.js",
-      "source_location": "L1590"
+      "source_location": "L1601"
     },
     {
       "id": "app_fetchcoursevisitorcount",
@@ -97,7 +97,7 @@
       "file_type": "code",
       "norm_label": "fetchcoursevisitorcount()",
       "source_file": "app.js",
-      "source_location": "L2258"
+      "source_location": "L2274"
     },
     {
       "id": "app_fetchrepovisitorconfig",
@@ -109,7 +109,7 @@
       "file_type": "code",
       "norm_label": "fetchrepovisitorconfig()",
       "source_file": "app.js",
-      "source_location": "L2214"
+      "source_location": "L2230"
     },
     {
       "id": "app_parsecoursevisitorsvg",
@@ -121,7 +121,7 @@
       "file_type": "code",
       "norm_label": "parsecoursevisitorsvg()",
       "source_file": "app.js",
-      "source_location": "L2181"
+      "source_location": "L2197"
     },
     {
       "id": "app_setupcoursevisitors",
@@ -133,7 +133,7 @@
       "file_type": "code",
       "norm_label": "setupcoursevisitors()",
       "source_file": "app.js",
-      "source_location": "L2321"
+      "source_location": "L2337"
     },
     {
       "id": "app_updatecoursevisitorsui",
@@ -145,7 +145,7 @@
       "file_type": "code",
       "norm_label": "updatecoursevisitorsui()",
       "source_file": "app.js",
-      "source_location": "L2368"
+      "source_location": "L2384"
     },
     {
       "id": "app_applycoursefilters",
@@ -157,7 +157,7 @@
       "file_type": "code",
       "norm_label": "applycoursefilters()",
       "source_file": "app.js",
-      "source_location": "L1613"
+      "source_location": "L1624"
     },
     {
       "id": "app_forcereveal",
@@ -169,7 +169,7 @@
       "file_type": "code",
       "norm_label": "forcereveal()",
       "source_file": "app.js",
-      "source_location": "L1602"
+      "source_location": "L1613"
     },
     {
       "id": "app_setupfilters",
@@ -181,7 +181,7 @@
       "file_type": "code",
       "norm_label": "setupfilters()",
       "source_file": "app.js",
-      "source_location": "L1734"
+      "source_location": "L1745"
     },
     {
       "id": "app_setupsearch",
@@ -193,7 +193,7 @@
       "file_type": "code",
       "norm_label": "setupsearch()",
       "source_file": "app.js",
-      "source_location": "L1764"
+      "source_location": "L1775"
     },
     {
       "id": "app_setlanguage",
@@ -205,7 +205,7 @@
       "file_type": "code",
       "norm_label": "setlanguage()",
       "source_file": "app.js",
-      "source_location": "L1874"
+      "source_location": "L1885"
     },
     {
       "id": "app_setuplanguage",
@@ -217,7 +217,7 @@
       "file_type": "code",
       "norm_label": "setuplanguage()",
       "source_file": "app.js",
-      "source_location": "L1969"
+      "source_location": "L1980"
     },
     {
       "id": "app_setupstats",
@@ -229,7 +229,7 @@
       "file_type": "code",
       "norm_label": "setupstats()",
       "source_file": "app.js",
-      "source_location": "L2012"
+      "source_location": "L2023"
     },
     {
       "id": "app_setupvisitors",
@@ -241,7 +241,7 @@
       "file_type": "code",
       "norm_label": "setupvisitors()",
       "source_file": "app.js",
-      "source_location": "L2046"
+      "source_location": "L2056"
     },
     {
       "id": "app_topersiandigits",
@@ -253,7 +253,7 @@
       "file_type": "code",
       "norm_label": "topersiandigits()",
       "source_file": "app.js",
-      "source_location": "L1996"
+      "source_location": "L2007"
     },
     {
       "id": "app_updatevisitorsdisplay",
@@ -265,7 +265,7 @@
       "file_type": "code",
       "norm_label": "updatevisitorsdisplay()",
       "source_file": "app.js",
-      "source_location": "L2003"
+      "source_location": "L2014"
     },
     {
       "id": "tools_generate_logos_main",
@@ -314,6 +314,18 @@
       "norm_label": "main()",
       "source_file": "tools/refine_custom_logos.py",
       "source_location": "L217"
+    },
+    {
+      "id": "tools_screenshot_preview_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pathlib",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "tools/screenshot_preview.py",
+      "source_location": "L13"
     },
     {
       "id": "tools_vectorize_favicon_contours_to_path",
@@ -400,16 +412,40 @@
       "source_location": "L16"
     },
     {
-      "id": "tools_screenshot_preview_main",
+      "id": "tools_test_counter_fetch",
+      "label": "fetch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "test_counter.py",
+      "file_type": "code",
+      "norm_label": "fetch()",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L22"
+    },
+    {
+      "id": "tools_test_counter_main",
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
-      "community_name": "screenshot_preview.py",
+      "community": 4,
+      "community_name": "test_counter.py",
       "file_type": "code",
       "norm_label": "main()",
-      "source_file": "tools/screenshot_preview.py",
-      "source_location": "L13"
+      "source_file": "tools/test_counter.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "tools_test_counter_parse_count",
+      "label": "parse_count()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "test_counter.py",
+      "file_type": "code",
+      "norm_label": "parse_count()",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L35"
     },
     {
       "id": "app_createcoursecard",
@@ -421,7 +457,7 @@
       "file_type": "code",
       "norm_label": "createcoursecard()",
       "source_file": "app.js",
-      "source_location": "L1507"
+      "source_location": "L1518"
     },
     {
       "id": "app_escapehtml",
@@ -433,7 +469,7 @@
       "file_type": "code",
       "norm_label": "escapehtml()",
       "source_file": "app.js",
-      "source_location": "L888"
+      "source_location": "L897"
     },
     {
       "id": "app_formatdesc",
@@ -445,7 +481,7 @@
       "file_type": "code",
       "norm_label": "formatdesc()",
       "source_file": "app.js",
-      "source_location": "L915"
+      "source_location": "L924"
     },
     {
       "id": "app_formattitle",
@@ -457,7 +493,7 @@
       "file_type": "code",
       "norm_label": "formattitle()",
       "source_file": "app.js",
-      "source_location": "L902"
+      "source_location": "L911"
     },
     {
       "id": "app_rendercourses",
@@ -469,7 +505,7 @@
       "file_type": "code",
       "norm_label": "rendercourses()",
       "source_file": "app.js",
-      "source_location": "L1667"
+      "source_location": "L1678"
     },
     {
       "id": "app",
@@ -502,7 +538,7 @@
       "file_type": "code",
       "norm_label": "course_desc_de",
       "source_file": "app.js",
-      "source_location": "L1021"
+      "source_location": "L1031"
     },
     {
       "id": "app_course_desc_en",
@@ -513,7 +549,7 @@
       "file_type": "code",
       "norm_label": "course_desc_en",
       "source_file": "app.js",
-      "source_location": "L930"
+      "source_location": "L939"
     },
     {
       "id": "app_coursefilters",
@@ -524,7 +560,7 @@
       "file_type": "code",
       "norm_label": "coursefilters",
       "source_file": "app.js",
-      "source_location": "L1582"
+      "source_location": "L1593"
     },
     {
       "id": "app_coursevisitorscache",
@@ -535,7 +571,7 @@
       "file_type": "code",
       "norm_label": "coursevisitorscache",
       "source_file": "app.js",
-      "source_location": "L1484"
+      "source_location": "L1495"
     },
     {
       "id": "app_filters",
@@ -546,7 +582,7 @@
       "file_type": "code",
       "norm_label": "filters",
       "source_file": "app.js",
-      "source_location": "L869"
+      "source_location": "L878"
     },
     {
       "id": "app_i18n",
@@ -557,7 +593,7 @@
       "file_type": "code",
       "norm_label": "i18n",
       "source_file": "app.js",
-      "source_location": "L1112"
+      "source_location": "L1123"
     },
     {
       "id": "app_known_course_visitors",
@@ -568,7 +604,7 @@
       "file_type": "code",
       "norm_label": "known_course_visitors",
       "source_file": "app.js",
-      "source_location": "L1460"
+      "source_location": "L1471"
     },
     {
       "id": "app_repo_visitor_paths",
@@ -579,7 +615,7 @@
       "file_type": "code",
       "norm_label": "repo_visitor_paths",
       "source_file": "app.js",
-      "source_location": "L2167"
+      "source_location": "L2183"
     },
     {
       "id": "app_status_meta",
@@ -590,7 +626,7 @@
       "file_type": "code",
       "norm_label": "status_meta",
       "source_file": "app.js",
-      "source_location": "L1436"
+      "source_location": "L1447"
     },
     {
       "id": "claude",
@@ -683,6 +719,17 @@
       "source_location": "L1"
     },
     {
+      "id": "tools_screenshot_preview",
+      "label": "screenshot_preview.py",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pathlib",
+      "file_type": "code",
+      "norm_label": "screenshot_preview.py",
+      "source_file": "tools/screenshot_preview.py",
+      "source_location": "L1"
+    },
+    {
       "id": "tools_test_new_concepts",
       "label": "test_new_concepts.py",
       "_origin": "ast",
@@ -691,6 +738,17 @@
       "file_type": "code",
       "norm_label": "test_new_concepts.py",
       "source_file": "tools/test_new_concepts.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "tools_test_visitors",
+      "label": "test_visitors.py",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pathlib",
+      "file_type": "code",
+      "norm_label": "test_visitors.py",
+      "source_file": "tools/test_visitors.py",
       "source_location": "L1"
     },
     {
@@ -749,6 +807,17 @@
       "source_location": "L1"
     },
     {
+      "id": "tools_screenshot_preview_rationale_1",
+      "label": "Capture desktop and mobile screenshots of the landing page for visual QA.",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pathlib",
+      "file_type": "rationale",
+      "norm_label": "capture desktop and mobile screenshots of the landing page for visual qa.",
+      "source_file": "tools/screenshot_preview.py",
+      "source_location": "L1"
+    },
+    {
       "id": "tools_test_new_concepts_rationale_1",
       "label": "Generate and preview concepts for: 1. Technical Interviews (techinterviews) 2.\u2026",
       "_origin": "ast",
@@ -757,6 +826,28 @@
       "file_type": "rationale",
       "norm_label": "generate and preview concepts for: 1. technical interviews (techinterviews) 2....",
       "source_file": "tools/test_new_concepts.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "tools_test_visitors_rationale_1",
+      "label": "Smoke-test unique visitor counter (first visit increments, later visits cache).",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "pathlib",
+      "file_type": "rationale",
+      "norm_label": "smoke-test unique visitor counter (first visit increments, later visits cache).",
+      "source_file": "tools/test_visitors.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "tools_check_deployed",
+      "label": "check_deployed.py",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "upgrade_logos.py",
+      "file_type": "code",
+      "norm_label": "check_deployed.py",
+      "source_file": "tools/check_deployed.py",
       "source_location": "L1"
     },
     {
@@ -830,7 +921,7 @@
       "label": "apply_user_selections.py",
       "_origin": "ast",
       "community": 4,
-      "community_name": "build_comparison_view.py",
+      "community_name": "test_counter.py",
       "file_type": "code",
       "norm_label": "apply_user_selections.py",
       "source_file": "tools/apply_user_selections.py",
@@ -841,10 +932,21 @@
       "label": "build_comparison_view.py",
       "_origin": "ast",
       "community": 4,
-      "community_name": "build_comparison_view.py",
+      "community_name": "test_counter.py",
       "file_type": "code",
       "norm_label": "build_comparison_view.py",
       "source_file": "tools/build_comparison_view.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "tools_test_counter",
+      "label": "test_counter.py",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "test_counter.py",
+      "file_type": "code",
+      "norm_label": "test_counter.py",
+      "source_file": "tools/test_counter.py",
       "source_location": "L1"
     },
     {
@@ -852,7 +954,7 @@
       "label": "Apply user choices: 1. Revert 5 logos to Option 1 (api, arduino, functional,\u2026",
       "_origin": "ast",
       "community": 4,
-      "community_name": "build_comparison_view.py",
+      "community_name": "test_counter.py",
       "file_type": "rationale",
       "norm_label": "apply user choices: 1. revert 5 logos to option 1 (api, arduino, functional,...",
       "source_file": "tools/apply_user_selections.py",
@@ -863,55 +965,44 @@
       "label": "Build interactive comparison view between git 751ca20 (Old - 1) and HEAD (New -\u2026",
       "_origin": "ast",
       "community": 4,
-      "community_name": "build_comparison_view.py",
+      "community_name": "test_counter.py",
       "file_type": "rationale",
       "norm_label": "build interactive comparison view between git 751ca20 (old - 1) and head (new -...",
       "source_file": "tools/build_comparison_view.py",
       "source_location": "L1"
     },
     {
-      "id": "tools_screenshot_preview",
-      "label": "screenshot_preview.py",
+      "id": "tools_test_counter_rationale_1",
+      "label": "Verify the shared page counter: a single /api/hit raises the count by 1, and\u2026",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "screenshot_preview.py",
-      "file_type": "code",
-      "norm_label": "screenshot_preview.py",
-      "source_file": "tools/screenshot_preview.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "tools_test_visitors",
-      "label": "test_visitors.py",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "screenshot_preview.py",
-      "file_type": "code",
-      "norm_label": "test_visitors.py",
-      "source_file": "tools/test_visitors.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "tools_screenshot_preview_rationale_1",
-      "label": "Capture desktop and mobile screenshots of the landing page for visual QA.",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "screenshot_preview.py",
+      "community": 4,
+      "community_name": "test_counter.py",
       "file_type": "rationale",
-      "norm_label": "capture desktop and mobile screenshots of the landing page for visual qa.",
-      "source_file": "tools/screenshot_preview.py",
+      "norm_label": "verify the shared page counter: a single /api/hit raises the count by 1, and...",
+      "source_file": "tools/test_counter.py",
       "source_location": "L1"
     },
     {
-      "id": "tools_test_visitors_rationale_1",
-      "label": "Smoke-test unique visitor counter (first visit increments, later visits cache).",
+      "id": "tools_test_counter_rationale_23",
+      "label": "Return the response body, or None on any network/HTTP problem.",
       "_origin": "ast",
-      "community": 5,
-      "community_name": "screenshot_preview.py",
+      "community": 4,
+      "community_name": "test_counter.py",
       "file_type": "rationale",
-      "norm_label": "smoke-test unique visitor counter (first visit increments, later visits cache).",
-      "source_file": "tools/test_visitors.py",
-      "source_location": "L1"
+      "norm_label": "return the response body, or none on any network/http problem.",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "tools_test_counter_rationale_36",
+      "label": "Tolerate a bare number or JSON ({value} / {count} / {visitors}).",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "test_counter.py",
+      "file_type": "rationale",
+      "norm_label": "tolerate a bare number or json ({value} / {count} / {visitors}).",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L36"
     },
     {
       "id": "roadmap",
@@ -950,14 +1041,14 @@
       "source_location": "L49"
     },
     {
-      "id": "roadmap_3_architecture_methodology_architecture_10_courses",
-      "label": "3. Architecture & Methodology (`architecture` \u00b7 10 Courses)",
+      "id": "roadmap_3_architecture_methodology_architecture_11_courses",
+      "label": "3. Architecture & Methodology (`architecture` \u00b7 11 Courses)",
       "_origin": "ast",
       "community": 6,
       "community_name": "Detailed Course Breakdown",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "3. architecture & methodology (`architecture` \u00b7 10 courses)",
+      "norm_label": "3. architecture & methodology (`architecture` \u00b7 11 courses)",
       "source_file": "ROADMAP.md",
       "source_location": "L58"
     },
@@ -971,7 +1062,7 @@
       "node_kind": "heading",
       "norm_label": "4. cloud, platforms & ops (`platforms` \u00b7 13 courses)",
       "source_file": "ROADMAP.md",
-      "source_location": "L70"
+      "source_location": "L71"
     },
     {
       "id": "roadmap_5_data_analytics_data_12_courses",
@@ -983,7 +1074,7 @@
       "node_kind": "heading",
       "norm_label": "5. data & analytics (`data` \u00b7 12 courses)",
       "source_file": "ROADMAP.md",
-      "source_location": "L85"
+      "source_location": "L86"
     },
     {
       "id": "roadmap_6_mlops_pipelines_mlops_9_courses",
@@ -995,7 +1086,7 @@
       "node_kind": "heading",
       "norm_label": "6. mlops & pipelines (`mlops` \u00b7 9 courses)",
       "source_file": "ROADMAP.md",
-      "source_location": "L99"
+      "source_location": "L100"
     },
     {
       "id": "roadmap_7_machine_learning_ai_ml_16_courses",
@@ -1007,7 +1098,7 @@
       "node_kind": "heading",
       "norm_label": "7. machine learning & ai (`ml` \u00b7 16 courses)",
       "source_file": "ROADMAP.md",
-      "source_location": "L110"
+      "source_location": "L111"
     },
     {
       "id": "roadmap_8_web_applications_web_7_courses",
@@ -1019,7 +1110,7 @@
       "node_kind": "heading",
       "norm_label": "8. web & applications (`web` \u00b7 7 courses)",
       "source_file": "ROADMAP.md",
-      "source_location": "L128"
+      "source_location": "L129"
     },
     {
       "id": "roadmap_9_iot_hardware_edge_iot_5_courses",
@@ -1031,7 +1122,7 @@
       "node_kind": "heading",
       "norm_label": "9. iot, hardware & edge (`iot` \u00b7 5 courses)",
       "source_file": "ROADMAP.md",
-      "source_location": "L137"
+      "source_location": "L138"
     },
     {
       "id": "roadmap_aghili_labs_curriculum_roadmap",
@@ -1046,14 +1137,14 @@
       "source_location": "L1"
     },
     {
-      "id": "roadmap_catalog_topology_9_disciplines_88_courses",
-      "label": "Catalog Topology (9 Disciplines \u00b7 88 Courses)",
+      "id": "roadmap_catalog_topology_9_disciplines_89_courses",
+      "label": "Catalog Topology (9 Disciplines \u00b7 89 Courses)",
       "_origin": "ast",
       "community": 6,
       "community_name": "Detailed Course Breakdown",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "catalog topology (9 disciplines \u00b7 88 courses)",
+      "norm_label": "catalog topology (9 disciplines \u00b7 89 courses)",
       "source_file": "ROADMAP.md",
       "source_location": "L17"
     },
@@ -1091,7 +1182,7 @@
       "node_kind": "heading",
       "norm_label": "pedagogical & technical standards",
       "source_file": "ROADMAP.md",
-      "source_location": "L146"
+      "source_location": "L147"
     },
     {
       "id": "readme",
@@ -1298,6 +1389,18 @@
       "type": "external"
     },
     {
+      "id": "playwright_sync_api",
+      "label": "playwright_sync_api",
+      "_origin": "semantic",
+      "community": 2,
+      "community_name": "pathlib",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "playwright_sync_api",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "skimage",
       "label": "skimage",
       "_origin": "semantic",
@@ -1306,18 +1409,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "skimage",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "urllib_request",
-      "label": "urllib_request",
-      "_origin": "semantic",
-      "community": 2,
-      "community_name": "pathlib",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "urllib_request",
       "source_file": "",
       "type": "external"
     },
@@ -1346,11 +1437,23 @@
       "type": "external"
     },
     {
+      "id": "urllib_request",
+      "label": "urllib_request",
+      "_origin": "semantic",
+      "community": 3,
+      "community_name": "upgrade_logos.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "urllib_request",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "json",
       "label": "json",
       "_origin": "semantic",
       "community": 4,
-      "community_name": "build_comparison_view.py",
+      "community_name": "test_counter.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "json",
@@ -1362,7 +1465,7 @@
       "label": "subprocess",
       "_origin": "semantic",
       "community": 4,
-      "community_name": "build_comparison_view.py",
+      "community_name": "test_counter.py",
       "external": true,
       "file_type": "concept",
       "norm_label": "subprocess",
@@ -1370,14 +1473,14 @@
       "type": "external"
     },
     {
-      "id": "playwright_sync_api",
-      "label": "playwright_sync_api",
+      "id": "time",
+      "label": "time",
       "_origin": "semantic",
-      "community": 5,
-      "community_name": "screenshot_preview.py",
+      "community": 4,
+      "community_name": "test_counter.py",
       "external": true,
       "file_type": "concept",
-      "norm_label": "playwright_sync_api",
+      "norm_label": "time",
       "source_file": "",
       "type": "external"
     }
@@ -1392,7 +1495,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1655",
+      "source_location": "L1666",
       "weight": 1.0
     },
     {
@@ -1404,7 +1507,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1520",
+      "source_location": "L1531",
       "weight": 1.0
     },
     {
@@ -1416,7 +1519,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1520",
+      "source_location": "L1531",
       "weight": 1.0
     },
     {
@@ -1428,7 +1531,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1532",
+      "source_location": "L1543",
       "weight": 1.0
     },
     {
@@ -1440,7 +1543,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2260",
+      "source_location": "L2276",
       "weight": 1.0
     },
     {
@@ -1452,7 +1555,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2302",
+      "source_location": "L2318",
       "weight": 1.0
     },
     {
@@ -1464,7 +1567,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L916",
+      "source_location": "L925",
       "weight": 1.0
     },
     {
@@ -1476,7 +1579,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L904",
+      "source_location": "L913",
       "weight": 1.0
     },
     {
@@ -1488,7 +1591,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2487",
+      "source_location": "L2503",
       "weight": 1.0
     },
     {
@@ -1500,7 +1603,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2488",
+      "source_location": "L2504",
       "weight": 1.0
     },
     {
@@ -1512,7 +1615,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2489",
+      "source_location": "L2505",
       "weight": 1.0
     },
     {
@@ -1524,7 +1627,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2490",
+      "source_location": "L2506",
       "weight": 1.0
     },
     {
@@ -1536,7 +1639,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2491",
+      "source_location": "L2507",
       "weight": 1.0
     },
     {
@@ -1548,7 +1651,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2492",
+      "source_location": "L2508",
       "weight": 1.0
     },
     {
@@ -1560,7 +1663,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2493",
+      "source_location": "L2509",
       "weight": 1.0
     },
     {
@@ -1572,7 +1675,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2494",
+      "source_location": "L2510",
       "weight": 1.0
     },
     {
@@ -1584,7 +1687,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2495",
+      "source_location": "L2511",
       "weight": 1.0
     },
     {
@@ -1596,7 +1699,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2496",
+      "source_location": "L2512",
       "weight": 1.0
     },
     {
@@ -1608,7 +1711,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2497",
+      "source_location": "L2513",
       "weight": 1.0
     },
     {
@@ -1620,7 +1723,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1691",
+      "source_location": "L1702",
       "weight": 1.0
     },
     {
@@ -1632,7 +1735,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1710",
+      "source_location": "L1721",
       "weight": 1.0
     },
     {
@@ -1644,7 +1747,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1718",
+      "source_location": "L1729",
       "weight": 1.0
     },
     {
@@ -1656,7 +1759,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1726",
+      "source_location": "L1737",
       "weight": 1.0
     },
     {
@@ -1668,7 +1771,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1926",
+      "source_location": "L1937",
       "weight": 1.0
     },
     {
@@ -1680,7 +1783,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1927",
+      "source_location": "L1938",
       "weight": 1.0
     },
     {
@@ -1692,7 +1795,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2342",
+      "source_location": "L2358",
       "weight": 1.0
     },
     {
@@ -1704,7 +1807,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2348",
+      "source_location": "L2364",
       "weight": 1.0
     },
     {
@@ -1716,7 +1819,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1755",
+      "source_location": "L1766",
       "weight": 1.0
     },
     {
@@ -1728,7 +1831,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1974",
+      "source_location": "L1985",
       "weight": 1.0
     },
     {
@@ -1740,7 +1843,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L1770",
+      "source_location": "L1781",
       "weight": 1.0
     },
     {
@@ -1752,7 +1855,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2478",
+      "source_location": "L2494",
       "weight": 1.0
     },
     {
@@ -1764,7 +1867,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2021",
+      "source_location": "L2032",
       "weight": 1.0
     },
     {
@@ -1776,7 +1879,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2030",
+      "source_location": "L2041",
       "weight": 1.0
     },
     {
@@ -1788,7 +1891,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2070",
+      "source_location": "L2081",
       "weight": 1.0
     },
     {
@@ -1800,7 +1903,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app.js",
-      "source_location": "L2007",
+      "source_location": "L2018",
       "weight": 1.0
     },
     {
@@ -1825,6 +1928,54 @@
       "context": "call",
       "source_file": "tools/generate_logos.py",
       "source_location": "L373",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter_main",
+      "target": "tools_test_counter_fetch",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter_main",
+      "target": "tools_test_counter_parse_count",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter_main",
+      "target": "time",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter_parse_count",
+      "target": "json",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -1984,6 +2135,30 @@
       "weight": 1.0
     },
     {
+      "source": "tools_check_deployed",
+      "target": "urllib_request",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tools/check_deployed.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_check_deployed",
+      "target": "re",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tools/check_deployed.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "tools_generate_16_logos",
       "target": "xml_etree_elementtree",
       "relation": "imports",
@@ -2041,6 +2216,42 @@
       "context": "import",
       "source_file": "tools/rewrite_descs.py",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter",
+      "target": "json",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter",
+      "target": "time",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter",
+      "target": "urllib_request",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tools/test_counter.py",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -2363,7 +2574,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1021",
+      "source_location": "L1031",
       "weight": 1.0
     },
     {
@@ -2374,7 +2585,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1112",
+      "source_location": "L1123",
       "weight": 1.0
     },
     {
@@ -2385,7 +2596,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1436",
+      "source_location": "L1447",
       "weight": 1.0
     },
     {
@@ -2396,7 +2607,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1460",
+      "source_location": "L1471",
       "weight": 1.0
     },
     {
@@ -2407,7 +2618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1484",
+      "source_location": "L1495",
       "weight": 1.0
     },
     {
@@ -2418,7 +2629,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1507",
+      "source_location": "L1518",
       "weight": 1.0
     },
     {
@@ -2429,7 +2640,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1582",
+      "source_location": "L1593",
       "weight": 1.0
     },
     {
@@ -2440,7 +2651,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1590",
+      "source_location": "L1601",
       "weight": 1.0
     },
     {
@@ -2451,7 +2662,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1602",
+      "source_location": "L1613",
       "weight": 1.0
     },
     {
@@ -2462,7 +2673,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1613",
+      "source_location": "L1624",
       "weight": 1.0
     },
     {
@@ -2473,7 +2684,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1667",
+      "source_location": "L1678",
       "weight": 1.0
     },
     {
@@ -2484,7 +2695,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1734",
+      "source_location": "L1745",
       "weight": 1.0
     },
     {
@@ -2495,7 +2706,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1764",
+      "source_location": "L1775",
       "weight": 1.0
     },
     {
@@ -2506,7 +2717,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1782",
+      "source_location": "L1793",
       "weight": 1.0
     },
     {
@@ -2517,7 +2728,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1826",
+      "source_location": "L1837",
       "weight": 1.0
     },
     {
@@ -2528,7 +2739,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1874",
+      "source_location": "L1885",
       "weight": 1.0
     },
     {
@@ -2539,18 +2750,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L1969",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_topersiandigits",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L1996",
+      "source_location": "L1980",
       "weight": 1.0
     },
     {
@@ -2566,13 +2766,24 @@
     },
     {
       "source": "app",
+      "target": "app_topersiandigits",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.js",
+      "source_location": "L2007",
+      "weight": 1.0
+    },
+    {
+      "source": "app",
       "target": "app_updatevisitorsdisplay",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2003",
+      "source_location": "L2014",
       "weight": 1.0
     },
     {
@@ -2583,7 +2794,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2012",
+      "source_location": "L2023",
       "weight": 1.0
     },
     {
@@ -2594,7 +2805,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2046",
+      "source_location": "L2056",
       "weight": 1.0
     },
     {
@@ -2605,7 +2816,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2167",
+      "source_location": "L2183",
       "weight": 1.0
     },
     {
@@ -2616,7 +2827,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2181",
+      "source_location": "L2197",
       "weight": 1.0
     },
     {
@@ -2627,7 +2838,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2214",
+      "source_location": "L2230",
       "weight": 1.0
     },
     {
@@ -2638,7 +2849,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2258",
+      "source_location": "L2274",
       "weight": 1.0
     },
     {
@@ -2649,7 +2860,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2321",
+      "source_location": "L2337",
       "weight": 1.0
     },
     {
@@ -2660,7 +2871,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2368",
+      "source_location": "L2384",
       "weight": 1.0
     },
     {
@@ -2671,7 +2882,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2388",
+      "source_location": "L2404",
       "weight": 1.0
     },
     {
@@ -2682,7 +2893,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2423",
+      "source_location": "L2439",
       "weight": 1.0
     },
     {
@@ -2693,7 +2904,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L2447",
+      "source_location": "L2463",
       "weight": 1.0
     },
     {
@@ -2704,7 +2915,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L869",
+      "source_location": "L878",
       "weight": 1.0
     },
     {
@@ -2715,7 +2926,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L888",
+      "source_location": "L897",
       "weight": 1.0
     },
     {
@@ -2726,7 +2937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L902",
+      "source_location": "L911",
       "weight": 1.0
     },
     {
@@ -2737,7 +2948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L915",
+      "source_location": "L924",
       "weight": 1.0
     },
     {
@@ -2748,7 +2959,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.js",
-      "source_location": "L930",
+      "source_location": "L939",
       "weight": 1.0
     },
     {
@@ -2902,12 +3113,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ROADMAP.md",
-      "source_location": "L146",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
       "source": "roadmap_aghili_labs_curriculum_roadmap",
-      "target": "roadmap_catalog_topology_9_disciplines_88_courses",
+      "target": "roadmap_catalog_topology_9_disciplines_89_courses",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2940,13 +3151,24 @@
     },
     {
       "source": "roadmap_detailed_course_breakdown",
+      "target": "roadmap_6_mlops_pipelines_mlops_9_courses",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ROADMAP.md",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "roadmap_detailed_course_breakdown",
       "target": "roadmap_7_machine_learning_ai_ml_16_courses",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ROADMAP.md",
-      "source_location": "L110",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -2957,7 +3179,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ROADMAP.md",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -2968,7 +3190,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ROADMAP.md",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -2995,7 +3217,7 @@
     },
     {
       "source": "roadmap_detailed_course_breakdown",
-      "target": "roadmap_3_architecture_methodology_architecture_10_courses",
+      "target": "roadmap_3_architecture_methodology_architecture_11_courses",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3012,7 +3234,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ROADMAP.md",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -3023,18 +3245,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "ROADMAP.md",
-      "source_location": "L85",
-      "weight": 1.0
-    },
-    {
-      "source": "roadmap_detailed_course_breakdown",
-      "target": "roadmap_6_mlops_pipelines_mlops_9_courses",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "ROADMAP.md",
-      "source_location": "L99",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -3090,6 +3301,39 @@
       "confidence_score": 1.0,
       "source_file": "tools/screenshot_preview.py",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter",
+      "target": "tools_test_counter_fetch",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tools/test_counter.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter",
+      "target": "tools_test_counter_parse_count",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tools/test_counter.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter",
+      "target": "tools_test_counter_main",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tools/test_counter.py",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -3258,6 +3502,39 @@
       "weight": 1.0
     },
     {
+      "source": "tools_test_counter_rationale_1",
+      "target": "tools_test_counter",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tools/test_counter.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter_rationale_23",
+      "target": "tools_test_counter_fetch",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tools/test_counter.py",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_test_counter_rationale_36",
+      "target": "tools_test_counter_parse_count",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tools/test_counter.py",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
       "source": "tools_test_new_concepts_rationale_1",
       "target": "tools_test_new_concepts",
       "relation": "rationale_for",
@@ -3310,10 +3587,10 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app.js",
-      "source_location": "L2503",
+      "source_location": "L2519",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7eecd1b85c30bf81e4f3bf8c796afb51d7682693"
+  "built_at_commit": "6c034831dccc7ac0f6f61f2f7be4bb0d40ac7981"
 }
