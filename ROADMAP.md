@@ -26,10 +26,10 @@ The curriculum is partitioned into nine foundational disciplines:
 | 4 | **Cloud, Platforms & Ops** | Scalable infrastructure, platforms, observability, Kubernetes & data cloud | 0 | 0 | 6 | 7 | 13 |
 | 5 | **Data & Analytics** | Relational, document, modeling, governance, DuckDB & big data | 0 | 0 | 5 | 7 | 12 |
 | 6 | **MLOps & Pipelines** | Model lifecycle, data versioning, DataOps, LLMOps, MLSecOps & stream processing | 2 | 0 | 3 | 4 | 9 |
-| 7 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning, LLMs, RAG, agents & optimization | 0 | 2 | 6 | 8 | 16 |
+| 7 | **Machine Learning & AI** | Mathematical foundations, algorithms, deep learning, LLMs, RAG, agents & optimization | 0 | 2 | 7 | 7 | 16 |
 | 8 | **Web & Applications** | Data presentation, web applications, DOM architecture, APIs & extraction | 0 | 0 | 6 | 1 | 7 |
 | 9 | **IoT, Hardware & Edge** | Physical computing, edge analytics, industrial automation, protocols & TinyML | 0 | 0 | 0 | 5 | 5 |
-| **Sum** | | | **4** | **7** | **30** | **47** | **88** |
+| **Sum** | | | **4** | **7** | **31** | **46** | **88** |
 
 ---
 
@@ -109,7 +109,7 @@ The curriculum is partitioned into nine foundational disciplines:
 
 ### 7. Machine Learning & AI (`ml` · 16 Courses)
 - `learn-ml` — Machine Learning: Supervised/unsupervised algorithms, evaluation metrics, scikit-learn sandboxes. *(Nearly Complete)*
-- `learn-mlmath` — ML Math: Linear algebra, vector calculus, matrix decompositions, loss optimization. *(Planned)*
+- `learn-mlmath` — ML Math: Linear algebra, vector calculus, matrix decompositions, loss optimization. *(In Development)*
 - `learn-mlstats` — ML Statistics: Hypothesis testing, probability distributions, Bayesian inference, confidence intervals. *(Planned)*
 - `learn-ts` — Time Series & Forecasting: Temporal dependence, trend/seasonality decomposition, stationarity, ARIMA models, ML & deep forecasting. *(Nearly Complete)*
 - `learn-dl` — Deep Learning: Neural architectures, backpropagation, PyTorch/TensorFlow models. *(In Development)*

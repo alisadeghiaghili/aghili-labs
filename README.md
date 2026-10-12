@@ -22,8 +22,8 @@ tools/              # maintenance scripts
 The 88 courses are partitioned across four explicit development statuses:
 - **Published (4)** — Fully interactive and deployed.
 - **Nearly Complete (7)** — Core learning curriculum built and in final review.
-- **In Development (30)** — Active authoring and engineering.
-- **Planned (47)** — Architected and scheduled in the curriculum roadmap.
+- **In Development (31)** — Active authoring and engineering.
+- **Planned (46)** — Architected and scheduled in the curriculum roadmap.
 
 The courses are grouped into nine foundational disciplines:
 

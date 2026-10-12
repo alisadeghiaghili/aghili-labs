@@ -613,7 +613,7 @@ const CATEGORIES = {
         en: "ML Math",
         desc: "بدون ریاضی، مدل ML یک جعبه سیاه باقی می‌ماند. جبر خطی، مشتق‌گیری ماتریسی، بهینه‌سازی گرادیانی و شهود هندسی فضاهای برداری.",
         logo: "mlmath",
-        status: "planned",
+        status: "in_development",
         contentLanguages: ["en"],
       },
       {
