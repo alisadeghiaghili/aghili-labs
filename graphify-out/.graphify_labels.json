@@ -8,8 +8,9 @@
   "6": "Detailed Course Breakdown",
   "7": "Aghili Labs",
   "8": "Aghili Labs — maintenance notes",
-  "9": "createCourseCard",
+  "9": "renderCourses",
   "10": "CLAUDE.md",
+  "11": "test_visitors.py",
   "12": "setupStats",
   "14": "generate_logos.py"
 }
