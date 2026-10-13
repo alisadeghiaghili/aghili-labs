@@ -38,6 +38,13 @@
           <a href="#about" data-i18n="navAbout">داستان</a>
           <a href="#support" data-i18n="navSupport">حمایت</a>
           <a href="#courses" data-i18n="navCourses">دوره‌ها</a>
+          <button type="button" class="nav-search-btn" id="nav-search-btn" aria-label="جستجوی دوره‌ها" data-i18n-aria="navSearchAria" title="جستجوی دوره‌ها">
+            <svg class="nav-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <span class="nav-search-label" data-i18n="navSearch">جستجو</span>
+          </button>
           <div class="lang-switch" role="group" aria-label="Language selection">
             <button class="lang-btn is-active" type="button" data-lang="fa" aria-label="Farsi" data-i18n="langFa">فا</button>
             <button class="lang-btn" type="button" data-lang="en" aria-label="English">EN</button>
@@ -433,6 +440,6 @@
       </div>
     </footer>
 
-    <script src="app.js?v=20261013_sql_pub"></script>
+    <script src="app.js?v=20261013_nav_search"></script>
   </body>
 </html>
