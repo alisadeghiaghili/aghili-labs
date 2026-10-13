@@ -2121,13 +2121,27 @@ function toPersianDigits(val) {
   return String(val).replace(/\d/g, (d) => farsi[Number(d)]);
 }
 
-let currentVisitorsCount = 214;
+/**
+ * Last known site-wide visitor total, or `null` until one is known.
+ * @type {number | null}
+ */
+let currentVisitorsCount = null;
 
+/**
+ * Render `currentVisitorsCount` into the hero stat in the active language.
+ * Shows an em dash while the shared total is still unknown.
+ *
+ * @returns {void}
+ */
 function updateVisitorsDisplay() {
   const el = document.getElementById("stat-visitors");
   if (!el) return;
-  const count = Math.max(214, Math.round(currentVisitorsCount));
-  el.textContent = currentLang === "fa" ? toPersianDigits(count) : count.toLocaleString("en-US");
+  const count = currentVisitorsCount;
+  if (typeof count !== "number" || !Number.isFinite(count)) {
+    el.textContent = "—";
+  } else {
+    el.textContent = currentLang === "fa" ? toPersianDigits(count) : count.toLocaleString("en-US");
+  }
   const dict = I18N[currentLang] || I18N.fa;
   el.title = dict.visitorsTitle || "Visitors";
 }
@@ -2294,141 +2308,116 @@ function updateStatusFilterUI() {
 }
 
 /**
- * Display the shared page visitor count, incrementing once per unique visit.
+ * Shared site-wide visitor counter, hosted on Abacus (a free, CORS-enabled
+ * counting API). The value lives on the Abacus server, so every browser reads
+ * the same number.
+ */
+const VISITOR_COUNTER = {
+  api: "https://abacus.jasoncameron.dev",
+  namespace: "alisadeghiaghili.github.io",
+  key: "aghili-labs-unique-visitors",
+  /**
+   * Visitors recorded before the Abacus counter existed. Added to the server
+   * value on display so the public total carries the earlier history.
+   */
+  baseline: 214,
+  /** Set once this browser has been counted; never cleared. */
+  countedKey: "aghili-labs:visitor-counted:v1",
+  /** Last total fetched from the server, used only as a placeholder on load. */
+  cacheKey: "aghili-labs:visitors:v5",
+  timeoutMs: 5000,
+};
+
+/**
+ * Request one Abacus endpoint and return the counter value it reports.
  *
- * The counter lives on visitorbadge.io at `path=aghili-labs` (a single shared
- * number on their server, so every browser reads the same value). We read it
- * with the read-only `/api/get` endpoint — which does NOT increment — and only
- * bump it via `/api/hit` on a browser's first visit of the day. This guarantees
- * all browsers agree on one stable number that grows with genuine new visitors
- * instead of inflating on every page load (the old behavior).
+ * @param {"get" | "hit"} action `get` reads without changing the value; `hit`
+ *   increments it by one and returns the new value.
+ * @returns {Promise<number | null>} The counter value, `0` for a counter that
+ *   does not exist yet (`get` only), or `null` on any network/HTTP failure.
+ */
+async function requestVisitorCounter(action) {
+  const { api, namespace, key, timeoutMs } = VISITOR_COUNTER;
+  const url = `${api}/${action}/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { cache: "no-store", signal: controller.signal });
+    if (action === "get" && res.status === 404) return 0;
+    if (!res.ok) return null;
+    const data = await res.json();
+    const value = Number(data && data.value);
+    return Number.isInteger(value) && value >= 0 ? value : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/**
+ * Show the site-wide unique visitor total and count this browser exactly once.
+ *
+ * A browser that has never been counted sends one `hit` (server-side +1) and
+ * remembers that in localStorage; every later load only sends a read-only
+ * `get`. The displayed number is always the server's value plus
+ * `VISITOR_COUNTER.baseline`, so all browsers converge on the same total. The
+ * localStorage cache is a placeholder for the first paint and is replaced by
+ * the server value as soon as it arrives, even if that value is lower.
+ *
+ * If localStorage is unavailable the browser cannot be deduplicated, so it is
+ * never counted (read-only) rather than counted on every load.
  *
  * @returns {Promise<void>}
  */
 async function setupVisitors() {
-  const el = document.getElementById("stat-visitors");
-  if (!el) return;
+  const { baseline, countedKey, cacheKey } = VISITOR_COUNTER;
 
-  const STORAGE_KEY = "aghili-labs:visitors:v4";
-  const LAST_VISIT_KEY = "aghili-labs:last-visit-date";
-  const COUNTER_PATH = "aghili-labs";
-  const GET_URL = `https://api.visitorbadge.io/api/get?path=${COUNTER_PATH}`;   // read-only
-  const HIT_URL = `https://api.visitorbadge.io/api/hit?path=${COUNTER_PATH}`;   // +1
-  const HISTORICAL_OFFSET = 50;  // Total visits recorded prior to renaming
-  const MINIMUM_BASELINE = 214;  // Synchronized floor guaranteeing consistency across all clients
-
-  // Aggressively purge any stale caches from earlier iterations (incl. the
-  // per-load-incrementing v3) so old inflated numbers never linger.
   try {
     [
       "learn-with-ali:unique-visitors",
       "aghili-labs:unique-visitors",
       "aghili-labs:visitors:v2",
       "aghili-labs:visitors:v3",
+      "aghili-labs:visitors:v4",
+      "aghili-labs:last-visit-date",
     ].forEach((k) => localStorage.removeItem(k));
   } catch {}
 
-  const paint = (value) => {
-    currentVisitorsCount = Math.max(MINIMUM_BASELINE, Math.round(value));
-    updateVisitorsDisplay();
-  };
-
-  // Local cache doubles as a floor so the number never visibly drops for a
-  // returning browser (mirrors the course counters' "never downgrade" rule).
-  let floor = MINIMUM_BASELINE;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      if (parsed && typeof parsed.count === "number" && Number.isFinite(parsed.count) && parsed.count >= MINIMUM_BASELINE) {
-        floor = parsed.count;
-      }
+    const cached = Number(JSON.parse(localStorage.getItem(cacheKey) || "null")?.count);
+    if (Number.isInteger(cached) && cached >= 0) {
+      currentVisitorsCount = cached;
+      updateVisitorsDisplay();
     }
-  } catch {
-    floor = MINIMUM_BASELINE;
-  }
-  paint(floor);
+  } catch {}
 
-  // Has this browser already been counted today (UTC day)? Set the flag up
-  // front so a fast reload can never double-increment.
-  const isNewDailyVisit = () => {
-    try {
-      const today = new Date().toISOString().slice(0, 10);
-      if (localStorage.getItem(LAST_VISIT_KEY) === today) return false;
-      localStorage.setItem(LAST_VISIT_KEY, today);
-      return true;
-    } catch {
-      return false;
-    }
-  };
-
-  /**
-   * Fetch and parse a counter value. Tolerates a bare number or JSON
-   * ({ "value": n } / { "count": n } / { "visitors": n }).
-   *
-   * @param {string} url
-   * @returns {Promise<number | null>}
-   */
-  const fetchCount = async (url, ms = 3500) => {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), ms);
-    try {
-      const res = await fetch(url, {
-        cache: "no-store",
-        signal: controller.signal,
-        headers: { Accept: "application/json, text/plain, */*" },
-      });
-      if (!res.ok) return null;
-      const text = (await res.text()).trim();
-      let n = NaN;
-      if (/^\d+$/.test(text)) {
-        n = Number(text);
-      } else {
-        try {
-          const j = JSON.parse(text);
-          n = Number(j.value ?? j.count ?? j.visitors ?? j);
-        } catch {
-          const m = text.match(/\d+/);
-          n = m ? Number(m[0]) : NaN;
-        }
-      }
-      return Number.isFinite(n) && n >= 0 ? n : null;
-    } catch {
-      return null;
-    } finally {
-      clearTimeout(timer);
-    }
-  };
-
+  let shouldHit = false;
   try {
-    // 1. Read the shared counter WITHOUT incrementing (every browser sees this).
-    let value = await fetchCount(GET_URL);
-
-    // 2. Genuinely new unique (daily) visit → bump the shared counter once.
-    if (isNewDailyVisit()) {
-      try {
-        await fetch(HIT_URL, { cache: "no-store" });
-      } catch {}
-      value = value === null ? value : value + 1;
-    }
-
-    // 3. Render. Unknown base (null) falls back to the floor.
-    if (value !== null) {
-      const total = Math.max(floor, MINIMUM_BASELINE, HISTORICAL_OFFSET + value);
-      paint(total);
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: total, at: Date.now() }));
-      } catch {}
-      return;
-    }
+    shouldHit = localStorage.getItem(countedKey) === null;
+    // Claim the slot before the request so a second tab opened meanwhile
+    // does not count the same browser twice.
+    if (shouldHit) localStorage.setItem(countedKey, new Date().toISOString());
   } catch {
-    // Ignore network errors/adblocker blocks; keep the floor.
+    shouldHit = false;
   }
 
-  // 4. Read failed / blocked: hold the floor (never drop, never inflate).
-  paint(floor);
+  let value = await requestVisitorCounter(shouldHit ? "hit" : "get");
+  if (value === null && shouldHit) {
+    // The hit may not have reached the server; release the slot so the next
+    // load retries, and still try to show the shared total now.
+    try {
+      localStorage.removeItem(countedKey);
+    } catch {}
+    value = await requestVisitorCounter("get");
+  }
+  if (value === null) return;
+
+  const total = baseline + value;
+  currentVisitorsCount = total;
+  updateVisitorsDisplay();
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ count: floor, at: Date.now() }));
+    localStorage.setItem(cacheKey, JSON.stringify({ count: total, at: Date.now() }));
   } catch {}
 }
 
