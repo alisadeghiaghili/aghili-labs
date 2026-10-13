@@ -1,16 +1,11 @@
 {
-  "0": "init",
   "1": "app.js",
   "2": "pathlib",
   "3": "upgrade_logos.py",
   "4": "test_counter.py",
-  "5": "setupCourseVisitors",
   "6": "Detailed Course Breakdown",
   "7": "Aghili Labs",
   "8": "Aghili Labs — maintenance notes",
-  "9": "renderCourses",
   "10": "CLAUDE.md",
-  "11": "test_visitors.py",
-  "12": "setupStats",
-  "14": "generate_logos.py"
+  "11": "test_visitors.py"
 }
