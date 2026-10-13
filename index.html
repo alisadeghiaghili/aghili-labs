@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=20261005c" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20261005c" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20261005c" />
-    <link rel="stylesheet" href="styles.css?v=20261008_visitors" />
+    <link rel="stylesheet" href="styles.css?v=20261013_status" />
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -269,6 +269,95 @@
             </p>
           </div>
 
+          <!-- Course Status & Readiness Dashboard -->
+          <div class="status-summary reveal" id="course-status-summary" role="region" aria-label="وضعیت آمادگی دوره‌ها" data-i18n-aria="statusSummaryAria">
+            <div class="status-summary-head">
+              <div class="status-summary-title-wrap">
+                <span class="status-summary-badge" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="status-summary-title" data-i18n="statusSummaryTitle">وضعیت آمادگی و توسعهٔ دوره‌ها</h3>
+                  <p class="status-summary-subtitle" data-i18n="statusSummarySubtitle">
+                    تفکیک دوره‌ها بر اساس میزان دسترسی و پیشرفت تولید؛ برای فیلتر سریع روی هر وضعیت کلیک کنید.
+                  </p>
+                </div>
+              </div>
+              <div class="status-summary-active-filter" id="status-filter-indicator" hidden>
+                <span class="status-filter-text" id="status-filter-text"></span>
+                <button type="button" class="status-filter-clear" id="status-filter-clear" data-i18n="statusFilterClear">
+                  نمایش همه
+                  <span aria-hidden="true">✕</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Visual Progress Stack -->
+            <div class="status-progress-wrap">
+              <div class="status-progress-bar" role="progressbar" aria-label="پیشرفت کل دوره‌ها" id="status-progress-bar">
+                <div class="status-seg is-published" id="seg-published" style="width: 4.5%" title="منتشرشده: ۴ دوره"></div>
+                <div class="status-seg is-near-complete" id="seg-near-complete" style="width: 10.1%" title="تقریباً تمام: ۹ دوره"></div>
+                <div class="status-seg is-in-development" id="seg-in-development" style="width: 33.7%" title="در حال توسعه: ۳۰ دوره"></div>
+                <div class="status-seg is-planned" id="seg-planned" style="width: 51.7%" title="برنامه‌ریزی‌شده: ۴۶ دوره"></div>
+              </div>
+              <div class="status-progress-legend" id="status-progress-legend">
+                <span class="legend-item"><span class="legend-dot is-published"></span><span data-i18n="statusLegendPublished">منتشرشده</span> (<span id="pct-published">۵٪</span>)</span>
+                <span class="legend-item"><span class="legend-dot is-near-complete"></span><span data-i18n="statusLegendNearComplete">آماده تمرین</span> (<span id="pct-near-complete">۱۰٪</span>)</span>
+                <span class="legend-item"><span class="legend-dot is-in-development"></span><span data-i18n="statusLegendInDev">در حال توسعه</span> (<span id="pct-in-development">۳۴٪</span>)</span>
+                <span class="legend-item"><span class="legend-dot is-planned"></span><span data-i18n="statusLegendPlanned">برنامه‌ریزی‌شده</span> (<span id="pct-planned">۵۱٪</span>)</span>
+              </div>
+            </div>
+
+            <!-- Interactive Metric Cards -->
+            <div class="status-cards-grid" role="tablist" aria-label="فیلتر بر اساس وضعیت دوره">
+              <!-- Card 1: Usable / Ready (Published + Near Complete) -->
+              <button type="button" class="status-card is-usable" data-status-filter="usable" role="tab" aria-selected="false">
+                <div class="status-card-top">
+                  <span class="status-card-pill is-usable" data-i18n="statusCardPillUsable">قابل استفاده</span>
+                  <span class="status-card-icon" aria-hidden="true">✓</span>
+                </div>
+                <div class="status-card-count" id="count-usable">۱۳</div>
+                <div class="status-card-label" data-i18n="statusCardLabelUsable">دوره آماده یادگیری</div>
+                <div class="status-card-sub" id="sub-usable" data-i18n="statusCardSubUsable">۴ منتشرشده + ۹ در مراحل پایانی</div>
+              </button>
+
+              <!-- Card 2: In Development -->
+              <button type="button" class="status-card is-in-dev" data-status-filter="in_development" role="tab" aria-selected="false">
+                <div class="status-card-top">
+                  <span class="status-card-pill is-in-dev" data-i18n="statusCardPillInDev">در دست ساخت</span>
+                  <span class="status-card-icon" aria-hidden="true">⚡</span>
+                </div>
+                <div class="status-card-count" id="count-in-dev">۳۰</div>
+                <div class="status-card-label" data-i18n="statusCardLabelInDev">دوره در حال توسعه</div>
+                <div class="status-card-sub" data-i18n="statusCardSubInDev">محیط سندباکس و چالش‌ها در دست طراحی</div>
+              </button>
+
+              <!-- Card 3: Planned -->
+              <button type="button" class="status-card is-planned" data-status-filter="planned" role="tab" aria-selected="false">
+                <div class="status-card-top">
+                  <span class="status-card-pill is-planned" data-i18n="statusCardPillPlanned">نقشه راه</span>
+                  <span class="status-card-icon" aria-hidden="true">📋</span>
+                </div>
+                <div class="status-card-count" id="count-planned">۴۶</div>
+                <div class="status-card-label" data-i18n="statusCardLabelPlanned">دوره برنامه‌ریزی‌شده</div>
+                <div class="status-card-sub" data-i18n="statusCardSubPlanned">سرفصل‌ها در نوبت پیاده‌سازی</div>
+              </button>
+
+              <!-- Card 4: Total / Show All -->
+              <button type="button" class="status-card is-all is-active" data-status-filter="all" role="tab" aria-selected="true">
+                <div class="status-card-top">
+                  <span class="status-card-pill is-all" data-i18n="statusCardPillAll">کاتالوگ کل</span>
+                  <span class="status-card-icon" aria-hidden="true">❖</span>
+                </div>
+                <div class="status-card-count" id="count-all">۸۹</div>
+                <div class="status-card-label" data-i18n="statusCardLabelAll">مجموع کل دوره‌ها</div>
+                <div class="status-card-sub" id="sub-all" data-i18n="statusCardSubAll">در ۹ دسته تخصصی مهندسی و هوش مصنوعی</div>
+              </button>
+            </div>
+          </div>
+
           <div class="courses-tools reveal">
             <div class="course-search">
               <svg class="course-search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -344,6 +433,6 @@
       </div>
     </footer>
 
-    <script src="app.js?v=20261012_v8"></script>
+    <script src="app.js?v=20261013_status"></script>
   </body>
 </html>

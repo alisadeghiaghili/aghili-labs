@@ -1192,6 +1192,27 @@ const I18N = {
       in_development: "در حال توسعه",
       planned: "برنامه‌ریزی‌شده",
     },
+    statusSummaryTitle: "وضعیت آمادگی و توسعهٔ دوره‌ها",
+    statusSummarySubtitle: "تفکیک دوره‌ها بر اساس میزان دسترسی و پیشرفت تولید؛ برای فیلتر سریع روی هر وضعیت کلیک کنید.",
+    statusSummaryAria: "وضعیت آمادگی دوره‌ها",
+    statusFilterClear: "نمایش همه",
+    statusFilterActiveText: "فیلتر فعال: {label} ({count} دوره)",
+    statusLegendPublished: "منتشرشده",
+    statusLegendNearComplete: "آماده تمرین",
+    statusLegendInDev: "در حال توسعه",
+    statusLegendPlanned: "برنامه‌ریزی‌شده",
+    statusCardPillUsable: "قابل استفاده",
+    statusCardLabelUsable: "دوره آماده یادگیری",
+    statusCardSubUsable: "{published} منتشرشده + {nearComplete} در مراحل پایانی",
+    statusCardPillInDev: "در دست ساخت",
+    statusCardLabelInDev: "دوره در حال توسعه",
+    statusCardSubInDev: "محیط سندباکس و چالش‌ها در دست طراحی",
+    statusCardPillPlanned: "نقشه راه",
+    statusCardLabelPlanned: "دوره برنامه‌ریزی‌شده",
+    statusCardSubPlanned: "سرفصل‌ها در نوبت پیاده‌سازی",
+    statusCardPillAll: "کاتالوگ کل",
+    statusCardLabelAll: "مجموع کل دوره‌ها",
+    statusCardSubAll: "در {categories} دسته تخصصی مهندسی و هوش مصنوعی",
     filterLabels: {
       all: "همه",
       languages: "زبان‌ها",
@@ -1298,6 +1319,27 @@ const I18N = {
       in_development: "In Development",
       planned: "Planned",
     },
+    statusSummaryTitle: "Course Readiness & Availability",
+    statusSummarySubtitle: "Distribution of courses across developmental stages. Click any status card to filter the catalog.",
+    statusSummaryAria: "Course readiness status and roadmap",
+    statusFilterClear: "Show all",
+    statusFilterActiveText: "Active filter: {label} ({count} courses)",
+    statusLegendPublished: "Published",
+    statusLegendNearComplete: "Nearly Complete",
+    statusLegendInDev: "In Development",
+    statusLegendPlanned: "Planned",
+    statusCardPillUsable: "Ready to Learn",
+    statusCardLabelUsable: "Interactive Courses Ready",
+    statusCardSubUsable: "{published} published + {nearComplete} nearly complete",
+    statusCardPillInDev: "In Progress",
+    statusCardLabelInDev: "Courses in Development",
+    statusCardSubInDev: "Browser sandboxes & challenges being crafted",
+    statusCardPillPlanned: "Roadmap",
+    statusCardLabelPlanned: "Planned Courses",
+    statusCardSubPlanned: "Curricula queued on upcoming roadmap",
+    statusCardPillAll: "Full Catalog",
+    statusCardLabelAll: "Total Courses",
+    statusCardSubAll: "Across {categories} specialized engineering disciplines",
     filterLabels: {
       all: "All",
       languages: "Languages",
@@ -1404,6 +1446,27 @@ const I18N = {
       in_development: "In Entwicklung",
       planned: "Geplant",
     },
+    statusSummaryTitle: "Kursverfügbarkeit & Entwicklungsstand",
+    statusSummarySubtitle: "Übersicht aller Kurse nach Entwicklungsphase. Klicken Sie auf einen Status, um das Angebot zu filtern.",
+    statusSummaryAria: "Status der Kursverfügbarkeit",
+    statusFilterClear: "Alle anzeigen",
+    statusFilterActiveText: "Aktiver Filter: {label} ({count} Kurse)",
+    statusLegendPublished: "Veröffentlicht",
+    statusLegendNearComplete: "Fast fertig",
+    statusLegendInDev: "In Entwicklung",
+    statusLegendPlanned: "Geplant",
+    statusCardPillUsable: "Bereit zum Lernen",
+    statusCardLabelUsable: "Interaktive Kurse verfügbar",
+    statusCardSubUsable: "{published} veröffentlicht + {nearComplete} fast fertig",
+    statusCardPillInDev: "In Arbeit",
+    statusCardLabelInDev: "Kurse in Entwicklung",
+    statusCardSubInDev: "Browser-Sandboxen & Aufgaben in Arbeit",
+    statusCardPillPlanned: "Roadmap",
+    statusCardLabelPlanned: "Geplante Kurse",
+    statusCardSubPlanned: "Lehrpläne in der Entwicklungspipeline",
+    statusCardPillAll: "Gesamtkatalog",
+    statusCardLabelAll: "Gesamte Kurse",
+    statusCardSubAll: "In {categories} technischen Fachbereichen",
     filterLabels: {
       all: "Alle",
       languages: "Sprachen",
@@ -1526,6 +1589,7 @@ function createCourseCard(course) {
   card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
 
   card.dataset.slug = course.slug;
+  card.dataset.status = course.status;
   const shareTitle = currentLang === "fa" ? course.title : course.en;
   const titleHtml = currentLang === "fa"
     ? `<p class="course-title">${formatTitle(course.title)}</p><p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>`
@@ -1589,8 +1653,8 @@ function createCourseCard(course) {
   return card;
 }
 
-/** @type {{ filter: string, query: string }} */
-const courseFilters = { filter: "all", query: "" };
+/** @type {{ filter: string, query: string, status: string }} */
+const courseFilters = { filter: "all", query: "", status: "all" };
 
 /**
  * Build a lowercase searchable haystack from a course.
@@ -1617,7 +1681,7 @@ function forceReveal(node) {
 
 /**
  * Show or hide category sections and cards based on the active
- * filter chip and the search query.
+ * filter chip, search query, and status filter.
  *
  * @returns {void}
  */
@@ -1627,6 +1691,7 @@ function applyCourseFilters() {
   if (!root || !empty) return;
 
   const query = courseFilters.query;
+  const statusFilter = courseFilters.status || "all";
   let visibleTotal = 0;
 
   root.querySelectorAll(".category").forEach((section) => {
@@ -1637,9 +1702,18 @@ function applyCourseFilters() {
       const en = card.querySelector(".course-en")?.textContent || "";
       const desc = card.querySelector(".course-desc")?.textContent || "";
       const slug = card.dataset.slug || "";
+      const status = card.dataset.status || "";
       const haystack = `${title} ${en} ${desc} ${slug}`.toLowerCase();
-      const matches = !query || haystack.includes(query);
-      const show = matches;
+      const matchesQuery = !query || haystack.includes(query);
+
+      let matchesStatus = true;
+      if (statusFilter === "usable") {
+        matchesStatus = status === "published" || status === "near_complete";
+      } else if (statusFilter !== "all") {
+        matchesStatus = status === statusFilter;
+      }
+
+      const show = matchesQuery && matchesStatus;
       card.hidden = !show;
       card.style.display = show ? "" : "none";
       if (show) visibleInSection += 1;
@@ -1908,6 +1982,13 @@ function setLanguage(lang) {
     }
   });
 
+  document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-aria");
+    if (key && dict[key] !== undefined) {
+      el.setAttribute("aria-label", dict[key]);
+    }
+  });
+
   const searchInput = document.getElementById("course-search");
   if (searchInput) {
     searchInput.setAttribute("placeholder", dict.searchPlaceholder);
@@ -2024,21 +2105,184 @@ function setupStats() {
   const coursesEl = document.getElementById("stat-courses");
   const catsEl = document.getElementById("stat-categories");
   const freeEl = document.getElementById("stat-free");
+  const dict = I18N[currentLang] || I18N.fa;
 
-  const totalCourses = Object.values(CATEGORIES).flatMap((c) => c.courses).length || 88;
+  const allCourses = Object.values(CATEGORIES).flatMap((c) => c.courses);
+  const totalCourses = allCourses.length || 89;
   const totalCats = Object.keys(CATEGORIES).length || 9;
 
+  const published = allCourses.filter((c) => c.status === "published").length;
+  const nearComplete = allCourses.filter((c) => c.status === "near_complete").length;
+  const inDev = allCourses.filter((c) => c.status === "in_development").length;
+  const planned = allCourses.filter((c) => c.status === "planned").length;
+  const usable = published + nearComplete;
+
+  const formatNum = (n) => (currentLang === "fa" ? toPersianDigits(n) : String(n));
+
   if (coursesEl) {
-    coursesEl.textContent = currentLang === "fa" ? toPersianDigits(totalCourses) : String(totalCourses);
+    coursesEl.textContent = formatNum(totalCourses);
   }
   if (catsEl) {
-    catsEl.textContent = currentLang === "fa" ? toPersianDigits(totalCats) : String(totalCats);
+    catsEl.textContent = formatNum(totalCats);
   }
   if (freeEl) {
     freeEl.textContent = currentLang === "fa" ? "۱۰۰٪" : "100%";
   }
 
+  // Update status summary numbers and subtexts
+  const countUsableEl = document.getElementById("count-usable");
+  if (countUsableEl) countUsableEl.textContent = formatNum(usable);
+
+  const countDevEl = document.getElementById("count-in-dev");
+  if (countDevEl) countDevEl.textContent = formatNum(inDev);
+
+  const countPlanEl = document.getElementById("count-planned");
+  if (countPlanEl) countPlanEl.textContent = formatNum(planned);
+
+  const countAllEl = document.getElementById("count-all");
+  if (countAllEl) countAllEl.textContent = formatNum(totalCourses);
+
+  const subUsableEl = document.getElementById("sub-usable");
+  if (subUsableEl && dict.statusCardSubUsable) {
+    subUsableEl.textContent = dict.statusCardSubUsable
+      .replace("{published}", formatNum(published))
+      .replace("{nearComplete}", formatNum(nearComplete));
+  }
+
+  const subAllEl = document.getElementById("sub-all");
+  if (subAllEl && dict.statusCardSubAll) {
+    subAllEl.textContent = dict.statusCardSubAll.replace("{categories}", formatNum(totalCats));
+  }
+
+  // Progress stack bar widths & titles
+  const segPub = document.getElementById("seg-published");
+  const segNear = document.getElementById("seg-near-complete");
+  const segDev = document.getElementById("seg-in-development");
+  const segPlan = document.getElementById("seg-planned");
+
+  const pctPublished = Math.round((published / totalCourses) * 100);
+  const pctNearComplete = Math.round((nearComplete / totalCourses) * 100);
+  const pctInDev = Math.round((inDev / totalCourses) * 100);
+  const pctPlanned = 100 - (pctPublished + pctNearComplete + pctInDev);
+
+  if (segPub) {
+    segPub.style.width = `${(published / totalCourses) * 100}%`;
+    segPub.title = `${dict.statusLegendPublished || "منتشرشده"}: ${formatNum(published)} (${formatNum(pctPublished)}%)`;
+  }
+  if (segNear) {
+    segNear.style.width = `${(nearComplete / totalCourses) * 100}%`;
+    segNear.title = `${dict.statusLegendNearComplete || "آماده تمرین"}: ${formatNum(nearComplete)} (${formatNum(pctNearComplete)}%)`;
+  }
+  if (segDev) {
+    segDev.style.width = `${(inDev / totalCourses) * 100}%`;
+    segDev.title = `${dict.statusLegendInDev || "در حال توسعه"}: ${formatNum(inDev)} (${formatNum(pctInDev)}%)`;
+  }
+  if (segPlan) {
+    segPlan.style.width = `${(planned / totalCourses) * 100}%`;
+    segPlan.title = `${dict.statusLegendPlanned || "برنامه‌ریزی‌شده"}: ${formatNum(planned)} (${formatNum(pctPlanned)}%)`;
+  }
+
+  const pctPubEl = document.getElementById("pct-published");
+  if (pctPubEl) pctPubEl.textContent = currentLang === "fa" ? `${toPersianDigits(pctPublished)}٪` : `${pctPublished}%`;
+
+  const pctNearEl = document.getElementById("pct-near-complete");
+  if (pctNearEl) pctNearEl.textContent = currentLang === "fa" ? `${toPersianDigits(pctNearComplete)}٪` : `${pctNearComplete}%`;
+
+  const pctDevEl = document.getElementById("pct-in-development");
+  if (pctDevEl) pctDevEl.textContent = currentLang === "fa" ? `${toPersianDigits(pctInDev)}٪` : `${pctInDev}%`;
+
+  const pctPlanEl = document.getElementById("pct-planned");
+  if (pctPlanEl) pctPlanEl.textContent = currentLang === "fa" ? `${toPersianDigits(pctPlanned)}٪` : `${pctPlanned}%`;
+
   updateVisitorsDisplay();
+  updateStatusFilterUI();
+}
+
+/**
+ * Setup status summary card clicks and clear filter action.
+ *
+ * @returns {void}
+ */
+function setupStatusFilter() {
+  const container = document.getElementById("course-status-summary");
+  if (!container) return;
+
+  container.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const clearBtn = target.closest("#status-filter-clear");
+    if (clearBtn) {
+      courseFilters.status = "all";
+      updateStatusFilterUI();
+      applyCourseFilters();
+      return;
+    }
+
+    const card = target.closest(".status-card");
+    if (!card) return;
+
+    const filterVal = card.dataset.statusFilter || "all";
+    if (filterVal === "all") {
+      courseFilters.status = "all";
+    } else if (courseFilters.status === filterVal) {
+      // Clicking already active status toggles back to all
+      courseFilters.status = "all";
+    } else {
+      courseFilters.status = filterVal;
+    }
+
+    updateStatusFilterUI();
+    applyCourseFilters();
+  });
+}
+
+/**
+ * Update UI state of status filter cards and active filter banner.
+ *
+ * @returns {void}
+ */
+function updateStatusFilterUI() {
+  const dict = I18N[currentLang] || I18N.fa;
+  const currentStatus = courseFilters.status || "all";
+
+  // 1. Highlight matching card
+  document.querySelectorAll(".status-card").forEach((card) => {
+    const f = card.dataset.statusFilter || "all";
+    const isActive = f === currentStatus;
+    card.classList.toggle("is-active", isActive);
+    card.setAttribute("aria-selected", isActive ? "true" : "false");
+  });
+
+  // 2. Active filter indicator
+  const indicator = document.getElementById("status-filter-indicator");
+  const textEl = document.getElementById("status-filter-text");
+  if (!indicator || !textEl) return;
+
+  if (currentStatus === "all") {
+    indicator.hidden = true;
+    textEl.textContent = "";
+  } else {
+    indicator.hidden = false;
+    let label = dict.statusCardPillUsable || "قابل استفاده";
+    let count = 0;
+    const allCourses = Object.values(CATEGORIES).flatMap((c) => c.courses);
+
+    if (currentStatus === "usable") {
+      label = dict.statusCardPillUsable || "قابل استفاده";
+      count = allCourses.filter((c) => c.status === "published" || c.status === "near_complete").length;
+    } else if (currentStatus === "in_development") {
+      label = dict.statusCardPillInDev || "در دست ساخت";
+      count = allCourses.filter((c) => c.status === "in_development").length;
+    } else if (currentStatus === "planned") {
+      label = dict.statusCardPillPlanned || "نقشه راه";
+      count = allCourses.filter((c) => c.status === "planned").length;
+    }
+
+    const countFormatted = currentLang === "fa" ? toPersianDigits(count) : String(count);
+    const template = dict.statusFilterActiveText || "فیلتر فعال: {label} ({count} دوره)";
+    textEl.textContent = template.replace("{label}", label).replace("{count}", countFormatted);
+  }
 }
 
 /**
@@ -2503,6 +2747,7 @@ function init() {
   setupLanguage();
   renderCourses();
   setupFilters();
+  setupStatusFilter();
   setupSearch();
   setupNav();
   setupStats();

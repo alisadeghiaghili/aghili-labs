@@ -1,0 +1,188 @@
+{
+  "communities": {
+    "0": [
+      "pathlib",
+      "tools_generate_logos",
+      "tools_generate_logos_main",
+      "tools_generate_logos_rationale_1",
+      "tools_generate_logos_write",
+      "tools_refine_custom_logos",
+      "tools_refine_custom_logos_main",
+      "tools_refine_custom_logos_rationale_1",
+      "tools_rewrite_descs",
+      "tools_rewrite_descs_rationale_1",
+      "tools_test_new_concepts",
+      "tools_test_new_concepts_rationale_1",
+      "tools_verify_logos",
+      "tools_verify_logos_rationale_1"
+    ],
+    "1": [
+      "app",
+      "app_categories",
+      "app_coursefilters",
+      "app_coursesearchtext",
+      "app_filters",
+      "app_i18n",
+      "app_setupnav",
+      "app_setupreveal",
+      "app_setupshare",
+      "app_setupstats",
+      "app_setupvisitors",
+      "app_showtoast",
+      "app_status_meta"
+    ],
+    "2": [
+      "base64",
+      "tools_generate_16_logos",
+      "tools_generate_16_logos_get_simple_icon",
+      "tools_generate_16_logos_rationale_1",
+      "tools_make_shiny_go",
+      "tools_make_webfundamentals_logo",
+      "tools_make_webfundamentals_logo_rationale_1",
+      "tools_update_favicon",
+      "urllib_request",
+      "xml_etree_elementtree"
+    ],
+    "3": [
+      "re",
+      "tools_upgrade_logos",
+      "tools_upgrade_logos_extract_inner",
+      "tools_upgrade_logos_fetch",
+      "tools_upgrade_logos_main",
+      "tools_upgrade_logos_rationale_1",
+      "tools_upgrade_logos_upgrade_devicon",
+      "tools_upgrade_logos_upgrade_simpleicon",
+      "tools_upgrade_logos_wrap_svg"
+    ],
+    "4": [
+      "json",
+      "subprocess",
+      "tools_apply_user_selections",
+      "tools_apply_user_selections_rationale_1",
+      "tools_build_comparison_view",
+      "tools_build_comparison_view_rationale_1"
+    ],
+    "5": [
+      "playwright_sync_api",
+      "tools_screenshot_preview",
+      "tools_screenshot_preview_main",
+      "tools_screenshot_preview_rationale_1",
+      "tools_test_visitors",
+      "tools_test_visitors_rationale_1"
+    ],
+    "6": [
+      "app_createcoursecard",
+      "app_escapehtml",
+      "app_formatdesc",
+      "app_formattitle",
+      "app_rendercourses"
+    ],
+    "7": [
+      "numpy",
+      "pil",
+      "skimage",
+      "tools_vectorize_favicon",
+      "tools_vectorize_favicon_contours_to_path"
+    ],
+    "8": [
+      "app_applycoursefilters",
+      "app_forcereveal"
+    ],
+    "9": [
+      "app_setlanguage",
+      "app_setuplanguage"
+    ]
+  },
+  "cohesion": {
+    "0": 0.15384615384615385,
+    "1": 0.16666666666666666,
+    "2": 0.2222222222222222,
+    "3": 0.4722222222222222,
+    "4": 0.3333333333333333,
+    "5": 0.3333333333333333,
+    "6": 0.7,
+    "7": 0.4,
+    "8": 1.0,
+    "9": 1.0
+  },
+  "gods": [
+    {
+      "id": "app_escapehtml",
+      "label": "escapeHtml()",
+      "degree": 5
+    },
+    {
+      "id": "app_createcoursecard",
+      "label": "createCourseCard()",
+      "degree": 5
+    },
+    {
+      "id": "app_rendercourses",
+      "label": "renderCourses()",
+      "degree": 5
+    },
+    {
+      "id": "tools_upgrade_logos_upgrade_devicon",
+      "label": "upgrade_devicon()",
+      "degree": 5
+    },
+    {
+      "id": "tools_upgrade_logos_upgrade_simpleicon",
+      "label": "upgrade_simpleicon()",
+      "degree": 5
+    },
+    {
+      "id": "app_formattitle",
+      "label": "formatTitle()",
+      "degree": 3
+    },
+    {
+      "id": "app_formatdesc",
+      "label": "formatDesc()",
+      "degree": 3
+    },
+    {
+      "id": "app_applycoursefilters",
+      "label": "applyCourseFilters()",
+      "degree": 3
+    },
+    {
+      "id": "app_setlanguage",
+      "label": "setLanguage()",
+      "degree": 3
+    },
+    {
+      "id": "tools_upgrade_logos_fetch",
+      "label": "fetch()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "renderCourses()",
+      "target": "applyCourseFilters()",
+      "source_files": [
+        "app.js",
+        "app.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 8 \u2192 community 6"
+    },
+    {
+      "source": "setLanguage()",
+      "target": "renderCourses()",
+      "source_files": [
+        "app.js",
+        "app.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 6 \u2192 community 9"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
