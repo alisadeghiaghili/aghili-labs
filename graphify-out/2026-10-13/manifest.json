@@ -1,8 +1,8 @@
 {
   "app.js": {
-    "mtime": 1791891043.8157377,
-    "seen": 1791891048.36707,
-    "ast_hash": "30db9db8ad819a0cb6b0cc399da218cf",
+    "mtime": 1791897116.2999992,
+    "seen": 1791897333.0693874,
+    "ast_hash": "931a23a0d41a49226197e34baec5516b",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -12,15 +12,15 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1791889529.0456283,
-    "seen": 1791889580.287723,
-    "ast_hash": "6e6b8b2d44c57bf2f26289f0fa7b152b",
+    "mtime": 1791897139.1099253,
+    "seen": 1791897333.0693874,
+    "ast_hash": "290e9a835242172b7d4461574d4b9996",
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1791889529.047932,
-    "seen": 1791889580.287723,
-    "ast_hash": "75b3804a0aee3e3f24f7282a9987349a",
+    "mtime": 1791897129.674128,
+    "seen": 1791897333.0693874,
+    "ast_hash": "f45c421004f8a4e6e344cb6750af0c26",
     "semantic_hash": ""
   },
   "docs/MAINTENANCE.md": {
@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1791890845.6541605,
-    "seen": 1791891048.36707,
-    "ast_hash": "0eb77183d432edbdead7c82631541fb9",
+    "mtime": 1791897294.4850004,
+    "seen": 1791897333.0693874,
+    "ast_hash": "6b8b9bca7e487557acb68e9ac7aab9c7",
     "semantic_hash": ""
   },
   "assets/apple-touch-icon.png": {

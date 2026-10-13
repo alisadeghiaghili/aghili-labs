@@ -1128,6 +1128,8 @@ const I18N = {
     navAbout: "داستان",
     navSupport: "حمایت",
     navCourses: "دوره‌ها",
+    navSearch: "جستجو",
+    navSearchAria: "جستجوی دوره‌ها",
     navCta: "حمایت کنید",
     heroEyebrow: "آموزش رایگان · تعاملی · عمیق",
     heroHeading: "آموزش حق همه است.<br />نه امتیاز چند نفر.",
@@ -1255,6 +1257,8 @@ const I18N = {
     navAbout: "Story",
     navSupport: "Support",
     navCourses: "Courses",
+    navSearch: "Search",
+    navSearchAria: "Search courses",
     navCta: "Support Us",
     heroEyebrow: "Free · Interactive · In-depth Education",
     heroHeading: "Education is a human right.<br />Not a privilege for a few.",
@@ -1382,6 +1386,8 @@ const I18N = {
     navAbout: "Über uns",
     navSupport: "Unterstützen",
     navCourses: "Kurse",
+    navSearch: "Suchen",
+    navSearchAria: "Kurse suchen",
     navCta: "Unterstützen",
     heroEyebrow: "Kostenlose · Interaktive · Fundierte Bildung",
     heroHeading: "Bildung gehört allen.<br />Kein Privileg für wenige.",
@@ -1859,6 +1865,29 @@ function setupSearch() {
 
   searchInput.addEventListener("input", onSearch);
   searchInput.addEventListener("search", onSearch);
+
+  const navSearchBtn = document.getElementById("nav-search-btn");
+  if (navSearchBtn) {
+    navSearchBtn.addEventListener("click", () => {
+      // Close mobile menu if open
+      const navLinks = document.getElementById("nav-links");
+      const burger = document.getElementById("nav-burger");
+      if (navLinks && navLinks.classList.contains("is-open")) {
+        navLinks.classList.remove("is-open");
+        if (burger) {
+          burger.classList.remove("is-open");
+          burger.setAttribute("aria-expanded", "false");
+        }
+      }
+
+      // Smooth scroll to search input and focus
+      searchInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(() => {
+        searchInput.focus({ preventScroll: true });
+        searchInput.select?.();
+      }, 350);
+    });
+  }
 }
 
 /**
