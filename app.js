@@ -1532,55 +1532,65 @@ const STATUS_META = {
   },
 };
 
-/**
- * Known baseline and fallback visitor telemetry configurations for courses.
- * Guaranteed zero-latency initial rendering with offline fallback.
- * @type {Record<string, { countApi?: string, badgeUrl?: string, baseCount?: number }>}
- */
-const KNOWN_COURSE_VISITORS = {
-  "learn-r": {
-    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-r",
-    historicalOffset: 18,
-    baseCount: 45,
-  },
-  "learn-cmd": {
-    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-cmd",
-    historicalOffset: 43,
-    baseCount: 44,
-  },
-  "learn-dvc": {
-    countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-dvc",
-    historicalOffset: 203,
-    baseCount: 204,
-  },
-  "learn-mlops": {
-    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-mlops",
-    baseCount: 1,
-  },
-};
+/** Course statuses that have a live site, and therefore a visitor counter. */
+const LIVE_COURSE_STATUSES = new Set(["published", "near_complete"]);
 
-const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v6";
+/** Placeholder cache of per-course counts; only used for the first paint. */
+const COURSE_VISITORS_STORAGE_KEY = "aghili-labs:course-visitors:v7";
+
+/** Cache keys written by earlier builds; removed on load. */
+const COURSE_VISITORS_LEGACY_KEYS = [
+  "aghili-labs:course-visitors:v1",
+  "aghili-labs:course-visitors:v6",
+];
 
 /**
- * In-memory cache of course visitor counts for synchronous zero-latency rendering.
+ * Latest known visitor count per course slug (server value once it arrives,
+ * the localStorage placeholder before that).
  * @type {Record<string, number>}
  */
 const courseVisitorsCache = {};
 
-try {
-  localStorage.removeItem("aghili-labs:course-visitors:v1");
-  const rawCourseVisitors = localStorage.getItem(COURSE_VISITORS_STORAGE_KEY);
-  if (rawCourseVisitors) {
-    const parsed = JSON.parse(rawCourseVisitors);
+/**
+ * Whether a course has a live site and so shows a visitor badge.
+ *
+ * @param {Course} course
+ * @returns {boolean}
+ */
+function hasLiveSite(course) {
+  return LIVE_COURSE_STATUSES.has(course.status);
+}
+
+/**
+ * Format a visitor count for display in the active language.
+ *
+ * @param {number} count
+ * @returns {string}
+ */
+function formatVisitorCount(count) {
+  const rounded = Math.round(count);
+  return currentLang === "fa" ? toPersianDigits(rounded) : rounded.toLocaleString("en-US");
+}
+
+/**
+ * Drop legacy cache keys and load the placeholder counts from localStorage
+ * into `courseVisitorsCache`. Must run before the first render.
+ *
+ * @returns {void}
+ */
+function loadCourseVisitorsCache() {
+  try {
+    COURSE_VISITORS_LEGACY_KEYS.forEach((k) => localStorage.removeItem(k));
+    const raw = localStorage.getItem(COURSE_VISITORS_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : null;
     if (parsed && typeof parsed === "object") {
       Object.entries(parsed).forEach(([slug, item]) => {
-        if (item && typeof item.count === "number" && Number.isFinite(item.count) && item.count > 0) {
-          courseVisitorsCache[slug] = item.count;
-        }
+        const count = Number(item && item.count);
+        if (Number.isInteger(count) && count >= 0) courseVisitorsCache[slug] = count;
       });
     }
-  }
-} catch {}
+  } catch {}
+}
 
 /**
  * Build a course card element.
@@ -1592,8 +1602,7 @@ function createCourseCard(course) {
   const dict = I18N[currentLang] || I18N.fa;
   const meta = STATUS_META[course.status] || STATUS_META.in_development;
   const isPlanned = course.status === "planned";
-  const hasVisitorCounter = Boolean(KNOWN_COURSE_VISITORS[course.slug] || courseVisitorsCache[course.slug]);
-  const isPublished = course.status === "published" && hasVisitorCounter;
+  const showsCounter = hasLiveSite(course);
   const courseUrl = `${BASE}/${course.slug}/`;
   const card = document.createElement("article");
   card.className = `course-card reveal ${meta.className}${isPlanned ? " is-planned" : ""}`;
@@ -1616,12 +1625,10 @@ function createCourseCard(course) {
     : course.desc;
   const displayDesc = currentLang === "fa" ? formatDesc(course.desc) : escapeHtml(localizedDesc);
 
-  const cachedCount = courseVisitorsCache[course.slug] ?? KNOWN_COURSE_VISITORS[course.slug]?.baseCount;
-  const visitorCountText = typeof cachedCount === "number"
-    ? Math.round(cachedCount).toLocaleString("en-US")
-    : "…";
+  const cachedCount = courseVisitorsCache[course.slug];
+  const visitorCountText = typeof cachedCount === "number" ? formatVisitorCount(cachedCount) : "…";
 
-  const visitorsBadgeHtml = isPublished
+  const visitorsBadgeHtml = showsCounter
     ? `<span class="course-visitors" data-course-visitors="${course.slug}" title="${escapeHtml(dict.courseVisitorsTooltip || dict.visitorsTitle || 'بازدید')}" aria-label="${escapeHtml(dict.courseVisitorsTooltip || dict.visitorsTitle || 'بازدید')}: ${visitorCountText}">
         <svg class="course-visitors-icon" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <path d="M1.5 8s2.5-4.5 6.5-4.5 6.5 4.5 6.5 4.5-2.5 4.5-6.5 4.5-6.5-4.5z"/>
@@ -1816,7 +1823,6 @@ function renderCourses() {
   });
 
   applyCourseFilters();
-  setupCourseVisitors();
 }
 
 /**
@@ -2308,13 +2314,18 @@ function updateStatusFilterUI() {
 }
 
 /**
- * Shared site-wide visitor counter, hosted on Abacus (a free, CORS-enabled
- * counting API). The value lives on the Abacus server, so every browser reads
- * the same number.
+ * Abacus, a free CORS-enabled counting API. The values live on the Abacus
+ * server, so every browser and every course site reads the same numbers.
+ * All counters of this site share one namespace.
  */
-const VISITOR_COUNTER = {
+const ABACUS = {
   api: "https://abacus.jasoncameron.dev",
   namespace: "alisadeghiaghili.github.io",
+  timeoutMs: 5000,
+};
+
+/** Shared site-wide visitor counter (the hero stat). */
+const VISITOR_COUNTER = {
   key: "aghili-labs-unique-visitors",
   /**
    * Visitors recorded before the Abacus counter existed. Added to the server
@@ -2325,7 +2336,6 @@ const VISITOR_COUNTER = {
   countedKey: "aghili-labs:visitor-counted:v1",
   /** Last total fetched from the server, used only as a placeholder on load. */
   cacheKey: "aghili-labs:visitors:v5",
-  timeoutMs: 5000,
 };
 
 /**
@@ -2333,11 +2343,12 @@ const VISITOR_COUNTER = {
  *
  * @param {"get" | "hit"} action `get` reads without changing the value; `hit`
  *   increments it by one and returns the new value.
+ * @param {string} key Counter key inside the shared namespace.
  * @returns {Promise<number | null>} The counter value, `0` for a counter that
  *   does not exist yet (`get` only), or `null` on any network/HTTP failure.
  */
-async function requestVisitorCounter(action) {
-  const { api, namespace, key, timeoutMs } = VISITOR_COUNTER;
+async function requestAbacusCounter(action, key) {
+  const { api, namespace, timeoutMs } = ABACUS;
   const url = `${api}/${action}/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -2402,14 +2413,14 @@ async function setupVisitors() {
     shouldHit = false;
   }
 
-  let value = await requestVisitorCounter(shouldHit ? "hit" : "get");
+  let value = await requestAbacusCounter(shouldHit ? "hit" : "get", VISITOR_COUNTER.key);
   if (value === null && shouldHit) {
     // The hit may not have reached the server; release the slot so the next
     // load retries, and still try to show the shared total now.
     try {
       localStorage.removeItem(countedKey);
     } catch {}
-    value = await requestVisitorCounter("get");
+    value = await requestAbacusCounter("get", VISITOR_COUNTER.key);
   }
   if (value === null) return;
 
@@ -2421,202 +2432,58 @@ async function setupVisitors() {
   } catch {}
 }
 
-const REPO_VISITOR_PATHS = [
-  "src/ui/visitor-counter.ts",
-  "js/visitor-counter.js",
-  "assets/js/visitor-counter.js",
-  "js/visitor.js",
-];
-
 /**
- * Parse visitor count from badge SVG.
- * Handles both combined ("VISITORS: daily / total") and simple ("VISITORS: total").
- *
- * @param {string} svg
- * @returns {number | null}
- */
-function parseCourseVisitorSvg(svg) {
-  if (!svg || typeof svg !== "string") return null;
-
-  // 1. Look for primary count label "VISITORS: <number>" (matches first number in "VISITORS: X / Y")
-  const match = svg.match(/VISITORS:\s*([\d.,]+[KMB]?)/i) ||
-                svg.match(/aria-label=["']VISITORS:\s*([\d.,]+[KMB]?)/i);
-  let raw = match ? match[1] : "";
-
-  // 2. Fallback to extracting first numeric text node before slash or closing tag
-  if (!raw) {
-    const textMatches = Array.from(svg.matchAll(/>\s*([0-9.,]+[KMB]?)(?:\s*\/|\s*<)/gi));
-    if (textMatches.length > 0) {
-      raw = textMatches[0][1];
-    }
-  }
-
-  raw = (raw || "").replace(/,/g, "").trim();
-  if (!raw) return null;
-
-  const suffix = raw.slice(-1).toUpperCase();
-  const scale = { K: 1e3, M: 1e6, B: 1e9 }[suffix] || 1;
-  const numPart = scale > 1 ? raw.slice(0, -1) : raw;
-  const numeric = Number.parseFloat(numPart) * scale;
-  return Number.isFinite(numeric) && numeric >= 0 ? Math.round(numeric) : null;
-}
-
-/**
- * Dynamically extract visitor counter configuration from the course's GitHub repository.
- * Inspects official repo source files (e.g. src/ui/visitor-counter.ts, js/visitor-counter.js).
+ * Counter key a course site increments for its own unique visitors.
  *
  * @param {string} slug
- * @returns {Promise<{ countApi?: string, badgeUrl?: string, baseCount?: number, hasOffset?: boolean } | null>}
+ * @returns {string}
  */
-async function fetchRepoVisitorConfig(slug) {
-  for (const filePath of REPO_VISITOR_PATHS) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(`https://raw.githubusercontent.com/alisadeghiaghili/${slug}/main/${filePath}`, {
-        signal: controller.signal,
-      });
-      clearTimeout(timer);
-      if (res.ok) {
-        const text = await res.text();
-        const badgeMatch = text.match(/BADGE_URL\s*=\s*['"]([^'"]+)['"]/);
-        const countKeyMatch = text.match(/COUNT_KEY\s*=\s*['"]([^'"]+)['"]/);
-        const countApiBaseMatch = text.match(/COUNT_API_BASE\s*=\s*['"]([^'"]+)['"]/);
-        const baseCountMatch = text.match(/(?:BASE_COUNT|BASELINE_FALLBACK)\s*=\s*(\d+)/);
-        const offsetMatch = text.match(/HISTORICAL_OFFSET\s*=\s*(\d+)/);
-        const hasOffset = /BASE_COUNT\s*\+\s*\(\s*parsed\s*-\s*1\s*\)/.test(text);
-
-        let countApi = undefined;
-        if (countKeyMatch) {
-          const apiBase = countApiBaseMatch ? countApiBaseMatch[1] : "https://countapi.mileshilliard.com/api/v1";
-          countApi = `${apiBase}/get/${countKeyMatch[1]}`;
-        }
-
-        return {
-          badgeUrl: countApi ? undefined : (badgeMatch ? badgeMatch[1] : undefined),
-          countApi,
-          historicalOffset: offsetMatch ? Number.parseInt(offsetMatch[1], 10) : 0,
-          baseCount: baseCountMatch ? Number.parseInt(baseCountMatch[1], 10) : undefined,
-          hasOffset,
-        };
-      }
-    } catch {}
-  }
-  return null;
+function courseCounterKey(slug) {
+  return `${slug}-unique-visitors`;
 }
 
 /**
- * Fetch and resolve the visitor count for a given course slug.
- * Reads config directly from the course repository with seamless fallback.
+ * Show the visitor count of every course that has a live site.
  *
- * @param {string} slug
- * @returns {Promise<number | null>}
- */
-async function fetchCourseVisitorCount(slug) {
-  // 1. Discover configuration dynamically from repo files
-  let config = await fetchRepoVisitorConfig(slug);
-
-  // 2. Fallback to known registry
-  if (!config) {
-    config = KNOWN_COURSE_VISITORS[slug];
-  }
-
-  // If this course has no visitor counter configured in repo or registry, do not guess
-  if (!config) return null;
-
-  // 3. Try primary CountAPI if available (read-only 'get', zero increment)
-  if (config.countApi) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(config.countApi, { signal: controller.signal });
-      clearTimeout(timer);
-      if (res.ok) {
-        const data = await res.json();
-        if (typeof data.value === "number" && Number.isFinite(data.value) && data.value > 0) {
-          const total = data.value + (config.historicalOffset || 0);
-          return config.baseCount ? Math.max(config.baseCount, total) : total;
-        }
-      }
-    } catch {}
-  }
-
-  // 4. Try SVG Badge API (visitorbadge.io) if no countApi configured
-  if (config.badgeUrl) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(config.badgeUrl, {
-        signal: controller.signal,
-        headers: {
-          Accept: "image/svg+xml, */*",
-          "Accept-Language": "en-US,en;q=0.9",
-        },
-      });
-      clearTimeout(timer);
-      if (res.ok) {
-        const svg = await res.text();
-        const parsed = parseCourseVisitorSvg(svg);
-        if (parsed !== null && parsed > 0) {
-          if (config.hasOffset && config.baseCount) {
-            return Math.max(config.baseCount, config.baseCount + (parsed - 1));
-          }
-          return config.baseCount ? Math.max(config.baseCount, parsed) : parsed;
-        }
-      }
-    } catch {}
-  }
-
-  return config.baseCount ?? null;
-}
-
-/**
- * Fetch and update visitor counts for all completed/published courses.
+ * The landing page only reads (`get`); the course sites own the incrementing.
+ * The server value is displayed exactly as returned (a missing key reads as 0)
+ * and always replaces whatever the placeholder cache held. A request that
+ * fails leaves the badge as it was, never a made-up number.
  *
  * @returns {Promise<void>}
  */
 async function setupCourseVisitors() {
-  const elements = Array.from(document.querySelectorAll("[data-course-visitors]"));
-  if (elements.length === 0) return;
+  const slugs = Object.values(CATEGORIES)
+    .flatMap((cat) => cat.courses)
+    .filter(hasLiveSite)
+    .map((course) => course.slug);
+
+  const results = await Promise.allSettled(
+    slugs.map((slug) => requestAbacusCounter("get", courseCounterKey(slug)))
+  );
 
   /** @type {Record<string, { count: number, at: number }>} */
-  let storage = {};
+  const storage = {};
+  const at = Date.now();
+  results.forEach((result, i) => {
+    const slug = slugs[i];
+    const count = result.status === "fulfilled" ? result.value : null;
+    if (count === null) {
+      if (slug in courseVisitorsCache) storage[slug] = { count: courseVisitorsCache[slug], at: 0 };
+      return;
+    }
+    courseVisitorsCache[slug] = count;
+    storage[slug] = { count, at };
+    updateCourseVisitorsUI(slug, count);
+  });
+
   try {
-    const raw = localStorage.getItem(COURSE_VISITORS_STORAGE_KEY);
-    if (raw) storage = JSON.parse(raw) || {};
+    localStorage.setItem(COURSE_VISITORS_STORAGE_KEY, JSON.stringify(storage));
   } catch {}
-
-  const now = Date.now();
-  const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
-
-  const slugs = Array.from(new Set(elements.map((el) => el.getAttribute("data-course-visitors")).filter(Boolean)));
-
-  await Promise.allSettled(
-    slugs.map(async (slug) => {
-      const cached = storage[slug];
-      if (cached && typeof cached.count === "number" && Number.isFinite(cached.count) && cached.count > 0) {
-        courseVisitorsCache[slug] = cached.count;
-        updateCourseVisitorsUI(slug, cached.count);
-        if (now - (cached.at || 0) < CACHE_TTL) {
-          return;
-        }
-      }
-
-      const count = await fetchCourseVisitorCount(slug);
-      if (count !== null && Number.isFinite(count) && count > 0) {
-        courseVisitorsCache[slug] = count;
-        storage[slug] = { count, at: Date.now() };
-        try {
-          localStorage.setItem(COURSE_VISITORS_STORAGE_KEY, JSON.stringify(storage));
-        } catch {}
-        updateCourseVisitorsUI(slug, count);
-      }
-    })
-  );
 }
 
 /**
- * Update the DOM elements displaying visitor count for a course slug.
+ * Update the DOM elements displaying the visitor count for a course slug.
  *
  * @param {string} slug
  * @param {number} count
@@ -2624,15 +2491,13 @@ async function setupCourseVisitors() {
  */
 function updateCourseVisitorsUI(slug, count) {
   const dict = I18N[currentLang] || I18N.fa;
-  const formatted = Math.round(count).toLocaleString("en-US");
-  const targets = document.querySelectorAll(`[data-course-visitors="${slug}"]`);
-  targets.forEach((el) => {
+  const formatted = formatVisitorCount(count);
+  const label = dict.courseVisitorsTooltip || dict.visitorsTitle || "بازدید";
+  document.querySelectorAll(`[data-course-visitors="${slug}"]`).forEach((el) => {
     const countEl = el.querySelector(".course-visitors-count");
-    if (countEl) {
-      countEl.textContent = formatted;
-    }
-    el.setAttribute("title", dict.courseVisitorsTooltip || dict.visitorsTitle || "بازدید");
-    el.setAttribute("aria-label", `${dict.courseVisitorsTooltip || "بازدید"}: ${formatted}`);
+    if (countEl) countEl.textContent = formatted;
+    el.setAttribute("title", label);
+    el.setAttribute("aria-label", `${label}: ${formatted}`);
   });
 }
 
@@ -2741,6 +2606,7 @@ function setupShare() {
 }
 
 function init() {
+  loadCourseVisitorsCache();
   setupLanguage();
   renderCourses();
   setupFilters();
