@@ -580,7 +580,7 @@ const CATEGORIES = {
         en: "MLOps",
         desc: "پل ارتباطی میان مدل‌های تجربی علم داده و سیستم‌های پایدار عملیاتی. آموزش مداوم (CT)، خودکارسازی استقرار، پایش رانش داده و مفهوم (Drift) و مدیریت چرخه عمر مدل در پروداکشن.",
         logo: "mlops",
-        status: "published",
+        status: "near_complete",
         contentLanguages: ["fa", "en", "de"],
       },
       {

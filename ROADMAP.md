@@ -104,7 +104,7 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-kafka` — Apache Kafka: Event streaming, topic partitioning, consumer groups, fault tolerance. *(In Development)*
 - `learn-mlflow` — MLflow: Experiment tracking, parameter logging, model registry, artifact packaging. *(In Development)*
 - `learn-dataops` — DataOps: Agile software engineering principles for data pipelines, continuous integration (CI/CD), automated data quality test suites. *(Planned)*
-- `learn-mlops` — MLOps: Bridge from experimental research to resilient production systems, Continuous Training (CT), deployment automation, and concept drift detection. *(Published)*
+- `learn-mlops` — MLOps: Bridge from experimental research to resilient production systems, Continuous Training (CT), deployment automation, and concept drift detection. *(Nearly Complete)*
 - `learn-llmops` — LLMOps & Model Serving: High-throughput inference engines (vLLM/Triton), semantic caching, guardrail frameworks, token cost/latency telemetry. *(Planned)*
 - `learn-mlsecops` — MLSecOps & AI Security: Defense against prompt injections, dataset poisoning, model inversion attacks, and securing ML supply chains. *(Planned)*
 
