@@ -580,8 +580,8 @@ const CATEGORIES = {
         en: "MLOps",
         desc: "پل ارتباطی میان مدل‌های تجربی علم داده و سیستم‌های پایدار عملیاتی. آموزش مداوم (CT)، خودکارسازی استقرار، پایش رانش داده و مفهوم (Drift) و مدیریت چرخه عمر مدل در پروداکشن.",
         logo: "mlops",
-        status: "planned",
-        contentLanguages: ["en"],
+        status: "published",
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-llmops",
@@ -1193,26 +1193,26 @@ const I18N = {
       planned: "برنامه‌ریزی‌شده",
     },
     statusSummaryTitle: "وضعیت آمادگی و توسعهٔ دوره‌ها",
-    statusSummarySubtitle: "تفکیک دوره‌ها بر اساس میزان دسترسی و پیشرفت تولید؛ برای فیلتر سریع روی هر وضعیت کلیک کنید.",
+    statusSummarySubtitle: "تفکیک دوره‌ها بر اساس وضعیت؛ برای فیلتر سریع روی هر وضعیت کلیک کنید.",
     statusSummaryAria: "وضعیت آمادگی دوره‌ها",
     statusFilterClear: "نمایش همه",
     statusFilterActiveText: "فیلتر فعال: {label} ({count} دوره)",
     statusLegendPublished: "منتشرشده",
-    statusLegendNearComplete: "آماده تمرین",
+    statusLegendNearComplete: "تقریباً تمام",
     statusLegendInDev: "در حال توسعه",
     statusLegendPlanned: "برنامه‌ریزی‌شده",
-    statusCardPillUsable: "قابل استفاده",
-    statusCardLabelUsable: "دوره آماده یادگیری",
-    statusCardSubUsable: "{published} منتشرشده + {nearComplete} در مراحل پایانی",
-    statusCardPillInDev: "در دست ساخت",
-    statusCardLabelInDev: "دوره در حال توسعه",
-    statusCardSubInDev: "محیط سندباکس و چالش‌ها در دست طراحی",
-    statusCardPillPlanned: "نقشه راه",
-    statusCardLabelPlanned: "دوره برنامه‌ریزی‌شده",
+    statusCardPillPublished: "منتشرشده",
+    statusCardLabelPublished: "منتشرشده",
+    statusCardSubPublished: "آنلاین و آماده یادگیری",
+    statusCardPillNearComplete: "تقریباً تمام",
+    statusCardLabelNearComplete: "تقریباً تمام",
+    statusCardSubNearComplete: "در مراحل پایانی بازبینی",
+    statusCardPillInDev: "در حال توسعه",
+    statusCardLabelInDev: "در حال توسعه",
+    statusCardSubInDev: "محیط سندباکس و چالش‌ها در دست ساخت",
+    statusCardPillPlanned: "برنامه‌ریزی‌شده",
+    statusCardLabelPlanned: "برنامه‌ریزی‌شده",
     statusCardSubPlanned: "سرفصل‌ها در نوبت پیاده‌سازی",
-    statusCardPillAll: "کاتالوگ کل",
-    statusCardLabelAll: "مجموع کل دوره‌ها",
-    statusCardSubAll: "در {categories} دسته تخصصی مهندسی و هوش مصنوعی",
     filterLabels: {
       all: "همه",
       languages: "زبان‌ها",
@@ -1328,18 +1328,18 @@ const I18N = {
     statusLegendNearComplete: "Nearly Complete",
     statusLegendInDev: "In Development",
     statusLegendPlanned: "Planned",
-    statusCardPillUsable: "Ready to Learn",
-    statusCardLabelUsable: "Interactive Courses Ready",
-    statusCardSubUsable: "{published} published + {nearComplete} nearly complete",
-    statusCardPillInDev: "In Progress",
-    statusCardLabelInDev: "Courses in Development",
-    statusCardSubInDev: "Browser sandboxes & challenges being crafted",
-    statusCardPillPlanned: "Roadmap",
-    statusCardLabelPlanned: "Planned Courses",
-    statusCardSubPlanned: "Curricula queued on upcoming roadmap",
-    statusCardPillAll: "Full Catalog",
-    statusCardLabelAll: "Total Courses",
-    statusCardSubAll: "Across {categories} specialized engineering disciplines",
+    statusCardPillPublished: "Published",
+    statusCardLabelPublished: "Published",
+    statusCardSubPublished: "Live interactive sandboxes",
+    statusCardPillNearComplete: "Nearly Complete",
+    statusCardLabelNearComplete: "Nearly Complete",
+    statusCardSubNearComplete: "In final review stages",
+    statusCardPillInDev: "In Development",
+    statusCardLabelInDev: "In Development",
+    statusCardSubInDev: "Sandboxes & challenges being crafted",
+    statusCardPillPlanned: "Planned",
+    statusCardLabelPlanned: "Planned",
+    statusCardSubPlanned: "Curricula queued on roadmap",
     filterLabels: {
       all: "All",
       languages: "Languages",
@@ -1455,18 +1455,18 @@ const I18N = {
     statusLegendNearComplete: "Fast fertig",
     statusLegendInDev: "In Entwicklung",
     statusLegendPlanned: "Geplant",
-    statusCardPillUsable: "Bereit zum Lernen",
-    statusCardLabelUsable: "Interaktive Kurse verfügbar",
-    statusCardSubUsable: "{published} veröffentlicht + {nearComplete} fast fertig",
-    statusCardPillInDev: "In Arbeit",
-    statusCardLabelInDev: "Kurse in Entwicklung",
-    statusCardSubInDev: "Browser-Sandboxen & Aufgaben in Arbeit",
-    statusCardPillPlanned: "Roadmap",
-    statusCardLabelPlanned: "Geplante Kurse",
-    statusCardSubPlanned: "Lehrpläne in der Entwicklungspipeline",
-    statusCardPillAll: "Gesamtkatalog",
-    statusCardLabelAll: "Gesamte Kurse",
-    statusCardSubAll: "In {categories} technischen Fachbereichen",
+    statusCardPillPublished: "Veröffentlicht",
+    statusCardLabelPublished: "Veröffentlicht",
+    statusCardSubPublished: "Online & interaktiv nutzbar",
+    statusCardPillNearComplete: "Fast fertig",
+    statusCardLabelNearComplete: "Fast fertig",
+    statusCardSubNearComplete: "In der finalen Überprüfung",
+    statusCardPillInDev: "In Entwicklung",
+    statusCardLabelInDev: "In Entwicklung",
+    statusCardSubInDev: "Sandboxen & Aufgaben in Arbeit",
+    statusCardPillPlanned: "Geplant",
+    statusCardLabelPlanned: "Geplant",
+    statusCardSubPlanned: "In der Roadmap vorgesehen",
     filterLabels: {
       all: "Alle",
       languages: "Sprachen",
@@ -1546,6 +1546,10 @@ const KNOWN_COURSE_VISITORS = {
     countApi: "https://countapi.mileshilliard.com/api/v1/get/alisadeghiaghili-learn-dvc",
     historicalOffset: 203,
     baseCount: 204,
+  },
+  "learn-mlops": {
+    badgeUrl: "https://api.visitorbadge.io/api/combined?path=learn-mlops",
+    baseCount: 1,
   },
 };
 
@@ -1707,9 +1711,7 @@ function applyCourseFilters() {
       const matchesQuery = !query || haystack.includes(query);
 
       let matchesStatus = true;
-      if (statusFilter === "usable") {
-        matchesStatus = status === "published" || status === "near_complete";
-      } else if (statusFilter !== "all") {
+      if (statusFilter && statusFilter !== "all") {
         matchesStatus = status === statusFilter;
       }
 
@@ -2129,30 +2131,18 @@ function setupStats() {
     freeEl.textContent = currentLang === "fa" ? "۱۰۰٪" : "100%";
   }
 
-  // Update status summary numbers and subtexts
-  const countUsableEl = document.getElementById("count-usable");
-  if (countUsableEl) countUsableEl.textContent = formatNum(usable);
+  // Update status summary numbers
+  const countPubEl = document.getElementById("count-published");
+  if (countPubEl) countPubEl.textContent = formatNum(published);
+
+  const countNearEl = document.getElementById("count-near-complete");
+  if (countNearEl) countNearEl.textContent = formatNum(nearComplete);
 
   const countDevEl = document.getElementById("count-in-dev");
   if (countDevEl) countDevEl.textContent = formatNum(inDev);
 
   const countPlanEl = document.getElementById("count-planned");
   if (countPlanEl) countPlanEl.textContent = formatNum(planned);
-
-  const countAllEl = document.getElementById("count-all");
-  if (countAllEl) countAllEl.textContent = formatNum(totalCourses);
-
-  const subUsableEl = document.getElementById("sub-usable");
-  if (subUsableEl && dict.statusCardSubUsable) {
-    subUsableEl.textContent = dict.statusCardSubUsable
-      .replace("{published}", formatNum(published))
-      .replace("{nearComplete}", formatNum(nearComplete));
-  }
-
-  const subAllEl = document.getElementById("sub-all");
-  if (subAllEl && dict.statusCardSubAll) {
-    subAllEl.textContent = dict.statusCardSubAll.replace("{categories}", formatNum(totalCats));
-  }
 
   // Progress stack bar widths & titles
   const segPub = document.getElementById("seg-published");
@@ -2171,7 +2161,7 @@ function setupStats() {
   }
   if (segNear) {
     segNear.style.width = `${(nearComplete / totalCourses) * 100}%`;
-    segNear.title = `${dict.statusLegendNearComplete || "آماده تمرین"}: ${formatNum(nearComplete)} (${formatNum(pctNearComplete)}%)`;
+    segNear.title = `${dict.statusLegendNearComplete || "تقریباً تمام"}: ${formatNum(nearComplete)} (${formatNum(pctNearComplete)}%)`;
   }
   if (segDev) {
     segDev.style.width = `${(inDev / totalCourses) * 100}%`;
@@ -2264,20 +2254,9 @@ function updateStatusFilterUI() {
     textEl.textContent = "";
   } else {
     indicator.hidden = false;
-    let label = dict.statusCardPillUsable || "قابل استفاده";
-    let count = 0;
     const allCourses = Object.values(CATEGORIES).flatMap((c) => c.courses);
-
-    if (currentStatus === "usable") {
-      label = dict.statusCardPillUsable || "قابل استفاده";
-      count = allCourses.filter((c) => c.status === "published" || c.status === "near_complete").length;
-    } else if (currentStatus === "in_development") {
-      label = dict.statusCardPillInDev || "در دست ساخت";
-      count = allCourses.filter((c) => c.status === "in_development").length;
-    } else if (currentStatus === "planned") {
-      label = dict.statusCardPillPlanned || "نقشه راه";
-      count = allCourses.filter((c) => c.status === "planned").length;
-    }
+    const count = allCourses.filter((c) => c.status === currentStatus).length;
+    const label = dict.statusLabels[currentStatus] || currentStatus;
 
     const countFormatted = currentLang === "fa" ? toPersianDigits(count) : String(count);
     const template = dict.statusFilterActiveText || "فیلتر فعال: {label} ({count} دوره)";

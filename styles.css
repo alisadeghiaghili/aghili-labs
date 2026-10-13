@@ -874,12 +874,17 @@ html[lang="fa"] .hero-stats dt {
   letter-spacing: 0.02em;
 }
 
-.status-card-pill.is-usable {
+.status-card-pill.is-published {
   background: rgba(15, 118, 110, 0.12);
   color: var(--teal);
 }
 
-.status-card-pill.is-in-dev {
+.status-card-pill.is-near-complete {
+  background: rgba(180, 83, 9, 0.12);
+  color: var(--gold);
+}
+
+.status-card-pill.is-in-development {
   background: rgba(194, 65, 12, 0.1);
   color: var(--accent);
 }
@@ -887,11 +892,6 @@ html[lang="fa"] .hero-stats dt {
 .status-card-pill.is-planned {
   background: rgba(28, 25, 23, 0.07);
   color: var(--ink-soft);
-}
-
-.status-card-pill.is-all {
-  background: rgba(28, 25, 23, 0.09);
-  color: var(--ink);
 }
 
 .status-card-icon {
@@ -913,20 +913,20 @@ html[lang="fa"] .status-card-count {
   letter-spacing: 0;
 }
 
-.status-card.is-usable .status-card-count {
+.status-card.is-published .status-card-count {
   color: var(--teal);
 }
 
-.status-card.is-in-dev .status-card-count {
+.status-card.is-near-complete .status-card-count {
+  color: var(--gold);
+}
+
+.status-card.is-in-development .status-card-count {
   color: var(--accent);
 }
 
 .status-card.is-planned .status-card-count {
   color: var(--ink-soft);
-}
-
-.status-card.is-all .status-card-count {
-  color: var(--ink);
 }
 
 .status-card-label {
@@ -950,12 +950,17 @@ html[lang="fa"] .status-card-count {
   box-shadow: 0 0 0 2px var(--ink), 0 10px 24px -10px rgba(28, 25, 23, 0.2);
 }
 
-.status-card.is-usable.is-active {
+.status-card.is-published.is-active {
   border-color: var(--teal);
   box-shadow: 0 0 0 2px var(--teal), 0 10px 24px -10px rgba(15, 118, 110, 0.25);
 }
 
-.status-card.is-in-dev.is-active {
+.status-card.is-near-complete.is-active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--gold), 0 10px 24px -10px rgba(180, 83, 9, 0.25);
+}
+
+.status-card.is-in-development.is-active {
   border-color: var(--accent);
   box-shadow: 0 0 0 2px var(--accent), 0 10px 24px -10px rgba(194, 65, 12, 0.25);
 }

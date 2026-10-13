@@ -304,56 +304,56 @@
               </div>
               <div class="status-progress-legend" id="status-progress-legend">
                 <span class="legend-item"><span class="legend-dot is-published"></span><span data-i18n="statusLegendPublished">منتشرشده</span> (<span id="pct-published">۵٪</span>)</span>
-                <span class="legend-item"><span class="legend-dot is-near-complete"></span><span data-i18n="statusLegendNearComplete">آماده تمرین</span> (<span id="pct-near-complete">۱۰٪</span>)</span>
+                <span class="legend-item"><span class="legend-dot is-near-complete"></span><span data-i18n="statusLegendNearComplete">تقریباً تمام</span> (<span id="pct-near-complete">۱۰٪</span>)</span>
                 <span class="legend-item"><span class="legend-dot is-in-development"></span><span data-i18n="statusLegendInDev">در حال توسعه</span> (<span id="pct-in-development">۳۴٪</span>)</span>
                 <span class="legend-item"><span class="legend-dot is-planned"></span><span data-i18n="statusLegendPlanned">برنامه‌ریزی‌شده</span> (<span id="pct-planned">۵۱٪</span>)</span>
               </div>
             </div>
 
-            <!-- Interactive Metric Cards -->
+            <!-- Interactive Metric Cards: 4 Exact Statuses -->
             <div class="status-cards-grid" role="tablist" aria-label="فیلتر بر اساس وضعیت دوره">
-              <!-- Card 1: Usable / Ready (Published + Near Complete) -->
-              <button type="button" class="status-card is-usable" data-status-filter="usable" role="tab" aria-selected="false">
+              <!-- Card 1: Published -->
+              <button type="button" class="status-card is-published" data-status-filter="published" role="tab" aria-selected="false">
                 <div class="status-card-top">
-                  <span class="status-card-pill is-usable" data-i18n="statusCardPillUsable">قابل استفاده</span>
+                  <span class="status-card-pill is-published" data-i18n="statusCardPillPublished">منتشرشده</span>
                   <span class="status-card-icon" aria-hidden="true">✓</span>
                 </div>
-                <div class="status-card-count" id="count-usable">۱۳</div>
-                <div class="status-card-label" data-i18n="statusCardLabelUsable">دوره آماده یادگیری</div>
-                <div class="status-card-sub" id="sub-usable" data-i18n="statusCardSubUsable">۴ منتشرشده + ۹ در مراحل پایانی</div>
+                <div class="status-card-count" id="count-published">۴</div>
+                <div class="status-card-label" data-i18n="statusCardLabelPublished">منتشرشده</div>
+                <div class="status-card-sub" data-i18n="statusCardSubPublished">آنلاین و آماده یادگیری</div>
               </button>
 
-              <!-- Card 2: In Development -->
-              <button type="button" class="status-card is-in-dev" data-status-filter="in_development" role="tab" aria-selected="false">
+              <!-- Card 2: Nearly Complete -->
+              <button type="button" class="status-card is-near-complete" data-status-filter="near_complete" role="tab" aria-selected="false">
                 <div class="status-card-top">
-                  <span class="status-card-pill is-in-dev" data-i18n="statusCardPillInDev">در دست ساخت</span>
+                  <span class="status-card-pill is-near-complete" data-i18n="statusCardPillNearComplete">تقریباً تمام</span>
+                  <span class="status-card-icon" aria-hidden="true">◐</span>
+                </div>
+                <div class="status-card-count" id="count-near-complete">۹</div>
+                <div class="status-card-label" data-i18n="statusCardLabelNearComplete">تقریباً تمام</div>
+                <div class="status-card-sub" data-i18n="statusCardSubNearComplete">در مراحل پایانی بازبینی</div>
+              </button>
+
+              <!-- Card 3: In Development -->
+              <button type="button" class="status-card is-in-development" data-status-filter="in_development" role="tab" aria-selected="false">
+                <div class="status-card-top">
+                  <span class="status-card-pill is-in-development" data-i18n="statusCardPillInDev">در حال توسعه</span>
                   <span class="status-card-icon" aria-hidden="true">⚡</span>
                 </div>
                 <div class="status-card-count" id="count-in-dev">۳۰</div>
-                <div class="status-card-label" data-i18n="statusCardLabelInDev">دوره در حال توسعه</div>
-                <div class="status-card-sub" data-i18n="statusCardSubInDev">محیط سندباکس و چالش‌ها در دست طراحی</div>
+                <div class="status-card-label" data-i18n="statusCardLabelInDev">در حال توسعه</div>
+                <div class="status-card-sub" data-i18n="statusCardSubInDev">محیط سندباکس و چالش‌ها در دست ساخت</div>
               </button>
 
-              <!-- Card 3: Planned -->
+              <!-- Card 4: Planned -->
               <button type="button" class="status-card is-planned" data-status-filter="planned" role="tab" aria-selected="false">
                 <div class="status-card-top">
-                  <span class="status-card-pill is-planned" data-i18n="statusCardPillPlanned">نقشه راه</span>
+                  <span class="status-card-pill is-planned" data-i18n="statusCardPillPlanned">برنامه‌ریزی‌شده</span>
                   <span class="status-card-icon" aria-hidden="true">📋</span>
                 </div>
                 <div class="status-card-count" id="count-planned">۴۶</div>
-                <div class="status-card-label" data-i18n="statusCardLabelPlanned">دوره برنامه‌ریزی‌شده</div>
+                <div class="status-card-label" data-i18n="statusCardLabelPlanned">برنامه‌ریزی‌شده</div>
                 <div class="status-card-sub" data-i18n="statusCardSubPlanned">سرفصل‌ها در نوبت پیاده‌سازی</div>
-              </button>
-
-              <!-- Card 4: Total / Show All -->
-              <button type="button" class="status-card is-all is-active" data-status-filter="all" role="tab" aria-selected="true">
-                <div class="status-card-top">
-                  <span class="status-card-pill is-all" data-i18n="statusCardPillAll">کاتالوگ کل</span>
-                  <span class="status-card-icon" aria-hidden="true">❖</span>
-                </div>
-                <div class="status-card-count" id="count-all">۸۹</div>
-                <div class="status-card-label" data-i18n="statusCardLabelAll">مجموع کل دوره‌ها</div>
-                <div class="status-card-sub" id="sub-all" data-i18n="statusCardSubAll">در ۹ دسته تخصصی مهندسی و هوش مصنوعی</div>
               </button>
             </div>
           </div>

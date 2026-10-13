@@ -1,17 +1,17 @@
-# Graph Report - learn-with-ali  (2026-10-12)
+# Graph Report - learn-with-ali  (2026-10-13)
 
 ## Corpus Check
-- 22 files · ~65,803 words
+- 22 files · ~67,183 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: .ico 2, (none) 1, .css 1)
 
 ## Summary
-- 127 nodes · 183 edges · 13 communities (10 shown, 3 thin omitted)
+- 129 nodes · 190 edges · 13 communities (10 shown, 3 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6c034831`
+- Built from commit: `7fdcea3d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,38 +21,38 @@
 - pathlib
 - upgrade_logos.py
 - test_counter.py
+- setupCourseVisitors
 - Detailed Course Breakdown
 - Aghili Labs
 - Aghili Labs — maintenance notes
 - createCourseCard
 - CLAUDE.md
-- applyCourseFilters
 - setupStats
 - generate_logos.py
 
 ## God Nodes (most connected - your core abstractions)
-1. `init()` - 12 edges
+1. `init()` - 13 edges
 2. `Detailed Course Breakdown` - 10 edges
 3. `renderCourses()` - 7 edges
 4. `Aghili Labs` - 7 edges
-5. `escapeHtml()` - 5 edges
-6. `createCourseCard()` - 5 edges
-7. `applyCourseFilters()` - 5 edges
-8. `setupStats()` - 5 edges
+5. `applyCourseFilters()` - 6 edges
+6. `setupStats()` - 6 edges
+7. `escapeHtml()` - 5 edges
+8. `createCourseCard()` - 5 edges
 9. `setupCourseVisitors()` - 5 edges
 10. `upgrade_devicon()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `renderCourses()` --calls--> `applyCourseFilters()`  [EXTRACTED]
-  app.js → app.js  _Bridges community 11 → community 9_
-- `init()` --calls--> `renderCourses()`  [EXTRACTED]
-  app.js → app.js  _Bridges community 9 → community 0_
+  app.js → app.js  _Bridges community 0 → community 9_
 - `renderCourses()` --calls--> `setupCourseVisitors()`  [EXTRACTED]
-  app.js → app.js  _Bridges community 9 → community 1_
+  app.js → app.js  _Bridges community 9 → community 5_
 - `setLanguage()` --calls--> `renderCourses()`  [EXTRACTED]
   app.js → app.js  _Bridges community 9 → community 12_
-- `init()` --calls--> `setupFilters()`  [EXTRACTED]
-  app.js → app.js  _Bridges community 11 → community 0_
+- `init()` --calls--> `setupLanguage()`  [EXTRACTED]
+  app.js → app.js  _Bridges community 12 → community 0_
+- `init()` --calls--> `setupCourseVisitors()`  [EXTRACTED]
+  app.js → app.js  _Bridges community 5 → community 0_
 
 ## Import Cycles
 - None detected.
@@ -60,12 +60,12 @@
 ## Communities (13 total, 3 thin omitted)
 
 ### Community 0 - "init"
-Cohesion: 0.33
-Nodes (6): init(), setupDonateTabs(), setupNav(), setupReveal(), setupShare(), showToast()
+Cohesion: 0.28
+Nodes (9): applyCourseFilters(), forceReveal(), init(), setupDonateTabs(), setupFilters(), setupNav(), setupReveal(), setupSearch() (+1 more)
 
 ### Community 1 - "app.js"
 Cohesion: 0.15
-Nodes (15): CATEGORIES, COURSE_DESC_DE, COURSE_DESC_EN, courseFilters, courseVisitorsCache, fetchCourseVisitorCount(), fetchRepoVisitorConfig(), FILTERS (+7 more)
+Nodes (12): CATEGORIES, COURSE_DESC_DE, COURSE_DESC_EN, courseFilters, courseVisitorsCache, FILTERS, I18N, KNOWN_COURSE_VISITORS (+4 more)
 
 ### Community 3 - "upgrade_logos.py"
 Cohesion: 0.23
@@ -74,6 +74,10 @@ Nodes (6): extract_inner(), fetch(), main(), upgrade_devicon(), upgrade_simpleic
 ### Community 4 - "test_counter.py"
 Cohesion: 0.19
 Nodes (3): fetch(), main(), parse_count()
+
+### Community 5 - "setupCourseVisitors"
+Cohesion: 0.40
+Nodes (5): fetchCourseVisitorCount(), fetchRepoVisitorConfig(), parseCourseVisitorSvg(), setupCourseVisitors(), updateCourseVisitorsUI()
 
 ### Community 6 - "Detailed Course Breakdown"
 Cohesion: 0.13
@@ -91,13 +95,9 @@ Nodes (4): Adding a course, Aghili Labs — maintenance notes, Deploy, Re-genera
 Cohesion: 0.70
 Nodes (5): createCourseCard(), escapeHtml(), formatDesc(), formatTitle(), renderCourses()
 
-### Community 11 - "applyCourseFilters"
-Cohesion: 0.50
-Nodes (4): applyCourseFilters(), forceReveal(), setupFilters(), setupSearch()
-
 ### Community 12 - "setupStats"
-Cohesion: 0.40
-Nodes (6): setLanguage(), setupLanguage(), setupStats(), setupVisitors(), toPersianDigits(), updateVisitorsDisplay()
+Cohesion: 0.38
+Nodes (7): setLanguage(), setupLanguage(), setupStats(), setupVisitors(), toPersianDigits(), updateStatusFilterUI(), updateVisitorsDisplay()
 
 ## Knowledge Gaps
 - **32 isolated node(s):** `CATEGORIES`, `FILTERS`, `COURSE_DESC_EN`, `COURSE_DESC_DE`, `I18N` (+27 more)
@@ -109,8 +109,6 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **What connects `CATEGORIES`, `FILTERS`, `COURSE_DESC_EN` to the rest of the system?**
   _32 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `app.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.14705882352941177 - nodes in this community are weakly interconnected._
 - **Should `pathlib` be split into smaller, more focused modules?**
   _Cohesion score 0.09538461538461539 - nodes in this community are weakly interconnected._
 - **Should `Detailed Course Breakdown` be split into smaller, more focused modules?**
