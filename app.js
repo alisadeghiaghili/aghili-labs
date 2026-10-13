@@ -412,8 +412,8 @@ const CATEGORIES = {
         en: "SQL",
         desc: "هر مهندس داده‌ای، هر روز SQL می‌نویسد. کوئری‌های تودرتو، توابع پنجره‌ای، CTEها، ایندکس‌گذاری و بهینه‌سازی اجرا در سندباکس زنده.",
         logo: "sql",
-        status: "near_complete",
-        contentLanguages: ["en"],
+        status: "published",
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-dax",

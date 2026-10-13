@@ -84,7 +84,7 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-terraform` — Terraform & IaC: HashiCorp Configuration Language (HCL), resource lifecycles, remote state management, modular infrastructure provisioning. *(Planned)*
 
 ### 5. Data & Analytics (`data` · 12 Courses)
-- `learn-sql` — SQL: In-browser SQLite engine, relational algebra, window functions, query optimization. *(In Development)*
+- `learn-sql` — SQL: In-browser SQLite engine, relational algebra, window functions, query optimization. *(Published)*
 - `learn-dax` — DAX: Power BI calculation engine, evaluation context, filter transitions. *(In Development)*
 - `learn-m` — Power Query M: Data transformation language, ETL pipelines, step-by-step evaluation. *(In Development)*
 - `learn-spark` — Apache Spark: Distributed datasets, DataFrames, cluster execution model, catalyst optimizer. *(In Development)*
