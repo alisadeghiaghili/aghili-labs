@@ -1,8 +1,8 @@
 {
   "app.js": {
-    "mtime": 1791959051.8429358,
-    "seen": 1791959130.116254,
-    "ast_hash": "d732a38c6199ca82b506bc59791dad28",
+    "mtime": 1791959247.1666293,
+    "seen": 1791959505.016068,
+    "ast_hash": "9b1a5a705284a103ecbddac31f1496b6",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -12,27 +12,27 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1791959071.6665628,
-    "seen": 1791959130.116254,
+    "mtime": 1791959247.15867,
+    "seen": 1791959505.016068,
     "ast_hash": "4584246403a8bb9f37f6873f63e09488",
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1791959061.2203083,
-    "seen": 1791959130.116254,
+    "mtime": 1791959247.1615353,
+    "seen": 1791959505.016068,
     "ast_hash": "d73ed20b530275fdeb6bddb0df8df4ac",
     "semantic_hash": ""
   },
   "docs/MAINTENANCE.md": {
-    "mtime": 1791218328.6226754,
-    "seen": 1791222274.4474657,
-    "ast_hash": "f3bc8970a3ee86e252fa4c6a14e17549",
+    "mtime": 1791959246.9131382,
+    "seen": 1791959505.016068,
+    "ast_hash": "6a5b0ff17aa9eb082ef9f64e0b63328b",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1791959103.4211166,
-    "seen": 1791959130.116254,
-    "ast_hash": "caf2dd9d723a2f1f14ddab9f1938b281",
+    "mtime": 1791959352.9935033,
+    "seen": 1791959505.016068,
+    "ast_hash": "39d9c19a755fcb34775360cd2803603b",
     "semantic_hash": ""
   },
   "assets/apple-touch-icon.png": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "tools/test_visitors.py": {
-    "mtime": 1791789956.0451455,
-    "seen": 1791789989.5969167,
-    "ast_hash": "7accb572da2ca8d2513a0e25366d3f7a",
+    "mtime": 1791959246.957282,
+    "seen": 1791959505.016068,
+    "ast_hash": "5a3208048530cd02b90b5bd831ed542a",
     "semantic_hash": ""
   },
   "tools/update_favicon.py": {
@@ -720,9 +720,9 @@
     "semantic_hash": ""
   },
   "tools/test_counter.py": {
-    "mtime": 1791789956.0432172,
-    "seen": 1791789989.5969167,
-    "ast_hash": "ad6291f1b40de1d726f5581d20943445",
+    "mtime": 1791959246.9544692,
+    "seen": 1791959505.016068,
+    "ast_hash": "898aee2821fb48522c1b903a255b3174",
     "semantic_hash": ""
   },
   "assets/logos/sdd.svg": {
