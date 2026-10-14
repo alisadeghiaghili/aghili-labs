@@ -51,7 +51,7 @@ The curriculum is partitioned into nine foundational disciplines:
 - `learn-powershell` — PowerShell: Object pipeline, system automation, Windows administration. *(Nearly Complete)*
 - `learn-cmd` — Windows CMD: Classic command shell, filesystem navigation, batch tooling. *(Published)*
 - `learn-linux` — Linux / Ubuntu: OS fundamentals, processes, filesystem visualizer, user permissions. *(Nearly Complete)*
-- `learn-git` — Git: DAG revision graph, staging, branching, merging, interactive recovery. *(Nearly Complete)*
+- `learn-git` — Git: DAG revision graph, staging, branching, merging, interactive recovery. *(Published)*
 - `learn-networking` — Networking: TCP/IP, OSI layers, DNS, routing, diagnostics for data & DevOps. *(In Development)*
 - `learn-cryptography` — Applied Cryptography: Hashing, symmetric/asymmetric encryption, digital signatures, data integrity. *(Planned)*
 

@@ -151,8 +151,8 @@ const CATEGORIES = {
         en: "Git",
         desc: "بدون تسلط بر Git، همکاری تیمی روی کد غیرممکن است. شاخه‌بندی، Rebase، حل تعارض و بازیابی تغییرات گم‌شده.",
         logo: "git",
-        status: "near_complete",
-        contentLanguages: ["en"],
+        status: "published",
+        contentLanguages: ["fa", "en", "de"],
       },
       {
         slug: "learn-networking",
@@ -1651,7 +1651,7 @@ function createCourseCard(course) {
       </div>
     </div>
     <p class="course-desc">${displayDesc}</p>
-    <p class="course-lang-note${isMultiLang ? " is-multilang" : ""}">${escapeHtml(langNote)}</p>
+    ${isPlanned ? "" : `<p class="course-lang-note${isMultiLang ? " is-multilang" : ""}">${escapeHtml(langNote)}</p>`}
     <div class="course-foot">
       <div class="course-foot-meta">
         <a class="course-tag ${meta.className}" href="${isPlanned ? "#courses" : courseUrl}"${isPlanned ? "" : ' target="_blank" rel="noopener noreferrer"'}>${escapeHtml(statusLabel)}</a>
