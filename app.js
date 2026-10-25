@@ -1600,6 +1600,7 @@ function createCourseCard(course) {
 
   card.dataset.slug = course.slug;
   card.dataset.status = course.status;
+  card.dataset.searchText = courseSearchText(course);
   const shareTitle = currentLang === "fa" ? course.title : course.en;
   const titleHtml = currentLang === "fa"
     ? `<p class="course-title">${formatTitle(course.title)}</p><p class="course-en" dir="ltr">${escapeHtml(course.en)}</p>`
@@ -1667,7 +1668,23 @@ function createCourseCard(course) {
 const courseFilters = { filter: "all", query: "", status: "all" };
 
 /**
- * Build a lowercase searchable haystack from a course.
+ * Normalize search text, ignoring Persian/Arabic letter variants, Arabic
+ * vowel marks, tatweel, whitespace, and zero-width formatting characters.
+ * Keep punctuation so technical names such as C++ remain distinct.
+ *
+ * @param {string} text
+ * @returns {string}
+ */
+function normalizeSearchText(text) {
+  return text.normalize("NFKC").toLowerCase()
+    .replace(/[\u064a\u0649]/g, "\u06cc")
+    .replace(/\u0643/g, "\u06a9")
+    .replace(/[\u0610-\u061a\u0640\u064b-\u065f\u0670\u06d6-\u06ed]/g, "")
+    .replace(/[\s\u200b-\u200f\u202a-\u202e\u2060\u2066-\u2069]/g, "");
+}
+
+/**
+ * Build a language-independent searchable haystack from course metadata.
  *
  * @param {Course} course
  * @returns {string}
@@ -1675,7 +1692,7 @@ const courseFilters = { filter: "all", query: "", status: "all" };
 function courseSearchText(course) {
   const enDesc = (typeof COURSE_DESC_EN !== "undefined" && COURSE_DESC_EN[course.slug]) || "";
   const deDesc = (typeof COURSE_DESC_DE !== "undefined" && COURSE_DESC_DE[course.slug]) || "";
-  return [course.title, course.en, course.desc, enDesc, deDesc, course.slug].join(" ").toLowerCase();
+  return normalizeSearchText([course.title, course.en, course.desc, enDesc, deDesc, course.slug].join(" "));
 }
 
 /**
@@ -1708,12 +1725,8 @@ function applyCourseFilters() {
     let visibleInSection = 0;
 
     section.querySelectorAll(".course-card").forEach((card) => {
-      const title = card.querySelector(".course-title")?.textContent || "";
-      const en = card.querySelector(".course-en")?.textContent || "";
-      const desc = card.querySelector(".course-desc")?.textContent || "";
-      const slug = card.dataset.slug || "";
       const status = card.dataset.status || "";
-      const haystack = `${title} ${en} ${desc} ${slug}`.toLowerCase();
+      const haystack = card.dataset.searchText || "";
       const matchesQuery = !query || haystack.includes(query);
 
       let matchesStatus = true;
@@ -1859,7 +1872,7 @@ function setupSearch() {
   if (!searchInput) return;
 
   const onSearch = () => {
-    courseFilters.query = searchInput.value.trim().toLowerCase();
+    courseFilters.query = normalizeSearchText(searchInput.value);
     applyCourseFilters();
   };
 
