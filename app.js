@@ -1133,7 +1133,7 @@ const I18N = {
     navCta: "حمایت کنید",
     heroEyebrow: "آموزش رایگان · تعاملی · عمیق",
     heroHeading: "آموزش حق همه است.<br />نه امتیاز چند نفر.",
-    heroLede: "من <strong>علی صادقی عقیلی</strong> هستم. اینجا تجربه‌هایم در برنامه‌نویسی و داده را در قالب دوره‌های رایگان با شما به اشتراک می‌گذارم.<br /><br />این مجموعه رو اول برای تیمم ساختم. بعد، برای ادای دین به مردم کشورم گسترشش دادم؛ آدم‌هایی که با وجود همهٔ سختی‌ها، همچنان دارن تلاش می‌کنن.<br /><br />حالا می‌خوام این آموزش‌ها فراتر از ایران هم در دسترس باشن، چون باور دارم همه باید فرصت یادگیری باکیفیت داشته باشن؛ فارغ از اینکه کجا زندگی می‌کنن.",
+    heroLede: "من <strong>علی صادقی عقیلی</strong> هستم. اینجا تجربه‌هایم در برنامه‌نویسی و داده را در قالب دوره‌های رایگان با شما به اشتراک می‌گذارم.<br /><br />این مجموعه را ابتدا برای تیمم ساختم. سپس، برای ادای دین به مردم کشورم گسترش دادم؛ آدم‌هایی که با وجود همهٔ سختی‌ها، همچنان تلاش می‌کنند.<br /><br />اکنون می‌خواهم این آموزش‌ها فراتر از ایران هم در دسترس باشند، چون باور دارم همه باید فرصت یادگیری باکیفیت داشته باشند؛ فارغ از اینکه کجا زندگی می‌کنند.",
     heroBrowse: "مرور دوره‌ها",
     heroSupport: "چطور حمایت کنم",
     heroStatsCourses: "دورهٔ تعاملی",
@@ -1141,12 +1141,12 @@ const I18N = {
     heroStatsVisitors: "بازدید",
     heroStatsFree: "رایگان و متن‌باز",
     quoteCardLabel: "چرا این مجموعه وجود دارد",
-    quoteText: "«خوندن بهتنهایی کافی نیست. باید دست به کار بشی، اشتباه کنی و دوباره امتحان کنی. این دورهها برای همین ساخته شدن.»",
+    quoteText: "«خواندن به‌تنهایی کافی نیست. باید دست به کار شوید، اشتباه کنید و دوباره امتحان کنید. این دوره‌ها برای همین ساخته شده‌اند.»",
     aboutHeading: "از تجربهٔ صنعت تا آموزش آزاد",
     aboutCard1Title: "سابقه",
-    aboutCard1Body: "دکترای مهندسی صنایع با گرایش اتوماسیون دارم. فعالیت حرفهایام در حوزهٔ داده رو از سال ۱۳۹۱ شروع کردم و امروز در زمینهٔ برنامهنویسی، مهندسی داده، علم داده و حوزههای مرتبط با انقلاب صنعتی چهارم کار میکنم؛ از ساخت ETL و پایپ‌لاین‌های داده تا مدل‌سازی آماری، یادگیری ماشین و سامانه‌های صنعتی.<br /><br />در این مدت، در زمینهٔ هوش مصنوعی و داده به سازمان‌های زیادی در ایران مشاوره داده‌ام و در آموزشگاه‌های تهران، از جمله مرکز آموزش‌های دانشگاه صنعتی شریف، برنامه‌نویسی، داشبوردینگ، مهندسی داده و یادگیری ماشین تدریس می‌کنم. این دوره‌ها رو هم بر پایهٔ همین تجربه‌های کاری و آموزشی ساخته‌ام.",
+    aboutCard1Body: "دکترای مهندسی صنایع با گرایش اتوماسیون دارم. فعالیت حرفه‌ای‌ام در حوزهٔ داده را از سال ۱۳۹۱ شروع کردم و امروز در زمینهٔ برنامه‌نویسی، مهندسی داده، علم داده و حوزه‌های مرتبط با انقلاب صنعتی چهارم کار می‌کنم؛ از ساخت ETL و پایپ‌لاین‌های داده تا مدل‌سازی آماری، یادگیری ماشین و سامانه‌های صنعتی.<br /><br />در این مدت، در زمینهٔ هوش مصنوعی و داده به سازمان‌های زیادی در ایران مشاوره داده‌ام و در آموزشگاه‌های تهران، از جمله مرکز آموزش‌های دانشگاه صنعتی شریف، برنامه‌نویسی، داشبوردینگ، مهندسی داده و یادگیری ماشین تدریس می‌کنم. این دوره‌ها را هم بر پایهٔ همین تجربه‌های کاری و آموزشی ساخته‌ام.",
     aboutCard2Title: "مأموریت",
-    aboutCard2Body: "اولویت من مردم کشورم هستن؛ آدم‌هایی که با وجود همهٔ سختی‌ها، هنوز برای یادگرفتن و ساختن آینده‌ای بهتر تلاش می‌کنن. دلم می‌خواد هزینه، یک مانع دیگه سر راهشون نباشه. کسی که شوق یادگیری داره، باید فرصتش رو هم داشته باشه؛ حتی اگر نتونه هزینهٔ یک دوره رو پرداخت کنه.<br /><br />اما یادگیری مرز نمی‌شناسه. آرزوم اینه که این آموزش‌ها به آدم‌های بیشتری، هر جای دنیا که هستن، برسن و بهشون کمک کنن چیزی یاد بگیرن، مسئله‌ای رو حل کنن یا قدمی برای بهترکردن زندگی‌شون بردارن.<br /><br />تلاشم اینه که با حمایت داوطلبانهٔ شما، این آموزش‌ها رایگان بمونن و روزبه‌روز بهتر و کامل‌تر بشن. اگر این مجموعه براتون مفید بوده و امکان حمایتش رو دارین، کمک شما فرصت ادامهٔ این مسیر رو فراهم می‌کنه؛ تا نفر بعدی هم بتونه بدون نگرانی از هزینه، یادگیری رو شروع کنه.",
+    aboutCard2Body: "اولویت من مردم کشورم هستند؛ آدم‌هایی که با وجود همهٔ سختی‌ها، هنوز برای یاد گرفتن و ساختن آینده‌ای بهتر تلاش می‌کنند. می‌خواهم هزینه، مانع دیگری بر سر راهشان نباشد. کسی که شوق یادگیری دارد، باید فرصت آن را هم داشته باشد؛ حتی اگر نتواند هزینهٔ یک دوره را پرداخت کند.<br /><br />اما یادگیری مرز نمی‌شناسد. آرزویم این است که این آموزش‌ها به آدم‌های بیشتری، در هر جای دنیا، برسند و به آن‌ها کمک کنند چیزی یاد بگیرند، مسئله‌ای را حل کنند یا قدمی برای بهتر کردن زندگی‌شان بردارند.<br /><br />تلاشم این است که با حمایت داوطلبانهٔ شما، این آموزش‌ها رایگان بمانند و روزبه‌روز بهتر و کامل‌تر شوند. اگر این مجموعه برایتان مفید بوده و امکان حمایت از آن را دارید، کمک شما فرصت ادامهٔ این مسیر را فراهم می‌کند؛ تا نفر بعدی هم بتواند بدون نگرانی از هزینه، یادگیری را شروع کند.",
     aboutCard3Title: "روش آموزش",
     aboutCard3Body: "هر دوره یک محیط تعاملی است: سندباکس زنده، چالش‌های پلکانی، بازخورد فوری و بصری‌سازی مفاهیم. یادگیری با دست و آزمودن — نه فقط با خواندن.",
     supportHeading: "اگر این مسیر برایتان مفید است، کنارش بایستید",
@@ -1155,8 +1155,8 @@ const I18N = {
     supportDonateBody: "کمک مالی کوچک هم اثر دارد. اگر این آموزش‌ها مسیر کاری یا یادگیری شما را تغییر داده، یک دونیت چرخهٔ ساخت دوره‌های بعدی را روشن نگه می‌دارد.",
     supportDonateBtn: "حمایت مالی",
     supportShareTitle: "اشتراک‌گذاری",
-    supportShareBody: "دوره‌ها را به کسانی برسانید که به‌شان نیاز دارند. اگر می‌دانید کسی دنبال یادگیری Python، SQL، داده یا هر مسیر دیگری است، از فهرست زیر لینک همان دوره را کپی کنید و برایش بفرستید.",
-    supportShareBtn: "برو به فهرست دوره‌ها",
+    supportShareBody: "دوره‌ها را به کسانی برسانید که به آن‌ها نیاز دارند. اگر می‌دانید کسی به دنبال یادگیری Python، SQL، داده یا هر مسیر دیگری است، از فهرست زیر لینک همان دوره را کپی کنید و برایش بفرستید.",
+    supportShareBtn: "مشاهدهٔ فهرست دوره‌ها",
     supportContribTitle: "مشارکت",
     supportContribBody: "باگ، بهبود مستندات، ترجمه، مثال نو، یا ایدهٔ سطح جدید — هر مشارکت فنی همان‌قدر ارزشمند است که حمایت مالی. مخزن‌ها روی گیت‌هاب باز هستند.",
     supportContribBtn: "گیت‌هاب من",
@@ -1185,6 +1185,9 @@ const I18N = {
     courseVisitorsTooltip: "تعداد بازدیدکنندگان این دوره",
     shareLabel: "اشتراک‌گذاری",
     copiedToast: "لینک کپی شد!",
+    copyFailed: "کپی خودکار انجام نشد. لینک زیر را انتخاب و کپی کنید.",
+    courseLinkLabel: "لینک دوره",
+    closeLabel: "بستن",
     courseUnit: "دوره",
     courseContentLangNote: "محتوای دوره فعلاً به انگلیسی است",
     courseContentLangNoteMulti: "محتوای دوره به فارسی، انگلیسی و آلمانی در دسترس است",
@@ -1314,6 +1317,9 @@ const I18N = {
     courseVisitorsTooltip: "Learners & visitors for this course",
     shareLabel: "Share",
     copiedToast: "Link copied to clipboard!",
+    copyFailed: "Automatic copying failed. Select and copy the link below.",
+    courseLinkLabel: "Course link",
+    closeLabel: "Close",
     courseUnit: "courses",
     courseContentLangNote: "Course content is currently in English",
     courseContentLangNoteMulti: "Course content is available in English, Persian, and German",
@@ -1443,6 +1449,9 @@ const I18N = {
     courseVisitorsTooltip: "Besuchende dieses Kurses",
     shareLabel: "Teilen",
     copiedToast: "Link in Zwischenablage kopiert!",
+    copyFailed: "Automatisches Kopieren fehlgeschlagen. Wählen Sie den Link unten aus und kopieren Sie ihn.",
+    courseLinkLabel: "Kurslink",
+    closeLabel: "Schließen",
     courseUnit: "Kurse",
     courseContentLangNote: "Der Kursinhalt ist derzeit auf Englisch",
     courseContentLangNoteMulti: "Der Kursinhalt ist auf Deutsch, Englisch und Persisch verfügbar",
@@ -2680,12 +2689,6 @@ function showToast(message) {
 showToast.timer = undefined;
 
 /**
- * Copy a single course page URL from the course grid.
- *
- * @returns {void}
- */
-
-/**
  * Setup donation method switcher (CoffeeBede vs Buy Me a Coffee).
  *
  * @returns {void}
@@ -2714,6 +2717,75 @@ function setupDonateTabs() {
   });
 }
 
+/** Copy text, reporting failure when both clipboard methods are unavailable. */
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {}
+
+  const previousFocus = document.activeElement;
+  const input = document.createElement("input");
+  input.value = text;
+  input.readOnly = true;
+  input.tabIndex = -1;
+  input.style.position = "fixed";
+  input.style.opacity = "0";
+  try {
+    document.body.appendChild(input);
+    input.focus({ preventScroll: true });
+    input.select();
+    return document.execCommand("copy") === true;
+  } catch {
+    return false;
+  } finally {
+    input.remove();
+    previousFocus?.focus({ preventScroll: true });
+  }
+}
+
+/** Keep a selectable link on the card when automatic copying fails. */
+function showManualCopy(url, button) {
+  const card = button.closest(".course-card");
+  if (!card) return;
+  card.querySelector(".course-copy-fallback")?.remove();
+  const dict = I18N[currentLang] || I18N.fa;
+  const panel = document.createElement("div");
+  panel.className = "course-copy-fallback";
+  panel.setAttribute("role", "group");
+  panel.setAttribute("aria-label", dict.courseLinkLabel);
+
+  const label = document.createElement("label");
+  label.textContent = dict.copyFailed;
+  const input = document.createElement("input");
+  input.type = "text";
+  input.value = url;
+  input.readOnly = true;
+  input.dir = "ltr";
+  input.addEventListener("click", () => input.select());
+  label.appendChild(input);
+
+  const close = document.createElement("button");
+  close.type = "button";
+  close.textContent = dict.closeLabel;
+  const dismiss = () => {
+    panel.remove();
+    button.focus({ preventScroll: true });
+  };
+  close.addEventListener("click", dismiss);
+  panel.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      dismiss();
+    }
+  });
+  panel.appendChild(label);
+  panel.appendChild(close);
+  card.appendChild(panel);
+  input.focus();
+  input.select();
+}
+
 function setupShare() {
   const root = document.getElementById("course-root");
   if (!root) return;
@@ -2731,18 +2803,16 @@ function setupShare() {
     const title = btn.getAttribute("data-course-title") || "course";
     if (!url) return;
 
-    try {
-      await navigator.clipboard.writeText(url);
-    } catch {
-      const input = document.createElement("input");
-      input.value = url;
-      document.body.appendChild(input);
-      input.select();
-      document.execCommand("copy");
-      input.remove();
+    const dict = I18N[currentLang] || I18N.fa;
+    btn.classList.remove("is-copied");
+    btn.setAttribute("aria-label", `${dict.shareLabel} ${title}`);
+    if (!await copyText(url)) {
+      showToast(dict.copyFailed);
+      showManualCopy(url, btn);
+      return;
     }
 
-    const dict = I18N[currentLang] || I18N.fa;
+    btn.closest(".course-card")?.querySelector(".course-copy-fallback")?.remove();
     btn.classList.add("is-copied");
     btn.setAttribute("aria-label", `${dict.copiedToast} (${title})`);
     showToast(dict.copiedToast);
