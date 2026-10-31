@@ -28,7 +28,7 @@ const CATEGORIES = {
         en: "Python",
         desc: "از اتوماسیون ساده تا هوش مصنوعی، همه‌چیز از پایتون شروع می‌شود. مدل حافظه، ساختارهای داده و حل چالش‌های الگوریتمی قدم‌به‌قدم.",
         logo: "python",
-        status: "near_complete",
+        status: "published",
         contentLanguages: ["en"],
       },
       {
